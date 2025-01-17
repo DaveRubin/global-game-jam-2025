@@ -1,0 +1,10 @@
+{
+  "name": "global-game-jam-2025",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DaveRubin/global-game-jam-2025.git",
+  "license": "MIT",
+  "dependencies": {
+    "@babylonjs/core": "^7.44.0"
+  }
+}
