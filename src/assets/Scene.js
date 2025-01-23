@@ -12,7 +12,7 @@ export class Scene extends Phaser.Scene {
 
 	preload() {
 
-		this.load.image('tsconfig_1', 'public/tsconfig.png');
+		this.load.image('bubble', 'public/bubble.png');
 
 	}
 
@@ -20,9 +20,9 @@ export class Scene extends Phaser.Scene {
 	editorCreate() {
 
 		// image_1
-		const image_1 = this.add.image(608, 118, "tsconfig_1");
-		image_1.scaleX = 1;
-		image_1.scaleY = 1;
+		const image_1 = this.add.image(40, 40, "bubble");
+		image_1.scaleX = 0.1;
+		image_1.scaleY = 0.1;
 
 		this.events.emit("scene-awake");
 	}
@@ -42,3 +42,27 @@ export class Scene extends Phaser.Scene {
 /* END OF COMPILED CODE */
 
 // You can write more code here
+
+
+
+
+
+
+
+/*
+In game
+ - bubble float + apply force
+ - Game controller -
+	* onPlayerXStarted
+	* onPlayerXEnded
+	* should keep state of players "on" status
+
+ - walls (bouncy / sticky)
+ - pusher (per player) - should apply force in a direction
+ - spikes (kills bubble)
+ 
+Server:
+ - Setup firebase
+ - setup room and connect (QR ! ! ! ! !  !)
+
+*/
