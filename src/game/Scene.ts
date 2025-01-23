@@ -3,6 +3,7 @@
 
 import Phaser from "phaser";
 import { Bubble } from "./Bubble";
+import { Controller } from "./Controller";
 
 /* START OF COMPILED CODE */
 
@@ -32,6 +33,7 @@ export class Scene extends Phaser.Scene {
 
 		// Make camera follow the bubble
 		this.cameras.main.startFollow(bubble, false, 0.2, 0.2);
+		new Controller(this);
 
 		this.events.emit("scene-awake");
 	}

@@ -14,12 +14,11 @@ export class Bubble extends Phaser.Physics.Arcade.Image {
         this.setBounce(0.8);
 
         scene.events.on("update", this.update, this);
-        scene.input.keyboard?.addKey("M").on('down', () => {
-            this.addForce(100);
-        });
-        scene.input.keyboard?.addKey("N").on('down', () => {
-            this.addForce(-100);
-        });
+        scene.events.on("player1-down", this.onPlayerStarted, this);
+    }
+
+    onPlayerStarted() {
+        console.log("🚀 ~ Bubble ~ onPlayerStarted ~ key:")
     }
 
 
