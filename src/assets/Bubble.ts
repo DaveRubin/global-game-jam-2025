@@ -1,29 +1,39 @@
 import Phaser from "phaser";
 
 export class Bubble extends Phaser.Physics.Arcade.Image {
+
+    key: Phaser.Input.Keyboard.Key | undefined = undefined;
     constructor(scene: Phaser.Scene, x: number, y: number) {
         super(scene, x, y, "bubble");
 
-        // Add to scene and enable physics
         scene.add.existing(this);
         scene.physics.add.existing(this);
 
-        // Set up physics properties like in Scene.ts
         this.setScale(0.1);
         this.setCircle(this.width / 2);
         this.setBounce(0.8);
-        this.setVelocity(
-            Phaser.Math.Between(-100, 100),
-            Phaser.Math.Between(-100, 100)
-        );
+
         scene.events.on("update", this.update, this);
+        scene.input.keyboard?.addKey("M").on('down', () => {
+            this.addForce(100);
+        });
+        scene.input.keyboard?.addKey("N").on('down', () => {
+            this.addForce(-100);
+        });
+    }
+
+
+    addForce(force: number) {
+
+        if (this.body?.velocity) {
+            this.body.velocity.add({ x: force, y: 0 });
+        }
+
     }
 
 
     update() {
         super.update();
-
-        console.log(`Bubble y position: ${this.y}`);
     }
 }
 

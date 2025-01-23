@@ -31,7 +31,7 @@ export class Scene extends Phaser.Scene {
 
 
 		// Make camera follow the bubble
-		this.cameras.main.startFollow(bubble, false, 0.1, 0.1);
+		this.cameras.main.startFollow(bubble, false, 0.2, 0.2);
 
 		this.events.emit("scene-awake");
 	}
