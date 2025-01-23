@@ -4,7 +4,7 @@ import { Scene } from './Scene.js';
 const width = window.innerWidth;
 const height = window.innerHeight;
 
-const config = {
+const config: Phaser.Types.Core.GameConfig = {
     type: Phaser.AUTO,
     width,
     height,
@@ -12,9 +12,9 @@ const config = {
     physics: {
         default: 'arcade',
         arcade: {
-            gravity: { y: -10 }
+            gravity: { y: -50, x: 0 }
         }
     }
 };
 
-const game = new Phaser.Game(config);
+new Phaser.Game(config);

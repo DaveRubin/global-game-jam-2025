@@ -1,6 +1,9 @@
 
 // You can write more code here
 
+import Phaser from "phaser";
+import { Bubble } from "./Bubble";
+
 /* START OF COMPILED CODE */
 
 export class Scene extends Phaser.Scene {
@@ -19,30 +22,26 @@ export class Scene extends Phaser.Scene {
 	/** @returns {void} */
 	editorCreate() {
 
-		// image_1
-		const image_1 = this.add.image(40, 40, "bubble");
-		image_1.scaleX = 0.1;
-		image_1.scaleY = 0.1;
+		// bubble physics body
+		const bubble = new Bubble(
+			this,
+			this.cameras.main.centerX,
+			this.cameras.main.height - 100
+		);
+
+
+		// Make camera follow the bubble
+		this.cameras.main.startFollow(bubble, false, 0.1, 0.1);
 
 		this.events.emit("scene-awake");
 	}
 
-	/* START-USER-CODE */
-
-	// Write your code here
 
 	create() {
 
 		this.editorCreate();
 	}
-
-	/* END-USER-CODE */
 }
-
-/* END OF COMPILED CODE */
-
-// You can write more code here
-
 
 
 
