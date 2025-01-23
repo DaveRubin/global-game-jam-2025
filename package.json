@@ -13,6 +13,7 @@
     "vite": "^6.0.5"
   },
   "dependencies": {
-    "@babylonjs/core": "^7.44.0"
+    "@babylonjs/core": "^7.44.0",
+    "phaser": "^3.87.0"
   }
 }
