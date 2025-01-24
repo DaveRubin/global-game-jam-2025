@@ -1,0 +1,26 @@
+{
+    "id": "f889b80a-a443-4d72-a67d-d9bbe0ab009a",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": ""
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "1795e3ae-1c96-4662-9d0d-13aa7a4079a6",
+            "label": "wall_02",
+            "texture": {
+                "key": "Wall_02"
+            }
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
