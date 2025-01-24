@@ -41,7 +41,7 @@ export class GameScene extends Phaser.Scene {
 		createAnimation(this, 'Mouth_Wind_fx', 4);
 		createAnimation(this, 'Death', 7);
 
-		const scrollSpeed = 1;
+		const scrollSpeed = 0.6;
 
 		// Update camera position each frame
 		this.scrollTimer = this.time.addEvent({

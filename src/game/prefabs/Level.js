@@ -12,9 +12,6 @@ import { Bills } from "./Bills";
 import { Cat } from "./Cat";
 import { Cat2 } from "./Cat2";
 import { Cigarete } from "./Cigarete";
-
-
-
 import { Collectible2 } from "./Collectible2";
 import { Collectible3 } from "./Collectible3";
 import { Collectible1 } from "./Collectible1";
