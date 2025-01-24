@@ -1,19 +1,26 @@
 {
-    "id": "f889b80a-a443-4d72-a67d-d9bbe0ab009a",
+    "id": "564a8c49-3f32-4cb7-a18c-3f845fbf2294",
     "sceneType": "PREFAB",
     "settings": {
         "preloadMethodName": "",
         "preloadPackFiles": [],
-        "createMethodName": ""
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1125,
+        "borderHeight": 2436
     },
     "displayList": [
         {
             "type": "Image",
-            "id": "1795e3ae-1c96-4662-9d0d-13aa7a4079a6",
-            "label": "wall_02",
+            "id": "04cca7df-42da-46b8-8619-40de5246e1b2",
+            "label": "checkpoint_v01",
             "texture": {
-                "key": "Wall_02"
-            }
+                "key": "Checkpoint_v01"
+            },
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "originX": 0,
+            "originY": 0
         }
     ],
     "plainObjects": [],

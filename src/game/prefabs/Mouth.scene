@@ -1,0 +1,84 @@
+{
+    "id": "d1732831-30db-4654-aaef-bf47e40a912d",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT"
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "3d9a9e9a-e666-411a-b5fc-7530f6429eb2",
+            "label": "container_1",
+            "blendMode": -1,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "43a80d46-ff73-40e8-97e0-40901b87cf7c",
+                    "label": "mouthIdle",
+                    "texture": {
+                        "key": "MouthIdle"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "b98ec885-d454-4b5a-8820-f1a1fae92bb9",
+                    "label": "mouthBlow",
+                    "texture": {
+                        "key": "MouthBlow"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "9b69ca15-1143-4fd7-b6f4-453980b90d5c",
+                    "label": "mouth_Wind_fx",
+                    "texture": {
+                        "key": "Mouth_Wind_fx"
+                    },
+                    "x": -139
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "bd6f9b0a-962f-45e1-b596-122660c9b55e",
+                    "label": "effect",
+                    "x": -3,
+                    "y": 4,
+                    "scaleX": 4,
+                    "originX": 1,
+                    "isFilled": true,
+                    "fillColor": "#ff0",
+                    "fillAlpha": 0.4,
+                    "width": 128,
+                    "height": 128
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "prefabProperties": [
+        {
+            "name": "property",
+            "label": "Property",
+            "tooltip": "",
+            "defValue": "p1",
+            "customDefinition": false,
+            "type": {
+                "id": "option",
+                "options": [
+                    "p1",
+                    "p2",
+                    "p3",
+                    "p4"
+                ]
+            }
+        }
+    ]
+}

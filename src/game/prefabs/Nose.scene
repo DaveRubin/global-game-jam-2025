@@ -1,0 +1,84 @@
+{
+    "id": "d173283d-30db-4654-aaef-bf47e40a912d",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT"
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "3d9a9e9a-e666-411a-b5fc-7530f6429eb2",
+            "label": "container_1",
+            "blendMode": -1,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "9986d5d1-2606-4b24-a09b-23eff6e198ad",
+                    "label": "noseSuck",
+                    "texture": {
+                        "key": "NoseSuck"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "5368f6f1-33cc-4dce-8573-a49e5eec3c64",
+                    "label": "noseIdle",
+                    "texture": {
+                        "key": "NoseIdle"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "529ba5f6-0a84-4d64-8e66-b05a851e962e",
+                    "label": "noseVfx",
+                    "texture": {
+                        "key": "NoseVfx"
+                    },
+                    "x": -2,
+                    "y": 373
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "f5a3908b-caf1-4bde-b4a1-94815da0e2cc",
+                    "label": "effect",
+                    "scaleX": 4,
+                    "angle": -90,
+                    "originX": 1,
+                    "isFilled": true,
+                    "fillColor": "#ff0",
+                    "fillAlpha": 0.4,
+                    "width": 128,
+                    "height": 128
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "prefabProperties": [
+        {
+            "name": "property",
+            "label": "Property",
+            "tooltip": "",
+            "defValue": "p1",
+            "customDefinition": false,
+            "type": {
+                "id": "option",
+                "options": [
+                    "p1",
+                    "p2",
+                    "p3",
+                    "p4"
+                ]
+            }
+        }
+    ]
+}

@@ -4,7 +4,8 @@
     "settings": {
         "preloadMethodName": "",
         "preloadPackFiles": [],
-        "createMethodName": ""
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT"
     },
     "displayList": [
         {

@@ -59,6 +59,27 @@
             },
             {
                 "url": {
+                    "IMG": "public/NoseIdle.png"
+                },
+                "type": "texture",
+                "key": "NoseIdle"
+            },
+            {
+                "url": {
+                    "IMG": "public/NoseSuck.png"
+                },
+                "type": "texture",
+                "key": "NoseSuck"
+            },
+            {
+                "url": {
+                    "IMG": "public/NoseVfx.png"
+                },
+                "type": "texture",
+                "key": "NoseVfx"
+            },
+            {
+                "url": {
                     "IMG": "public/Ref.png"
                 },
                 "type": "texture",
