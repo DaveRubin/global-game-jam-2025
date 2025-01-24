@@ -1,0 +1,32 @@
+{
+    "id": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
+    "sceneType": "PREFAB",
+    "settings": {
+        "generateAwakeHandler": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT"
+    },
+    "displayList": [
+        {
+            "type": "ArcadeSprite",
+            "id": "c3aac5e2-841a-44ea-b565-b63ed9c0c2e8",
+            "label": "arcadesprite_1",
+            "texture": {
+                "key": "Obstacle_01"
+            },
+            "x": 343,
+            "y": 322,
+            "body.width": 421,
+            "body.height": 542
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
