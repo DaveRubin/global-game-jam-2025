@@ -1,4 +1,5 @@
 import { KEY_BINDING, PlayerType } from "./consts";
+import {getStageClient} from "../client/BaseClient.ts";
 
 export class Controller {
     static status: { [key in PlayerType]: boolean } = {
@@ -18,6 +19,11 @@ export class Controller {
                 scene.events.emit(`${key}-up`);
                 Controller.status[key as PlayerType] = false;
             });
+        });
+
+        const stageClient = getStageClient();
+        stageClient.onPlayerOnCallbacks = (player => {
+            scene.events.emit(`${player.id}-${player.isOn ? 'down' : 'up'}`);
         });
     }
 

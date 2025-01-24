@@ -4,10 +4,10 @@ import { GameStatePlayer } from "./GameStatePlayer";
 import { firebaseConfig } from "./config";
 import { initializeApp } from "firebase/app";
 
-export type PlayerStateScreenCallback = (screen: GameStateScreen) => void;
+export type StateScreenCallback = (screen: GameStateScreen) => void;
 
 export class PlayerClient {
-  onGameChangeScreen: PlayerStateScreenCallback = (screen) => {
+  onGameChangeScreen: StateScreenCallback = (screen) => {
     console.log("PlayerStateScreenCallback", screen);
   };
   gameId: string;

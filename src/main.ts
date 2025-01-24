@@ -29,4 +29,4 @@ document.addEventListener('touchstart', (event) => {
 }, { passive: false });
 
 
-console.log('version', '0.0.1');
+console.log('version', '0.0.2');

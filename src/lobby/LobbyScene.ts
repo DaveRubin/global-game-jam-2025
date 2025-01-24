@@ -94,6 +94,10 @@ export class LobbyScene extends Phaser.Scene {
       }
     };
 
+    this.stageClient.onScreenChanged = screen => {
+      this.scene.start("GameScene");
+    };
+
     this.add.sprite(900, 900, "qr-code");
   }
 }

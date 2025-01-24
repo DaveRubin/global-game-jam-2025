@@ -4,6 +4,7 @@ import { GameStatePlayer } from "./GameStatePlayer";
 import { PlayerColor } from "../game/PlayerColor";
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "./config";
+import {StateScreenCallback} from "./PlayerCilent.ts";
 
 type PlayerStateCallback = (player: GameStatePlayer) => void;
 
@@ -12,6 +13,7 @@ export class StageClient {
   root = "ggj2025";
   db = getDatabase(this.app);
 
+  onScreenChanged: StateScreenCallback = (_) => {};
   onPlayerReadyCallbacks: PlayerStateCallback = (_) => {};
   onPlayerOnCallbacks: PlayerStateCallback = (_) => {};
   onPlayerAssignedCallbacks: PlayerStateCallback = (_) => {};
@@ -62,12 +64,13 @@ export class StageClient {
     if (this.arePlayersReady(updatedGameState)) {
       this.currentGameState.screen = GameStateScreen.GAME;
       this.updateState();
+      this.onScreenChanged(this.currentGameState.screen);
     }
   }
 
   private arePlayersReady(state: GameState): boolean {
     const isAnyAssigned = Object.values(state.players).some(
-      (player) => player.assignedTo
+      (player) => !!player.assignedTo
     );
     if (!isAnyAssigned) {
       return false;
