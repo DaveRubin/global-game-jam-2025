@@ -442,6 +442,13 @@
                 "key": "Ref"
             },
             {
+                "url": {
+                    "IMG": "public/Sprites/Opening/Ref.png"
+                },
+                "type": "texture",
+                "key": "Ref_1"
+            },
+            {
                 "url": "public/Sprites/VFX/Suck/SuckFx_01.png",
                 "frameConfig": {
                     "frameWidth": 32,
