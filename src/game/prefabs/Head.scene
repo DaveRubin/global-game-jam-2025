@@ -2,6 +2,7 @@
     "id": "a2419916-9652-4973-9383-dcf21f09337b",
     "sceneType": "PREFAB",
     "settings": {
+        "generateAwakeHandler": true,
         "superClassName": "Phaser.Physics.Arcade.Image",
         "preloadMethodName": "",
         "preloadPackFiles": [],

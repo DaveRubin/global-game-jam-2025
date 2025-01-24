@@ -15,19 +15,16 @@
             "blendMode": -1,
             "list": [
                 {
-                    "type": "Rectangle",
+                    "type": "Image",
                     "id": "bd6f9b0a-962f-45e1-b596-122660c9b55e",
                     "label": "effect",
                     "useGameObjectName": true,
+                    "texture": {
+                        "key": "AOE"
+                    },
                     "x": -3,
                     "y": 4,
-                    "scaleX": 4.1,
-                    "originX": 1,
-                    "isFilled": true,
-                    "fillColor": "#ff0",
-                    "fillAlpha": 0.4,
-                    "width": 128,
-                    "height": 128
+                    "originX": 1
                 },
                 {
                     "type": "Image",
@@ -35,8 +32,10 @@
                     "label": "mouthIdle",
                     "useGameObjectName": true,
                     "texture": {
-                        "key": "MouthIdle"
-                    }
+                        "key": "MouthIdle_1"
+                    },
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
                 },
                 {
                     "type": "Image",
@@ -44,8 +43,10 @@
                     "label": "mouthBlow",
                     "useGameObjectName": true,
                     "texture": {
-                        "key": "MouthBlow"
-                    }
+                        "key": "MouthBlow_1"
+                    },
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
                 },
                 {
                     "type": "Image",

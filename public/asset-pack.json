@@ -3,6 +3,13 @@
         "files": [
             {
                 "url": {
+                    "IMG": "public/Sprites/VFX/AOE.png"
+                },
+                "type": "texture",
+                "key": "AOE"
+            },
+            {
+                "url": {
                     "IMG": "public/Background_01.png"
                 },
                 "type": "texture",
@@ -14,6 +21,19 @@
                 },
                 "type": "texture",
                 "key": "Background_02"
+            },
+            {
+                "url": "public/Sprites/VFX/Blow/Blow_spritesheet.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "Blow_spritesheet"
             },
             {
                 "url": {
@@ -147,6 +167,58 @@
                 },
                 "type": "texture",
                 "key": "Ref"
+            },
+            {
+                "url": "public/Sprites/VFX/Suck/SuckFx_01.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "SuckFx_01"
+            },
+            {
+                "url": "public/Sprites/VFX/Suck/SuckFx_02.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "SuckFx_02"
+            },
+            {
+                "url": "public/Sprites/VFX/Suck/SuckFx_03.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "SuckFx_03"
+            },
+            {
+                "url": "public/Sprites/VFX/Suck/SuckFx_04.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "SuckFx_04"
             },
             {
                 "url": {
