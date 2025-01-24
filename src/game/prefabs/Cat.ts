@@ -3,13 +3,22 @@
 
 /* START OF COMPILED CODE */
 
-class Cat extends Phaser.GameObjects.Image {
+class Cat extends Phaser.GameObjects.Container {
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 0, y ?? 0, texture || "cat", frame);
+	constructor(scene: Phaser.Scene, x?: number, y?: number) {
+		super(scene, x ?? 0, y ?? 0);
 
-		this.scaleX = 0.5;
-		this.scaleY = 0.5;
+		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
+
+		// badThought
+		const badThought = new BadThought(scene, -49, 0);
+		this.add(badThought);
+
+		// cat
+		const cat = scene.add.image(0, 0, "Cat_01");
+		cat.scaleX = 0.5;
+		cat.scaleY = 0.5;
+		this.add(cat);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.

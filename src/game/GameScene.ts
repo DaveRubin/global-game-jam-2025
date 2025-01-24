@@ -31,6 +31,8 @@ export class GameScene extends Phaser.Scene {
 		this.add.existing(level); // This adds the container to the display list
 		createAnimation(this, 'Cloud_A', 3);
 		createAnimation(this, 'Cloud_B', 3);
+		createAnimation(this, 'Obstacle', 3);
+
 
 		// Make camera follow the bubble
 		// this.cameras.main.startFollow(bubble, false, 0.2, 0.2);
