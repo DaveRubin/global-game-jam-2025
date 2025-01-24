@@ -2,7 +2,11 @@ import { PLAYER_COLORS } from "../consts";
 import { getPlayerTrigger } from "../getPlayerTrigger";
 
 // You can write more code here
-export const coloredImages = ['noseSuck', 'noseIdle'];
+
+const SUCK_IMAGE = "noseSuck";
+const IDLE_IMAGE = "noseIdle";
+const VFX_IMAGE = "noseVfx";
+export const coloredImages = [SUCK_IMAGE, IDLE_IMAGE, VFX_IMAGE];
 
 /* START OF COMPILED CODE */
 
@@ -57,20 +61,39 @@ class Nose extends Phaser.GameObjects.Container {
 	awake() {
 		getPlayerTrigger(this.scene, this.property, (isDown) => this.onPlayerTrigger(isDown));
 		this.onPlayerTrigger(false);
+
 		this.list.forEach((child) => {
 			if (coloredImages.includes(child.name)) {
-				console.log("Child name:", child.name);
 				(child as Phaser.GameObjects.Image).setTint(PLAYER_COLORS[this.property]);
 			}
 		});
+
+
+		const vfx = this.list.find((child) => child.name === VFX_IMAGE) as Phaser.GameObjects.Image;
+		vfx.setVisible(false);
 	}
 
 	onPlayerTrigger(isDown: boolean) {
-		const idleImage = this.list.find((child) => child.name === "noseIdle") as Phaser.GameObjects.Image;
-		const suckImage = this.list.find((child) => child.name === "noseSuck") as Phaser.GameObjects.Image;
+		const idleImage = this.list.find((child) => child.name === IDLE_IMAGE) as Phaser.GameObjects.Image;
+		const suckImage = this.list.find((child) => child.name === SUCK_IMAGE) as Phaser.GameObjects.Image;
 
 		idleImage.setVisible(!isDown);
 		suckImage.setVisible(isDown);
+		const vfx = this.list.find((child) => child.name === VFX_IMAGE) as Phaser.GameObjects.Image;
+
+		if (isDown) {
+			vfx.setPosition(0, 400);
+			vfx.setVisible(true);
+			vfx.setAlpha(1);
+			this.scene.tweens.killTweensOf(vfx);
+			this.scene.tweens.add({
+				targets: vfx,
+				y: 100,
+				alpha: 0,
+				duration: 500,
+				ease: 'Linear'
+			});
+		}
 	}
 
 	// Write your code here.

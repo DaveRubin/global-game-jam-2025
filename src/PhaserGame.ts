@@ -5,12 +5,19 @@ import { MobileScene } from "./mobile/MobileScene.js";
 import { MobileGameScene } from "./mobile/MobileGameScene.js";
 const width = window.innerWidth;
 const height = window.innerHeight;
+const ratio = height / 2436;
+
+import { Scene } from "./game/Scene.js";
+
+const scenes = new URLSearchParams(window.location.search).has("edit-level")
+  ? Scene
+  : [ConnectingScene, LobbyScene, MobileScene, MobileGameScene];
 
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
-  width,
-  height,
-  scene: [ConnectingScene, LobbyScene, MobileScene, MobileGameScene],
+  width: width / ratio,
+  height: 2436,
+  scene: scenes,
   physics: {
     default: "arcade",
     arcade: {
