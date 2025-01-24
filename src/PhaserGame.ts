@@ -5,10 +5,14 @@ import { MobileLobbyScene } from "./mobile/MobileLobbyScene.js";
 import { MobileGameScene } from "./mobile/MobileGameScene.js";
 import { GameScene } from "./game/GameScene.ts";
 import { GAME_WIDTH, GAME_HEIGHT } from "./game/consts.js";
-import {MobileDisconnectedScene} from "./mobile/MobileDisconnectedScene.ts";
+import { MobileDisconnectedScene } from "./mobile/MobileDisconnectedScene.ts";
 
+
+
+const width = window.innerWidth;
+const height = window.innerHeight;
 if (new URLSearchParams(window.location.search).has("edit-level")) {
-// @ts-ignore
+  // @ts-ignore
   window.isDebugMode = true;
 }
 
@@ -19,9 +23,16 @@ const scenes = window.isDebugMode
 
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
-  width: GAME_WIDTH,
-  height: GAME_HEIGHT,
+  width: width,
+  height: height,
   scene: scenes,
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+    parent: 'game',
+    width: GAME_WIDTH,
+    height: GAME_HEIGHT
+  },
   physics: {
     default: "arcade",
     arcade: {

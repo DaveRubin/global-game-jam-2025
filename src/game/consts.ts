@@ -18,7 +18,4 @@ export const PLAYER_COLORS: Record<PlayerType, number> = {
 
 
 export const GAME_HEIGHT = 2436;
-
-const ratio = window.innerHeight / GAME_HEIGHT;
-
-export const GAME_WIDTH = window.innerWidth / ratio;
+export const GAME_WIDTH = 1125;
