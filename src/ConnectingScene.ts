@@ -21,7 +21,7 @@ async function init() {
     stageClient.onPlayerReadyCallbacks = (player) => {
       console.log("player ready", player);
     };
-    window.addEventListener("beforeunload", (event) => {
+    window.addEventListener("beforeunload", (_) => {
       stageClient.shutdown();
     });
     return true;
@@ -33,7 +33,7 @@ async function init() {
       return false;
     }
     console.log("Player found", playerId);
-    window.addEventListener("beforeunload", (event) => {
+    window.addEventListener("beforeunload", (_) => {
       playerClient.shutdown();
     });
     return true;

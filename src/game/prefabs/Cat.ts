@@ -3,6 +3,8 @@
 
 /* START OF COMPILED CODE */
 
+import {BadThought} from "./BadThought.ts";
+
 class Cat extends Phaser.GameObjects.Container {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
