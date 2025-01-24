@@ -1,4 +1,4 @@
-import { get, getDatabase, onValue, ref, set, update } from "firebase/database";
+import { get, getDatabase, onValue, ref, update } from "firebase/database";
 import { GameState, GameStateScreen } from "./GameState";
 import { GameStatePlayer } from "./GameStatePlayer";
 import { firebaseConfig } from "./config";

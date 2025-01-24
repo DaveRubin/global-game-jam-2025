@@ -1,14 +1,17 @@
 
 // You can write more code here
 
+import Phaser from "phaser";
 import { PLAYER_COLORS } from "../consts";
 import { getPlayerTrigger } from "../getPlayerTrigger";
+import { getTouchingPhysicsElement } from "../getTouchingPhysicsElement";
 
 
 // You can write more code here
 const IDLE_IMAGE = "mouthIdle";
 const BLOW_IMAGE = "mouthBlow";
 const VFX_IMAGE = "mouth_Wind_fx";
+const EFFECT_IMAGE = "effect";
 export const coloredImages = [IDLE_IMAGE, BLOW_IMAGE];
 /* START OF COMPILED CODE */
 
@@ -48,7 +51,6 @@ class Mouth extends Phaser.GameObjects.Container {
 
 		// awake handler
 		this.scene.events.once("scene-awake", this.awake, this);
-
 		/* END-USER-CTR-CODE */
 	}
 
@@ -66,6 +68,25 @@ class Mouth extends Phaser.GameObjects.Container {
 		});
 		const vfx = this.list.find((child) => child.name === VFX_IMAGE) as Phaser.GameObjects.Image;
 		vfx.setVisible(false);
+
+		// const effect = this.list.find((child) => child.name === "effect") as Phaser.GameObjects.Rectangle;
+
+		// // Enable arcade physics for the effect
+		// this.scene.physics.world.enable(effect);
+		// const effectBody = effect.body as Phaser.Physics.Arcade.Body;
+
+		// // Make it static and sensor-like
+		// effectBody.setImmovable(true);
+		// effectBody.moves = false;
+
+		// // Set up continuous overlap detection
+		// this.scene.physics.add.overlap(
+		// 	effect,
+		// 	this.scene.physics.world.bodies.getArray().map(body => body.gameObject),
+		// 	(effect, other) => {
+		// 		console.log('Something touched the effect!', other);
+		// 	}
+		// );
 	}
 	// Write your code here.
 
@@ -90,6 +111,23 @@ class Mouth extends Phaser.GameObjects.Container {
 				duration: 500,
 				ease: 'Linear'
 			});
+		}
+
+
+		const effect = this.list.find((child) => child.name === EFFECT_IMAGE) as Phaser.GameObjects.Rectangle;
+		if (isDown) {
+			const touchedBody = getTouchingPhysicsElement(this.scene, effect);
+			if (touchedBody?.body) {
+				const dx = effect.x - touchedBody.x;
+				const maxDist = effect.width;
+				const forceX = -dx / maxDist * (1 - Math.abs(dx) / maxDist);
+				console.log("🚀 ~ Mouth ~ onPlayerTrigger ~ dx:", { dx, forceX })
+
+				touchedBody.body.velocity.add({
+					x: forceX,
+					y: 0
+				});
+			}
 		}
 	}
 	/* END-USER-CODE */

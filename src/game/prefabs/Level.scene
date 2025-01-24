@@ -2,8 +2,8 @@
     "id": "1f70116c-2c3a-49a0-b4fd-fbc7b6601da8",
     "sceneType": "PREFAB",
     "settings": {
-        "snapWidth": 224.5,
-        "snapHeight": 385.75,
+        "snapWidth": 762,
+        "snapHeight": 749,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -159,12 +159,16 @@
                     "unlock": [
                         "x",
                         "y",
-                        "property"
+                        "property",
+                        "scaleX",
+                        "scaleY"
                     ],
                     "label": "mouth_1",
                     "property": "p1",
-                    "x": 244,
-                    "y": 488
+                    "x": 68,
+                    "y": 1390,
+                    "scaleX": -1,
+                    "scaleY": 1
                 },
                 {
                     "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
@@ -176,8 +180,8 @@
                     ],
                     "label": "mouth_2",
                     "property": "p2",
-                    "x": 952,
-                    "y": 488
+                    "x": 1050,
+                    "y": 1687
                 },
                 {
                     "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",

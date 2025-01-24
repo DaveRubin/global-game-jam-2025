@@ -66,11 +66,13 @@ class Level extends Phaser.GameObjects.Container {
 		this.add(nose_3);
 
 		// mouth_1
-		const mouth_1 = new Mouth(scene, 244, 488);
+		const mouth_1 = new Mouth(scene, 68, 1390);
+		mouth_1.scaleX = -1;
+		mouth_1.scaleY = 1;
 		this.add(mouth_1);
 
 		// mouth_2
-		const mouth_2 = new Mouth(scene, 952, 488);
+		const mouth_2 = new Mouth(scene, 1050, 1687);
 		this.add(mouth_2);
 
 		// mouth_3
