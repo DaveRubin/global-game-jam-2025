@@ -1,6 +1,7 @@
 
 // You can write more code here
 import { CollectibleBase } from "../CollectibleBase";
+import { GAME_WIDTH } from "../consts";
 
 /* START OF COMPILED CODE */
 
@@ -39,7 +40,7 @@ class Head extends Phaser.GameObjects.Container {
 		this.body.onOverlap = true;
 
 		// Create boundaries
-		const leftBoundary = scene.add.rectangle(1050, 0, 10, 800000);
+		const leftBoundary = scene.add.rectangle(GAME_WIDTH, 0, 10, 800000);
 		const rightBoundary = scene.add.rectangle(-10, 0, 10, 800000);
 
 
