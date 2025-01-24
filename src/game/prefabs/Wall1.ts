@@ -5,7 +5,7 @@
 
 class Wall1 extends Phaser.GameObjects.Image {
 
-	constructor(scene, x, y, texture, frame) {
+	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 0, y ?? 0, texture || "Wall_02", frame);
 
 		/* START-USER-CTR-CODE */
@@ -21,5 +21,6 @@ class Wall1 extends Phaser.GameObjects.Image {
 }
 
 /* END OF COMPILED CODE */
-export { Wall1 };
+
 // You can write more code here
+export { Wall1 };
