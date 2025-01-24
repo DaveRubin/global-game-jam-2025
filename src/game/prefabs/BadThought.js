@@ -55,11 +55,13 @@ class BadThought extends Phaser.GameObjects.Container {
 
 	/* START-USER-CODE */
 	awake() {
-		// @ts-ignore
+
 		this.getByName("arcadesprite_1").play("Obstacle");
 
 		// Add the enemy sprite
-		const enemy = this.add.sprite(400, 300, 'enemyTexture');
+		const enemy = this.scene.add.sprite(400, 300, 'enemyTexture');
+		this.add(enemy);
+
 
 		// Define a Bezier curve path for a "smile" shape
 		const bezierCurve = {
@@ -70,7 +72,7 @@ class BadThought extends Phaser.GameObjects.Container {
 		};
 
 		// Use a tween to move the enemy along the Bezier curve
-		this.tweens.add({
+		this.scene.tweens.add({
 			targets: enemy,
 			x: {
 				getStart: () => bezierCurve.start.x,

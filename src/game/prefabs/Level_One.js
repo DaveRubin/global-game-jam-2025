@@ -1,15 +1,15 @@
 
 // You can write more code here
-import {Wall2} from "./Wall2.js";
-import {Collectible1} from "./Collectible1.js";
-import {Wall1} from "./Wall1.js";
-import {Collectible3} from "./Collectible3.js";
-import {Collectible2} from "./Collectible2.js";
-import {Mouth} from "./Mouth.js";
-import {Nose} from "./Nose.js";
-import {BadThought} from "./BadThought.js";
-import {Head} from "./Head.js";
-import {Rainbow} from "./Rainbow.js";
+import { Wall2 } from "./Wall2.js";
+import { Collectible1 } from "./Collectible1.js";
+import { Wall1 } from "./Wall1.js";
+import { Collectible3 } from "./Collectible3.js";
+import { Collectible2 } from "./Collectible2.js";
+import { Mouth } from "./Mouth.js";
+import { Nose } from "./Nose.js";
+import { BadThought } from "./BadThought.js";
+import { Head2 } from "./Head2.js";
+import { Rainbow } from "./Rainbow.js";
 
 
 
@@ -17,7 +17,7 @@ import {Rainbow} from "./Rainbow.js";
 
 
 
-export class Level_One extends Phaser.GameObjects.Container {
+class Level_One extends Phaser.GameObjects.Container {
 
 	constructor(scene, x, y) {
 		super(scene, x ?? 0, y ?? 0);

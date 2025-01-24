@@ -78,7 +78,6 @@ class Mouth extends Phaser.GameObjects.Container {
 		});
 		const vfx = this.list.find((child) => child.name === VFX_IMAGE);
 		vfx.setVisible(false);
-		// @ts-ignore
 		this.getByName("mouth_Wind_fx").play("Mouth_Wind_fx");
 	}
 	// Write your code here.
