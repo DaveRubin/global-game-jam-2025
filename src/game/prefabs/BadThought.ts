@@ -18,6 +18,7 @@ class BadThought extends Phaser.GameObjects.Container {
 		arcadesprite_1.tintTopRight = 14421255;
 		arcadesprite_1.tintBottomLeft = 14421255;
 		arcadesprite_1.tintBottomRight = 14421255;
+		// @ts-ignore
 		arcadesprite_1.body.allowGravity = false;
 		arcadesprite_1.body.setSize(421, 542, false);
 		this.add(arcadesprite_1);
@@ -60,6 +61,7 @@ class BadThought extends Phaser.GameObjects.Container {
 
 	/* START-USER-CODE */
 	awake() {
+		// @ts-ignore
 		this.play("Obstacle");
 	}	/* END-USER-CODE */
 }

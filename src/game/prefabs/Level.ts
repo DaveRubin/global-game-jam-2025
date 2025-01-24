@@ -96,11 +96,14 @@ class Level extends Phaser.GameObjects.Container {
 		this.add(head);
 
 		// wall2
-		const wall2 = new Wall2(scene, 799, 1617);
+
+
+		const wall2 = new Wall2(scene, 1324, 386);
+		wall2.angle = 0;
 		this.add(wall2);
 
 		// wall_1
-		const wall_1 = new Wall1(scene, 294, 501);
+		const wall_1 = new Wall1(scene, 318, 1655);
 		this.add(wall_1);
 
 		// badThought
