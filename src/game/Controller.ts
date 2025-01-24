@@ -1,5 +1,6 @@
 import { KEY_BINDING, PlayerType } from "./consts";
 import {getStageClient} from "../client/BaseClient.ts";
+import {PlayerColor} from "./PlayerColor.ts";
 
 export class Controller {
     static status: { [key in PlayerType]: boolean } = {
@@ -22,8 +23,14 @@ export class Controller {
         });
 
         const stageClient = getStageClient();
-        stageClient.onPlayerOnCallbacks = (player => {
-            scene.events.emit(`${player.id}-${player.isOn ? 'down' : 'up'}`);
+        stageClient.onPlayerOnCallbacks = ((color, isOn) => {
+            const translatedPlayer = {
+                [PlayerColor.BLUE]: 'p1',
+                [PlayerColor.GREEN]: 'p4',
+                [PlayerColor.YELLOW]: 'p2',
+                [PlayerColor.RED]: 'p3',
+            }[color];
+            scene.events.emit(`${translatedPlayer}-${isOn ? 'down' : 'up'}`);
         });
     }
 

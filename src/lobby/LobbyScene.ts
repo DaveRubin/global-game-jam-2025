@@ -74,24 +74,16 @@ export class LobbyScene extends Phaser.Scene {
     });
 
     this.stageClient.onPlayerAssignedCallbacks = (player) => {
-      this.players[player.color].visible = !!player.assignedTo;
+      this.players[player.baseColor].visible = !!player.assignedTo;
     };
     this.stageClient.onPlayerReadyCallbacks = (player) => {
-      const playerRect = this.players[player.color].fillColor;
+      const playerRect = this.players[player.baseColor].fillColor;
       const darkenColor =
         Phaser.Display.Color.ValueToColor(playerRect).darken(30).color;
 
-      this.players[player.color].fillColor = player.isReady
-        ? player.color
+      this.players[player.baseColor].fillColor = player.isReady
+        ? player.baseColor
         : darkenColor;
-    };
-
-    this.stageClient.onPlayerOnCallbacks = (player) => {
-      if (player.isOn) {
-        this.players[player.color].y = playerY + 30;
-      } else {
-        this.players[player.color].y = playerY;
-      }
     };
 
     this.stageClient.onScreenChanged = _ => {
