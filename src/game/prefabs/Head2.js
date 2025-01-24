@@ -55,7 +55,7 @@ class Head2 extends Phaser.GameObjects.Container {
 		Head2.instance = this;
 		death_01.setVisible(false);
 		const body = this.body;
-		body.setMaxVelocity(80, 80);
+		body.setMaxVelocity(150, 80);
 		/* END-USER-CTR-CODE */
 	}
 

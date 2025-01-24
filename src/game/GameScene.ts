@@ -41,11 +41,11 @@ export class GameScene extends Phaser.Scene {
 		createAnimation(this, 'Mouth_Wind_fx', 4);
 		createAnimation(this, 'Death', 7);
 
-		const scrollSpeed = 0.6;
+		const scrollSpeed = 2;
 
 		// Update camera position each frame
 		this.scrollTimer = this.time.addEvent({
-			delay: 16, // Add a small delay (roughly 60fps)
+			delay: 50, // Add a small delay (roughly 60fps)
 			callback: () => {
 				this.cameras.main.scrollY -= scrollSpeed;
 				// Check if Head2 is out of frame
