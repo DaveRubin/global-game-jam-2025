@@ -46,6 +46,7 @@ class Rainbow extends Phaser.GameObjects.Container {
 
 		// Meters
 		const meters = scene.add.text(438, 31, "", {});
+		meters.name = "Meters";
 		meters.tintTopLeft = 0;
 		meters.tintTopRight = 0;
 		meters.tintBottomLeft = 0;
@@ -61,6 +62,9 @@ class Rainbow extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
+	/** @type {string} */
+	text = "50m";
+
 	/* START-USER-CODE */
 
 	// Write your code here.
@@ -71,6 +75,8 @@ class Rainbow extends Phaser.GameObjects.Container {
 
 		this.getByName("Cloud_L").play("CheckPointCloud_L");
 		this.getByName("Cloud_R").play("CheckPointCloud_R");
+
+		this.getByName("Meters").setText(this.text);
 
 		this.scene.physics.world.createDebugGraphic();
 

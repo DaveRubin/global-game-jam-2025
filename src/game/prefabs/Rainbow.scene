@@ -70,6 +70,7 @@
                     "type": "Text",
                     "id": "7609c423-ebee-4ceb-904d-cd7a13f32434",
                     "label": "Meters",
+                    "useGameObjectName": true,
                     "x": 438,
                     "y": 31,
                     "tintTopLeft": "#000000",
@@ -89,5 +90,17 @@
         "url": "https://phaser.io/editor",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "text",
+            "label": "Property",
+            "tooltip": "",
+            "defValue": "50m",
+            "customDefinition": false,
+            "type": {
+                "id": "string"
+            }
+        }
+    ]
 }
