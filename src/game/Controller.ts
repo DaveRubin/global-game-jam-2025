@@ -11,16 +11,19 @@ export class Controller {
     }
 
     constructor(scene: Phaser.Scene) {
-        Object.entries(KEY_BINDING).forEach(([key, value]) => {
-            scene.input.keyboard?.addKey(value).on('down', () => {
-                scene.events.emit(`${key}-down`);
-                Controller.status[key as PlayerType] = true;
+        // @ts-ignore
+        if (window.isDebugMode) {
+            Object.entries(KEY_BINDING).forEach(([key, value]) => {
+                scene.input.keyboard?.addKey(value).on('down', () => {
+                    scene.events.emit(`${key}-down`);
+                    Controller.status[key as PlayerType] = true;
+                });
+                scene.input.keyboard?.addKey(value).on('up', () => {
+                    scene.events.emit(`${key}-up`);
+                    Controller.status[key as PlayerType] = false;
+                });
             });
-            scene.input.keyboard?.addKey(value).on('up', () => {
-                scene.events.emit(`${key}-up`);
-                Controller.status[key as PlayerType] = false;
-            });
-        });
+        }
 
         const stageClient = getStageClient();
         stageClient.onPlayerOnCallbacks = ((color, isOn) => {

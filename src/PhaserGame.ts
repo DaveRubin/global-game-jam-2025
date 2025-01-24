@@ -7,7 +7,13 @@ import { GameScene } from "./game/GameScene.ts";
 import { GAME_WIDTH, GAME_HEIGHT } from "./game/consts.js";
 import {MobileDisconnectedScene} from "./mobile/MobileDisconnectedScene.ts";
 
-const scenes = new URLSearchParams(window.location.search).has("edit-level")
+if (new URLSearchParams(window.location.search).has("edit-level")) {
+// @ts-ignore
+  window.isDebugMode = true;
+}
+
+// @ts-ignore
+const scenes = window.isDebugMode
   ? GameScene
   : [ConnectingScene, LobbyScene, MobileLobbyScene, MobileGameScene, GameScene, MobileDisconnectedScene];
 

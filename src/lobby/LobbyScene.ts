@@ -3,6 +3,13 @@ import { StageClient } from "../client/StageClient";
 import { PlayerColor } from "../game/PlayerColor";
 import encodeQR from "@paulmillr/qr";
 
+let debugKeyCount = 0;
+let debugKeyTimeout;
+
+const DEBUG_KEY = "q";
+const DEBUG_ACTIVATION_COUNT = 3;
+const DEBUG_TIMEOUT = 1000; // 1 second to reset the counter if not pressed consecutively
+
 export class LobbyScene extends Phaser.Scene {
   stageClient: StageClient;
   bluePlayer!: Phaser.GameObjects.Rectangle;
@@ -91,5 +98,28 @@ export class LobbyScene extends Phaser.Scene {
     };
 
     this.add.sprite(900, 900, "qr-code");
+
+    this.input.keyboard.on("keydown", (event) => {
+      if (event.key.toLowerCase() === DEBUG_KEY) {
+        debugKeyCount++;
+
+        // If the user presses the debug key `DEBUG_ACTIVATION_COUNT` times consecutively
+        if (debugKeyCount === DEBUG_ACTIVATION_COUNT) {
+          console.log("Debug mode activated!");
+          // @ts-ignore
+          window.isDebugMode = true;
+          this.scene.start("GameScene"); // Start the GameScene
+          debugKeyCount = 0; // Reset the counter
+          clearTimeout(debugKeyTimeout); // Clear the timeout if debug mode is activated
+          return;
+        }
+
+        // Reset the counter after `DEBUG_TIMEOUT` milliseconds
+        clearTimeout(debugKeyTimeout);
+        debugKeyTimeout = setTimeout(() => {
+          debugKeyCount = 0;
+        }, DEBUG_TIMEOUT);
+      }
+    });
   }
 }
