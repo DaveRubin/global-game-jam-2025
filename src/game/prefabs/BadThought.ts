@@ -13,6 +13,10 @@ class BadThought extends Phaser.Physics.Arcade.Sprite {
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 343, y ?? 322, texture || "Obstacle_01", frame);
 
+		this.tintTopLeft = 14421255;
+		this.tintTopRight = 14421255;
+		this.tintBottomLeft = 14421255;
+		this.tintBottomRight = 14421255;
 		scene.physics.add.existing(this, true);
 		this.body.allowGravity = false;
 		this.body.setSize(421, 542, false);

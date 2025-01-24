@@ -23,6 +23,13 @@
                 "key": "Background_02"
             },
             {
+                "url": {
+                    "IMG": "public/Sprites/Obstacles/Bill.png"
+                },
+                "type": "texture",
+                "key": "Bill"
+            },
+            {
                 "url": "public/Sprites/VFX/Blow/Blow_spritesheet.png",
                 "frameConfig": {
                     "frameWidth": 32,
@@ -58,10 +65,31 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Obstacles/Cat_01.png"
+                },
+                "type": "texture",
+                "key": "Cat_01"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Obstacles/Cat_02.png"
+                },
+                "type": "texture",
+                "key": "Cat_02"
+            },
+            {
+                "url": {
                     "IMG": "public/Checkpoint_v01.png"
                 },
                 "type": "texture",
                 "key": "Checkpoint_v01"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Obstacles/Ciggarete.png"
+                },
+                "type": "texture",
+                "key": "Ciggarete"
             },
             {
                 "url": {

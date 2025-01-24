@@ -9,14 +9,33 @@
     },
     "displayList": [
         {
-            "type": "Image",
-            "id": "d699eac8-d826-4bf0-83dd-e4f280040415",
-            "label": "cat",
-            "texture": {
-                "key": "cat"
-            },
-            "scaleX": 0.5,
-            "scaleY": 0.5
+            "type": "Container",
+            "id": "60b3e804-ffc0-49ee-9769-59dd1a265e8e",
+            "label": "container_1",
+            "blendMode": -1,
+            "list": [
+                {
+                    "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
+                    "id": "cd5aeb84-ea31-446b-ba3e-64eaffd5c93b",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "badThought",
+                    "x": -49,
+                    "y": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "d699eac8-d826-4bf0-83dd-e4f280040415",
+                    "label": "cat",
+                    "texture": {
+                        "key": "Cat_01"
+                    },
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                }
+            ]
         }
     ],
     "plainObjects": [],
