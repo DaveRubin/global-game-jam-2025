@@ -79,10 +79,24 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Player/Hat.png"
+                },
+                "type": "texture",
+                "key": "Hat"
+            },
+            {
+                "url": {
                     "IMG": "public/Head_Idle.png"
                 },
                 "type": "texture",
                 "key": "Head_Idle"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Player/HeadBefore Start.png"
+                },
+                "type": "texture",
+                "key": "HeadBefore Start"
             },
             {
                 "url": {
