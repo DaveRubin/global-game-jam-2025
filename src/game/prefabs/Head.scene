@@ -1,0 +1,33 @@
+{
+    "id": "a2419916-9652-4973-9383-dcf21f09337b",
+    "sceneType": "PREFAB",
+    "settings": {
+        "superClassName": "Phaser.Physics.Arcade.Image",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT"
+    },
+    "displayList": [
+        {
+            "type": "ArcadeImage",
+            "id": "f0204c47-3d85-417b-906a-74b2fca40051",
+            "label": "head_Idle",
+            "texture": {
+                "key": "Head_Idle"
+            },
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "bodyGeometry": 0,
+            "body.width": 128,
+            "body.height": 128
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

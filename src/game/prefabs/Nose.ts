@@ -64,7 +64,6 @@ class Nose extends Phaser.GameObjects.Container {
 
 		this.list.forEach((child) => {
 			if (coloredImages.includes(child.name)) {
-				console.log("Child name:", child.name);
 				(child as Phaser.GameObjects.Image).setTint(PLAYER_COLORS[this.property]);
 			}
 		});

@@ -61,7 +61,6 @@ class Mouth extends Phaser.GameObjects.Container {
 		this.onPlayerTrigger(false);
 		this.list.forEach((child) => {
 			if (coloredImages.includes(child.name)) {
-				console.log("Child name:", child.name);
 				(child as Phaser.GameObjects.Image).setTint(PLAYER_COLORS[this.property]);
 			}
 		});
@@ -80,13 +79,13 @@ class Mouth extends Phaser.GameObjects.Container {
 		const vfx = this.list.find((child) => child.name === VFX_IMAGE) as Phaser.GameObjects.Image;
 
 		if (isDown) {
-			vfx.setPosition(0, 0);
+			vfx.setPosition(-50, 0);
 			vfx.setVisible(true);
 			vfx.setAlpha(1);
 			this.scene.tweens.killTweensOf(vfx);
 			this.scene.tweens.add({
 				targets: vfx,
-				x: -200,
+				x: -250,
 				alpha: 0,
 				duration: 500,
 				ease: 'Linear'

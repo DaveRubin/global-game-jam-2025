@@ -31,10 +31,38 @@
             },
             {
                 "url": {
+                    "IMG": "public/cat.png"
+                },
+                "type": "texture",
+                "key": "cat"
+            },
+            {
+                "url": {
                     "IMG": "public/Checkpoint_v01.png"
                 },
                 "type": "texture",
                 "key": "Checkpoint_v01"
+            },
+            {
+                "url": {
+                    "IMG": "public/collectible1.png"
+                },
+                "type": "texture",
+                "key": "collectible1"
+            },
+            {
+                "url": {
+                    "IMG": "public/collectible2.png"
+                },
+                "type": "texture",
+                "key": "collectible2"
+            },
+            {
+                "url": {
+                    "IMG": "public/Head_Idle.png"
+                },
+                "type": "texture",
+                "key": "Head_Idle"
             },
             {
                 "url": {
