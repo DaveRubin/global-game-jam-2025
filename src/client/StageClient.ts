@@ -49,7 +49,7 @@ export class StageClient {
         console.log("player on", updatedPlayer);
         this.onPlayerOnCallbacks(updatedPlayer!);
       }
-      if (currentPlayer!.isAssigned !== updatedPlayer!.isAssigned) {
+      if (currentPlayer!.assignedTo !== updatedPlayer!.assignedTo) {
         console.log("player assigned", updatedPlayer);
         this.onPlayerAssignedCallbacks(updatedPlayer!);
       }
@@ -67,13 +67,13 @@ export class StageClient {
 
   private arePlayersReady(state: GameState): boolean {
     const isAnyAssigned = Object.values(state.players).some(
-      (player) => player.isAssigned
+      (player) => player.assignedTo
     );
     if (!isAnyAssigned) {
       return false;
     }
     return Object.values(state.players).every(
-      (player) => player.isAssigned === player.isReady
+      (player) => !!player.assignedTo === player.isReady
     );
   }
 
@@ -92,7 +92,7 @@ export class StageClient {
           name: "Player 1",
           isOn: false,
           isReady: false,
-          isAssigned: false,
+          assignedTo: null,
           color: PlayerColor.BLUE,
         },
         p2: {
@@ -100,7 +100,7 @@ export class StageClient {
           name: "Player 2",
           isOn: false,
           isReady: false,
-          isAssigned: false,
+          assignedTo: null,
           color: PlayerColor.GREEN,
         },
         p3: {
@@ -108,7 +108,7 @@ export class StageClient {
           name: "Player 3",
           isOn: false,
           isReady: false,
-          isAssigned: false,
+          assignedTo: null,
           color: PlayerColor.YELLOW,
         },
         p4: {
@@ -116,7 +116,7 @@ export class StageClient {
           name: "Player 4",
           isOn: false,
           isReady: false,
-          isAssigned: false,
+          assignedTo: null,
           color: PlayerColor.RED,
         },
       },

@@ -6,5 +6,5 @@ export interface GameStatePlayer {
   color: PlayerColor;
   isOn: boolean;
   isReady: boolean;
-  isAssigned: boolean;
+  assignedTo: string | null;
 }

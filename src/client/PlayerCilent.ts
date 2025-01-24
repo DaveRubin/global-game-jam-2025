@@ -11,6 +11,7 @@ export class PlayerClient {
     console.log("PlayerStateScreenCallback", screen);
   };
   gameId: string;
+  playerId: string = crypto.randomUUID();
   private app = initializeApp(firebaseConfig);
   root = "ggj2025";
   db = getDatabase(this.app);
@@ -49,12 +50,12 @@ export class PlayerClient {
   }
 
   private getFreePlayer(state: GameState): GameStatePlayer | undefined {
-    return Object.values(state.players).find((player) => !player.isAssigned);
+    return Object.values(state.players).find((player) => !player.assignedTo);
   }
 
   private setPlayerAssigned() {
-    this.player.isAssigned = true;
-    this.updatePlayerState({ isAssigned: true });
+    this.player.assignedTo = this.playerId;
+    this.updatePlayerState({ assignedTo: this.playerId });
   }
 
   public togglePlayerOn(toggle: boolean) {
