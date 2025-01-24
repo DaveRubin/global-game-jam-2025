@@ -24,6 +24,8 @@
                     "texture": {
                         "key": "Obstacle_01"
                     },
+                    "scaleX": 0.666,
+                    "scaleY": 0.666,
                     "tintTopLeft": "#dc0d07",
                     "tintTopRight": "#dc0d07",
                     "tintBottomLeft": "#dc0d07",
@@ -41,7 +43,9 @@
                         "key": "ObstacleFace"
                     },
                     "x": -20,
-                    "y": 23
+                    "y": 23,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
                 },
                 {
                     "type": "Container",
@@ -68,7 +72,9 @@
                                 "key": "Obstacle_Empty"
                             },
                             "x": 347,
-                            "y": 322
+                            "y": 322,
+                            "scaleX": 0.666,
+                            "scaleY": 0.666
                         },
                         {
                             "type": "Image",
@@ -78,7 +84,9 @@
                                 "key": "Obstacle_Empty_Face"
                             },
                             "x": 320,
-                            "y": 329
+                            "y": 329,
+                            "scaleX": 0.5,
+                            "scaleY": 0.5
                         }
                     ]
                 }

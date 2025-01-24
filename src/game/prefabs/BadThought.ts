@@ -12,6 +12,8 @@ class BadThought extends Phaser.GameObjects.Container {
 
 		// arcadesprite_1
 		const arcadesprite_1 = scene.physics.add.staticSprite(0, 0, "Obstacle_01");
+		arcadesprite_1.scaleX = 0.666;
+		arcadesprite_1.scaleY = 0.666;
 		arcadesprite_1.tintTopLeft = 14421255;
 		arcadesprite_1.tintTopRight = 14421255;
 		arcadesprite_1.tintBottomLeft = 14421255;
@@ -22,6 +24,8 @@ class BadThought extends Phaser.GameObjects.Container {
 
 		// image_1
 		const image_1 = scene.add.image(-20, 23, "ObstacleFace");
+		image_1.scaleX = 0.5;
+		image_1.scaleY = 0.5;
 		this.add(image_1);
 
 		// Active
@@ -37,10 +41,14 @@ class BadThought extends Phaser.GameObjects.Container {
 
 		// Cloud
 		const cloud = scene.add.image(347, 322, "Obstacle_Empty");
+		cloud.scaleX = 0.666;
+		cloud.scaleY = 0.666;
 		disabled.add(cloud);
 
 		// image_2
 		const image_2 = scene.add.image(320, 329, "Obstacle_Empty_Face");
+		image_2.scaleX = 0.5;
+		image_2.scaleY = 0.5;
 		disabled.add(image_2);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
