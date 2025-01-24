@@ -14,6 +14,7 @@ class BadThought extends Phaser.Physics.Arcade.Sprite {
 		super(scene, x ?? 343, y ?? 322, texture || "Obstacle_01", frame);
 
 		scene.physics.add.existing(this, true);
+		this.body.allowGravity = false;
 		this.body.setSize(421, 542, false);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());

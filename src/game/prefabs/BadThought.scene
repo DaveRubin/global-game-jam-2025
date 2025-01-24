@@ -19,6 +19,7 @@
             "x": 343,
             "y": 322,
             "physicsType": 1,
+            "allowGravity": false,
             "body.width": 421,
             "body.height": 542
         }
