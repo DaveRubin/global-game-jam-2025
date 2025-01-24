@@ -30,6 +30,7 @@ class Wall2 extends Phaser.Physics.Arcade.Sprite {
 	/* START-USER-CODE */
 	awake() {
 		console.log("awake WALL 2 !");
+
 		this.play("Cloud_B");
 	}
 	// Write your code here.
