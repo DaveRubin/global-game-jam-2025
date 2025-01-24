@@ -219,6 +219,55 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Player/Death/Death_01.png"
+                },
+                "type": "texture",
+                "key": "Death_01"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Player/Death/Death_02.png"
+                },
+                "type": "texture",
+                "key": "Death_02"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Player/Death/Death_03.png"
+                },
+                "type": "texture",
+                "key": "Death_03"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Player/Death/Death_04.png"
+                },
+                "type": "texture",
+                "key": "Death_04"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Player/Death/Death_05.png"
+                },
+                "type": "texture",
+                "key": "Death_05"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Player/Death/Death_06.png"
+                },
+                "type": "texture",
+                "key": "Death_06"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Player/Death/Death_07.png"
+                },
+                "type": "texture",
+                "key": "Death_07"
+            },
+            {
+                "url": {
                     "IMG": "public/Sprites/Opening/GoTitle.png"
                 },
                 "type": "texture",
