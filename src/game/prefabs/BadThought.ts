@@ -3,38 +3,38 @@
 
 /* START OF COMPILED CODE */
 
-interface Wall1 {
+interface BadThought {
 
 	body: Phaser.Physics.Arcade.StaticBody;
 }
 
-class Wall1 extends Phaser.Physics.Arcade.Sprite {
+class BadThought extends Phaser.Physics.Arcade.Sprite {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 0, y ?? 0, texture || "Cloud_A_01", frame);
+		super(scene, x ?? 343, y ?? 322, texture || "Obstacle_01", frame);
 
-		this.scaleX = 0.5;
-		this.scaleY = 0.5;
+		this.tintTopLeft = 14421255;
+		this.tintTopRight = 14421255;
+		this.tintBottomLeft = 14421255;
+		this.tintBottomRight = 14421255;
 		scene.physics.add.existing(this, true);
-		this.body.setSize(1685, 481, false);
+		this.body.allowGravity = false;
+		this.body.setSize(421, 542, false);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
-		this.body.onOverlap = true;
+
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		/* END-USER-CTR-CODE */
 	}
 
 	/* START-USER-CODE */
-
-	// Write your code here.
 	awake() {
-		this.play("Cloud_A");
-	}
-	/* END-USER-CODE */
+		this.play("Obstacle");
+	}	/* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
 
 // You can write more code here
-export { Wall1 };
+export { BadThought };

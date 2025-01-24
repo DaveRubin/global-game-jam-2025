@@ -10,10 +10,10 @@ export const KEY_BINDING: Record<PlayerType, string> = {
 }
 
 export const PLAYER_COLORS: Record<PlayerType, number> = {
-    p1: 0x8462FB,
-    p2: 0xF8E11E,
-    p3: 0xF65862,
-    p4: 0x46F771,
+    p1: 0xFBFB53,
+    p2: 0xE96CD6,
+    p3: 0x79F66F,
+    p4: 0x75F4EF,
 }
 
 

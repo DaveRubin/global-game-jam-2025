@@ -1,22 +1,20 @@
 {
-    "id": "d3c9b8d8-0f55-4b5c-bbe7-e2708c75f54d",
+    "id": "80a3c23b-897f-4af9-aeb3-82f0b1e9b190",
     "sceneType": "PREFAB",
     "settings": {
         "superClassName": "CollectibleBase",
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
-        "compilerOutputLanguage": "TYPE_SCRIPT",
-        "borderWidth": 1125,
-        "borderHeight": 2436
+        "compilerOutputLanguage": "TYPE_SCRIPT"
     },
     "displayList": [
         {
             "type": "Image",
-            "id": "24051277-2f15-49bd-bf44-631b92cbfce8",
-            "label": "collectible1",
+            "id": "f6f3edc5-a887-4e0b-b9fa-214185389a30",
+            "label": "pickUp_01",
             "texture": {
-                "key": "collectible1"
+                "key": "PickUp_01"
             },
             "scaleX": 0.5,
             "scaleY": 0.5

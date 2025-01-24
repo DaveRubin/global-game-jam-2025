@@ -2,6 +2,7 @@
     "id": "f5032964-65e6-42bf-9151-20eb2b02b297",
     "sceneType": "PREFAB",
     "settings": {
+        "superClassName": "CollectibleBase",
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
