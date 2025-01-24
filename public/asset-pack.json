@@ -1,0 +1,98 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": {
+                    "IMG": "public/Background_01.png"
+                },
+                "type": "texture",
+                "key": "Background_01"
+            },
+            {
+                "url": {
+                    "IMG": "public/Background_02.png"
+                },
+                "type": "texture",
+                "key": "Background_02"
+            },
+            {
+                "url": {
+                    "IMG": "public/Bod_v01.png"
+                },
+                "type": "texture",
+                "key": "Bod_v01"
+            },
+            {
+                "url": {
+                    "IMG": "public/bubble.png"
+                },
+                "type": "texture",
+                "key": "bubble"
+            },
+            {
+                "url": {
+                    "IMG": "public/Checkpoint_v01.png"
+                },
+                "type": "texture",
+                "key": "Checkpoint_v01"
+            },
+            {
+                "url": {
+                    "IMG": "public/Mouth_Wind_fx.png"
+                },
+                "type": "texture",
+                "key": "Mouth_Wind_fx"
+            },
+            {
+                "url": {
+                    "IMG": "public/MouthBlow.png"
+                },
+                "type": "texture",
+                "key": "MouthBlow"
+            },
+            {
+                "url": {
+                    "IMG": "public/MouthIdle.png"
+                },
+                "type": "texture",
+                "key": "MouthIdle"
+            },
+            {
+                "url": {
+                    "IMG": "public/Ref.png"
+                },
+                "type": "texture",
+                "key": "Ref"
+            },
+            {
+                "url": {
+                    "IMG": "public/tsconfig.png"
+                },
+                "type": "texture",
+                "key": "tsconfig"
+            },
+            {
+                "url": {
+                    "IMG": "public/Wall_01.png"
+                },
+                "type": "texture",
+                "key": "Wall_01"
+            },
+            {
+                "url": {
+                    "IMG": "public/Wall_02.png"
+                },
+                "type": "texture",
+                "key": "Wall_02"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false,
+        "visible": true
+    }
+}
