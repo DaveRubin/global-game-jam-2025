@@ -7,19 +7,33 @@ import { CollectibleBase } from "../CollectibleBase";
 
 class Head extends Phaser.Physics.Arcade.Image {
 
-	constructor(scene, x, y, texture, frame) {
-		super(scene, x ?? 0, y ?? 0, texture || "Head_Idle", frame);
+	constructor(scene, x, y) {
+		super(scene, x ?? 0, y ?? 0);
 
-		this.scaleX = 0.5;
-		this.scaleY = 0.5;
-		scene.physics.add.existing(this, false);
-		this.body.friction.x = 0;
-		this.body.bounce.x = 0.5;
-		this.body.bounce.y = 0.5;
-		this.body.angularAcceleration = 5;
-		this.body.angularDrag = 5;
-		this.body.angularVelocity = 5;
-		this.body.setCircle(64);
+		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
+
+		// head_Idle
+		const head_Idle = scene.physics.add.image(0, 0, "Head_Idle");
+		head_Idle.scaleX = 0.5;
+		head_Idle.scaleY = 0.5;
+		head_Idle.body.friction.x = 0;
+		head_Idle.body.bounce.x = 0.5;
+		head_Idle.body.bounce.y = 0.5;
+		head_Idle.body.angularAcceleration = 5;
+		head_Idle.body.angularDrag = 5;
+		head_Idle.body.angularVelocity = 5;
+		head_Idle.body.setCircle(64);
+		this.add(head_Idle);
+
+		// DeathSeq
+		const deathSeq = scene.physics.add.staticSprite(0, 18, "Death_01");
+		deathSeq.name = "DeathSeq";
+		deathSeq.scaleX = 0.5;
+		deathSeq.scaleY = 0.5;
+		deathSeq.visible = false;
+		deathSeq.body.allowGravity = false;
+		deathSeq.body.setSize(1084, 1072, false);
+		this.add(deathSeq);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
@@ -65,6 +79,8 @@ class Head extends Phaser.Physics.Arcade.Image {
 				gameObject1.collect();
 			}
 		});
+		this.getByName("DeathSeq").setVisible(true);
+		this.getByName("DeathSeq").play("Death");
 	}
 	// Write your code here.
 

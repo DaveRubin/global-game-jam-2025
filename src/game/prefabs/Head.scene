@@ -10,23 +10,49 @@
     },
     "displayList": [
         {
-            "type": "ArcadeImage",
-            "id": "f0204c47-3d85-417b-906a-74b2fca40051",
-            "label": "head_Idle",
-            "texture": {
-                "key": "Head_Idle"
-            },
-            "scaleX": 0.5,
-            "scaleY": 0.5,
-            "body.friction.x": 0,
-            "body.bounce.x": 0.5,
-            "body.bounce.y": 0.5,
-            "angularAcceleration": 5,
-            "angularDrag": 5,
-            "angularVelocity": 5,
-            "bodyGeometry": 0,
-            "body.width": 128,
-            "body.height": 128
+            "type": "Container",
+            "id": "2a977c12-2bd6-462d-93c9-bc38ee978842",
+            "label": "container_1",
+            "blendMode": -1,
+            "list": [
+                {
+                    "type": "ArcadeImage",
+                    "id": "f0204c47-3d85-417b-906a-74b2fca40051",
+                    "label": "head_Idle",
+                    "texture": {
+                        "key": "Head_Idle"
+                    },
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "body.friction.x": 0,
+                    "body.bounce.x": 0.5,
+                    "body.bounce.y": 0.5,
+                    "angularAcceleration": 5,
+                    "angularDrag": 5,
+                    "angularVelocity": 5,
+                    "bodyGeometry": 0,
+                    "body.width": 128,
+                    "body.height": 128
+                },
+                {
+                    "type": "ArcadeSprite",
+                    "id": "2194323d-a2d2-4304-bb89-fb2948dc5091",
+                    "label": "DeathSeq",
+                    "displayName": "DeathSeq",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "Death_01"
+                    },
+                    "y": 18,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "visible": false,
+                    "physicsType": 1,
+                    "allowGravity": false,
+                    "body.width": 1084,
+                    "body.height": 1072
+                }
+            ]
         }
     ],
     "plainObjects": [],

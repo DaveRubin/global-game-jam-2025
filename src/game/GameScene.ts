@@ -37,6 +37,7 @@ export class GameScene extends Phaser.Scene {
 		createAnimation(this, 'CheckPointCloud_R', 3);
 		createAnimation(this, 'SuckFx_02',4);
 		createAnimation(this, 'Mouth_Wind_fx',4);
+		createAnimation(this, 'Death',7);
 
 		
 
