@@ -15,9 +15,25 @@
             "blendMode": -1,
             "list": [
                 {
+                    "type": "Rectangle",
+                    "id": "bd6f9b0a-962f-45e1-b596-122660c9b55e",
+                    "label": "effect",
+                    "useGameObjectName": true,
+                    "x": -3,
+                    "y": 4,
+                    "scaleX": 4.1,
+                    "originX": 1,
+                    "isFilled": true,
+                    "fillColor": "#ff0",
+                    "fillAlpha": 0.4,
+                    "width": 128,
+                    "height": 128
+                },
+                {
                     "type": "Image",
                     "id": "43a80d46-ff73-40e8-97e0-40901b87cf7c",
                     "label": "mouthIdle",
+                    "useGameObjectName": true,
                     "texture": {
                         "key": "MouthIdle"
                     }
@@ -26,6 +42,7 @@
                     "type": "Image",
                     "id": "b98ec885-d454-4b5a-8820-f1a1fae92bb9",
                     "label": "mouthBlow",
+                    "useGameObjectName": true,
                     "texture": {
                         "key": "MouthBlow"
                     }
@@ -34,24 +51,11 @@
                     "type": "Image",
                     "id": "9b69ca15-1143-4fd7-b6f4-453980b90d5c",
                     "label": "mouth_Wind_fx",
+                    "useGameObjectName": true,
                     "texture": {
                         "key": "Mouth_Wind_fx"
                     },
                     "x": -139
-                },
-                {
-                    "type": "Rectangle",
-                    "id": "bd6f9b0a-962f-45e1-b596-122660c9b55e",
-                    "label": "effect",
-                    "x": -3,
-                    "y": 4,
-                    "scaleX": 4,
-                    "originX": 1,
-                    "isFilled": true,
-                    "fillColor": "#ff0",
-                    "fillAlpha": 0.4,
-                    "width": 128,
-                    "height": 128
                 }
             ]
         }
@@ -67,6 +71,22 @@
         {
             "name": "property",
             "label": "Property",
+            "tooltip": "",
+            "defValue": "p1",
+            "customDefinition": false,
+            "type": {
+                "id": "option",
+                "options": [
+                    "p1",
+                    "p2",
+                    "p3",
+                    "p4"
+                ]
+            }
+        },
+        {
+            "name": "property_1",
+            "label": "Property 1",
             "tooltip": "",
             "defValue": "p1",
             "customDefinition": false,

@@ -102,19 +102,6 @@
                     "originY": 0
                 },
                 {
-                    "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
-                    "id": "b7b80581-49f8-4be2-a754-cbd9cb9797cb",
-                    "unlock": [
-                        "x",
-                        "y",
-                        "property"
-                    ],
-                    "label": "mouth",
-                    "property": "p3",
-                    "x": 1087,
-                    "y": 661
-                },
-                {
                     "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
                     "id": "2282268c-9a26-4c5c-8590-b472cf4c362f",
                     "unlock": [
@@ -165,6 +152,58 @@
                     "property": "p4",
                     "x": 949,
                     "y": 899
+                },
+                {
+                    "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
+                    "id": "2eb5a79a-c769-4184-8f8d-6869bcc9906a",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property"
+                    ],
+                    "label": "mouth_1",
+                    "property": "p1",
+                    "x": 244,
+                    "y": 488
+                },
+                {
+                    "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
+                    "id": "7d82ac4f-718c-4cbc-9024-92195447e1fd",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property"
+                    ],
+                    "label": "mouth_2",
+                    "property": "p2",
+                    "x": 952,
+                    "y": 488
+                },
+                {
+                    "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
+                    "id": "95d89e2a-36a1-46a0-ab8c-8f374163b363",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property"
+                    ],
+                    "label": "mouth_3",
+                    "property": "p3",
+                    "x": 962,
+                    "y": 628
+                },
+                {
+                    "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
+                    "id": "b7b80581-49f8-4be2-a754-cbd9cb9797cb",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property"
+                    ],
+                    "label": "mouth",
+                    "property": "p4",
+                    "x": 235,
+                    "y": 651
                 }
             ]
         }

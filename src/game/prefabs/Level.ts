@@ -48,10 +48,6 @@ class Level extends Phaser.GameObjects.Container {
 		background_02.setOrigin(0, 0);
 		this.add(background_02);
 
-		// mouth
-		const mouth = new Mouth(scene, 1087, 661);
-		this.add(mouth);
-
 		// nose
 		const nose = new Nose(scene, 117, 894);
 		this.add(nose);
@@ -68,8 +64,21 @@ class Level extends Phaser.GameObjects.Container {
 		const nose_3 = new Nose(scene, 949, 899);
 		this.add(nose_3);
 
-		// mouth (prefab fields)
-		mouth.property = "p3";
+		// mouth_1
+		const mouth_1 = new Mouth(scene, 244, 488);
+		this.add(mouth_1);
+
+		// mouth_2
+		const mouth_2 = new Mouth(scene, 952, 488);
+		this.add(mouth_2);
+
+		// mouth_3
+		const mouth_3 = new Mouth(scene, 962, 628);
+		this.add(mouth_3);
+
+		// mouth
+		const mouth = new Mouth(scene, 235, 651);
+		this.add(mouth);
 
 		// nose (prefab fields)
 		nose.property = "p1";
@@ -82,6 +91,18 @@ class Level extends Phaser.GameObjects.Container {
 
 		// nose_3 (prefab fields)
 		nose_3.property = "p4";
+
+		// mouth_1 (prefab fields)
+		mouth_1.property = "p1";
+
+		// mouth_2 (prefab fields)
+		mouth_2.property = "p2";
+
+		// mouth_3 (prefab fields)
+		mouth_3.property = "p3";
+
+		// mouth (prefab fields)
+		mouth.property = "p4";
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.

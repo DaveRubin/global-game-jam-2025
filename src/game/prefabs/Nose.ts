@@ -1,7 +1,7 @@
 import { PLAYER_COLORS } from "../consts";
 
 // You can write more code here
-const coloredImages = ['noseSuck', 'noseIdle'];
+export const coloredImages = ['noseSuck', 'noseIdle'];
 
 /* START OF COMPILED CODE */
 
@@ -11,6 +11,16 @@ class Nose extends Phaser.GameObjects.Container {
 		super(scene, x ?? 0, y ?? 0);
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
+
+		// effect
+		const effect = scene.add.rectangle(0, 0, 128, 128);
+		effect.scaleX = 3.25;
+		effect.angle = -90;
+		effect.setOrigin(1, 0.5);
+		effect.isFilled = true;
+		effect.fillColor = 16776960;
+		effect.fillAlpha = 0.4;
+		this.add(effect);
 
 		// noseSuck
 		const noseSuck = scene.add.image(0, 0, "NoseSuck");
@@ -32,15 +42,6 @@ class Nose extends Phaser.GameObjects.Container {
 		noseVfx.scaleX = 0.5;
 		noseVfx.scaleY = 0.5;
 		this.add(noseVfx);
-
-		// effect
-		const effect = scene.add.rectangle(0, 0, 128, 128);
-		effect.angle = -90;
-		effect.setOrigin(1, 0.5);
-		effect.isFilled = true;
-		effect.fillColor = 16776960;
-		effect.fillAlpha = 0.4;
-		this.add(effect);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
@@ -50,20 +51,16 @@ class Nose extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public property: "p1" | "p2" | "p3" | "p4" = "p1";
+	public property: "p1"|"p2"|"p3"|"p4" = "p1";
 
 	/* START-USER-CODE */
 	awake() {
-		console.log("Nose awake", this.property);
-		// 
 		this.list.forEach((child) => {
-
 			if (coloredImages.includes(child.name)) {
 				console.log("Child name:", child.name);
 				(child as Phaser.GameObjects.Image).setTint(PLAYER_COLORS[this.property]);
 			}
 		});
-
 	}
 
 	// Write your code here.
