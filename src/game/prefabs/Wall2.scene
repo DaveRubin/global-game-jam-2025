@@ -2,6 +2,7 @@
     "id": "d7ad529b-d006-4116-8863-a029760214eb",
     "sceneType": "PREFAB",
     "settings": {
+        "generateAwakeHandler": true,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -9,12 +10,17 @@
     },
     "displayList": [
         {
-            "type": "Image",
+            "type": "ArcadeSprite",
             "id": "9e15f02d-4ec8-442d-b6a8-cfcbfc378027",
             "label": "wall_01",
             "texture": {
-                "key": "Wall_01"
-            }
+                "key": "Cloud_B_01"
+            },
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "physicsType": 1,
+            "body.width": 1203,
+            "body.height": 495
         }
     ],
     "plainObjects": [],

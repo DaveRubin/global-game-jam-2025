@@ -2,6 +2,7 @@
     "id": "f889b80a-a443-4d72-a67d-d9bbe0ab009a",
     "sceneType": "PREFAB",
     "settings": {
+        "generateAwakeHandler": true,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -9,12 +10,17 @@
     },
     "displayList": [
         {
-            "type": "Image",
+            "type": "ArcadeSprite",
             "id": "1795e3ae-1c96-4662-9d0d-13aa7a4079a6",
             "label": "wall_02",
             "texture": {
-                "key": "Wall_02"
-            }
+                "key": "Cloud_A_01"
+            },
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "physicsType": 1,
+            "body.width": 1685,
+            "body.height": 481
         }
     ],
     "plainObjects": [],
@@ -23,6 +29,5 @@
         "url": "https://phaser.io/editor",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
-    },
-    "prefabProperties": []
+    }
 }

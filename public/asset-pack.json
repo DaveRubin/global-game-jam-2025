@@ -65,6 +65,48 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Obstacles/Walls/Cloud_A_01.png"
+                },
+                "type": "texture",
+                "key": "Cloud_A_01"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Obstacles/Walls/Cloud_A_02.png"
+                },
+                "type": "texture",
+                "key": "Cloud_A_02"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Obstacles/Walls/Cloud_A_03.png"
+                },
+                "type": "texture",
+                "key": "Cloud_A_03"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Obstacles/Walls/Cloud_B_01.png"
+                },
+                "type": "texture",
+                "key": "Cloud_B_01"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Obstacles/Walls/Cloud_B_02.png"
+                },
+                "type": "texture",
+                "key": "Cloud_B_02"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Obstacles/Walls/Cloud_B_03.png"
+                },
+                "type": "texture",
+                "key": "Cloud_B_03"
+            },
+            {
+                "url": {
                     "IMG": "public/collectible1.png"
                 },
                 "type": "texture",
