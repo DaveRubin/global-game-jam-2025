@@ -26,7 +26,7 @@
             "allowRotation": false,
             "pushable": false,
             "body.width": 1685,
-            "body.height": 300
+            "body.height": 350
         }
     ],
     "plainObjects": [],

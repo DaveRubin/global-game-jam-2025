@@ -19,9 +19,8 @@ class Head extends Phaser.Physics.Arcade.Image {
 		this.scaleY = 0.5;
 		scene.physics.add.existing(this, false);
 		this.body.friction.x = 0;
-		this.body.bounce.x = 1;
+		this.body.bounce.x = 0.5;
 		this.body.bounce.y = 0.5;
-		this.body.mass = 300;
 		this.body.angularAcceleration = 5;
 		this.body.angularDrag = 5;
 		this.body.angularVelocity = 5;
