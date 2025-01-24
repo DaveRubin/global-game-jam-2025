@@ -1,7 +1,7 @@
 
 // You can write more code here
 import { getStageClient } from "../../client/BaseClient";
-import { Head } from "./Head";
+import { Head2 } from "./Head2";
 
 /* START OF COMPILED CODE */
 
@@ -80,7 +80,7 @@ class Rainbow extends Phaser.GameObjects.Container {
 
 		this.scene.physics.world.createDebugGraphic();
 
-		this.overlapCollider = this.scene.physics.add.overlap(rainbow, Head.instance, () => {
+		this.overlapCollider = this.scene.physics.add.overlap(rainbow, Head2.instance, () => {
 			this.onRainbowOverlap();
 			this.scene.physics.world.removeCollider(this.overlapCollider);
 		});

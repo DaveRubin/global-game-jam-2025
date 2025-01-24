@@ -6,7 +6,7 @@ import { Controller } from "./Controller";
 import { Level } from "./prefabs/Level";
 import { Level_One } from "./prefabs/Level_One";
 import { createAnimation } from "./createAnimation";
-import { Head } from "./prefabs/Head";
+import { Head2 } from "./prefabs/Head2";
 
 /* START OF COMPILED CODE */
 
@@ -41,18 +41,18 @@ export class GameScene extends Phaser.Scene {
 		createAnimation(this, 'Mouth_Wind_fx', 4);
 		createAnimation(this, 'Death', 7);
 
-		const scrollSpeed = 1;
+		const scrollSpeed = 0.6;
 
 		// Update camera position each frame
 		this.scrollTimer = this.time.addEvent({
 			delay: 16, // Add a small delay (roughly 60fps)
 			callback: () => {
 				this.cameras.main.scrollY -= scrollSpeed;
-				// Check if Head is out of frame
-				if (Head.instance) {
-					const headWorldY = Head.instance.y - this.cameras.main.scrollY;
+				// Check if Head2 is out of frame
+				if (Head2.instance) {
+					const headWorldY = Head2.instance.y - this.cameras.main.scrollY;
 					if (headWorldY > this.cameras.main.height + 300) {
-						console.log("Head is out of frame!");
+						console.log("Head2 is out of frame!");
 						this.scrollTimer?.destroy();
 					}
 				}

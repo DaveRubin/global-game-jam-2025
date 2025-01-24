@@ -12,6 +12,7 @@ import {Head} from "./Head.js";
 import {Rainbow} from "./Rainbow.js";
 
 
+
 /* START OF COMPILED CODE */
 
 
@@ -56,7 +57,7 @@ export class Level_One extends Phaser.GameObjects.Container {
 		this.add(mouth);
 
 		// head
-		const head = new Head(scene, 586, 2055);
+		const head = new Head2(scene, 586, 2055);
 		this.add(head);
 
 		// wall2
@@ -228,3 +229,5 @@ export class Level_One extends Phaser.GameObjects.Container {
 /* END OF COMPILED CODE */
 
 // You can write more code here
+
+export { Level_One };

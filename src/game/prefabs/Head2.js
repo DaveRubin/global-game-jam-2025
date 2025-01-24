@@ -1,11 +1,11 @@
 
 // You can write more code here
-import { CollectibleBase } from "../CollectibleBase";
+
 import { GAME_WIDTH } from "../consts";
 
 /* START OF COMPILED CODE */
 
-class Head extends Phaser.Physics.Arcade.Image {
+class Head2 extends Phaser.GameObjects.Container {
 
 	constructor(scene, x, y) {
 		super(scene, x ?? 0, y ?? 0);
@@ -21,13 +21,12 @@ class Head extends Phaser.Physics.Arcade.Image {
 		head_Idle.scaleY = 0.5;
 		this.add(head_Idle);
 
-		// DeathSeq
-		const deathSeq = scene.add.sprite(0, 18, "Death_01");
-		deathSeq.name = "DeathSeq";
-		deathSeq.scaleX = 0.5;
-		deathSeq.scaleY = 0.5;
-		deathSeq.visible = false;
-		this.add(deathSeq);
+		// death_01
+		const death_01 = scene.add.sprite(0, 0, "Death_01");
+		death_01.name = "death_01";
+		death_01.scaleX = 0.5;
+		death_01.scaleY = 0.5;
+		this.add(death_01);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
@@ -52,17 +51,18 @@ class Head extends Phaser.Physics.Arcade.Image {
 
 		// Add collision between head and boundaries
 		scene.physics.add.collider(this, [leftBoundary, rightBoundary]);
-		console.log("Head awake!");
-		Head.instance = this;
-		deathSeq.setVisible(false);
+
+		Head2.instance = this;
+		death_01.setVisible(false);
 		const body = this.body;
-		body.setMaxVelocity(100, 100);
+		body.setMaxVelocity(80, 80);
 		/* END-USER-CTR-CODE */
 	}
 
 	/* START-USER-CODE */
 	static instance;
 	awake() {
+		console.log(this.getByName("head_Idle"))
 		// Create a looping rotation tween
 		this.scene.tweens.add({
 			targets: this.getByName("head_Idle"),
@@ -75,8 +75,8 @@ class Head extends Phaser.Physics.Arcade.Image {
 		// Check for overlaps with other physics objects
 		// Enable checking if body is overlapping
 
-		this.getByName("DeathSeq").setVisible(false);
-		this.getByName("DeathSeq").play("Death");
+		this.getByName("death_01").setVisible(false);
+		this.getByName("death_01").play("Death");
 	}
 	// Write your code here.
 
@@ -86,4 +86,4 @@ class Head extends Phaser.Physics.Arcade.Image {
 /* END OF COMPILED CODE */
 
 // You can write more code here
-export { Head };
+export { Head2 };
