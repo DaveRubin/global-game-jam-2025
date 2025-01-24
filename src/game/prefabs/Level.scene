@@ -2,8 +2,8 @@
     "id": "1f70116c-2c3a-49a0-b4fd-fbc7b6601da8",
     "sceneType": "PREFAB",
     "settings": {
-        "snapWidth": 762,
-        "snapHeight": 749,
+        "snapWidth": 1203,
+        "snapHeight": 495,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -112,7 +112,7 @@
                     "label": "nose",
                     "property": "p1",
                     "x": 117,
-                    "y": 894
+                    "y": -681
                 },
                 {
                     "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
@@ -125,7 +125,7 @@
                     "label": "nose_1",
                     "property": "p2",
                     "x": 420,
-                    "y": 905
+                    "y": -670
                 },
                 {
                     "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
@@ -138,7 +138,7 @@
                     "label": "nose_2",
                     "property": "p3",
                     "x": 690,
-                    "y": 896
+                    "y": -679
                 },
                 {
                     "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
@@ -151,7 +151,7 @@
                     "label": "nose_3",
                     "property": "p4",
                     "x": 949,
-                    "y": 899
+                    "y": -676
                 },
                 {
                     "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
@@ -217,6 +217,8 @@
                         "y"
                     ],
                     "label": "head",
+                    "displayName": "head",
+                    "useGameObjectName": true,
                     "x": 538,
                     "y": 2045
                 },
@@ -228,7 +230,7 @@
                         "y"
                     ],
                     "label": "wall2",
-                    "x": 799,
+                    "x": 1138,
                     "y": 1617
                 },
                 {
@@ -240,7 +242,40 @@
                     ],
                     "label": "wall_1",
                     "x": 294,
-                    "y": 501
+                    "y": 270
+                },
+                {
+                    "prefabId": "f5032964-65e6-42bf-9151-20eb2b02b297",
+                    "id": "4ab43da3-1e60-4696-afc7-79b9c654be8f",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "collectible2",
+                    "x": 312,
+                    "y": 1811
+                },
+                {
+                    "prefabId": "80a3c23b-897f-4af9-aeb3-82f0b1e9b190",
+                    "id": "1e2f23f0-8e71-4444-8b40-a8eb86909a9f",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "collectible3",
+                    "x": 453,
+                    "y": 1528
+                },
+                {
+                    "prefabId": "d3c9b8d8-0f55-4b5c-bbe7-e2708c75f54d",
+                    "id": "520628fc-8255-45e9-860d-02d24525c1d4",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "collectible1",
+                    "x": 395,
+                    "y": 1011
                 }
             ]
         }

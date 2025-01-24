@@ -19,7 +19,7 @@ class Wall2 extends Phaser.Physics.Arcade.Sprite {
 		this.body.setSize(1203, 495, false);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
-
+		this.body.onOverlap = true;
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		/* END-USER-CTR-CODE */
@@ -29,8 +29,8 @@ class Wall2 extends Phaser.Physics.Arcade.Sprite {
 
 	/* START-USER-CODE */
 	awake() {
-		console.log("awake WALL 2 !");
 		this.play("Cloud_B");
+
 	}
 	// Write your code here.
 
