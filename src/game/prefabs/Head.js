@@ -22,7 +22,8 @@ class Head extends Phaser.Physics.Arcade.Image {
 		head_Idle.body.angularAcceleration = 5;
 		head_Idle.body.angularDrag = 5;
 		head_Idle.body.angularVelocity = 5;
-		head_Idle.body.setCircle(64);
+		head_Idle.body.setOffset(100, 100);
+		head_Idle.body.setCircle(310);
 		this.add(head_Idle);
 
 		// DeathSeq
@@ -34,7 +35,9 @@ class Head extends Phaser.Physics.Arcade.Image {
 		deathSeq.body.allowGravity = false;
 		deathSeq.body.setSize(1084, 1072, false);
 		this.add(deathSeq);
-		// awake handler
+
+
+		scene.physics.add.existing(this, false);
 		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
@@ -70,15 +73,6 @@ class Head extends Phaser.Physics.Arcade.Image {
 		// Check for overlaps with other physics objects
 		// Enable checking if body is overlapping
 		this.body.onOverlap = true;
-
-		// Listen for overlap start
-		this.body.world.on('overlap', (gameObject1, gameObject2) => {
-
-			console.log("🚀 ~ Head ~ this.body.world.on ~ gameObject1:", gameObject1.constructor.name)
-			if (gameObject1.constructor.name.startsWith("Collectible")) {
-				gameObject1.collect();
-			}
-		});
 		this.getByName("DeathSeq").setVisible(true);
 		this.getByName("DeathSeq").play("Death");
 	}

@@ -129,6 +129,9 @@ class Level extends Phaser.GameObjects.Container {
 		const nose_4 = new Nose(scene, 251, 943);
 		this.add(nose_4);
 
+		// rainbow (prefab fields)
+		rainbow.text = "150m";
+
 		// nose (prefab fields)
 		nose.property = "p1";
 

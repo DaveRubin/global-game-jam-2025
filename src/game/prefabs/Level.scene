@@ -83,9 +83,11 @@
                     "id": "b9330dc5-b6ad-4de3-b79a-970f5314ae76",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "text"
                     ],
                     "label": "rainbow",
+                    "text": "150m",
                     "x": 0,
                     "y": 1237
                 },

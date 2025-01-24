@@ -1,5 +1,7 @@
 
 // You can write more code here
+import { getStageClient } from "../../client/BaseClient";
+import { Head } from "./Head";
 
 /* START OF COMPILED CODE */
 
@@ -11,12 +13,20 @@ class Rainbow extends Phaser.GameObjects.Container {
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
 
 		// checkpoint_v01
-		const checkpoint_v01 = scene.physics.add.staticSprite(0, 0, "CheckPointRainbow_01");
+		const checkpoint_v01 = scene.physics.add.sprite(0, 0, "CheckPointRainbow_01");
 		checkpoint_v01.name = "checkpoint_v01";
 		checkpoint_v01.scaleX = 0.5;
 		checkpoint_v01.scaleY = 0.5;
 		checkpoint_v01.setOrigin(0, 0);
+		checkpoint_v01.body.moves = false;
 		checkpoint_v01.body.allowGravity = false;
+		checkpoint_v01.body.allowDrag = false;
+		checkpoint_v01.body.allowRotation = false;
+		checkpoint_v01.body.checkCollision.up = false;
+		checkpoint_v01.body.checkCollision.down = false;
+		checkpoint_v01.body.checkCollision.left = false;
+		checkpoint_v01.body.checkCollision.right = false;
+		checkpoint_v01.body.pushable = false;
 		checkpoint_v01.body.setSize(2250, 483, false);
 		this.add(checkpoint_v01);
 
@@ -36,6 +46,7 @@ class Rainbow extends Phaser.GameObjects.Container {
 
 		// Meters
 		const meters = scene.add.text(438, 31, "", {});
+		meters.name = "Meters";
 		meters.tintTopLeft = 0;
 		meters.tintTopRight = 0;
 		meters.tintBottomLeft = 0;
@@ -51,16 +62,33 @@ class Rainbow extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
+	/** @type {string} */
+	text = "50m";
+
 	/* START-USER-CODE */
 
 	// Write your code here.
 	awake() {
-		// @ts-ignore
-		this.getByName("checkpoint_v01").play("CheckPointRainbow");
-		// @ts-ignore
+
+		const rainbow = this.getByName("checkpoint_v01");
+		rainbow.play("CheckPointRainbow");
+
 		this.getByName("Cloud_L").play("CheckPointCloud_L");
-		// @ts-ignore
 		this.getByName("Cloud_R").play("CheckPointCloud_R");
+
+		this.getByName("Meters").setText(this.text);
+
+		this.scene.physics.world.createDebugGraphic();
+
+		this.overlapCollider = this.scene.physics.add.overlap(rainbow, Head.instance, () => {
+			this.onRainbowOverlap();
+			this.scene.physics.world.removeCollider(this.overlapCollider);
+		});
+
+	}
+
+	onRainbowOverlap() {
+		getStageClient().distributeColors(true);
 	}
 	/* END-USER-CODE */
 }
