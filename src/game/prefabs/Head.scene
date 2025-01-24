@@ -20,12 +20,11 @@
             "scaleX": 0.5,
             "scaleY": 0.5,
             "body.friction.x": 0,
-            "body.bounce.x": 1,
+            "body.bounce.x": 0.5,
             "body.bounce.y": 0.5,
             "angularAcceleration": 5,
             "angularDrag": 5,
             "angularVelocity": 5,
-            "mass": 300,
             "bodyGeometry": 0,
             "body.width": 128,
             "body.height": 128

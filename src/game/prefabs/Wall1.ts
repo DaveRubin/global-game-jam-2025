@@ -23,7 +23,7 @@ class Wall1 extends BaseCollider {
 		this.body.allowDrag = false;
 		this.body.allowRotation = false;
 		this.body.pushable = false;
-		this.body.setSize(1685, 300, false);
+		this.body.setSize(1685, 350, false);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
