@@ -225,11 +225,13 @@
                     "id": "affaa79c-7ab4-494b-89db-38ddca0168b9",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "angle"
                     ],
                     "label": "wall2",
-                    "x": 799,
-                    "y": 1617
+                    "x": 1324,
+                    "y": 386,
+                    "angle": 0
                 },
                 {
                     "prefabId": "f889b80a-a443-4d72-a67d-d9bbe0ab009a",
@@ -239,8 +241,41 @@
                         "y"
                     ],
                     "label": "wall_1",
-                    "x": 294,
-                    "y": 501
+                    "x": 318,
+                    "y": 1655
+                },
+                {
+                    "prefabId": "f5032964-65e6-42bf-9151-20eb2b02b297",
+                    "id": "4ab43da3-1e60-4696-afc7-79b9c654be8f",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "collectible2",
+                    "x": 312,
+                    "y": 1811
+                },
+                {
+                    "prefabId": "80a3c23b-897f-4af9-aeb3-82f0b1e9b190",
+                    "id": "1e2f23f0-8e71-4444-8b40-a8eb86909a9f",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "collectible3",
+                    "x": 453,
+                    "y": 1528
+                },
+                {
+                    "prefabId": "d3c9b8d8-0f55-4b5c-bbe7-e2708c75f54d",
+                    "id": "520628fc-8255-45e9-860d-02d24525c1d4",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "collectible1",
+                    "x": 395,
+                    "y": 1011
                 },
                 {
                     "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",

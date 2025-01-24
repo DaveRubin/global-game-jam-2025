@@ -3,6 +3,7 @@
     "sceneType": "PREFAB",
     "settings": {
         "generateAwakeHandler": true,
+        "superClassName": "BaseCollider",
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -19,8 +20,13 @@
             "scaleX": 0.5,
             "scaleY": 0.5,
             "physicsType": 1,
+            "moves": false,
+            "allowGravity": false,
+            "allowDrag": false,
+            "allowRotation": false,
+            "pushable": false,
             "body.width": 1685,
-            "body.height": 481
+            "body.height": 300
         }
     ],
     "plainObjects": [],

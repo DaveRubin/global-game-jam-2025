@@ -7,18 +7,24 @@ import { CollectibleBase } from "../CollectibleBase";
 
 interface Head {
 
-	body: Phaser.Physics.Arcade.Body;
+	 body: Phaser.Physics.Arcade.Body;
 }
 
 class Head extends Phaser.Physics.Arcade.Image {
-	static instance: Head;
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 0, y ?? 0, texture || "Head_Idle", frame);
-		Head.instance = this;
+
 		this.scaleX = 0.5;
 		this.scaleY = 0.5;
 		scene.physics.add.existing(this, false);
+		this.body.friction.x = 0;
+		this.body.bounce.x = 1;
+		this.body.bounce.y = 0.5;
+		this.body.mass = 300;
+		this.body.angularAcceleration = 5;
+		this.body.angularDrag = 5;
+		this.body.angularVelocity = 5;
 		this.body.setCircle(64);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
@@ -36,11 +42,13 @@ class Head extends Phaser.Physics.Arcade.Image {
 		// Add collision between head and boundaries
 		scene.physics.add.collider(this, [leftBoundary, rightBoundary]);
 		console.log("Head awake!");
-
+		Head.instance = this;
+		this.body.onCollide = true;
 		/* END-USER-CTR-CODE */
 	}
 
 	/* START-USER-CODE */
+	static instance: Head;
 	awake() {
 		// Create a looping rotation tween
 		this.scene.tweens.add({
