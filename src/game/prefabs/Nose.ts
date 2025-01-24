@@ -57,7 +57,7 @@ class Nose extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public property: "p1"|"p2"|"p3"|"p4" = "p1";
+	public property: "p1" | "p2" | "p3" | "p4" = "p1";
 
 	/* START-USER-CODE */
 	awake() {
@@ -69,7 +69,8 @@ class Nose extends Phaser.GameObjects.Container {
 				(child as Phaser.GameObjects.Image).setTint(PLAYER_COLORS[this.property]);
 			}
 		});
-
+		// @ts-ignore
+		this.getByName("noseVfx").play("SuckFx_02");
 
 		const vfx = this.list.find((child) => child.name === VFX_IMAGE) as Phaser.GameObjects.Image;
 		vfx.setVisible(false);
@@ -110,9 +111,7 @@ class Nose extends Phaser.GameObjects.Container {
 	}
 
 	// Write your code here.
-	awake() {
-		this.play("SuckFx_02");
-	}
+
 
 	/* END-USER-CODE */
 }
