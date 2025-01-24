@@ -52,6 +52,8 @@ class Head extends Phaser.GameObjects.Container {
 		console.log("Head awake!");
 		Head.instance = this;
 		deathSeq.setVisible(false);
+		const body = this.body;
+		body.setMaxVelocity(100, 100);
 		/* END-USER-CTR-CODE */
 	}
 
