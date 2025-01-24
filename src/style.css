@@ -13,6 +13,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#canvas {
+  touch-action: none; /* Disable gestures like pinch zoom and double-tap zoom */
+}
 
 body {
   margin: 0;
