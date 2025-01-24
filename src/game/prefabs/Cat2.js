@@ -1,26 +1,26 @@
 
 // You can write more code here
 
+import { BadThought } from "./BadThought";
+
 /* START OF COMPILED CODE */
 
-class Cigarete extends Phaser.GameObjects.Container {
+class Cat2 extends Phaser.GameObjects.Container {
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number) {
+	constructor(scene, x, y) {
 		super(scene, x ?? 0, y ?? 0);
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
 
 		// badThought
-		const badThought = new BadThought(scene, 20, 43);
+		const badThought = new BadThought(scene, 0, 0);
 		this.add(badThought);
 
 		// image_1
-		const image_1 = scene.add.image(0, 0, "Ciggarete");
+		const image_1 = scene.add.image(0, 0, "Cat_02");
 		image_1.scaleX = 0.5;
 		image_1.scaleY = 0.5;
 		this.add(image_1);
-		// awake handler
-		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -37,4 +37,4 @@ class Cigarete extends Phaser.GameObjects.Container {
 /* END OF COMPILED CODE */
 
 // You can write more code here
-export { Cigarete };
+export { Cat2 };

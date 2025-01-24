@@ -5,7 +5,7 @@
 
 class Rainbow extends Phaser.GameObjects.Container {
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number) {
+	constructor(scene, x, y) {
 		super(scene, x ?? 0, y ?? 0);
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;

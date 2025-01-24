@@ -5,8 +5,7 @@
         "generateAwakeHandler": true,
         "preloadMethodName": "",
         "preloadPackFiles": [],
-        "createMethodName": "",
-        "compilerOutputLanguage": "TYPE_SCRIPT"
+        "createMethodName": ""
     },
     "displayList": [
         {
@@ -14,6 +13,8 @@
             "id": "ab821421-17a5-4ed7-93ac-77ff0e5c93f5",
             "label": "container_1",
             "blendMode": -1,
+            "x": 343,
+            "y": 322,
             "list": [
                 {
                     "type": "ArcadeSprite",
@@ -23,8 +24,6 @@
                     "texture": {
                         "key": "Obstacle_01"
                     },
-                    "scaleX": 0.666,
-                    "scaleY": 0.666,
                     "tintTopLeft": "#dc0d07",
                     "tintTopRight": "#dc0d07",
                     "tintBottomLeft": "#dc0d07",
@@ -42,21 +41,23 @@
                         "key": "ObstacleFace"
                     },
                     "x": -20,
-                    "y": 23,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5
+                    "y": 23
                 },
                 {
                     "type": "Container",
                     "id": "80217374-2b75-44a8-a330-a832edaa2fd5",
                     "label": "Active",
-                    "blendMode": -1
+                    "blendMode": -1,
+                    "x": -343,
+                    "y": -322
                 },
                 {
                     "type": "Container",
                     "id": "38f996b6-69bc-45a6-8697-e8692b624875",
                     "label": "Disabled",
                     "blendMode": -1,
+                    "x": -343,
+                    "y": -322,
                     "visible": false,
                     "list": [
                         {
@@ -66,8 +67,8 @@
                             "texture": {
                                 "key": "Obstacle_Empty"
                             },
-                            "scaleX": 0.666,
-                            "scaleY": 0.666
+                            "x": 347,
+                            "y": 322
                         },
                         {
                             "type": "Image",
@@ -76,8 +77,8 @@
                             "texture": {
                                 "key": "Obstacle_Empty_Face"
                             },
-                            "scaleX": 0.5,
-                            "scaleY": 0.5
+                            "x": 320,
+                            "y": 329
                         }
                     ]
                 }

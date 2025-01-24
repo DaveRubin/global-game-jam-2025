@@ -7,7 +7,6 @@
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
-        "compilerOutputLanguage": "TYPE_SCRIPT",
         "borderWidth": 1125,
         "borderHeight": 2436
     },
@@ -289,6 +288,17 @@
                     "label": "badThought",
                     "x": 894,
                     "y": 1131
+                },
+                {
+                    "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
+                    "id": "68b39703-ec4e-4300-89f4-f8d1f031c9be",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "nose_4",
+                    "x": 251,
+                    "y": 943
                 }
             ]
         }

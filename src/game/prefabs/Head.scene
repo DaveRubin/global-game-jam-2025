@@ -6,8 +6,7 @@
         "superClassName": "Phaser.Physics.Arcade.Image",
         "preloadMethodName": "",
         "preloadPackFiles": [],
-        "createMethodName": "",
-        "compilerOutputLanguage": "TYPE_SCRIPT"
+        "createMethodName": ""
     },
     "displayList": [
         {

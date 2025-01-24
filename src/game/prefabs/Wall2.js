@@ -1,18 +1,11 @@
 
 // You can write more code here
-
 import { BaseCollider } from "../BaseCollider";
-
 /* START OF COMPILED CODE */
-
-interface Wall2 {
-
-	 body: Phaser.Physics.Arcade.Body;
-}
 
 class Wall2 extends BaseCollider {
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
+	constructor(scene, x, y, texture, frame) {
 		super(scene, x ?? 0, y ?? 0, texture || "Cloud_B_01", frame);
 
 		this.scaleX = 0.5;
@@ -28,23 +21,26 @@ class Wall2 extends BaseCollider {
 		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
+		// Write your code here.
 		this.body.onCollide = true;
 		/* END-USER-CTR-CODE */
 	}
 
-	public property: number = 0;
+	/** @type {number} */
+	property = 0;
+
+	/* START-USER-CODE */
 
 	/* START-USER-CODE */
 	awake() {
 		this.play("Cloud_B");
 		super.awake();
-	}
-	// Write your code here.
+	}	// Write your code here.
 
 	/* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
 
-// You can write more code here
 export { Wall2 };
+// You can write more code here

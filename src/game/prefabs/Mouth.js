@@ -18,7 +18,7 @@ export const coloredImages = [IDLE_IMAGE, BLOW_IMAGE, EFFECT_IMAGE];
 
 class Mouth extends Phaser.GameObjects.Container {
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number) {
+	constructor(scene, x, y) {
 		super(scene, x ?? 0, y ?? 0);
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
@@ -62,8 +62,10 @@ class Mouth extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public property: "p1"|"p2"|"p3"|"p4" = "p1";
-	public property_1: "p1"|"p2"|"p3"|"p4" = "p1";
+	/** @type {"p1"|"p2"|"p3"|"p4"} */
+	property = "p1";
+	/** @type {"p1"|"p2"|"p3"|"p4"} */
+	property_1 = "p1";
 
 	/* START-USER-CODE */
 	awake() {
@@ -71,24 +73,24 @@ class Mouth extends Phaser.GameObjects.Container {
 		this.onPlayerTrigger(false);
 		this.list.forEach((child) => {
 			if (coloredImages.includes(child.name)) {
-				(child as Phaser.GameObjects.Image).setTint(PLAYER_COLORS[this.property]);
+				child.setTint(PLAYER_COLORS[this.property]);
 			}
 		});
-		const vfx = this.list.find((child) => child.name === VFX_IMAGE) as Phaser.GameObjects.Image;
+		const vfx = this.list.find((child) => child.name === VFX_IMAGE);
 		vfx.setVisible(false);
 		// @ts-ignore
 		this.getByName("mouth_Wind_fx").play("Mouth_Wind_fx");
 	}
 	// Write your code here.
 
-	onPlayerTrigger(isDown: boolean) {
-		const idleImage = this.list.find((child) => child.name === IDLE_IMAGE) as Phaser.GameObjects.Image;
-		const blowImage = this.list.find((child) => child.name === BLOW_IMAGE) as Phaser.GameObjects.Image;
+	onPlayerTrigger(isDown) {
+		const idleImage = this.list.find((child) => child.name === IDLE_IMAGE);
+		const blowImage = this.list.find((child) => child.name === BLOW_IMAGE);
 
 		idleImage.setVisible(!isDown);
 		blowImage.setVisible(isDown);
 
-		const vfx = this.list.find((child) => child.name === VFX_IMAGE) as Phaser.GameObjects.Image;
+		const vfx = this.list.find((child) => child.name === VFX_IMAGE);
 
 		if (isDown) {
 			vfx.setPosition(-50, 0);
@@ -105,7 +107,7 @@ class Mouth extends Phaser.GameObjects.Container {
 		}
 
 
-		const effect = this.list.find((child) => child.name === EFFECT_IMAGE) as Phaser.GameObjects.Rectangle;
+		const effect = this.list.find((child) => child.name === EFFECT_IMAGE);
 
 		if (isDown) {
 			const touchedBody = getTouchingPhysicsElement(this.scene, effect);

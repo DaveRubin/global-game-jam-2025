@@ -22,7 +22,7 @@ import { Collectible1 } from "./Collectible1";
 
 class Level extends Phaser.GameObjects.Container {
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number) {
+	constructor(scene, x, y) {
 		super(scene, x ?? 0, y ?? 0);
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
@@ -124,6 +124,10 @@ class Level extends Phaser.GameObjects.Container {
 		// badThought
 		const badThought = new BadThought(scene, 894, 1131);
 		this.add(badThought);
+
+		// nose_4
+		const nose_4 = new Nose(scene, 251, 943);
+		this.add(nose_4);
 
 		// nose (prefab fields)
 		nose.property = "p1";

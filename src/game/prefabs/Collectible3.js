@@ -5,7 +5,7 @@ import { CollectibleBase } from "../CollectibleBase";
 
 class Collectible3 extends CollectibleBase {
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
+	constructor(scene, x, y, texture, frame) {
 		super(scene, x ?? 0, y ?? 0, texture || "PickUp_01", frame);
 
 		this.scaleX = 0.5;

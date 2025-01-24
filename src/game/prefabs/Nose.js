@@ -17,7 +17,7 @@ export const coloredImages = [SUCK_IMAGE, IDLE_IMAGE, VFX_IMAGE, EFFECT_IMAGE];
 
 class Nose extends Phaser.GameObjects.Container {
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number) {
+	constructor(scene, x, y) {
 		super(scene, x ?? 0, y ?? 0);
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
@@ -62,7 +62,8 @@ class Nose extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public property: "p1"|"p2"|"p3"|"p4" = "p1";
+	/** @type {"p1"|"p2"|"p3"|"p4"} */
+	property = "p1";
 
 	/* START-USER-CODE */
 	awake() {
@@ -71,23 +72,23 @@ class Nose extends Phaser.GameObjects.Container {
 
 		this.list.forEach((child) => {
 			if (coloredImages.includes(child.name)) {
-				(child as Phaser.GameObjects.Image).setTint(PLAYER_COLORS[this.property]);
+				child.setTint(PLAYER_COLORS[this.property]);
 			}
 		});
 		// @ts-ignore
 		this.getByName("noseVfx").play("SuckFx_02");
 
-		const vfx = this.list.find((child) => child.name === VFX_IMAGE) as Phaser.GameObjects.Image;
+		const vfx = this.list.find((child) => child.name === VFX_IMAGE);
 		vfx.setVisible(false);
 	}
 
-	onPlayerTrigger(isDown: boolean) {
-		const idleImage = this.list.find((child) => child.name === IDLE_IMAGE) as Phaser.GameObjects.Image;
-		const suckImage = this.list.find((child) => child.name === SUCK_IMAGE) as Phaser.GameObjects.Image;
+	onPlayerTrigger(isDown) {
+		const idleImage = this.list.find((child) => child.name === IDLE_IMAGE);
+		const suckImage = this.list.find((child) => child.name === SUCK_IMAGE);
 
 		idleImage.setVisible(!isDown);
 		suckImage.setVisible(isDown);
-		const vfx = this.list.find((child) => child.name === VFX_IMAGE) as Phaser.GameObjects.Image;
+		const vfx = this.list.find((child) => child.name === VFX_IMAGE);
 
 		if (isDown) {
 			vfx.setPosition(0, 400);
@@ -103,7 +104,7 @@ class Nose extends Phaser.GameObjects.Container {
 			});
 		}
 
-		const effect = this.list.find((child) => child.name === EFFECT_IMAGE) as Phaser.GameObjects.Rectangle;
+		const effect = this.list.find((child) => child.name === EFFECT_IMAGE);
 		const touchedBody = getTouchingPhysicsElement(this.scene, effect);
 
 		if (touchedBody?.body) {

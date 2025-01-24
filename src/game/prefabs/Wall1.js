@@ -5,14 +5,9 @@ import { BaseCollider } from "../BaseCollider";
 
 /* START OF COMPILED CODE */
 
-interface Wall1 {
-
-	 body: Phaser.Physics.Arcade.StaticBody;
-}
-
 class Wall1 extends BaseCollider {
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
+	constructor(scene, x, y, texture, frame) {
 		super(scene, x ?? 0, y ?? 0, texture || "Cloud_A_01", frame);
 
 		this.scaleX = 0.5;

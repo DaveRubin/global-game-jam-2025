@@ -6,8 +6,7 @@
         "superClassName": "BaseCollider",
         "preloadMethodName": "",
         "preloadPackFiles": [],
-        "createMethodName": "",
-        "compilerOutputLanguage": "TYPE_SCRIPT"
+        "createMethodName": ""
     },
     "displayList": [
         {

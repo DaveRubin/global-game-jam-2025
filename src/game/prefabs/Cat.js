@@ -1,11 +1,13 @@
 
 // You can write more code here
 
+import { BadThought } from "./BadThought";
+
 /* START OF COMPILED CODE */
 
 class Cat extends Phaser.GameObjects.Container {
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number) {
+	constructor(scene, x, y) {
 		super(scene, x ?? 0, y ?? 0);
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
@@ -28,7 +30,10 @@ class Cat extends Phaser.GameObjects.Container {
 	}
 
 	/* START-USER-CODE */
-
+	awake() {
+		// @ts-ignore
+		// this.getByName("badThought").play("BadThought");
+	}
 	// Write your code here.
 
 	/* END-USER-CODE */

@@ -5,14 +5,9 @@ import { CollectibleBase } from "../CollectibleBase";
 
 /* START OF COMPILED CODE */
 
-interface Head {
-
-	 body: Phaser.Physics.Arcade.Body;
-}
-
 class Head extends Phaser.Physics.Arcade.Image {
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
+	constructor(scene, x, y, texture, frame) {
 		super(scene, x ?? 0, y ?? 0, texture || "Head_Idle", frame);
 
 		this.scaleX = 0.5;
@@ -47,7 +42,7 @@ class Head extends Phaser.Physics.Arcade.Image {
 	}
 
 	/* START-USER-CODE */
-	static instance: Head;
+	static instance;
 	awake() {
 		// Create a looping rotation tween
 		this.scene.tweens.add({
@@ -63,11 +58,11 @@ class Head extends Phaser.Physics.Arcade.Image {
 		this.body.onOverlap = true;
 
 		// Listen for overlap start
-		this.body.world.on('overlap', (gameObject1: Phaser.GameObjects.GameObject, gameObject2: Phaser.GameObjects.GameObject) => {
+		this.body.world.on('overlap', (gameObject1, gameObject2) => {
 
 			console.log("🚀 ~ Head ~ this.body.world.on ~ gameObject1:", gameObject1.constructor.name)
 			if (gameObject1.constructor.name.startsWith("Collectible")) {
-				(gameObject1 as CollectibleBase).collect();
+				gameObject1.collect();
 			}
 		});
 	}
