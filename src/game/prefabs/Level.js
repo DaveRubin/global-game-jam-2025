@@ -78,8 +78,8 @@ class Level extends Phaser.GameObjects.Container {
 		this.add(nose_3);
 
 		// mouth_1
-		const mouth_1 = new Mouth(scene, 68, 1390);
-		mouth_1.scaleX = 1;
+		const mouth_1 = new Mouth(scene, -165, 1871);
+		mouth_1.scaleX = -1;
 		mouth_1.scaleY = 1;
 		this.add(mouth_1);
 
@@ -106,7 +106,7 @@ class Level extends Phaser.GameObjects.Container {
 		this.add(wall2);
 
 		// wall_1
-		const wall_1 = new Wall1(scene, 318, 1655);
+		const wall_1 = new Wall1(scene, 194, 1582);
 		this.add(wall_1);
 
 		// collectible2

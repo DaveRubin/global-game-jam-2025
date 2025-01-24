@@ -18,7 +18,7 @@
             "scaleY": 0.5,
             "list": [
                 {
-                    "type": "ArcadeImage",
+                    "type": "Image",
                     "id": "f0204c47-3d85-417b-906a-74b2fca40051",
                     "label": "head_Idle",
                     "useGameObjectName": true,
@@ -26,19 +26,7 @@
                         "key": "Head_Idle"
                     },
                     "scaleX": 0.5,
-                    "scaleY": 0.5,
-                    "body.friction.x": 0,
-                    "body.bounce.x": 0.5,
-                    "body.bounce.y": 0.5,
-                    "angularAcceleration": 5,
-                    "angularDrag": 5,
-                    "angularVelocity": 5,
-                    "bodyGeometry": 0,
-                    "radius": 310,
-                    "body.width": 128,
-                    "body.height": 128,
-                    "body.offset.x": 100,
-                    "body.offset.y": 100
+                    "scaleY": 0.5
                 },
                 {
                     "type": "Sprite",
