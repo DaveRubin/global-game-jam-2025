@@ -19,7 +19,17 @@ class Head extends Phaser.Physics.Arcade.Image {
 		this.body.setCircle(64);
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
+		// Create boundaries
+		const leftBoundary = scene.add.rectangle(850, 0, 10, 800000);
+		const rightBoundary = scene.add.rectangle(-10, 0, 10, 800000);
+
+
+		// Add physics to boundaries (true makes them static)
+		scene.physics.add.existing(leftBoundary, true);
+		scene.physics.add.existing(rightBoundary, true);
+
+		// Add collision between head and boundaries
+		scene.physics.add.collider(this, [leftBoundary, rightBoundary]);
 		/* END-USER-CTR-CODE */
 	}
 

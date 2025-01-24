@@ -15,3 +15,10 @@ export const PLAYER_COLORS: Record<PlayerType, number> = {
     p3: 0xF65862,
     p4: 0x46F771,
 }
+
+
+export const GAME_HEIGHT = 2436;
+
+const ratio = window.innerHeight / GAME_HEIGHT;
+
+export const GAME_WIDTH = window.innerWidth / ratio;

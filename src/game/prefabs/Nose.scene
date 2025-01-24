@@ -19,6 +19,7 @@
                     "type": "Rectangle",
                     "id": "f5a3908b-caf1-4bde-b4a1-94815da0e2cc",
                     "label": "effect",
+                    "useGameObjectName": true,
                     "scaleX": 3.25,
                     "angle": -90,
                     "originX": 1,
