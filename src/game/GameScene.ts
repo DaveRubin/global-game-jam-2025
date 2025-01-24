@@ -7,10 +7,10 @@ import { Level } from "./prefabs/Level";
 
 /* START OF COMPILED CODE */
 
-export class Scene extends Phaser.Scene {
+export class GameScene extends Phaser.Scene {
 
 	constructor() {
-		super("Scene");
+		super("GameScene");
 	}
 
 

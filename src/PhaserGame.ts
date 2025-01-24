@@ -7,11 +7,11 @@ const width = window.innerWidth;
 const height = window.innerHeight;
 const ratio = height / 2436;
 
-import { Scene } from "./game/Scene.js";
+import { GameScene } from "./game/GameScene.js";
 
 const scenes = new URLSearchParams(window.location.search).has("edit-level")
-  ? Scene
-  : [ConnectingScene, LobbyScene, MobileScene, MobileGameScene];
+  ? GameScene
+  : [ConnectingScene, LobbyScene, MobileScene, MobileGameScene, GameScene];
 
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,

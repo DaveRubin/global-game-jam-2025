@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { Scene } from '../Scene.js';
+import { GameScene } from '../GameScene.js';
 
 const width = window.innerWidth;
 const height = window.innerHeight;
@@ -15,7 +15,7 @@ const config: Phaser.Types.Core.GameConfig = {
         width: 1125,
         height: 2436
     },
-    scene: Scene,
+    scene: GameScene,
     physics: {
         default: 'arcade',
         arcade: {

@@ -1,7 +1,8 @@
 import { getStageClient } from "../client/BaseClient";
 import { StageClient } from "../client/StageClient";
 import { PlayerColor } from "../game/PlayerColor";
-import QRCode from "qrcode";
+import encodeQR from "@paulmillr/qr";
+
 export class LobbyScene extends Phaser.Scene {
   stageClient: StageClient;
   bluePlayer!: Phaser.GameObjects.Rectangle;
@@ -9,10 +10,10 @@ export class LobbyScene extends Phaser.Scene {
   yellowPlayer!: Phaser.GameObjects.Rectangle;
   redPlayer!: Phaser.GameObjects.Rectangle;
   players!: {
-    255: Phaser.GameObjects.Rectangle;
-    65280: Phaser.GameObjects.Rectangle;
-    16776960: Phaser.GameObjects.Rectangle;
-    16711680: Phaser.GameObjects.Rectangle;
+    [PlayerColor.YELLOW]: Phaser.GameObjects.Rectangle;
+    [PlayerColor.GREEN]: Phaser.GameObjects.Rectangle;
+    [PlayerColor.RED]: Phaser.GameObjects.Rectangle;
+    [PlayerColor.BLUE]: Phaser.GameObjects.Rectangle
   };
   constructor() {
     super("LobbyScene");
@@ -20,7 +21,13 @@ export class LobbyScene extends Phaser.Scene {
     this.stageClient = getStageClient();
   }
 
-  preload() {}
+  preload() {
+    const gameUrl = `${window.location.origin}${window.location.pathname}?game-id=${this.stageClient.gameId}`;
+    const gifBytes = encodeQR(gameUrl, "gif", { scale: 25 }); // Uncompressed GIF
+    const blob = new Blob([gifBytes], { type: "image/gif" });
+    const url = URL.createObjectURL(blob);
+    this.load.image("qr-code", url);
+  }
 
   create() {
     this.add.text(100, 100, "Lobby");
@@ -87,12 +94,6 @@ export class LobbyScene extends Phaser.Scene {
       }
     };
 
-    const gameUrl = `${window.location.origin}${window.location.pathname}?game-id=${this.stageClient.gameId}`;
-
-    // Use QR code library to generate code
-    QRCode.toCanvas(document.getElementById("canvas"), gameUrl, {
-      width: 300,
-      margin: 2,
-    });
+    this.add.sprite(900, 900, "qr-code");
   }
 }
