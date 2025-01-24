@@ -10,8 +10,8 @@ class Collectible1 extends CollectibleBase {
 	constructor(scene, x, y, texture, frame) {
 		super(scene, x ?? 0, y ?? 0, texture || "collectible1", frame);
 
-		this.scaleX = 0.3;
-		this.scaleY = 0.3;
+		this.scaleX = 0.2;
+		this.scaleY = 0.2;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -20,7 +20,9 @@ class Collectible1 extends CollectibleBase {
 
 	/* START-USER-CODE */
 
-	// Write your code here.
+	awake() {
+		this.setRotation(Math.random() * Math.PI * 2);
+	}
 
 	/* END-USER-CODE */
 }

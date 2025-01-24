@@ -17,8 +17,8 @@
             "texture": {
                 "key": "collectible1"
             },
-            "scaleX": 0.3,
-            "scaleY": 0.3
+            "scaleX": 0.2,
+            "scaleY": 0.2
         }
     ],
     "plainObjects": [],

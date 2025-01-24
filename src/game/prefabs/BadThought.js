@@ -57,6 +57,47 @@ class BadThought extends Phaser.GameObjects.Container {
 	awake() {
 		// @ts-ignore
 		this.getByName("arcadesprite_1").play("Obstacle");
+
+		// Add the enemy sprite
+		const enemy = this.add.sprite(400, 300, 'enemyTexture');
+
+		// Define a Bezier curve path for a "smile" shape
+		const bezierCurve = {
+			start: { x: 200, y: 400 }, // Starting point
+			control1: { x: 400, y: 200 }, // Control point (top of the smile)
+			control2: { x: 600, y: 200 }, // Second control point
+			end: { x: 800, y: 400 } // End point
+		};
+
+		// Use a tween to move the enemy along the Bezier curve
+		this.tweens.add({
+			targets: enemy,
+			x: {
+				getStart: () => bezierCurve.start.x,
+				getEnd: () => bezierCurve.end.x
+			},
+			y: {
+				getStart: () => bezierCurve.start.y,
+				getEnd: () => bezierCurve.end.y,
+				getInterpolation: (v) => {
+					// Calculate the Bezier curve value based on progress (v)
+					return Phaser.Math.Bezier.Interpolation(
+						v,
+						[
+							bezierCurve.start.y,
+							bezierCurve.control1.y,
+							bezierCurve.control2.y,
+							bezierCurve.end.y
+						]
+					);
+				}
+			},
+			duration: 3000, // Duration of the animation (in ms)
+			ease: 'Sine.easeInOut', // Easing: slower at edges, faster in the middle
+			repeat: -1, // Repeat forever
+			yoyo: true // Reverse the motion after each cycle
+		});
+
 	}	/* END-USER-CODE */
 }
 
