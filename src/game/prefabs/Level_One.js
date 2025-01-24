@@ -1,6 +1,22 @@
 
 // You can write more code here
+import { Wall1 } from "./Wall1";
+import { Mouth } from "./Mouth";
+import { Rainbow } from "./Rainbow";
+import { Nose } from "./Nose";
+import { Head2 } from "./Head2";
+import { Wall2 } from "./Wall2";
+import { BadThought } from "./BadThought";
+import { Bills } from "./Bills";
+import { Cat } from "./Cat";
+import { Cat2 } from "./Cat2";
+import { Cigarete } from "./Cigarete";
 
+
+
+import { Collectible2 } from "./Collectible2";
+import { Collectible3 } from "./Collectible3";
+import { Collectible1 } from "./Collectible1";
 /* START OF COMPILED CODE */
 
 class Level_One extends Phaser.GameObjects.Container {
