@@ -69,24 +69,6 @@ class Mouth extends Phaser.GameObjects.Container {
 		const vfx = this.list.find((child) => child.name === VFX_IMAGE) as Phaser.GameObjects.Image;
 		vfx.setVisible(false);
 
-		// const effect = this.list.find((child) => child.name === "effect") as Phaser.GameObjects.Rectangle;
-
-		// // Enable arcade physics for the effect
-		// this.scene.physics.world.enable(effect);
-		// const effectBody = effect.body as Phaser.Physics.Arcade.Body;
-
-		// // Make it static and sensor-like
-		// effectBody.setImmovable(true);
-		// effectBody.moves = false;
-
-		// // Set up continuous overlap detection
-		// this.scene.physics.add.overlap(
-		// 	effect,
-		// 	this.scene.physics.world.bodies.getArray().map(body => body.gameObject),
-		// 	(effect, other) => {
-		// 		console.log('Something touched the effect!', other);
-		// 	}
-		// );
 	}
 	// Write your code here.
 
@@ -115,18 +97,23 @@ class Mouth extends Phaser.GameObjects.Container {
 
 
 		const effect = this.list.find((child) => child.name === EFFECT_IMAGE) as Phaser.GameObjects.Rectangle;
+
 		if (isDown) {
 			const touchedBody = getTouchingPhysicsElement(this.scene, effect);
 			if (touchedBody?.body) {
-				const dx = effect.x - touchedBody.x;
-				const maxDist = effect.width;
-				const forceX = -dx / maxDist * (1 - Math.abs(dx) / maxDist);
-				console.log("🚀 ~ Mouth ~ onPlayerTrigger ~ dx:", { dx, forceX })
-
-				touchedBody.body.velocity.add({
-					x: forceX,
-					y: 0
-				});
+				const touchedWorldPoint = this.getWorldTransformMatrix().transformPoint(touchedBody.x, touchedBody.y);
+				const worldPoint = this.getWorldTransformMatrix().transformPoint(effect.x, effect.y);
+				const dx = worldPoint.x - touchedWorldPoint.x;
+				const maxDist = 600;
+				const part = Math.abs(dx) / maxDist;
+				if (part < 1) {
+					const direction = dx > 0 ? 1 : -1;
+					const forceX = 1 - part;
+					touchedBody.body.velocity.add({
+						x: forceX * 200 * direction,
+						y: 0
+					});
+				}
 			}
 		}
 	}
