@@ -5,11 +5,7 @@ import { GAME_WIDTH } from "../consts";
 
 /* START OF COMPILED CODE */
 
-<<<<<<< Updated upstream:src/game/prefabs/Head2.js
-class Head2 extends Phaser.Physics.Arcade.Image {
-=======
 class Head2 extends Phaser.GameObjects.Container {
->>>>>>> Stashed changes:src/game/prefabs/Head2.js
 
 	constructor(scene, x, y) {
 		super(scene, x ?? 0, y ?? 0);
