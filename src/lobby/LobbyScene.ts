@@ -1,7 +1,7 @@
 import { getStageClient } from "../client/BaseClient";
 import { StageClient } from "../client/StageClient";
 import { PlayerColor } from "../game/PlayerColor";
-
+import QRCode from "qrcode";
 export class LobbyScene extends Phaser.Scene {
   stageClient: StageClient;
   bluePlayer!: Phaser.GameObjects.Rectangle;
@@ -86,5 +86,13 @@ export class LobbyScene extends Phaser.Scene {
         this.players[player.color].y = playerY;
       }
     };
+
+    const gameUrl = `${window.location.origin}${window.location.pathname}?game-id=${this.stageClient.gameId}`;
+
+    // Use QR code library to generate code
+    QRCode.toCanvas(document.getElementById("canvas"), gameUrl, {
+      width: 300,
+      margin: 2,
+    });
   }
 }
