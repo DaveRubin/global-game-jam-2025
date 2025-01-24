@@ -80,10 +80,24 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Allies/MouthBlow.png"
+                },
+                "type": "texture",
+                "key": "MouthBlow_1"
+            },
+            {
+                "url": {
                     "IMG": "public/MouthIdle.png"
                 },
                 "type": "texture",
                 "key": "MouthIdle"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Allies/MouthIdle.png"
+                },
+                "type": "texture",
+                "key": "MouthIdle_1"
             },
             {
                 "url": {
@@ -105,6 +119,27 @@
                 },
                 "type": "texture",
                 "key": "NoseVfx"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/PickUps/PickUp_01.png"
+                },
+                "type": "texture",
+                "key": "PickUp_01"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/PickUps/PickUp_02.png"
+                },
+                "type": "texture",
+                "key": "PickUp_02"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/PickUps/PickUp_03.png"
+                },
+                "type": "texture",
+                "key": "PickUp_03"
             },
             {
                 "url": {
