@@ -94,7 +94,7 @@ export class LobbyScene extends Phaser.Scene {
       }
     };
 
-    this.stageClient.onScreenChanged = screen => {
+    this.stageClient.onScreenChanged = () => {
       this.scene.start("GameScene");
     };
 

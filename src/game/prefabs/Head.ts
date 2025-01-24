@@ -17,6 +17,8 @@ class Head extends Phaser.Physics.Arcade.Image {
 		this.scaleY = 0.5;
 		scene.physics.add.existing(this, false);
 		this.body.setCircle(64);
+		// awake handler
+		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
 		// Create boundaries
@@ -30,11 +32,22 @@ class Head extends Phaser.Physics.Arcade.Image {
 
 		// Add collision between head and boundaries
 		scene.physics.add.collider(this, [leftBoundary, rightBoundary]);
+
 		/* END-USER-CTR-CODE */
 	}
 
 	/* START-USER-CODE */
-
+	awake() {
+		// Create a looping rotation tween
+		this.scene.tweens.add({
+			targets: this,
+			duration: 1500,
+			yoyo: true,
+			repeat: -1,
+			ease: 'Sine.easeInOut',
+			angle: { from: -20, to: 20 }
+		});
+	}
 	// Write your code here.
 
 	/* END-USER-CODE */
