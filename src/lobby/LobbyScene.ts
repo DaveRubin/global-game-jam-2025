@@ -67,7 +67,7 @@ export class LobbyScene extends Phaser.Scene {
     });
 
     this.stageClient.onPlayerAssignedCallbacks = (player) => {
-      this.players[player.color].visible = player.isAssigned;
+      this.players[player.color].visible = !!player.assignedTo;
     };
     this.stageClient.onPlayerReadyCallbacks = (player) => {
       const playerRect = this.players[player.color].fillColor;
