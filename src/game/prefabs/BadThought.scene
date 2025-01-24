@@ -10,22 +10,79 @@
     },
     "displayList": [
         {
-            "type": "ArcadeSprite",
-            "id": "c3aac5e2-841a-44ea-b565-b63ed9c0c2e8",
-            "label": "arcadesprite_1",
-            "texture": {
-                "key": "Obstacle_01"
-            },
+            "type": "Container",
+            "id": "ab821421-17a5-4ed7-93ac-77ff0e5c93f5",
+            "label": "container_1",
+            "blendMode": -1,
             "x": 343,
             "y": 322,
-            "tintTopLeft": "#dc0d07",
-            "tintTopRight": "#dc0d07",
-            "tintBottomLeft": "#dc0d07",
-            "tintBottomRight": "#dc0d07",
-            "physicsType": 1,
-            "allowGravity": false,
-            "body.width": 421,
-            "body.height": 542
+            "list": [
+                {
+                    "type": "ArcadeSprite",
+                    "id": "c3aac5e2-841a-44ea-b565-b63ed9c0c2e8",
+                    "label": "arcadesprite_1",
+                    "texture": {
+                        "key": "Obstacle_01"
+                    },
+                    "tintTopLeft": "#dc0d07",
+                    "tintTopRight": "#dc0d07",
+                    "tintBottomLeft": "#dc0d07",
+                    "tintBottomRight": "#dc0d07",
+                    "physicsType": 1,
+                    "allowGravity": false,
+                    "body.width": 421,
+                    "body.height": 542
+                },
+                {
+                    "type": "Image",
+                    "id": "79ef9c47-cb72-4be1-ba28-851d27b78aa1",
+                    "label": "image_1",
+                    "texture": {
+                        "key": "ObstacleFace"
+                    },
+                    "x": -20,
+                    "y": 23
+                },
+                {
+                    "type": "Container",
+                    "id": "80217374-2b75-44a8-a330-a832edaa2fd5",
+                    "label": "Active",
+                    "blendMode": -1,
+                    "x": -343,
+                    "y": -322
+                },
+                {
+                    "type": "Container",
+                    "id": "38f996b6-69bc-45a6-8697-e8692b624875",
+                    "label": "Disabled",
+                    "blendMode": -1,
+                    "x": -343,
+                    "y": -322,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "a03aabd8-6756-4ef2-8d10-9ac6ad0c4c58",
+                            "label": "Cloud",
+                            "texture": {
+                                "key": "Obstacle_Empty"
+                            },
+                            "x": 347,
+                            "y": 322
+                        },
+                        {
+                            "type": "Image",
+                            "id": "85d54436-782b-4435-b9f5-6d471e5d20de",
+                            "label": "image_2",
+                            "texture": {
+                                "key": "Obstacle_Empty_Face"
+                            },
+                            "x": 320,
+                            "y": 329
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "plainObjects": [],

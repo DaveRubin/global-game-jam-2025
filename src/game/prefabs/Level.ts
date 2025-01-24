@@ -55,19 +55,19 @@ class Level extends Phaser.GameObjects.Container {
 		this.add(background_02);
 
 		// nose
-		const nose = new Nose(scene, 117, -681);
+		const nose = new Nose(scene, 117, 894);
 		this.add(nose);
 
 		// nose_1
-		const nose_1 = new Nose(scene, 420, -670);
+		const nose_1 = new Nose(scene, 420, 905);
 		this.add(nose_1);
 
 		// nose_2
-		const nose_2 = new Nose(scene, 690, -679);
+		const nose_2 = new Nose(scene, 690, 896);
 		this.add(nose_2);
 
 		// nose_3
-		const nose_3 = new Nose(scene, 949, -676);
+		const nose_3 = new Nose(scene, 949, 899);
 		this.add(nose_3);
 
 		// mouth_1
@@ -90,31 +90,18 @@ class Level extends Phaser.GameObjects.Container {
 
 		// head
 		const head = new Head(scene, 538, 2045);
-		head.name = "head";
 		this.add(head);
 
 		// wall2
-		const wall2 = new Wall2(scene, 1138, 1617);
+		const wall2 = new Wall2(scene, 799, 1617);
 		this.add(wall2);
 
 		// wall_1
-		const wall_1 = new Wall1(scene, 294, 270);
+		const wall_1 = new Wall1(scene, 294, 501);
 		this.add(wall_1);
 
-		// collectible2
-		const collectible2 = new Collectible2(scene, 312, 1811);
-		this.add(collectible2);
-
-		// collectible3
-		const collectible3 = new Collectible3(scene, 453, 1528);
-		this.add(collectible3);
-
-		// collectible1
-		const collectible1 = new Collectible1(scene, 395, 1011);
-		this.add(collectible1);
-
 		// badThought
-		const badThought = new BadThought(scene, 894, 1131);
+		const badThought = new BadThought(scene, 331, 1885);
 		this.add(badThought);
 
 		// nose (prefab fields)

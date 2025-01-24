@@ -156,10 +156,24 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Player/Head_HalfPissed.png"
+                },
+                "type": "texture",
+                "key": "Head_HalfPissed"
+            },
+            {
+                "url": {
                     "IMG": "public/Head_Idle.png"
                 },
                 "type": "texture",
                 "key": "Head_Idle"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Player/Head_Pissed.png"
+                },
+                "type": "texture",
+                "key": "Head_Pissed"
             },
             {
                 "url": {
