@@ -12,6 +12,7 @@ const IDLE_IMAGE = "mouthIdle";
 const BLOW_IMAGE = "mouthBlow";
 const VFX_IMAGE = "mouth_Wind_fx";
 const EFFECT_IMAGE = "effect";
+
 export const coloredImages = [IDLE_IMAGE, BLOW_IMAGE];
 /* START OF COMPILED CODE */
 
@@ -54,8 +55,8 @@ class Mouth extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public property: "p1"|"p2"|"p3"|"p4" = "p1";
-	public property_1: "p1"|"p2"|"p3"|"p4" = "p1";
+	public property: "p1" | "p2" | "p3" | "p4" = "p1";
+	public property_1: "p1" | "p2" | "p3" | "p4" = "p1";
 
 	/* START-USER-CODE */
 	awake() {
