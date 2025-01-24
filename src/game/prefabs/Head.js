@@ -19,7 +19,8 @@ class Head extends Phaser.Physics.Arcade.Image {
 		this.body.angularAcceleration = 5;
 		this.body.angularDrag = 5;
 		this.body.angularVelocity = 5;
-		this.body.setCircle(64);
+		this.body.setOffset(100, 100);
+		this.body.setCircle(310);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
@@ -56,15 +57,6 @@ class Head extends Phaser.Physics.Arcade.Image {
 		// Check for overlaps with other physics objects
 		// Enable checking if body is overlapping
 		this.body.onOverlap = true;
-
-		// Listen for overlap start
-		this.body.world.on('overlap', (gameObject1, gameObject2) => {
-
-			console.log("🚀 ~ Head ~ this.body.world.on ~ gameObject1:", gameObject1.constructor.name)
-			if (gameObject1.constructor.name.startsWith("Collectible")) {
-				gameObject1.collect();
-			}
-		});
 	}
 	// Write your code here.
 

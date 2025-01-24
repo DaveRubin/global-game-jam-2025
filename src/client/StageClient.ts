@@ -1,10 +1,10 @@
-import {get, getDatabase, onValue, ref, set} from "firebase/database";
-import {GameState, GameStateScreen} from "./GameState";
-import {GameStatePlayer} from "./GameStatePlayer";
-import {PlayerColor} from "../game/PlayerColor";
-import {initializeApp} from "firebase/app";
-import {firebaseConfig} from "./config";
-import {StateScreenCallback} from "./PlayerCilent.ts";
+import { get, getDatabase, onValue, ref, set } from "firebase/database";
+import { GameState, GameStateScreen } from "./GameState";
+import { GameStatePlayer } from "./GameStatePlayer";
+import { PlayerColor } from "../game/PlayerColor";
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from "./config";
+import { StateScreenCallback } from "./PlayerCilent.ts";
 
 type PlayerStateCallback = (player: GameStatePlayer) => void;
 type ColorStateCallback = (color: PlayerColor | string, isOn: boolean) => void;
@@ -14,10 +14,10 @@ export class StageClient {
   root = "ggj2025";
   db = getDatabase(this.app);
 
-  onScreenChanged: StateScreenCallback = (_) => {};
-  onPlayerReadyCallbacks: PlayerStateCallback = (_) => {};
-  onPlayerOnCallbacks: ColorStateCallback = (_) => {};
-  onPlayerAssignedCallbacks: PlayerStateCallback = (_) => {};
+  onScreenChanged: StateScreenCallback = (_) => { };
+  onPlayerReadyCallbacks: PlayerStateCallback = (_) => { };
+  onPlayerOnCallbacks: ColorStateCallback = (_) => { };
+  onPlayerAssignedCallbacks: PlayerStateCallback = (_) => { };
   currentGameState: GameState = this.createGameState();
   gameId!: string;
 
@@ -97,7 +97,7 @@ export class StageClient {
     set(ref(this.db, path), this.currentGameState);
   }
 
-  private distributeColors(isRandomized = false) {
+  public distributeColors(isRandomized = false) {
     const allColors = [
       PlayerColor.BLUE,
       PlayerColor.GREEN,
@@ -107,13 +107,13 @@ export class StageClient {
 
     // Filter players who are assigned
     const assignedPlayers = Object.values(this.currentGameState.players).filter(
-        (player) => !!player.assignedTo
+      (player) => !!player.assignedTo
     );
 
     // Shuffle colors if isRandomized is true
     const colors = isRandomized
-        ? [...allColors].sort(() => Math.random() - 0.5)
-        : [...allColors];
+      ? [...allColors].sort(() => Math.random() - 0.5)
+      : [...allColors];
 
     Object.values(this.currentGameState.players).forEach((player) => {
       player.colors = [];
@@ -192,7 +192,7 @@ export class StageClient {
   }
 
   shutdown() {
-      this.currentGameState.screen = GameStateScreen.DISCONNECTED;
-      this.updateState();
+    this.currentGameState.screen = GameStateScreen.DISCONNECTED;
+    this.updateState();
   }
 }

@@ -25,8 +25,11 @@
             "angularDrag": 5,
             "angularVelocity": 5,
             "bodyGeometry": 0,
+            "radius": 310,
             "body.width": 128,
-            "body.height": 128
+            "body.height": 128,
+            "body.offset.x": 100,
+            "body.offset.y": 100
         }
     ],
     "plainObjects": [],
