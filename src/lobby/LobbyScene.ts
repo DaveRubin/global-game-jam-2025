@@ -2,6 +2,9 @@ import { getStageClient } from "../client/BaseClient";
 import { StageClient } from "../client/StageClient";
 import { PlayerColor } from "../game/PlayerColor";
 import encodeQR from "@paulmillr/qr";
+import { Lobby } from "./Lobby";
+import { GAME_WIDTH, GAME_HEIGHT } from "../game/consts";
+
 
 let debugKeyCount = 0;
 let debugKeyTimeout;
@@ -37,9 +40,11 @@ export class LobbyScene extends Phaser.Scene {
   }
 
   create() {
-    this.add.text(100, 100, "Lobby");
 
-    const playerY = 300;
+    const lobby = new Lobby(this);
+    this.add.existing(lobby);
+
+    const playerY = 0;
     this.bluePlayer = this.add.rectangle(
       50,
       playerY,
@@ -97,7 +102,7 @@ export class LobbyScene extends Phaser.Scene {
       this.scene.start("GameScene");
     };
 
-    this.add.sprite(900, 900, "qr-code");
+    this.add.sprite(GAME_WIDTH / 2, GAME_HEIGHT / 2, "qr-code");
 
     this.input.keyboard.on("keydown", (event) => {
       if (event.key.toLowerCase() === DEBUG_KEY) {

@@ -1,4 +1,4 @@
-import { Head } from "./prefabs/Head";
+import { Head2 } from "./prefabs/Head2";
 
 export class CollectibleBase extends Phaser.Physics.Arcade.Image {
     constructor(scene: Phaser.Scene, x: number, y: number, texture: string, frame?: number | string) {
@@ -11,7 +11,7 @@ export class CollectibleBase extends Phaser.Physics.Arcade.Image {
     }
 
     awake() {
-        this.scene.physics.add.overlap(this, Head.instance, () => this.collect());
+        this.scene.physics.add.overlap(this, Head2.instance, () => this.collect());
     }
 
     collect() {

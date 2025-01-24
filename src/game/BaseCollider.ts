@@ -1,4 +1,4 @@
-import { Head } from "./prefabs/Head";
+import { Head2 } from "./prefabs/Head2";
 
 export class BaseCollider extends Phaser.Physics.Arcade.Sprite {
     constructor(scene: Phaser.Scene, x: number, y: number, texture: string, frame?: number | string) {
@@ -13,6 +13,6 @@ export class BaseCollider extends Phaser.Physics.Arcade.Sprite {
     }
 
     awake() {
-        this.scene.physics.add.collider(Head.instance, this);
+        this.scene.physics.add.collider(Head2.instance, this);
     }
 }

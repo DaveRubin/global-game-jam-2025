@@ -1,9 +1,8 @@
 {
-    "id": "a2419916-9652-4973-9383-dcf21f09337b",
+    "id": "c8e86ec0-2862-43df-a41c-5a06b7096488",
     "sceneType": "PREFAB",
     "settings": {
         "generateAwakeHandler": true,
-        "superClassName": "Phaser.Physics.Arcade.Image",
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": ""
@@ -11,7 +10,7 @@
     "displayList": [
         {
             "type": "Container",
-            "id": "2a977c12-2bd6-462d-93c9-bc38ee978842",
+            "id": "6ac2cc1e-4ce4-49ec-a295-24e7cdfe3b08",
             "label": "container_1",
             "blendMode": -1,
             "scaleX": 0.5,
@@ -19,7 +18,7 @@
             "list": [
                 {
                     "type": "Image",
-                    "id": "f0204c47-3d85-417b-906a-74b2fca40051",
+                    "id": "66a1dbf9-a885-4c71-b082-33ff699b52d8",
                     "label": "head_Idle",
                     "useGameObjectName": true,
                     "texture": {
@@ -30,17 +29,14 @@
                 },
                 {
                     "type": "Sprite",
-                    "id": "2194323d-a2d2-4304-bb89-fb2948dc5091",
-                    "label": "DeathSeq",
-                    "displayName": "DeathSeq",
+                    "id": "3036ba75-8767-47e0-9ba2-622ad08a1624",
+                    "label": "death_01",
                     "useGameObjectName": true,
                     "texture": {
                         "key": "Death_01"
                     },
-                    "y": 18,
                     "scaleX": 0.5,
-                    "scaleY": 0.5,
-                    "visible": false
+                    "scaleY": 0.5
                 }
             ]
         }

@@ -39,18 +39,6 @@
                     "y": 2293
                 },
                 {
-                    "type": "Image",
-                    "id": "1b882f3c-4c38-4bb3-b1f9-8f514bf49834",
-                    "label": "ref",
-                    "texture": {
-                        "key": "Ref"
-                    },
-                    "x": 3309,
-                    "y": -2289,
-                    "scaleX": 4,
-                    "scaleY": 4
-                },
-                {
                     "prefabId": "f889b80a-a443-4d72-a67d-d9bbe0ab009a",
                     "id": "8ebee859-10f9-42f3-a8fd-d9cfe0820789",
                     "unlock": [
@@ -211,19 +199,6 @@
                     "y": 651
                 },
                 {
-                    "prefabId": "a2419916-9652-4973-9383-dcf21f09337b",
-                    "id": "b06ea815-ee1b-4e09-8614-add7f6811204",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "head",
-                    "displayName": "head",
-                    "useGameObjectName": true,
-                    "x": 538,
-                    "y": 2045
-                },
-                {
                     "prefabId": "d7ad529b-d006-4116-8863-a029760214eb",
                     "id": "affaa79c-7ab4-494b-89db-38ddca0168b9",
                     "unlock": [
@@ -301,6 +276,17 @@
                     "label": "nose_4",
                     "x": 251,
                     "y": 943
+                },
+                {
+                    "prefabId": "c8e86ec0-2862-43df-a41c-5a06b7096488",
+                    "id": "50dc079f-3472-41a1-b5fa-f5c1e91bbc61",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "head2",
+                    "x": 536,
+                    "y": 2052
                 }
             ]
         }

@@ -5,7 +5,7 @@ import { Wall1 } from "./Wall1";
 import { Mouth } from "./Mouth";
 import { Rainbow } from "./Rainbow";
 import { Nose } from "./Nose";
-import { Head } from "./Head";
+import { Head2 } from "./Head2";
 import { Wall2 } from "./Wall2";
 import { BadThought } from "./BadThought";
 import { Bills } from "./Bills";
@@ -35,12 +35,6 @@ class Level extends Phaser.GameObjects.Container {
 		// bod_v01
 		const bod_v01 = scene.add.image(534, 2293, "Bod_v01");
 		this.add(bod_v01);
-
-		// ref
-		const ref = scene.add.image(3309, -2289, "Ref");
-		ref.scaleX = 4;
-		ref.scaleY = 4;
-		this.add(ref);
 
 		// wall1
 		const wall1 = new Wall1(scene, 2345, -2024);
@@ -95,11 +89,6 @@ class Level extends Phaser.GameObjects.Container {
 		const mouth = new Mouth(scene, 235, 651);
 		this.add(mouth);
 
-		// head
-		const head = new Head(scene, 538, 2045);
-		head.name = "head";
-		this.add(head);
-
 		// wall2
 		const wall2 = new Wall2(scene, 1324, 386);
 		wall2.angle = 0;
@@ -128,6 +117,10 @@ class Level extends Phaser.GameObjects.Container {
 		// nose_4
 		const nose_4 = new Nose(scene, 251, 943);
 		this.add(nose_4);
+
+		// head2
+		const head2 = new Head2(scene, 536, 2052);
+		this.add(head2);
 
 		// rainbow (prefab fields)
 		rainbow.text = "150m";
