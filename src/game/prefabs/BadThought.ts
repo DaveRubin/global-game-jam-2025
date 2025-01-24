@@ -5,7 +5,7 @@
 
 interface BadThought {
 
-	 body: Phaser.Physics.Arcade.StaticBody;
+	body: Phaser.Physics.Arcade.StaticBody;
 }
 
 class BadThought extends Phaser.Physics.Arcade.Sprite {
@@ -30,10 +30,11 @@ class BadThought extends Phaser.Physics.Arcade.Sprite {
 
 	/* START-USER-CODE */
 	awake() {
-		this.play("Obstacle_02");
+		this.play("Obstacle");
 	}	/* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
 
 // You can write more code here
+export { BadThought };

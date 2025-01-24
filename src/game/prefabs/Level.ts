@@ -7,6 +7,7 @@ import { Rainbow } from "./Rainbow";
 import { Nose } from "./Nose";
 import { Head } from "./Head";
 import { Wall2 } from "./Wall2";
+import { BadThought } from "./BadThought";
 /* START OF COMPILED CODE */
 
 class Level extends Phaser.GameObjects.Container {
@@ -95,6 +96,10 @@ class Level extends Phaser.GameObjects.Container {
 		// wall_1
 		const wall_1 = new Wall1(scene, 294, 501);
 		this.add(wall_1);
+
+		// badThought
+		const badThought = new BadThought(scene, 312, 1458);
+		this.add(badThought);
 
 		// nose (prefab fields)
 		nose.property = "p1";
