@@ -96,10 +96,6 @@ class Level extends Phaser.GameObjects.Container {
 		const wall_1 = new Wall1(scene, 294, 501);
 		this.add(wall_1);
 
-		// badThought
-		const badThought = new BadThought(scene, 296, 1781);
-		this.add(badThought);
-
 		// nose (prefab fields)
 		nose.property = "p1";
 

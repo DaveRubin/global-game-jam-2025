@@ -241,17 +241,6 @@
                     "label": "wall_1",
                     "x": 294,
                     "y": 501
-                },
-                {
-                    "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
-                    "id": "7dd082f1-22ff-430d-8bb4-4c10e9629e9c",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "badThought",
-                    "x": 296,
-                    "y": 1781
                 }
             ]
         }
