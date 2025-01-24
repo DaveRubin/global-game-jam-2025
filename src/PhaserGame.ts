@@ -3,7 +3,7 @@ import { ConnectingScene } from "./ConnectingScene.js";
 import { LobbyScene } from "./lobby/LobbyScene.js";
 import { MobileScene } from "./mobile/MobileScene.js";
 import { MobileGameScene } from "./mobile/MobileGameScene.js";
-import { GameScene } from "./game/GameScene.ts.js";
+import { GameScene } from "./game/GameScene.ts";
 import { GAME_WIDTH, GAME_HEIGHT } from "./game/consts.js";
 
 const scenes = new URLSearchParams(window.location.search).has("edit-level")
