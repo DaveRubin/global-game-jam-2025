@@ -1,11 +1,15 @@
+import Phaser from "phaser";
 import { PLAYER_COLORS } from "../consts";
 import { getPlayerTrigger } from "../getPlayerTrigger";
+import { getTouchingPhysicsElement } from "../getTouchingPhysicsElement";
+
 
 // You can write more code here
 
 const SUCK_IMAGE = "noseSuck";
 const IDLE_IMAGE = "noseIdle";
 const VFX_IMAGE = "noseVfx";
+const EFFECT_IMAGE = "noseEffect";
 export const coloredImages = [SUCK_IMAGE, IDLE_IMAGE, VFX_IMAGE];
 
 /* START OF COMPILED CODE */
@@ -19,6 +23,7 @@ class Nose extends Phaser.GameObjects.Container {
 
 		// effect
 		const effect = scene.add.rectangle(0, 0, 128, 128);
+		effect.name = EFFECT_IMAGE;
 		effect.scaleX = 3.25;
 		effect.angle = -90;
 		effect.setOrigin(1, 0.5);
@@ -94,6 +99,17 @@ class Nose extends Phaser.GameObjects.Container {
 				ease: 'Linear'
 			});
 		}
+
+		const effect = this.list.find((child) => child.name === EFFECT_IMAGE) as Phaser.GameObjects.Rectangle;
+		const touchedBody = getTouchingPhysicsElement(this.scene, effect);
+
+		if (touchedBody?.body) {
+			touchedBody.body.velocity.add({
+				x: 0,
+				y: isDown ? -100 : 200
+			});
+		}
+
 	}
 
 	// Write your code here.
