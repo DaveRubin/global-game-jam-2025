@@ -3,7 +3,7 @@
 
 /* START OF COMPILED CODE */
 
-class Bills extends Phaser.GameObjects.Container {
+class Cigarete extends Phaser.GameObjects.Container {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
 		super(scene, x ?? 0, y ?? 0);
@@ -11,16 +11,14 @@ class Bills extends Phaser.GameObjects.Container {
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
 
 		// badThought
-		const badThought = new BadThought(scene, 0, 0);
+		const badThought = new BadThought(scene, 20, 43);
 		this.add(badThought);
 
-		// arcadesprite_1
-		const arcadesprite_1 = scene.physics.add.staticSprite(0, 0, "Bill");
-		arcadesprite_1.scaleX = 0.5;
-		arcadesprite_1.scaleY = 0.5;
-		arcadesprite_1.body.allowGravity = false;
-		arcadesprite_1.body.setSize(664, 666, false);
-		this.add(arcadesprite_1);
+		// image_1
+		const image_1 = scene.add.image(0, 0, "Ciggarete");
+		image_1.scaleX = 0.5;
+		image_1.scaleY = 0.5;
+		this.add(image_1);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
@@ -39,4 +37,4 @@ class Bills extends Phaser.GameObjects.Container {
 /* END OF COMPILED CODE */
 
 // You can write more code here
-export { Bills };
+export { Cigarete };

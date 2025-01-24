@@ -1,46 +1,40 @@
 {
-    "id": "d405d424-4825-47e4-89e9-ddd238ba00c8",
+    "id": "d0e466d3-b84f-4af4-8dae-bc3f1ff29a90",
     "sceneType": "PREFAB",
     "settings": {
         "generateAwakeHandler": true,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
-        "compilerOutputLanguage": "TYPE_SCRIPT",
-        "borderWidth": 1125,
-        "borderHeight": 2436
+        "compilerOutputLanguage": "TYPE_SCRIPT"
     },
     "displayList": [
         {
             "type": "Container",
-            "id": "5819472c-47a3-4033-93fe-b5d0800605f5",
+            "id": "963af954-d6ef-40f3-878f-28c6a728a0fc",
             "label": "container_1",
             "blendMode": -1,
             "list": [
                 {
                     "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
-                    "id": "66ee195b-8d8c-413b-a873-b478fa1252b3",
+                    "id": "f5fc90e0-4afd-4dc3-a201-a67781683e9f",
                     "unlock": [
                         "x",
                         "y"
                     ],
                     "label": "badThought",
-                    "x": 0,
-                    "y": 0
+                    "x": 20,
+                    "y": 43
                 },
                 {
-                    "type": "ArcadeSprite",
-                    "id": "a971dcd4-3338-41b7-9f36-84d47c3fc17e",
-                    "label": "arcadesprite_1",
+                    "type": "Image",
+                    "id": "8809a8fe-0713-4875-a6b8-bd76a4498b99",
+                    "label": "image_1",
                     "texture": {
-                        "key": "Bill"
+                        "key": "Ciggarete"
                     },
                     "scaleX": 0.5,
-                    "scaleY": 0.5,
-                    "physicsType": 1,
-                    "allowGravity": false,
-                    "body.width": 664,
-                    "body.height": 666
+                    "scaleY": 0.5
                 }
             ]
         }

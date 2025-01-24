@@ -6,7 +6,7 @@
 class BadThought extends Phaser.GameObjects.Container {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
-		super(scene, x ?? 343, y ?? 322);
+		super(scene, x ?? 0, y ?? 0);
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
 
@@ -29,24 +29,24 @@ class BadThought extends Phaser.GameObjects.Container {
 		this.add(image_1);
 
 		// Active
-		const active = scene.add.container(-343, -322);
+		const active = scene.add.container(0, 0);
 		active.blendMode = Phaser.BlendModes.SKIP_CHECK;
 		this.add(active);
 
 		// Disabled
-		const disabled = scene.add.container(-343, -322);
+		const disabled = scene.add.container(0, 0);
 		disabled.blendMode = Phaser.BlendModes.SKIP_CHECK;
 		disabled.visible = false;
 		this.add(disabled);
 
 		// Cloud
-		const cloud = scene.add.image(347, 322, "Obstacle_Empty");
+		const cloud = scene.add.image(0, 0, "Obstacle_Empty");
 		cloud.scaleX = 0.666;
 		cloud.scaleY = 0.666;
 		disabled.add(cloud);
 
 		// image_2
-		const image_2 = scene.add.image(320, 329, "Obstacle_Empty_Face");
+		const image_2 = scene.add.image(0, 0, "Obstacle_Empty_Face");
 		image_2.scaleX = 0.5;
 		image_2.scaleY = 0.5;
 		disabled.add(image_2);
