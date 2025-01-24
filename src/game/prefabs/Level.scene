@@ -167,7 +167,7 @@
                     "property": "p1",
                     "x": 68,
                     "y": 1390,
-                    "scaleX": -1,
+                    "scaleX": 1,
                     "scaleY": 1
                 },
                 {
@@ -219,6 +219,28 @@
                     "label": "head",
                     "x": 538,
                     "y": 2045
+                },
+                {
+                    "prefabId": "d7ad529b-d006-4116-8863-a029760214eb",
+                    "id": "affaa79c-7ab4-494b-89db-38ddca0168b9",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "wall2",
+                    "x": 799,
+                    "y": 1617
+                },
+                {
+                    "prefabId": "f889b80a-a443-4d72-a67d-d9bbe0ab009a",
+                    "id": "ab766a69-51e7-4dda-a128-5fea339189fa",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "wall_1",
+                    "x": 294,
+                    "y": 501
                 }
             ]
         }

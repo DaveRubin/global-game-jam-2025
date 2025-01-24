@@ -9,7 +9,8 @@ import { getTouchingPhysicsElement } from "../getTouchingPhysicsElement";
 const SUCK_IMAGE = "noseSuck";
 const IDLE_IMAGE = "noseIdle";
 const VFX_IMAGE = "noseVfx";
-const EFFECT_IMAGE = "noseEffect";
+const EFFECT_IMAGE = "effect";
+
 export const coloredImages = [SUCK_IMAGE, IDLE_IMAGE, VFX_IMAGE];
 
 /* START OF COMPILED CODE */
@@ -56,7 +57,7 @@ class Nose extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public property: "p1"|"p2"|"p3"|"p4" = "p1";
+	public property: "p1" | "p2" | "p3" | "p4" = "p1";
 
 	/* START-USER-CODE */
 	awake() {
