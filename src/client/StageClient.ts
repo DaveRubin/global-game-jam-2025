@@ -21,7 +21,7 @@ export class StageClient {
   currentGameState: GameState = this.createGameState();
   gameId!: string;
 
-  async connect(): Promise<string> {
+  async connect(): Promise<string | null> {
     const urlParams = new URLSearchParams(window.location.search);
     const testGameId = urlParams.get("test");
     this.gameId = testGameId ? testGameId : crypto.randomUUID();
