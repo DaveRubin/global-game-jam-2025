@@ -2,6 +2,7 @@
 // You can write more code here
 
 import { PLAYER_COLORS } from "../consts";
+import { getPlayerTrigger } from "../getPlayerTrigger";
 
 
 // You can write more code here
@@ -48,11 +49,12 @@ class Mouth extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public property: "p1"|"p2"|"p3"|"p4" = "p1";
-	public property_1: "p1"|"p2"|"p3"|"p4" = "p1";
+	public property: "p1" | "p2" | "p3" | "p4" = "p1";
+	public property_1: "p1" | "p2" | "p3" | "p4" = "p1";
 
 	/* START-USER-CODE */
 	awake() {
+		getPlayerTrigger(this.scene, this.property, (isDown) => this.onPlayerTrigger(isDown));
 		this.list.forEach((child) => {
 			if (coloredImages.includes(child.name)) {
 				console.log("Child name:", child.name);
@@ -62,6 +64,9 @@ class Mouth extends Phaser.GameObjects.Container {
 	}
 	// Write your code here.
 
+	onPlayerTrigger(isDown: boolean) {
+		console.log("Mouth:", isDown, this.property);
+	}
 	/* END-USER-CODE */
 }
 

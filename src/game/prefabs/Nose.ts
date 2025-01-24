@@ -1,4 +1,5 @@
 import { PLAYER_COLORS } from "../consts";
+import { getPlayerTrigger } from "../getPlayerTrigger";
 
 // You can write more code here
 export const coloredImages = ['noseSuck', 'noseIdle'];
@@ -46,21 +47,26 @@ class Nose extends Phaser.GameObjects.Container {
 		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
-		// awake handler
-		this.scene.events.once("scene-awake", this.awake, this);
+
 		/* END-USER-CTR-CODE */
 	}
 
-	public property: "p1"|"p2"|"p3"|"p4" = "p1";
+	public property: "p1" | "p2" | "p3" | "p4" = "p1";
 
 	/* START-USER-CODE */
 	awake() {
+		console.log("Nose awake", this.property);
+		getPlayerTrigger(this.scene, this.property, (isDown) => this.onPlayerTrigger(isDown));
 		this.list.forEach((child) => {
 			if (coloredImages.includes(child.name)) {
 				console.log("Child name:", child.name);
 				(child as Phaser.GameObjects.Image).setTint(PLAYER_COLORS[this.property]);
 			}
 		});
+	}
+
+	onPlayerTrigger(isDown: boolean) {
+		console.log("Nose:", isDown, this.property);
 	}
 
 	// Write your code here.
