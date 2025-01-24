@@ -22,14 +22,10 @@ class Nose extends Phaser.GameObjects.Container {
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
 
 		// effect
-		const effect = scene.add.rectangle(0, 0, 128, 128);
-		effect.name = EFFECT_IMAGE;
-		effect.scaleX = 3.25;
+		const effect = scene.add.image(0, 0, "AOE");
+		effect.name = "effect";
 		effect.angle = -90;
 		effect.setOrigin(1, 0.5);
-		effect.isFilled = true;
-		effect.fillColor = 16776960;
-		effect.fillAlpha = 0.4;
 		this.add(effect);
 
 		// noseSuck
@@ -60,7 +56,7 @@ class Nose extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public property: "p1" | "p2" | "p3" | "p4" = "p1";
+	public property: "p1"|"p2"|"p3"|"p4" = "p1";
 
 	/* START-USER-CODE */
 	awake() {

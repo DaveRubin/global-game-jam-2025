@@ -23,23 +23,23 @@ class Mouth extends Phaser.GameObjects.Container {
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
 
 		// effect
-		const effect = scene.add.rectangle(-3, 4, 128, 128);
+		const effect = scene.add.image(-3, 4, "AOE");
 		effect.name = "effect";
-		effect.scaleX = 4.1;
 		effect.setOrigin(1, 0.5);
-		effect.isFilled = true;
-		effect.fillColor = 16776960;
-		effect.fillAlpha = 0.4;
 		this.add(effect);
 
 		// mouthIdle
-		const mouthIdle = scene.add.image(0, 0, "MouthIdle");
+		const mouthIdle = scene.add.image(0, 0, "MouthIdle_1");
 		mouthIdle.name = "mouthIdle";
+		mouthIdle.scaleX = 0.5;
+		mouthIdle.scaleY = 0.5;
 		this.add(mouthIdle);
 
 		// mouthBlow
-		const mouthBlow = scene.add.image(0, 0, "MouthBlow");
+		const mouthBlow = scene.add.image(0, 0, "MouthBlow_1");
 		mouthBlow.name = "mouthBlow";
+		mouthBlow.scaleX = 0.5;
+		mouthBlow.scaleY = 0.5;
 		this.add(mouthBlow);
 
 		// mouth_Wind_fx
@@ -54,8 +54,8 @@ class Mouth extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public property: "p1" | "p2" | "p3" | "p4" = "p1";
-	public property_1: "p1" | "p2" | "p3" | "p4" = "p1";
+	public property: "p1"|"p2"|"p3"|"p4" = "p1";
+	public property_1: "p1"|"p2"|"p3"|"p4" = "p1";
 
 	/* START-USER-CODE */
 	awake() {
