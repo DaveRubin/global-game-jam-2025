@@ -57,8 +57,8 @@ class Mouth extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public property: "p1"|"p2"|"p3"|"p4" = "p1";
-	public property_1: "p1"|"p2"|"p3"|"p4" = "p1";
+	public property: "p1" | "p2" | "p3" | "p4" = "p1";
+	public property_1: "p1" | "p2" | "p3" | "p4" = "p1";
 
 	/* START-USER-CODE */
 	awake() {
@@ -71,7 +71,8 @@ class Mouth extends Phaser.GameObjects.Container {
 		});
 		const vfx = this.list.find((child) => child.name === VFX_IMAGE) as Phaser.GameObjects.Image;
 		vfx.setVisible(false);
-
+		// @ts-ignore
+		this.getByName("mouth_Wind_fx").play("Mouth_Wind_fx");
 	}
 	// Write your code here.
 
@@ -121,9 +122,7 @@ class Mouth extends Phaser.GameObjects.Container {
 		}
 	}
 
-	awake() {
-		this.play("Mouth_Wind_fx");
-	}
+
 	/* END-USER-CODE */
 }
 

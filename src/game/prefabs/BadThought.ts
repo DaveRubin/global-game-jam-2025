@@ -14,6 +14,7 @@ class BadThought extends Phaser.GameObjects.Container {
 		const arcadesprite_1 = scene.physics.add.staticSprite(0, 0, "Obstacle_01");
 		arcadesprite_1.scaleX = 0.666;
 		arcadesprite_1.scaleY = 0.666;
+		arcadesprite_1.name = "arcadesprite_1";
 		arcadesprite_1.tintTopLeft = 14421255;
 		arcadesprite_1.tintTopRight = 14421255;
 		arcadesprite_1.tintBottomLeft = 14421255;
@@ -61,7 +62,7 @@ class BadThought extends Phaser.GameObjects.Container {
 	/* START-USER-CODE */
 	awake() {
 		// @ts-ignore
-		this.play("Obstacle");
+		this.getByName("arcadesprite_1").play("Obstacle");
 	}	/* END-USER-CODE */
 }
 

@@ -21,6 +21,7 @@
                     "type": "ArcadeSprite",
                     "id": "04cca7df-42da-46b8-8619-40de5246e1b2",
                     "label": "checkpoint_v01",
+                    "useGameObjectName": true,
                     "texture": {
                         "key": "CheckPointRainbow_01"
                     },
@@ -37,6 +38,7 @@
                     "type": "Sprite",
                     "id": "04363a4b-6f67-45a1-91ab-d0d28e223d8f",
                     "label": "Cloud_L",
+                    "useGameObjectName": true,
                     "texture": {
                         "key": "CheckPointCloud_L_01"
                     },
@@ -49,6 +51,7 @@
                     "type": "Sprite",
                     "id": "5820ba7c-6a2b-4305-b2c0-c6b150620ea2",
                     "label": "Cloud_R",
+                    "useGameObjectName": true,
                     "texture": {
                         "key": "CheckPointCloud_R_01"
                     },
