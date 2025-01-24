@@ -138,13 +138,6 @@ class Level_One extends Phaser.GameObjects.Container {
 		collectible_1.angle = 72;
 		this.add(collectible_1);
 
-		// collectible_2
-		const collectible_2 = new Collectible3(scene, 544, -419);
-		collectible_2.scaleX = 0.5;
-		collectible_2.scaleY = 0.5;
-		collectible_2.angle = -180;
-		this.add(collectible_2);
-
 		// collectible_3
 		const collectible_3 = new Collectible1(scene, 177, -973);
 		collectible_3.scaleX = 0.5;

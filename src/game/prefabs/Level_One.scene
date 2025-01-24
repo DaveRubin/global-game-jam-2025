@@ -416,23 +416,6 @@
                     "angle": 72
                 },
                 {
-                    "prefabId": "80a3c23b-897f-4af9-aeb3-82f0b1e9b190",
-                    "id": "b3a7fa55-79f5-4e7e-9970-12d39d9e43d6",
-                    "unlock": [
-                        "x",
-                        "y",
-                        "scaleX",
-                        "scaleY",
-                        "angle"
-                    ],
-                    "label": "collectible_2",
-                    "x": 544,
-                    "y": -419,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5,
-                    "angle": -180
-                },
-                {
                     "prefabId": "d3c9b8d8-0f55-4b5c-bbe7-e2708c75f54d",
                     "id": "52c0ec7b-2cc9-4076-bd31-78f1873c861a",
                     "unlock": [

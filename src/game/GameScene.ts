@@ -4,6 +4,7 @@
 import Phaser from "phaser";
 import { Controller } from "./Controller";
 import { Level } from "./prefabs/Level";
+import { Level_One } from "./prefabs/Level_One";
 import { createAnimation } from "./createAnimation";
 import { Head } from "./prefabs/Head";
 
@@ -28,7 +29,7 @@ export class GameScene extends Phaser.Scene {
 
 		new Controller(this);
 		// Create and add level container to the scene
-		const level = new Level(this);
+		const level = new Level_One(this);
 		this.add.existing(level); // This adds the container to the display list
 		createAnimation(this, 'Cloud_A', 3);
 		createAnimation(this, 'Cloud_B', 3);
