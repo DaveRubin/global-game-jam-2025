@@ -27,3 +27,6 @@ document.addEventListener('touchstart', (event) => {
         event.preventDefault(); // Ensure interaction is limited to canvas
     }
 }, { passive: false });
+
+
+console.log('version', '0.0.1');
