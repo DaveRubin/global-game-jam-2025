@@ -51,12 +51,12 @@
                     "scaleY": 0.5
                 },
                 {
-                    "type": "Image",
+                    "type": "Sprite",
                     "id": "529ba5f6-0a84-4d64-8e66-b05a851e962e",
                     "label": "noseVfx",
                     "useGameObjectName": true,
                     "texture": {
-                        "key": "NoseVfx"
+                        "key": "SuckFx_02_01"
                     },
                     "x": -2,
                     "y": 197,

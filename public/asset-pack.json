@@ -212,6 +212,20 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Opening/GoTitle.png"
+                },
+                "type": "texture",
+                "key": "GoTitle"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Opening/GridFrame.png"
+                },
+                "type": "texture",
+                "key": "GridFrame"
+            },
+            {
+                "url": {
                     "IMG": "public/Sprites/Player/Hat.png"
                 },
                 "type": "texture",
@@ -247,10 +261,45 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Opening/Logo.png"
+                },
+                "type": "texture",
+                "key": "Logo"
+            },
+            {
+                "url": {
                     "IMG": "public/Mouth_Wind_fx.png"
                 },
                 "type": "texture",
                 "key": "Mouth_Wind_fx"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/VFX/Blow/Mouth_Wind_fx_01.png"
+                },
+                "type": "texture",
+                "key": "Mouth_Wind_fx_01"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/VFX/Blow/Mouth_Wind_fx_02.png"
+                },
+                "type": "texture",
+                "key": "Mouth_Wind_fx_02"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/VFX/Blow/Mouth_Wind_fx_03.png"
+                },
+                "type": "texture",
+                "key": "Mouth_Wind_fx_03"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/VFX/Blow/Mouth_Wind_fx_04.png"
+                },
+                "type": "texture",
+                "key": "Mouth_Wind_fx_04"
             },
             {
                 "url": {
@@ -366,6 +415,27 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Opening/PlayerBox.png"
+                },
+                "type": "texture",
+                "key": "PlayerBox"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Opening/ReadyBox.png"
+                },
+                "type": "texture",
+                "key": "ReadyBox"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Opening/ReadyTitle.png"
+                },
+                "type": "texture",
+                "key": "ReadyTitle"
+            },
+            {
+                "url": {
                     "IMG": "public/Ref.png"
                 },
                 "type": "texture",
@@ -396,6 +466,34 @@
                 },
                 "type": "spritesheet",
                 "key": "SuckFx_02"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/VFX/Suck/SuckFx_02_01.png"
+                },
+                "type": "texture",
+                "key": "SuckFx_02_01"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/VFX/Suck/SuckFx_02_02.png"
+                },
+                "type": "texture",
+                "key": "SuckFx_02_02"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/VFX/Suck/SuckFx_02_03.png"
+                },
+                "type": "texture",
+                "key": "SuckFx_02_03"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/VFX/Suck/SuckFx_02_04.png"
+                },
+                "type": "texture",
+                "key": "SuckFx_02_04"
             },
             {
                 "url": "public/Sprites/VFX/Suck/SuckFx_03.png",

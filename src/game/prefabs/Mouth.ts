@@ -44,9 +44,11 @@ class Mouth extends Phaser.GameObjects.Container {
 		this.add(mouthBlow);
 
 		// mouth_Wind_fx
-		const mouth_Wind_fx = scene.add.image(-139, 0, "Mouth_Wind_fx");
+		const mouth_Wind_fx = scene.add.sprite(-139, 0, "Mouth_Wind_fx_01");
 		mouth_Wind_fx.name = "mouth_Wind_fx";
 		this.add(mouth_Wind_fx);
+		// awake handler
+		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
 
@@ -55,8 +57,8 @@ class Mouth extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public property: "p1" | "p2" | "p3" | "p4" = "p1";
-	public property_1: "p1" | "p2" | "p3" | "p4" = "p1";
+	public property: "p1"|"p2"|"p3"|"p4" = "p1";
+	public property_1: "p1"|"p2"|"p3"|"p4" = "p1";
 
 	/* START-USER-CODE */
 	awake() {
@@ -117,6 +119,10 @@ class Mouth extends Phaser.GameObjects.Container {
 				}
 			}
 		}
+	}
+
+	awake() {
+		this.play("Mouth_Wind_fx");
 	}
 	/* END-USER-CODE */
 }

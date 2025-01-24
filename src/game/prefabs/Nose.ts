@@ -44,7 +44,7 @@ class Nose extends Phaser.GameObjects.Container {
 		this.add(noseIdle);
 
 		// noseVfx
-		const noseVfx = scene.add.image(-2, 197, "NoseVfx");
+		const noseVfx = scene.add.sprite(-2, 197, "SuckFx_02_01");
 		noseVfx.name = "noseVfx";
 		noseVfx.scaleX = 0.5;
 		noseVfx.scaleY = 0.5;
@@ -57,7 +57,7 @@ class Nose extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public property: "p1" | "p2" | "p3" | "p4" = "p1";
+	public property: "p1"|"p2"|"p3"|"p4" = "p1";
 
 	/* START-USER-CODE */
 	awake() {
@@ -110,6 +110,9 @@ class Nose extends Phaser.GameObjects.Container {
 	}
 
 	// Write your code here.
+	awake() {
+		this.play("SuckFx_02");
+	}
 
 	/* END-USER-CODE */
 }

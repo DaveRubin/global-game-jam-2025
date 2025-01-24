@@ -2,6 +2,7 @@
     "id": "d1732831-30db-4654-aaef-bf47e40a912d",
     "sceneType": "PREFAB",
     "settings": {
+        "generateAwakeHandler": true,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -49,12 +50,12 @@
                     "scaleY": 0.5
                 },
                 {
-                    "type": "Image",
+                    "type": "Sprite",
                     "id": "9b69ca15-1143-4fd7-b6f4-453980b90d5c",
                     "label": "mouth_Wind_fx",
                     "useGameObjectName": true,
                     "texture": {
-                        "key": "Mouth_Wind_fx"
+                        "key": "Mouth_Wind_fx_01"
                     },
                     "x": -139
                 }
