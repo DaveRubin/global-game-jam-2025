@@ -1,18 +1,11 @@
-
-const KEY_BINDING = {
-    player1: "A",
-    player2: "B",
-    player3: "C",
-    player4: "D",
-}
-
+import { KEY_BINDING } from "./consts";
 
 export class Controller {
     static status: { [key in keyof typeof KEY_BINDING]: boolean } = {
-        player1: false,
-        player2: false,
-        player3: false,
-        player4: false,
+        p1: false,
+        p2: false,
+        p3: false,
+        p4: false,
     }
 
     constructor(scene: Phaser.Scene) {

@@ -2,8 +2,8 @@
     "id": "1f70116c-2c3a-49a0-b4fd-fbc7b6601da8",
     "sceneType": "PREFAB",
     "settings": {
-        "snapWidth": 1125,
-        "snapHeight": 2436,
+        "snapWidth": 224.5,
+        "snapHeight": 385.75,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -26,17 +26,6 @@
                         "key": "Background_01"
                     },
                     "y": 108,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Image",
-                    "id": "a82ad3a2-15fa-48e4-9ff3-c74b40f2bb9d",
-                    "label": "background_02",
-                    "texture": {
-                        "key": "Background_02"
-                    },
-                    "y": -1106,
                     "originX": 0,
                     "originY": 0
                 },
@@ -91,19 +80,6 @@
                     "y": -2024
                 },
                 {
-                    "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
-                    "id": "b7b80581-49f8-4be2-a754-cbd9cb9797cb",
-                    "unlock": [
-                        "x",
-                        "y",
-                        "property"
-                    ],
-                    "label": "mouth",
-                    "property": "p3",
-                    "x": 5107,
-                    "y": -1570
-                },
-                {
                     "prefabId": "564a8c49-3f32-4cb7-a18c-3f845fbf2294",
                     "id": "b9330dc5-b6ad-4de3-b79a-970f5314ae76",
                     "unlock": [
@@ -113,6 +89,82 @@
                     "label": "rainbow",
                     "x": 0,
                     "y": 1237
+                },
+                {
+                    "type": "Image",
+                    "id": "a82ad3a2-15fa-48e4-9ff3-c74b40f2bb9d",
+                    "label": "background_02",
+                    "texture": {
+                        "key": "Background_02"
+                    },
+                    "y": -1106,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
+                    "id": "b7b80581-49f8-4be2-a754-cbd9cb9797cb",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property"
+                    ],
+                    "label": "mouth",
+                    "property": "p3",
+                    "x": 1087,
+                    "y": 661
+                },
+                {
+                    "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
+                    "id": "2282268c-9a26-4c5c-8590-b472cf4c362f",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property"
+                    ],
+                    "label": "nose",
+                    "property": "p1",
+                    "x": 117,
+                    "y": 894
+                },
+                {
+                    "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
+                    "id": "78d1d419-e5f0-4c5c-b312-b96e186a2daf",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property"
+                    ],
+                    "label": "nose_1",
+                    "property": "p2",
+                    "x": 420,
+                    "y": 905
+                },
+                {
+                    "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
+                    "id": "bbb77219-f043-44fa-9738-8edec1347d42",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property"
+                    ],
+                    "label": "nose_2",
+                    "property": "p3",
+                    "x": 690,
+                    "y": 896
+                },
+                {
+                    "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
+                    "id": "ef64b663-0a54-457d-a83d-400941679f08",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property"
+                    ],
+                    "label": "nose_3",
+                    "property": "p4",
+                    "x": 949,
+                    "y": 899
                 }
             ]
         }

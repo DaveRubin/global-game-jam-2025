@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import { KEY_BINDING } from "./consts";
 
 export class Bubble extends Phaser.Physics.Arcade.Image {
 
@@ -14,7 +15,7 @@ export class Bubble extends Phaser.Physics.Arcade.Image {
         this.setBounce(0.8);
 
         scene.events.on("update", this.update, this);
-        scene.events.on("player1-down", this.onPlayerStarted, this);
+        scene.events.on(KEY_BINDING.p1 + "-down", this.onPlayerStarted, this);
     }
 
     onPlayerStarted() {

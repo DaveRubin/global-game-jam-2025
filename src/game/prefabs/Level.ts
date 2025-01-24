@@ -4,6 +4,7 @@
 import { Wall1 } from "./Wall1";
 import { Mouth } from "./Mouth";
 import { Rainbow } from "./Rainbow";
+import { Nose } from "./Nose";
 /* START OF COMPILED CODE */
 
 class Level extends Phaser.GameObjects.Container {
@@ -17,11 +18,6 @@ class Level extends Phaser.GameObjects.Container {
 		const background_01 = scene.add.image(0, 108, "Background_01");
 		background_01.setOrigin(0, 0);
 		this.add(background_01);
-
-		// background_02
-		const background_02 = scene.add.image(0, -1106, "Background_02");
-		background_02.setOrigin(0, 0);
-		this.add(background_02);
 
 		// bod_v01
 		const bod_v01 = scene.add.image(534, 2293, "Bod_v01");
@@ -43,16 +39,49 @@ class Level extends Phaser.GameObjects.Container {
 		const wall = new Wall1(scene, 4151, -2024);
 		this.add(wall);
 
-		// mouth
-		const mouth = new Mouth(scene, 5107, -1570);
-		this.add(mouth);
-
 		// rainbow
 		const rainbow = new Rainbow(scene, 0, 1237);
 		this.add(rainbow);
 
+		// background_02
+		const background_02 = scene.add.image(0, -1106, "Background_02");
+		background_02.setOrigin(0, 0);
+		this.add(background_02);
+
+		// mouth
+		const mouth = new Mouth(scene, 1087, 661);
+		this.add(mouth);
+
+		// nose
+		const nose = new Nose(scene, 117, 894);
+		this.add(nose);
+
+		// nose_1
+		const nose_1 = new Nose(scene, 420, 905);
+		this.add(nose_1);
+
+		// nose_2
+		const nose_2 = new Nose(scene, 690, 896);
+		this.add(nose_2);
+
+		// nose_3
+		const nose_3 = new Nose(scene, 949, 899);
+		this.add(nose_3);
+
 		// mouth (prefab fields)
 		mouth.property = "p3";
+
+		// nose (prefab fields)
+		nose.property = "p1";
+
+		// nose_1 (prefab fields)
+		nose_1.property = "p2";
+
+		// nose_2 (prefab fields)
+		nose_2.property = "p3";
+
+		// nose_3 (prefab fields)
+		nose_3.property = "p4";
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
