@@ -1,6 +1,8 @@
 
 // You can write more code here
 
+import { CollectibleBase } from "../CollectibleBase";
+
 /* START OF COMPILED CODE */
 
 interface Head {
@@ -9,10 +11,11 @@ interface Head {
 }
 
 class Head extends Phaser.Physics.Arcade.Image {
+	static instance: Head;
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 0, y ?? 0, texture || "Head_Idle", frame);
-
+		Head.instance = this;
 		this.scaleX = 0.5;
 		this.scaleY = 0.5;
 		scene.physics.add.existing(this, false);
@@ -32,6 +35,7 @@ class Head extends Phaser.Physics.Arcade.Image {
 
 		// Add collision between head and boundaries
 		scene.physics.add.collider(this, [leftBoundary, rightBoundary]);
+		console.log("Head awake!");
 
 		/* END-USER-CTR-CODE */
 	}
@@ -46,6 +50,18 @@ class Head extends Phaser.Physics.Arcade.Image {
 			repeat: -1,
 			ease: 'Sine.easeInOut',
 			angle: { from: -20, to: 20 }
+		});
+		// Check for overlaps with other physics objects
+		// Enable checking if body is overlapping
+		this.body.onOverlap = true;
+
+		// Listen for overlap start
+		this.body.world.on('overlap', (gameObject1: Phaser.GameObjects.GameObject, gameObject2: Phaser.GameObjects.GameObject) => {
+
+			console.log("🚀 ~ Head ~ this.body.world.on ~ gameObject1:", gameObject1.constructor.name)
+			if (gameObject1.constructor.name.startsWith("Collectible")) {
+				(gameObject1 as CollectibleBase).collect();
+			}
 		});
 	}
 	// Write your code here.

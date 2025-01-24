@@ -69,7 +69,7 @@ export class StageClient {
   }
 
   private arePlayersReady(state: GameState): boolean {
-    const isAnyAssigned = Object.values(state.players).some(
+    const isAnyAssigned = Object.values(state.players).every(
       (player) => !!player.assignedTo
     );
     if (!isAnyAssigned) {

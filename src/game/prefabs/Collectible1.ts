@@ -1,9 +1,11 @@
 
 // You can write more code here
 
+import { CollectibleBase } from "../CollectibleBase";
+
 /* START OF COMPILED CODE */
 
-class Collectible1 extends Phaser.GameObjects.Image {
+class Collectible1 extends CollectibleBase {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 0, y ?? 0, texture || "collectible1", frame);
