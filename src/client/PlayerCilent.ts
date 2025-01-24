@@ -4,7 +4,7 @@ import { GameState } from "./GameState";
 import { GameStatePlayer } from "./GameStatePlayer";
 
 export class PlayerClient extends BaseClient {
-  private playerId: string = "";
+  private playerId: string = 0;
   private gameId: string;
 
   constructor(gameId: string) {
@@ -38,11 +38,11 @@ export class PlayerClient extends BaseClient {
   }
 
   private getFreePlayer(state: GameState): GameStatePlayer | undefined {
-    return state.players.find((player) => !player.isReady);
+    return Object.values(state.players).find((player) => !player.isReady);
   }
 
   private setPlayerReady(state: GameState, playerId: string) {
-    state.players.find((x) => x.id === playerId)!.isReady = true;
+    state.players[playerId].isReady = true;
     return state;
   }
 }

@@ -27,8 +27,13 @@ async function init() {
     const stageClient = new StageClient();
     const gameId = await stageClient.connect();
     console.log(`${window.location.pathname}?game-id=${gameId}`);
-    stageClient;
-    // Show QR Code
+
+    stageClient.onPlayerOnCallbacks = (player) => {
+      console.log("player on", player);
+    };
+    stageClient.onPlayerReadyCallbacks = (player) => {
+      console.log("player ready", player);
+    };
   }
 }
 
