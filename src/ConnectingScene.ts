@@ -10,6 +10,9 @@ async function init() {
   if (isHost) {
     const stageClient = getStageClient();
     const gameId = await stageClient.connect();
+    if (!gameId) {
+      return false;
+    }
     console.log(`${window.location.pathname}?game-id=${gameId}`);
 
     stageClient.onPlayerOnCallbacks = (player) => {
@@ -18,25 +21,37 @@ async function init() {
     stageClient.onPlayerReadyCallbacks = (player) => {
       console.log("player ready", player);
     };
+    window.addEventListener("beforeunload", (event) => {
+      stageClient.shutdown();
+    });
+    return true;
   } else {
     const playerClient = getPlayerClient();
     const playerId = await playerClient.connect();
     if (!playerId) {
       console.log("No player found");
-      return;
+      return false;
     }
     console.log("Player found", playerId);
+    window.addEventListener("beforeunload", (event) => {
+      playerClient.shutdown();
+    });
+    return true;
   }
 }
 
 export class ConnectingScene extends Phaser.Scene {
   async create() {
-    await init();
+    const success = await init();
+    if (!success) {
+      this.scene.start("MobileDisconnectedScene");
+      return;
+    }
 
     if (isHost()) {
       this.scene.start("LobbyScene");
     } else {
-      this.scene.start("MobileScene");
+      this.scene.start("MobileLobbyScene");
     }
   }
 }

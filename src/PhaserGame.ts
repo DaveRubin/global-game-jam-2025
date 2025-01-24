@@ -1,14 +1,15 @@
 import Phaser from "phaser";
 import { ConnectingScene } from "./ConnectingScene.js";
 import { LobbyScene } from "./lobby/LobbyScene.js";
-import { MobileScene } from "./mobile/MobileScene.js";
+import { MobileLobbyScene } from "./mobile/MobileLobbyScene.js";
 import { MobileGameScene } from "./mobile/MobileGameScene.js";
 import { GameScene } from "./game/GameScene.ts";
 import { GAME_WIDTH, GAME_HEIGHT } from "./game/consts.js";
+import {MobileDisconnectedScene} from "./mobile/MobileDisconnectedScene.ts";
 
 const scenes = new URLSearchParams(window.location.search).has("edit-level")
   ? GameScene
-  : [ConnectingScene, LobbyScene, MobileScene, MobileGameScene, GameScene];
+  : [ConnectingScene, LobbyScene, MobileLobbyScene, MobileGameScene, GameScene, MobileDisconnectedScene];
 
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
