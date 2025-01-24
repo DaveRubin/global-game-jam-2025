@@ -1,4 +1,5 @@
 import { getPlayerClient } from "../client/BaseClient";
+import { GameStateScreen } from "../client/GameState";
 import { PlayerClient } from "../client/PlayerCilent";
 
 export class MobileScene extends Phaser.Scene {
@@ -48,6 +49,9 @@ export class MobileScene extends Phaser.Scene {
 
     background.on("pointerup", () => {
       if (!this.playerClient.player.isReady) {
+        const isReady = this.playerClient.player.isReady;
+        this.playerClient.togglePlayerReady(!isReady);
+        readyText.setText(isReady ? "Not Ready" : "Ready");
         return;
       }
       this.playerClient.togglePlayerOn(false);
@@ -73,12 +77,10 @@ export class MobileScene extends Phaser.Scene {
       })
       .setOrigin(0.5);
 
-    readyButton.setInteractive();
-
-    readyButton.on("pointerup", () => {
-      const isReady = this.playerClient.player.isReady;
-      this.playerClient.togglePlayerReady(!isReady);
-      readyText.setText(isReady ? "Not Ready" : "Ready");
-    });
+    this.playerClient.onGameChangeScreen = (screen: GameStateScreen) => {
+      if (screen === GameStateScreen.GAME) {
+        this.game.scene.start("MobileGameScene");
+      }
+    };
   }
 }

@@ -1,10 +1,15 @@
 import { get, getDatabase, onValue, ref, set, update } from "firebase/database";
-import { GameState } from "./GameState";
+import { GameState, GameStateScreen } from "./GameState";
 import { GameStatePlayer } from "./GameStatePlayer";
 import { firebaseConfig } from "./config";
 import { initializeApp } from "firebase/app";
 
+export type PlayerStateScreenCallback = (screen: GameStateScreen) => void;
+
 export class PlayerClient {
+  onGameChangeScreen: PlayerStateScreenCallback = (screen) => {
+    console.log("PlayerStateScreenCallback", screen);
+  };
   gameId: string;
   private app = initializeApp(firebaseConfig);
   root = "ggj2025";
@@ -27,6 +32,12 @@ export class PlayerClient {
     this.player = player;
     this.setPlayerAssigned();
     console.log("join room ", gameSnapshot.val());
+
+    onValue(ref(this.db, `${this.root}/${this.gameId}/screen`), (snapshot) => {
+      const val: GameStateScreen = snapshot.val();
+      console.log("onValue screen", val);
+      this.onGameChangeScreen(val);
+    });
 
     return this.player;
   }

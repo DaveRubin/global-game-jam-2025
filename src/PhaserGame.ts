@@ -2,6 +2,7 @@ import Phaser from "phaser";
 import { ConnectingScene } from "./ConnectingScene.js";
 import { LobbyScene } from "./lobby/LobbyScene.js";
 import { MobileScene } from "./mobile/MobileScene.js";
+import { MobileGameScene } from "./mobile/MobileGameScene.js";
 const width = window.innerWidth;
 const height = window.innerHeight;
 
@@ -9,7 +10,7 @@ const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
   width,
   height,
-  scene: [ConnectingScene, LobbyScene, MobileScene],
+  scene: [ConnectingScene, LobbyScene, MobileScene, MobileGameScene],
   physics: {
     default: "arcade",
     arcade: {

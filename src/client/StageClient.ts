@@ -1,5 +1,5 @@
 import { getDatabase, onValue, ref, set } from "firebase/database";
-import { GameState } from "./GameState";
+import { GameState, GameStateScreen } from "./GameState";
 import { GameStatePlayer } from "./GameStatePlayer";
 import { PlayerColor } from "../game/PlayerColor";
 import { initializeApp } from "firebase/app";
@@ -16,23 +16,24 @@ export class StageClient {
   onPlayerOnCallbacks: PlayerStateCallback = (_) => {};
   onPlayerAssignedCallbacks: PlayerStateCallback = (_) => {};
   currentGameState: GameState = this.createGameState();
+  gameId!: string;
 
   async connect(): Promise<string> {
     const urlParams = new URLSearchParams(window.location.search);
     const testGameId = urlParams.get("test");
-    const gameId = testGameId ? testGameId : crypto.randomUUID();
+    this.gameId = testGameId ? testGameId : crypto.randomUUID();
     await set(ref(this.db, this.root), {
-      id: gameId,
+      id: this.gameId,
     });
-    const gameRef = ref(this.db, `${this.root}/${gameId}`);
+    const gameRef = ref(this.db, `${this.root}/${this.gameId}`);
     await set(gameRef, this.currentGameState);
     onValue(gameRef, (snapshot) => {
       const val = snapshot.val();
       console.log("onValue", val);
       this.handleGameStateChange(val);
     });
-    console.log("openRoom", gameId);
-    return gameId;
+    console.log("openRoom", this.gameId);
+    return this.gameId;
   }
 
   private handleGameStateChange(updatedGameState: GameState) {
@@ -54,10 +55,37 @@ export class StageClient {
       }
     });
     this.currentGameState = updatedGameState;
+
+    if (updatedGameState.screen === GameStateScreen.GAME) {
+      return;
+    }
+    if (this.arePlayersReady(updatedGameState)) {
+      this.currentGameState.screen = GameStateScreen.GAME;
+      this.updateState();
+    }
+  }
+
+  private arePlayersReady(state: GameState): boolean {
+    const isAnyAssigned = Object.values(state.players).some(
+      (player) => player.isAssigned
+    );
+    if (!isAnyAssigned) {
+      return false;
+    }
+    return Object.values(state.players).every(
+      (player) => player.isAssigned === player.isReady
+    );
+  }
+
+  private updateState() {
+    const path = `${this.root}/${this.gameId}`;
+    console.log("updateState", this.currentGameState);
+    set(ref(this.db, path), this.currentGameState);
   }
 
   private createGameState(): GameState {
     return {
+      screen: GameStateScreen.LOBBY,
       players: {
         p1: {
           id: "p1",
