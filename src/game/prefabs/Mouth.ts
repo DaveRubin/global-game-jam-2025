@@ -13,7 +13,7 @@ const BLOW_IMAGE = "mouthBlow";
 const VFX_IMAGE = "mouth_Wind_fx";
 const EFFECT_IMAGE = "effect";
 
-export const coloredImages = [IDLE_IMAGE, BLOW_IMAGE];
+export const coloredImages = [IDLE_IMAGE, BLOW_IMAGE, EFFECT_IMAGE];
 /* START OF COMPILED CODE */
 
 class Mouth extends Phaser.GameObjects.Container {
@@ -27,6 +27,11 @@ class Mouth extends Phaser.GameObjects.Container {
 		const effect = scene.add.image(-3, 4, "AOE");
 		effect.name = "effect";
 		effect.setOrigin(1, 0.5);
+		effect.alpha = 0.2;
+		effect.alphaTopLeft = 0.2;
+		effect.alphaTopRight = 0.2;
+		effect.alphaBottomLeft = 0.2;
+		effect.alphaBottomRight = 0.2;
 		this.add(effect);
 
 		// mouthIdle
@@ -44,9 +49,11 @@ class Mouth extends Phaser.GameObjects.Container {
 		this.add(mouthBlow);
 
 		// mouth_Wind_fx
-		const mouth_Wind_fx = scene.add.image(-139, 0, "Mouth_Wind_fx");
+		const mouth_Wind_fx = scene.add.sprite(-139, 0, "Mouth_Wind_fx_01");
 		mouth_Wind_fx.name = "mouth_Wind_fx";
 		this.add(mouth_Wind_fx);
+		// awake handler
+		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
 
@@ -55,8 +62,8 @@ class Mouth extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public property: "p1" | "p2" | "p3" | "p4" = "p1";
-	public property_1: "p1" | "p2" | "p3" | "p4" = "p1";
+	public property: "p1"|"p2"|"p3"|"p4" = "p1";
+	public property_1: "p1"|"p2"|"p3"|"p4" = "p1";
 
 	/* START-USER-CODE */
 	awake() {
@@ -69,7 +76,8 @@ class Mouth extends Phaser.GameObjects.Container {
 		});
 		const vfx = this.list.find((child) => child.name === VFX_IMAGE) as Phaser.GameObjects.Image;
 		vfx.setVisible(false);
-
+		// @ts-ignore
+		this.getByName("mouth_Wind_fx").play("Mouth_Wind_fx");
 	}
 	// Write your code here.
 
@@ -118,6 +126,8 @@ class Mouth extends Phaser.GameObjects.Container {
 			}
 		}
 	}
+
+
 	/* END-USER-CODE */
 }
 

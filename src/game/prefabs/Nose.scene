@@ -24,7 +24,12 @@
                         "key": "AOE"
                     },
                     "angle": -90,
-                    "originX": 1
+                    "originX": 1,
+                    "alpha": 0.2,
+                    "alphaTopLeft": 0.2,
+                    "alphaTopRight": 0.2,
+                    "alphaBottomLeft": 0.2,
+                    "alphaBottomRight": 0.2
                 },
                 {
                     "type": "Image",
@@ -51,12 +56,12 @@
                     "scaleY": 0.5
                 },
                 {
-                    "type": "Image",
+                    "type": "Sprite",
                     "id": "529ba5f6-0a84-4d64-8e66-b05a851e962e",
                     "label": "noseVfx",
                     "useGameObjectName": true,
                     "texture": {
-                        "key": "NoseVfx"
+                        "key": "SuckFx_02_01"
                     },
                     "x": -2,
                     "y": 197,

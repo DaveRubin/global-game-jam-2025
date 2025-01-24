@@ -2,6 +2,7 @@
     "id": "564a8c49-3f32-4cb7-a18c-3f845fbf2294",
     "sceneType": "PREFAB",
     "settings": {
+        "generateAwakeHandler": true,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -11,16 +12,69 @@
     },
     "displayList": [
         {
-            "type": "Image",
-            "id": "04cca7df-42da-46b8-8619-40de5246e1b2",
-            "label": "checkpoint_v01",
-            "texture": {
-                "key": "Checkpoint_v01"
-            },
-            "scaleX": 0.5,
-            "scaleY": 0.5,
-            "originX": 0,
-            "originY": 0
+            "type": "Container",
+            "id": "1cf9d05d-4a1f-490c-b767-2ea5ae451b61",
+            "label": "container_1",
+            "blendMode": -1,
+            "list": [
+                {
+                    "type": "ArcadeSprite",
+                    "id": "04cca7df-42da-46b8-8619-40de5246e1b2",
+                    "label": "checkpoint_v01",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "CheckPointRainbow_01"
+                    },
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "originX": 0,
+                    "originY": 0,
+                    "physicsType": 1,
+                    "allowGravity": false,
+                    "body.width": 2250,
+                    "body.height": 483
+                },
+                {
+                    "type": "Sprite",
+                    "id": "04363a4b-6f67-45a1-91ab-d0d28e223d8f",
+                    "label": "Cloud_L",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "CheckPointCloud_L_01"
+                    },
+                    "x": 56,
+                    "y": 126,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Sprite",
+                    "id": "5820ba7c-6a2b-4305-b2c0-c6b150620ea2",
+                    "label": "Cloud_R",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "CheckPointCloud_R_01"
+                    },
+                    "x": 1065,
+                    "y": 133,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Text",
+                    "id": "7609c423-ebee-4ceb-904d-cd7a13f32434",
+                    "label": "Meters",
+                    "x": 438,
+                    "y": 31,
+                    "tintTopLeft": "#000000",
+                    "tintTopRight": "#000000",
+                    "tintBottomLeft": "#000000",
+                    "tintBottomRight": "#000000",
+                    "text": "50m",
+                    "align": "center",
+                    "fontSize": "168px"
+                }
+            ]
         }
     ],
     "plainObjects": [],

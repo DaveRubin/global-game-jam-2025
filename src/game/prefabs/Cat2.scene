@@ -1,8 +1,7 @@
 {
-    "id": "3cb72746-1901-4457-8f7a-1bf97343dd15",
+    "id": "f44964e4-beea-4915-b3cf-85bd39c8580b",
     "sceneType": "PREFAB",
     "settings": {
-        "generateAwakeHandler": true,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -11,27 +10,27 @@
     "displayList": [
         {
             "type": "Container",
-            "id": "60b3e804-ffc0-49ee-9769-59dd1a265e8e",
+            "id": "0d2a859b-fc77-4a9f-b788-682c0917eb89",
             "label": "container_1",
             "blendMode": -1,
             "list": [
                 {
                     "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
-                    "id": "cd5aeb84-ea31-446b-ba3e-64eaffd5c93b",
+                    "id": "1bc34a09-b415-43dd-8b86-3b57f87930b0",
                     "unlock": [
                         "x",
                         "y"
                     ],
                     "label": "badThought",
-                    "x": -49,
+                    "x": 0,
                     "y": 0
                 },
                 {
                     "type": "Image",
-                    "id": "d699eac8-d826-4bf0-83dd-e4f280040415",
-                    "label": "cat",
+                    "id": "85c30267-d906-40ac-b881-b0abdc549fad",
+                    "label": "image_1",
                     "texture": {
-                        "key": "Cat_01"
+                        "key": "Cat_02"
                     },
                     "scaleX": 0.5,
                     "scaleY": 0.5

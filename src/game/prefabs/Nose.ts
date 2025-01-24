@@ -11,7 +11,7 @@ const IDLE_IMAGE = "noseIdle";
 const VFX_IMAGE = "noseVfx";
 const EFFECT_IMAGE = "effect";
 
-export const coloredImages = [SUCK_IMAGE, IDLE_IMAGE, VFX_IMAGE];
+export const coloredImages = [SUCK_IMAGE, IDLE_IMAGE, VFX_IMAGE, EFFECT_IMAGE];
 
 /* START OF COMPILED CODE */
 
@@ -27,6 +27,11 @@ class Nose extends Phaser.GameObjects.Container {
 		effect.name = "effect";
 		effect.angle = -90;
 		effect.setOrigin(1, 0.5);
+		effect.alpha = 0.2;
+		effect.alphaTopLeft = 0.2;
+		effect.alphaTopRight = 0.2;
+		effect.alphaBottomLeft = 0.2;
+		effect.alphaBottomRight = 0.2;
 		this.add(effect);
 
 		// noseSuck
@@ -44,7 +49,7 @@ class Nose extends Phaser.GameObjects.Container {
 		this.add(noseIdle);
 
 		// noseVfx
-		const noseVfx = scene.add.image(-2, 197, "NoseVfx");
+		const noseVfx = scene.add.sprite(-2, 197, "SuckFx_02_01");
 		noseVfx.name = "noseVfx";
 		noseVfx.scaleX = 0.5;
 		noseVfx.scaleY = 0.5;
@@ -57,7 +62,7 @@ class Nose extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public property: "p1" | "p2" | "p3" | "p4" = "p1";
+	public property: "p1"|"p2"|"p3"|"p4" = "p1";
 
 	/* START-USER-CODE */
 	awake() {
@@ -69,7 +74,8 @@ class Nose extends Phaser.GameObjects.Container {
 				(child as Phaser.GameObjects.Image).setTint(PLAYER_COLORS[this.property]);
 			}
 		});
-
+		// @ts-ignore
+		this.getByName("noseVfx").play("SuckFx_02");
 
 		const vfx = this.list.find((child) => child.name === VFX_IMAGE) as Phaser.GameObjects.Image;
 		vfx.setVisible(false);
@@ -110,6 +116,7 @@ class Nose extends Phaser.GameObjects.Container {
 	}
 
 	// Write your code here.
+
 
 	/* END-USER-CODE */
 }

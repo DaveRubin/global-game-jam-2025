@@ -3,7 +3,7 @@
 
 /* START OF COMPILED CODE */
 
-class Cat extends Phaser.GameObjects.Container {
+class Cat2 extends Phaser.GameObjects.Container {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
 		super(scene, x ?? 0, y ?? 0);
@@ -11,16 +11,14 @@ class Cat extends Phaser.GameObjects.Container {
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
 
 		// badThought
-		const badThought = new BadThought(scene, -49, 0);
+		const badThought = new BadThought(scene, 0, 0);
 		this.add(badThought);
 
-		// cat
-		const cat = scene.add.image(0, 0, "Cat_01");
-		cat.scaleX = 0.5;
-		cat.scaleY = 0.5;
-		this.add(cat);
-		// awake handler
-		this.scene.events.once("scene-awake", () => this.awake());
+		// image_1
+		const image_1 = scene.add.image(0, 0, "Cat_02");
+		image_1.scaleX = 0.5;
+		image_1.scaleY = 0.5;
+		this.add(image_1);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -37,4 +35,4 @@ class Cat extends Phaser.GameObjects.Container {
 /* END OF COMPILED CODE */
 
 // You can write more code here
-export { Cat };
+export { Cat2 };

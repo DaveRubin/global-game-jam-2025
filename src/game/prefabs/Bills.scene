@@ -1,40 +1,46 @@
 {
-    "id": "3cb72746-1901-4457-8f7a-1bf97343dd15",
+    "id": "d405d424-4825-47e4-89e9-ddd238ba00c8",
     "sceneType": "PREFAB",
     "settings": {
         "generateAwakeHandler": true,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
-        "compilerOutputLanguage": "TYPE_SCRIPT"
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1125,
+        "borderHeight": 2436
     },
     "displayList": [
         {
             "type": "Container",
-            "id": "60b3e804-ffc0-49ee-9769-59dd1a265e8e",
+            "id": "5819472c-47a3-4033-93fe-b5d0800605f5",
             "label": "container_1",
             "blendMode": -1,
             "list": [
                 {
                     "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
-                    "id": "cd5aeb84-ea31-446b-ba3e-64eaffd5c93b",
+                    "id": "66ee195b-8d8c-413b-a873-b478fa1252b3",
                     "unlock": [
                         "x",
                         "y"
                     ],
                     "label": "badThought",
-                    "x": -49,
+                    "x": 0,
                     "y": 0
                 },
                 {
-                    "type": "Image",
-                    "id": "d699eac8-d826-4bf0-83dd-e4f280040415",
-                    "label": "cat",
+                    "type": "ArcadeSprite",
+                    "id": "a971dcd4-3338-41b7-9f36-84d47c3fc17e",
+                    "label": "arcadesprite_1",
                     "texture": {
-                        "key": "Cat_01"
+                        "key": "Bill"
                     },
                     "scaleX": 0.5,
-                    "scaleY": 0.5
+                    "scaleY": 0.5,
+                    "physicsType": 1,
+                    "allowGravity": false,
+                    "body.width": 664,
+                    "body.height": 666
                 }
             ]
         }
