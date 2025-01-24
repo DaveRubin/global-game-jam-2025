@@ -32,7 +32,9 @@ export class GameScene extends Phaser.Scene {
 		createAnimation(this, 'Cloud_A', 3);
 		createAnimation(this, 'Cloud_B', 3);
 		createAnimation(this, 'Obstacle', 3);
-		//createAnimation(this, 'Rainbow', 3);
+		createAnimation(this, 'CheckPointRainbow', 3);
+		createAnimation(this, 'CheckPointCloud_L', 3);
+		createAnimation(this, 'CheckPointCloud_R', 3);
 
 
 		// Make camera follow the bubble

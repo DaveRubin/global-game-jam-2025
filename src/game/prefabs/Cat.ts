@@ -3,8 +3,6 @@
 
 /* START OF COMPILED CODE */
 
-import {BadThought} from "./BadThought.ts";
-
 class Cat extends Phaser.GameObjects.Container {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
@@ -21,6 +19,8 @@ class Cat extends Phaser.GameObjects.Container {
 		cat.scaleX = 0.5;
 		cat.scaleY = 0.5;
 		this.add(cat);
+		// awake handler
+		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.

@@ -86,6 +86,69 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Checkpoint/CheckPointCloud_L_01.png"
+                },
+                "type": "texture",
+                "key": "CheckPointCloud_L_01"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Checkpoint/CheckPointCloud_L_02.png"
+                },
+                "type": "texture",
+                "key": "CheckPointCloud_L_02"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Checkpoint/CheckPointCloud_L_03.png"
+                },
+                "type": "texture",
+                "key": "CheckPointCloud_L_03"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Checkpoint/CheckPointCloud_R_01.png"
+                },
+                "type": "texture",
+                "key": "CheckPointCloud_R_01"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Checkpoint/CheckPointCloud_R_02.png"
+                },
+                "type": "texture",
+                "key": "CheckPointCloud_R_02"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Checkpoint/CheckPointCloud_R_03.png"
+                },
+                "type": "texture",
+                "key": "CheckPointCloud_R_03"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Checkpoint/CheckPointRainbow_01.png"
+                },
+                "type": "texture",
+                "key": "CheckPointRainbow_01"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Checkpoint/CheckPointRainbow_02.png"
+                },
+                "type": "texture",
+                "key": "CheckPointRainbow_02"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Checkpoint/CheckPointRainbow_03.png"
+                },
+                "type": "texture",
+                "key": "CheckPointRainbow_03"
+            },
+            {
+                "url": {
                     "IMG": "public/Sprites/Obstacles/Ciggarete.png"
                 },
                 "type": "texture",
