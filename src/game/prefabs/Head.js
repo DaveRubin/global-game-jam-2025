@@ -5,7 +5,7 @@ import { CollectibleBase } from "../CollectibleBase";
 
 /* START OF COMPILED CODE */
 
-class Head extends Phaser.Physics.Arcade.Image {
+class Head extends Phaser.GameObjects.Container {
 
 	constructor(scene, x, y) {
 		super(scene, x ?? 0, y ?? 0);
@@ -14,6 +14,7 @@ class Head extends Phaser.Physics.Arcade.Image {
 
 		// head_Idle
 		const head_Idle = scene.physics.add.image(0, 0, "Head_Idle");
+		head_Idle.name = "head_Idle";
 		head_Idle.scaleX = 0.5;
 		head_Idle.scaleY = 0.5;
 		head_Idle.body.friction.x = 0;
@@ -27,17 +28,13 @@ class Head extends Phaser.Physics.Arcade.Image {
 		this.add(head_Idle);
 
 		// DeathSeq
-		const deathSeq = scene.physics.add.staticSprite(0, 18, "Death_01");
+		const deathSeq = scene.add.sprite(0, 18, "Death_01");
 		deathSeq.name = "DeathSeq";
 		deathSeq.scaleX = 0.5;
 		deathSeq.scaleY = 0.5;
 		deathSeq.visible = false;
-		deathSeq.body.allowGravity = false;
-		deathSeq.body.setSize(1084, 1072, false);
 		this.add(deathSeq);
-
-
-		scene.physics.add.existing(this, false);
+		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
@@ -53,8 +50,9 @@ class Head extends Phaser.Physics.Arcade.Image {
 		// Add collision between head and boundaries
 		scene.physics.add.collider(this, [leftBoundary, rightBoundary]);
 		console.log("Head awake!");
-		Head.instance = this;
-		this.body.onCollide = true;
+		Head.instance = head_Idle;
+		head_Idle.body.onCollide = true;
+		head_Idle.body.onOverlap = true;
 		/* END-USER-CTR-CODE */
 	}
 
@@ -63,7 +61,7 @@ class Head extends Phaser.Physics.Arcade.Image {
 	awake() {
 		// Create a looping rotation tween
 		this.scene.tweens.add({
-			targets: this,
+			targets: this.getByName("head_Idle"),
 			duration: 1500,
 			yoyo: true,
 			repeat: -1,
@@ -72,7 +70,7 @@ class Head extends Phaser.Physics.Arcade.Image {
 		});
 		// Check for overlaps with other physics objects
 		// Enable checking if body is overlapping
-		this.body.onOverlap = true;
+
 		this.getByName("DeathSeq").setVisible(true);
 		this.getByName("DeathSeq").play("Death");
 	}
