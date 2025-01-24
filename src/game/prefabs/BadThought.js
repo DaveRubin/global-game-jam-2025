@@ -9,6 +9,8 @@ class BadThought extends Phaser.GameObjects.Container {
 		super(scene, x ?? 343, y ?? 322);
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
+		this.scaleX = 0.5;
+		this.scaleY = 0.5;
 
 		// arcadesprite_1
 		const arcadesprite_1 = scene.physics.add.staticSprite(0, 0, "Obstacle_01");

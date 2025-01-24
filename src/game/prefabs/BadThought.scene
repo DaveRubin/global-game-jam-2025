@@ -15,6 +15,8 @@
             "blendMode": -1,
             "x": 343,
             "y": 322,
+            "scaleX": 0.5,
+            "scaleY": 0.5,
             "list": [
                 {
                     "type": "ArcadeSprite",

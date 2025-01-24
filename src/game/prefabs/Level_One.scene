@@ -1,0 +1,539 @@
+{
+    "id": "1f70116c-2c3a-49a0-b4fd-fbc7b6601dc2",
+    "sceneType": "PREFAB",
+    "settings": {
+        "snapWidth": 424,
+        "snapHeight": 538,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1125,
+        "borderHeight": 2436
+    },
+    "displayList": [
+        {
+            "type": "Layer",
+            "id": "ae90b587-8677-4b06-b771-cd61f9a23098",
+            "label": "layer_2",
+            "blendMode": -1,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "f6bbba55-43e0-4a49-a355-3b1d866dff67",
+                    "label": "background_01",
+                    "texture": {
+                        "key": "Background_01"
+                    },
+                    "y": 108,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "a82ad3a2-15fa-48e4-9ff3-c74b40f2bb9d",
+                    "label": "background_02",
+                    "texture": {
+                        "key": "Background_02"
+                    },
+                    "y": -844,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "060fa21c-9e1b-46a3-9429-a7a95990ff12",
+                    "label": "background",
+                    "texture": {
+                        "key": "Background_01"
+                    },
+                    "y": -4738,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "d2c612ec-2779-4432-b748-ab6766d257af",
+                    "label": "background_1",
+                    "texture": {
+                        "key": "Background_02"
+                    },
+                    "y": -3276,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "c3222de7-8547-4b6d-ab8d-eaf55afea324",
+                    "label": "background_2",
+                    "texture": {
+                        "key": "Background_01"
+                    },
+                    "y": -2213,
+                    "originX": 0,
+                    "originY": 0
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "0702a5a0-814b-47c0-bb8e-d20e47d77a3e",
+            "label": "container_1",
+            "blendMode": -1,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "bd371373-5b96-4dfe-8237-9e490db20b93",
+                    "label": "bod_v01",
+                    "texture": {
+                        "key": "Bod_v01"
+                    },
+                    "x": 586,
+                    "y": 2293
+                },
+                {
+                    "prefabId": "564a8c49-3f32-4cb7-a18c-3f845fbf2294",
+                    "id": "b9330dc5-b6ad-4de3-b79a-970f5314ae76",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "text"
+                    ],
+                    "label": "rainbow",
+                    "text": "250m",
+                    "x": 0,
+                    "y": -4365
+                },
+                {
+                    "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
+                    "id": "2eb5a79a-c769-4184-8f8d-6869bcc9906a",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "mouth_1",
+                    "property": "p2",
+                    "x": 1054,
+                    "y": -533,
+                    "scaleX": 1,
+                    "scaleY": 1
+                },
+                {
+                    "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
+                    "id": "7d82ac4f-718c-4cbc-9024-92195447e1fd",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "mouth_2",
+                    "property": "p2",
+                    "x": -990,
+                    "y": 436,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
+                    "id": "95d89e2a-36a1-46a0-ab8c-8f374163b363",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "mouth_3",
+                    "property": "p3",
+                    "x": -990,
+                    "y": 436,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
+                    "id": "b7b80581-49f8-4be2-a754-cbd9cb9797cb",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "mouth",
+                    "property": "p4",
+                    "x": -718,
+                    "y": 850,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "prefabId": "a2419916-9652-4973-9383-dcf21f09337b",
+                    "id": "b06ea815-ee1b-4e09-8614-add7f6811204",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "head",
+                    "displayName": "head",
+                    "x": 586,
+                    "y": 2055
+                },
+                {
+                    "prefabId": "d7ad529b-d006-4116-8863-a029760214eb",
+                    "id": "affaa79c-7ab4-494b-89db-38ddca0168b9",
+                    "unlock": [
+                        "angle",
+                        "flipX",
+                        "flipY",
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "wall2",
+                    "x": 545,
+                    "y": -747,
+                    "scaleX": 0.3,
+                    "scaleY": 0.3,
+                    "angle": 0,
+                    "flipX": true,
+                    "flipY": false
+                },
+                {
+                    "prefabId": "f889b80a-a443-4d72-a67d-d9bbe0ab009a",
+                    "id": "ab766a69-51e7-4dda-a128-5fea339189fa",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "wall_1",
+                    "x": -122,
+                    "y": 1103,
+                    "scaleX": 0.45,
+                    "scaleY": 0.45
+                },
+                {
+                    "prefabId": "f5032964-65e6-42bf-9151-20eb2b02b297",
+                    "id": "4ab43da3-1e60-4696-afc7-79b9c654be8f",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "collectible2",
+                    "x": 561,
+                    "y": 54,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "prefabId": "80a3c23b-897f-4af9-aeb3-82f0b1e9b190",
+                    "id": "1e2f23f0-8e71-4444-8b40-a8eb86909a9f",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "collectible3",
+                    "x": -1210,
+                    "y": -101,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "prefabId": "d3c9b8d8-0f55-4b5c-bbe7-e2708c75f54d",
+                    "id": "520628fc-8255-45e9-860d-02d24525c1d4",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "collectible1",
+                    "x": 561,
+                    "y": 603,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
+                    "id": "dce7ecf2-5b3c-4a66-b897-640f0d39130e",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "badThought",
+                    "x": -1660,
+                    "y": 313,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
+                    "id": "68b39703-ec4e-4300-89f4-f8d1f031c9be",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "nose_4",
+                    "x": 2616,
+                    "y": 248
+                },
+                {
+                    "prefabId": "80a3c23b-897f-4af9-aeb3-82f0b1e9b190",
+                    "id": "e1e1ec95-7430-4b3f-82ec-24ccfefed2a1",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "collectible",
+                    "x": 569,
+                    "y": 1049,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
+                    "id": "5d8ffe17-dde5-4581-9d22-55bb622c3de3",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "mouth_4",
+                    "property": "p1",
+                    "x": 1070,
+                    "y": -1411,
+                    "scaleX": 1,
+                    "scaleY": 1
+                },
+                {
+                    "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
+                    "id": "b10e7084-79d2-4f21-ac3a-838fc931ffd0",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "mouth_5",
+                    "property": "p4",
+                    "x": 46,
+                    "y": -1411,
+                    "scaleX": -1,
+                    "scaleY": 1
+                },
+                {
+                    "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
+                    "id": "fc9a4834-ab3b-475d-a338-56a4ee50816d",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "mouth_6",
+                    "property": "p3",
+                    "x": 35,
+                    "y": -533,
+                    "scaleX": -1,
+                    "scaleY": 1
+                },
+                {
+                    "prefabId": "d7ad529b-d006-4116-8863-a029760214eb",
+                    "id": "7e0fedd8-5514-4cef-aefa-e680081619da",
+                    "unlock": [
+                        "angle",
+                        "flipX",
+                        "flipY",
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "wall",
+                    "x": 143,
+                    "y": -1575,
+                    "scaleX": 0.3,
+                    "scaleY": 0.3,
+                    "angle": 0,
+                    "flipX": true,
+                    "flipY": false
+                },
+                {
+                    "prefabId": "d7ad529b-d006-4116-8863-a029760214eb",
+                    "id": "12471dd6-f5e7-4867-85eb-d044d7e0746d",
+                    "unlock": [
+                        "angle",
+                        "flipX",
+                        "flipY",
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "wall_2",
+                    "x": 945,
+                    "y": -1575,
+                    "scaleX": 0.3,
+                    "scaleY": 0.3,
+                    "angle": 0,
+                    "flipX": true,
+                    "flipY": false
+                },
+                {
+                    "prefabId": "f5032964-65e6-42bf-9151-20eb2b02b297",
+                    "id": "c537cb3c-cb8b-43e9-8565-15f6316740ec",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "angle"
+                    ],
+                    "label": "collectible_1",
+                    "x": 532,
+                    "y": -1488,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "angle": 72
+                },
+                {
+                    "prefabId": "80a3c23b-897f-4af9-aeb3-82f0b1e9b190",
+                    "id": "b3a7fa55-79f5-4e7e-9970-12d39d9e43d6",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "angle"
+                    ],
+                    "label": "collectible_2",
+                    "x": 544,
+                    "y": -419,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "angle": -180
+                },
+                {
+                    "prefabId": "d3c9b8d8-0f55-4b5c-bbe7-e2708c75f54d",
+                    "id": "52c0ec7b-2cc9-4076-bd31-78f1873c861a",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "collectible_3",
+                    "x": 177,
+                    "y": -973,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "prefabId": "80a3c23b-897f-4af9-aeb3-82f0b1e9b190",
+                    "id": "19280781-0972-434c-a365-34b29771573f",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "collectible_4",
+                    "x": 540,
+                    "y": -1981,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "prefabId": "d3c9b8d8-0f55-4b5c-bbe7-e2708c75f54d",
+                    "id": "e62c29f5-66a4-4fa4-9978-cdc547581be3",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "angle"
+                    ],
+                    "label": "collectible_5",
+                    "x": 928,
+                    "y": -972,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "angle": 91
+                },
+                {
+                    "prefabId": "f889b80a-a443-4d72-a67d-d9bbe0ab009a",
+                    "id": "f15d0e67-0447-4613-9cfc-e97c48457cee",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "wall_3",
+                    "x": 1252,
+                    "y": 460,
+                    "scaleX": -0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "prefabId": "d3c9b8d8-0f55-4b5c-bbe7-e2708c75f54d",
+                    "id": "83cd2154-84a1-41e3-b464-64f50d58c23c",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "angle"
+                    ],
+                    "label": "collectible_6",
+                    "x": 565,
+                    "y": 1539,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "angle": 50
+                },
+                {
+                    "prefabId": "d7ad529b-d006-4116-8863-a029760214eb",
+                    "id": "a42b60e2-c644-478e-8623-6a7ec2b6ecab",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "wall_6",
+                    "x": 1136,
+                    "y": 685,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

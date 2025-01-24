@@ -21,6 +21,8 @@ class Nose extends Phaser.GameObjects.Container {
 		super(scene, x ?? 0, y ?? 0);
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
+		this.scaleX = 0.75;
+		this.scaleY = 0.75;
 
 		// effect
 		const effect = scene.add.image(0, 0, "AOE");

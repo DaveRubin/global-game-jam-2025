@@ -5,12 +5,14 @@ import { CollectibleBase } from "../CollectibleBase";
 
 /* START OF COMPILED CODE */
 
-class Head extends Phaser.GameObjects.Container {
+class Head extends Phaser.Physics.Arcade.Image {
 
 	constructor(scene, x, y) {
 		super(scene, x ?? 0, y ?? 0);
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
+		this.scaleX = 0.5;
+		this.scaleY = 0.5;
 
 		// head_Idle
 		const head_Idle = scene.physics.add.image(0, 0, "Head_Idle");

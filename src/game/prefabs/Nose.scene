@@ -13,6 +13,8 @@
             "id": "3d9a9e9a-e666-411a-b5fc-7530f6429eb2",
             "label": "container_1",
             "blendMode": -1,
+            "scaleX": 0.75,
+            "scaleY": 0.75,
             "list": [
                 {
                     "type": "Image",

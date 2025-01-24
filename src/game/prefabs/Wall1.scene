@@ -16,8 +16,8 @@
             "texture": {
                 "key": "Cloud_A_01"
             },
-            "scaleX": 0.5,
-            "scaleY": 0.5,
+            "scaleX": 0.4,
+            "scaleY": 0.4,
             "physicsType": 1,
             "moves": false,
             "allowGravity": false,

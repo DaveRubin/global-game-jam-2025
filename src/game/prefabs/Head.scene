@@ -14,6 +14,8 @@
             "id": "2a977c12-2bd6-462d-93c9-bc38ee978842",
             "label": "container_1",
             "blendMode": -1,
+            "scaleX": 0.5,
+            "scaleY": 0.5,
             "list": [
                 {
                     "type": "ArcadeImage",

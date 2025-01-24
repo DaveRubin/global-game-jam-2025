@@ -15,8 +15,8 @@
             "texture": {
                 "key": "PickUp_01"
             },
-            "scaleX": 0.5,
-            "scaleY": 0.5
+            "scaleX": 0.3,
+            "scaleY": 0.3
         }
     ],
     "plainObjects": [],

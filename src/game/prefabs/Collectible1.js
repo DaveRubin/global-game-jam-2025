@@ -10,8 +10,8 @@ class Collectible1 extends CollectibleBase {
 	constructor(scene, x, y, texture, frame) {
 		super(scene, x ?? 0, y ?? 0, texture || "collectible1", frame);
 
-		this.scaleX = 0.5;
-		this.scaleY = 0.5;
+		this.scaleX = 0.3;
+		this.scaleY = 0.3;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.

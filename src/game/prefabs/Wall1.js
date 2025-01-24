@@ -10,8 +10,8 @@ class Wall1 extends BaseCollider {
 	constructor(scene, x, y, texture, frame) {
 		super(scene, x ?? 0, y ?? 0, texture || "Cloud_A_01", frame);
 
-		this.scaleX = 0.5;
-		this.scaleY = 0.5;
+		this.scaleX = 0.4;
+		this.scaleY = 0.4;
 		scene.physics.add.existing(this, true);
 		this.body.moves = false;
 		this.body.allowGravity = false;
