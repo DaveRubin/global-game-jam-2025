@@ -51,7 +51,7 @@ export class StageClient {
         console.log("player on", updatedPlayer);
         this.onPlayerOnCallbacks(updatedPlayer!);
       }
-      if (currentPlayer!.assignedTo !== updatedPlayer!.assignedTo) {
+      if (!!currentPlayer!.assignedTo !== !!updatedPlayer!.assignedTo) {
         console.log("player assigned", updatedPlayer);
         this.onPlayerAssignedCallbacks(updatedPlayer!);
       }
