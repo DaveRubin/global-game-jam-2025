@@ -55,8 +55,8 @@ class Nose extends Phaser.GameObjects.Container {
 
 	/* START-USER-CODE */
 	awake() {
-		console.log("Nose awake", this.property);
 		getPlayerTrigger(this.scene, this.property, (isDown) => this.onPlayerTrigger(isDown));
+		this.onPlayerTrigger(false);
 		this.list.forEach((child) => {
 			if (coloredImages.includes(child.name)) {
 				console.log("Child name:", child.name);
@@ -66,7 +66,11 @@ class Nose extends Phaser.GameObjects.Container {
 	}
 
 	onPlayerTrigger(isDown: boolean) {
-		console.log("Nose:", isDown, this.property);
+		const idleImage = this.list.find((child) => child.name === "noseIdle") as Phaser.GameObjects.Image;
+		const suckImage = this.list.find((child) => child.name === "noseSuck") as Phaser.GameObjects.Image;
+
+		idleImage.setVisible(!isDown);
+		suckImage.setVisible(isDown);
 	}
 
 	// Write your code here.

@@ -6,7 +6,9 @@ import { getPlayerTrigger } from "../getPlayerTrigger";
 
 
 // You can write more code here
-export const coloredImages = ['mouthIdle', 'mouthBlow'];
+const IDLE_IMAGE = "mouthIdle";
+const BLOW_IMAGE = "mouthBlow";
+export const coloredImages = [IDLE_IMAGE, BLOW_IMAGE];
 /* START OF COMPILED CODE */
 
 class Mouth extends Phaser.GameObjects.Container {
@@ -55,6 +57,7 @@ class Mouth extends Phaser.GameObjects.Container {
 	/* START-USER-CODE */
 	awake() {
 		getPlayerTrigger(this.scene, this.property, (isDown) => this.onPlayerTrigger(isDown));
+		this.onPlayerTrigger(false);
 		this.list.forEach((child) => {
 			if (coloredImages.includes(child.name)) {
 				console.log("Child name:", child.name);
@@ -65,7 +68,11 @@ class Mouth extends Phaser.GameObjects.Container {
 	// Write your code here.
 
 	onPlayerTrigger(isDown: boolean) {
-		console.log("Mouth:", isDown, this.property);
+		const idleImage = this.list.find((child) => child.name === "mouthIdle") as Phaser.GameObjects.Image;
+		const blowImage = this.list.find((child) => child.name === "mouthBlow") as Phaser.GameObjects.Image;
+
+		idleImage.setVisible(!isDown);
+		blowImage.setVisible(isDown);
 	}
 	/* END-USER-CODE */
 }
