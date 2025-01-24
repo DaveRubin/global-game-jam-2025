@@ -1,0 +1,150 @@
+{
+    "id": "bb5530a3-f862-4b35-bb05-49815f93eeba",
+    "sceneType": "PREFAB",
+    "settings": {
+        "snapWidth": 894,
+        "snapHeight": 547,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT"
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "2b16ef0c-eac1-484d-b7e2-b234b598632a",
+            "label": "container_1",
+            "blendMode": -1,
+            "list": [
+                {
+                    "prefabId": "f9d62b2f-f86e-4dfc-a19d-cd9669c2d9db",
+                    "id": "81c48d63-cbe4-4856-819f-22369e7b1945",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "P1_",
+                    "displayName": "P1",
+                    "useGameObjectName": true,
+                    "x": -164,
+                    "y": 240
+                },
+                {
+                    "prefabId": "f9d62b2f-f86e-4dfc-a19d-cd9669c2d9db",
+                    "id": "4f1e120e-3832-4a9d-a21e-25af70d37944",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "P2_",
+                    "displayName": "P2",
+                    "useGameObjectName": true,
+                    "x": -47,
+                    "y": 240
+                },
+                {
+                    "prefabId": "f9d62b2f-f86e-4dfc-a19d-cd9669c2d9db",
+                    "id": "d4e57ded-f0a8-464e-acf8-7c1ed804f3b9",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "P3_",
+                    "displayName": "P3",
+                    "useGameObjectName": true,
+                    "x": 57,
+                    "y": 240
+                },
+                {
+                    "prefabId": "f9d62b2f-f86e-4dfc-a19d-cd9669c2d9db",
+                    "id": "2e53662d-88fb-4ab1-ab66-cde3ad49efde",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "P4_",
+                    "displayName": "P4",
+                    "useGameObjectName": true,
+                    "x": 161,
+                    "y": 240
+                },
+                {
+                    "type": "Image",
+                    "id": "54ffd62d-71c6-4949-b3da-26fb3ea7c912",
+                    "label": "Frame",
+                    "texture": {
+                        "key": "GridFrame"
+                    },
+                    "y": 258,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Container",
+                    "id": "1dc74bf1-5a81-4091-8ef3-f100fee9619a",
+                    "label": "Go Container",
+                    "blendMode": -1,
+                    "x": -218,
+                    "y": 351,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "6c19eab8-8d7f-4fd2-8438-0bba8d2cc457",
+                            "label": "Bar",
+                            "texture": {
+                                "key": "ReadyBox"
+                            },
+                            "x": 217,
+                            "y": 19,
+                            "scaleX": 1.85,
+                            "scaleY": 0.5
+                        },
+                        {
+                            "type": "Image",
+                            "id": "cc032f36-4c92-488a-b9f6-48e5c0020c97",
+                            "label": "Go_Text",
+                            "texture": {
+                                "key": "GoTitle"
+                            },
+                            "x": 215,
+                            "y": 20,
+                            "scaleX": 0.5,
+                            "scaleY": 0.5
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "90d0c8c4-2323-41f2-9e06-0e60f93e34bf",
+                    "label": "C2A",
+                    "texture": {
+                        "key": "C2A"
+                    },
+                    "y": -129,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "c68b028f-b346-42f9-8992-51e8e371c01b",
+                    "label": "logo",
+                    "texture": {
+                        "key": "Logo"
+                    },
+                    "x": 1,
+                    "y": -377,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

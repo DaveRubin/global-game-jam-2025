@@ -58,6 +58,13 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Opening/C2A.png"
+                },
+                "type": "texture",
+                "key": "C2A"
+            },
+            {
+                "url": {
                     "IMG": "public/cat.png"
                 },
                 "type": "texture",

@@ -1,0 +1,79 @@
+{
+    "id": "f9d62b2f-f86e-4dfc-a19d-cd9669c2d9db",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT"
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "cc6c1a49-fdc4-4587-b425-1b854165bf69",
+            "label": "container_2",
+            "blendMode": -1,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "13875367-a05b-4876-9127-d8c92cf14097",
+                    "label": "P1_off",
+                    "texture": {
+                        "key": "PlayerBox"
+                    },
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "tintTopLeft": "#888809",
+                    "tintTopRight": "#888809",
+                    "tintBottomLeft": "#888809",
+                    "tintBottomRight": "#888809"
+                },
+                {
+                    "type": "Image",
+                    "id": "e5bc94ac-634b-426d-8a96-9ab35c7d5377",
+                    "label": "P1_On",
+                    "texture": {
+                        "key": "PlayerBox"
+                    },
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "visible": false,
+                    "tintTopLeft": "#fbfb53",
+                    "tintTopRight": "#fbfb53",
+                    "tintBottomLeft": "#fbfb53",
+                    "tintBottomRight": "#fbfb53"
+                },
+                {
+                    "type": "Image",
+                    "id": "fbdd4088-2ebb-46a4-a691-809a48027769",
+                    "label": "Ready",
+                    "texture": {
+                        "key": "ReadyBox"
+                    },
+                    "y": 131,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "9c297c18-b3db-4139-9a26-e2dfeed27c2c",
+                    "label": "ReadyText",
+                    "texture": {
+                        "key": "ReadyTitle"
+                    },
+                    "y": 131,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "visible": false
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
