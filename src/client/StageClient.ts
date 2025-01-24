@@ -1,22 +1,25 @@
-import { onValue, ref, set } from "firebase/database";
-import { BaseClient } from "./BaseClient";
+import { getDatabase, onValue, ref, set } from "firebase/database";
 import { GameState } from "./GameState";
 import { GameStatePlayer } from "./GameStatePlayer";
+import { PlayerColor } from "../game/PlayerColor";
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from "./config";
 
 type PlayerStateCallback = (player: GameStatePlayer) => void;
 
-export class StageClient extends BaseClient {
+export class StageClient {
+  private app = initializeApp(firebaseConfig);
+  root = "ggj2025";
+  db = getDatabase(this.app);
+
   onPlayerReadyCallbacks: PlayerStateCallback = (_) => {};
   onPlayerOnCallbacks: PlayerStateCallback = (_) => {};
+  onPlayerAssignedCallbacks: PlayerStateCallback = (_) => {};
   currentGameState: GameState = this.createGameState();
-
-  constructor() {
-    super();
-  }
 
   async connect(): Promise<string> {
     const urlParams = new URLSearchParams(window.location.search);
-    const testGameId = urlParams.get("test-game-id");
+    const testGameId = urlParams.get("test");
     const gameId = testGameId ? testGameId : crypto.randomUUID();
     await set(ref(this.db, this.root), {
       id: gameId,
@@ -38,10 +41,16 @@ export class StageClient extends BaseClient {
         (p) => p.id === currentPlayer.id
       );
       if (currentPlayer!.isReady !== updatedPlayer!.isReady) {
+        console.log("player ready", updatedPlayer);
         this.onPlayerReadyCallbacks(updatedPlayer!);
       }
       if (currentPlayer!.isOn !== updatedPlayer!.isOn) {
+        console.log("player on", updatedPlayer);
         this.onPlayerOnCallbacks(updatedPlayer!);
+      }
+      if (currentPlayer!.isAssigned !== updatedPlayer!.isAssigned) {
+        console.log("player assigned", updatedPlayer);
+        this.onPlayerAssignedCallbacks(updatedPlayer!);
       }
     });
     this.currentGameState = updatedGameState;
@@ -55,24 +64,32 @@ export class StageClient extends BaseClient {
           name: "Player 1",
           isOn: false,
           isReady: false,
+          isAssigned: false,
+          color: PlayerColor.BLUE,
         },
         p2: {
           id: "p2",
           name: "Player 2",
           isOn: false,
           isReady: false,
+          isAssigned: false,
+          color: PlayerColor.GREEN,
         },
         p3: {
           id: "p3",
           name: "Player 3",
           isOn: false,
           isReady: false,
+          isAssigned: false,
+          color: PlayerColor.YELLOW,
         },
         p4: {
           id: "p4",
           name: "Player 4",
           isOn: false,
           isReady: false,
+          isAssigned: false,
+          color: PlayerColor.RED,
         },
       },
     };
