@@ -8,6 +8,7 @@ import { getPlayerTrigger } from "../getPlayerTrigger";
 // You can write more code here
 const IDLE_IMAGE = "mouthIdle";
 const BLOW_IMAGE = "mouthBlow";
+const VFX_IMAGE = "mouth_Wind_fx";
 export const coloredImages = [IDLE_IMAGE, BLOW_IMAGE];
 /* START OF COMPILED CODE */
 
@@ -64,15 +65,33 @@ class Mouth extends Phaser.GameObjects.Container {
 				(child as Phaser.GameObjects.Image).setTint(PLAYER_COLORS[this.property]);
 			}
 		});
+		const vfx = this.list.find((child) => child.name === VFX_IMAGE) as Phaser.GameObjects.Image;
+		vfx.setVisible(false);
 	}
 	// Write your code here.
 
 	onPlayerTrigger(isDown: boolean) {
-		const idleImage = this.list.find((child) => child.name === "mouthIdle") as Phaser.GameObjects.Image;
-		const blowImage = this.list.find((child) => child.name === "mouthBlow") as Phaser.GameObjects.Image;
+		const idleImage = this.list.find((child) => child.name === IDLE_IMAGE) as Phaser.GameObjects.Image;
+		const blowImage = this.list.find((child) => child.name === BLOW_IMAGE) as Phaser.GameObjects.Image;
 
 		idleImage.setVisible(!isDown);
 		blowImage.setVisible(isDown);
+
+		const vfx = this.list.find((child) => child.name === VFX_IMAGE) as Phaser.GameObjects.Image;
+
+		if (isDown) {
+			vfx.setPosition(0, 0);
+			vfx.setVisible(true);
+			vfx.setAlpha(1);
+			this.scene.tweens.killTweensOf(vfx);
+			this.scene.tweens.add({
+				targets: vfx,
+				x: -200,
+				alpha: 0,
+				duration: 500,
+				ease: 'Linear'
+			});
+		}
 	}
 	/* END-USER-CODE */
 }
