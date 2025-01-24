@@ -1,6 +1,5 @@
 
 // You can write more code here
-
 import { CollectibleBase } from "../CollectibleBase";
 
 /* START OF COMPILED CODE */
@@ -13,18 +12,10 @@ class Head extends Phaser.GameObjects.Container {
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
 
 		// head_Idle
-		const head_Idle = scene.physics.add.image(0, 0, "Head_Idle");
+		const head_Idle = scene.add.image(0, 0, "Head_Idle");
 		head_Idle.name = "head_Idle";
 		head_Idle.scaleX = 0.5;
 		head_Idle.scaleY = 0.5;
-		head_Idle.body.friction.x = 0;
-		head_Idle.body.bounce.x = 0.5;
-		head_Idle.body.bounce.y = 0.5;
-		head_Idle.body.angularAcceleration = 5;
-		head_Idle.body.angularDrag = 5;
-		head_Idle.body.angularVelocity = 5;
-		head_Idle.body.setOffset(100, 100);
-		head_Idle.body.setCircle(310);
 		this.add(head_Idle);
 
 		// DeathSeq
@@ -38,8 +29,17 @@ class Head extends Phaser.GameObjects.Container {
 		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
+		scene.physics.add.existing(this);
+		this.body.friction.x = 0;
+		this.body.bounce.x = 0.5;
+		this.body.bounce.y = 0.5;
+		this.body.setOffset(-150, -150);
+		this.body.setCircle(150);
+		this.body.onCollide = true;
+		this.body.onOverlap = true;
+
 		// Create boundaries
-		const leftBoundary = scene.add.rectangle(850, 0, 10, 800000);
+		const leftBoundary = scene.add.rectangle(1050, 0, 10, 800000);
 		const rightBoundary = scene.add.rectangle(-10, 0, 10, 800000);
 
 
@@ -50,9 +50,8 @@ class Head extends Phaser.GameObjects.Container {
 		// Add collision between head and boundaries
 		scene.physics.add.collider(this, [leftBoundary, rightBoundary]);
 		console.log("Head awake!");
-		Head.instance = head_Idle;
-		head_Idle.body.onCollide = true;
-		head_Idle.body.onOverlap = true;
+		Head.instance = this;
+		deathSeq.setVisible(false);
 		/* END-USER-CTR-CODE */
 	}
 
@@ -71,7 +70,7 @@ class Head extends Phaser.GameObjects.Container {
 		// Check for overlaps with other physics objects
 		// Enable checking if body is overlapping
 
-		this.getByName("DeathSeq").setVisible(true);
+		this.getByName("DeathSeq").setVisible(false);
 		this.getByName("DeathSeq").play("Death");
 	}
 	// Write your code here.
