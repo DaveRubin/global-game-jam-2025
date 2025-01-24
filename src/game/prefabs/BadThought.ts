@@ -5,7 +5,7 @@
 
 interface BadThought {
 
-	 body: Phaser.Physics.Arcade.Body;
+	 body: Phaser.Physics.Arcade.StaticBody;
 }
 
 class BadThought extends Phaser.Physics.Arcade.Sprite {
@@ -13,7 +13,7 @@ class BadThought extends Phaser.Physics.Arcade.Sprite {
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 343, y ?? 322, texture || "Obstacle_01", frame);
 
-		scene.physics.add.existing(this, false);
+		scene.physics.add.existing(this, true);
 		this.body.setSize(421, 542, false);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
