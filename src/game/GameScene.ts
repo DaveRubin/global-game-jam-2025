@@ -10,6 +10,8 @@ import { Head2 } from "./prefabs/Head2";
 import { GAME_HEIGHT } from "./consts";
 import { HUD } from "./prefabs/HUD";
 import { Lobby } from "../lobby/Lobby";
+import {getStageClient} from "../client/BaseClient.ts";
+import encodeQR from "@paulmillr/qr";
 
 /* START OF COMPILED CODE */
 
@@ -22,7 +24,13 @@ export class GameScene extends Phaser.Scene {
 
 
 	preload() {
-
+		const stageClient = getStageClient();
+		const gameUrl = `${window.location.origin}${window.location.pathname}?game-id=${stageClient.gameId}`;
+		const gifBytes = encodeQR(gameUrl, "gif", { scale: 25 });
+		const blob = new Blob([gifBytes], { type: "image/gif" });
+		const url = URL.createObjectURL(blob);
+		console.log('qr - ', gameUrl);
+		this.load.image("qr-code", url);
 	}
 
 	static instance: GameScene;

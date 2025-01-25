@@ -18,6 +18,7 @@ export class LobbyScene extends Phaser.Scene {
     const stageClient = getStageClient();
     this.load.pack("section1", "public/asset-pack.json");
     const gameUrl = `${window.location.origin}${window.location.pathname}?game-id=${stageClient.gameId}`;
+    console.log('what0, ', gameUrl);
     const gifBytes = encodeQR(gameUrl, "gif", { scale: 25 }); // Uncompressed GIF
     const blob = new Blob([gifBytes], { type: "image/gif" });
     const url = URL.createObjectURL(blob);

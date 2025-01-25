@@ -39,13 +39,6 @@ export class BootScene extends Phaser.Scene {
 
         // Load all your game assets here
         // Example:
-        const stageClient = getStageClient();
-        const gameUrl = `${window.location.origin}${window.location.pathname}?game-id=${stageClient.gameId}`;
-        const gifBytes = encodeQR(gameUrl, "gif", { scale: 25 });
-        const blob = new Blob([gifBytes], { type: "image/gif" });
-        const url = URL.createObjectURL(blob);
-
-        this.load.image("qr-code", url);
         this.load.image('bubble', 'public/bubble.png');
         this.load.pack("section1", "public/asset-pack.json");
         this.load.spritesheet('raster', 'public/sunset-raster.png', { frameWidth: 16, frameHeight: 16 });
