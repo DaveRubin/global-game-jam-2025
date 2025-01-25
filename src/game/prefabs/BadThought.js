@@ -1,12 +1,13 @@
 
 // You can write more code here
+import { Head2 } from "./Head2";
 
 /* START OF COMPILED CODE */
 
 class BadThought extends Phaser.GameObjects.Container {
 
 	constructor(scene, x, y) {
-		super(scene, x ?? 343, y ?? 322);
+		super(scene, x ?? 0, y ?? 0);
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
 		this.scaleX = 0.5;
@@ -45,6 +46,20 @@ class BadThought extends Phaser.GameObjects.Container {
 		// image_2
 		const image_2 = scene.add.image(320, 329, "Obstacle_Empty_Face");
 		disabled.add(image_2);
+
+		// collider
+		const collider = scene.physics.add.sprite(0, 0, "_MISSING");
+		collider.name = "collider";
+		collider.scaleX = 8;
+		collider.scaleY = 8;
+		collider.visible = false;
+		collider.body.moves = false;
+		collider.body.allowGravity = false;
+		collider.body.allowDrag = false;
+		collider.body.allowRotation = false;
+		collider.body.pushable = false;
+		collider.body.setCircle(64);
+		this.add(collider);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
@@ -61,45 +76,20 @@ class BadThought extends Phaser.GameObjects.Container {
 		// Add the enemy sprite
 		const enemyWhat = this.scene.add.sprite(400, 300, 'enemyTexture');
 		const enemy = this.add(enemyWhat);
+		const collider = this.getByName("collider");
+		const body = collider.body;
+		if (body) {
+			body.setSize(this.width, this.height, false);
+			body.onCollide = true;
+		}
+		const colliderEvent = this.scene.physics.add.collider(Head2.instance, collider, () => {
+			console.log("collide");
+			Head2.instance.kill();
+			colliderEvent.destroy();
 
-		// // Define a Bezier curve path for a "smile" shape
-		// const bezierCurve = {
-		// 	start: { x: 200, y: 400 }, // Starting point
-		// 	control1: { x: 400, y: 200 }, // Control point (top of the smile)
-		// 	control2: { x: 600, y: 200 }, // Second control point
-		// 	end: { x: 800, y: 400 } // End point
-		// };
-		//
-		// // Use a tween to move the enemy along the Bezier curve
-		// this.tweens.add({
-		// 	targets: enemy,
-		// 	x: {
-		// 		getStart: () => bezierCurve.start.x,
-		// 		getEnd: () => bezierCurve.end.x
-		// 	},
-		// 	y: {
-		// 		getStart: () => bezierCurve.start.y,
-		// 		getEnd: () => bezierCurve.end.y,
-		// 		getInterpolation: (v) => {
-		// 			// Calculate the Bezier curve value based on progress (v)
-		// 			return Phaser.Math.Bezier.Interpolation(
-		// 				v,
-		// 				[
-		// 					bezierCurve.start.y,
-		// 					bezierCurve.control1.y,
-		// 					bezierCurve.control2.y,
-		// 					bezierCurve.end.y
-		// 				]
-		// 			);
-		// 		}
-		// 	},
-		// 	duration: 3000, // Duration of the animation (in ms)
-		// 	ease: 'Sine.easeInOut', // Easing: slower at edges, faster in the middle
-		// 	repeat: -1, // Repeat forever
-		// 	yoyo: true // Reverse the motion after each cycle
-		// });
-
-	}	/* END-USER-CODE */
+		});
+	}
+	/* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */

@@ -13,8 +13,6 @@
             "id": "ab821421-17a5-4ed7-93ac-77ff0e5c93f5",
             "label": "container_1",
             "blendMode": -1,
-            "x": 343,
-            "y": 322,
             "scaleX": 0.5,
             "scaleY": 0.5,
             "list": [
@@ -83,6 +81,24 @@
                             "y": 329
                         }
                     ]
+                },
+                {
+                    "type": "ArcadeSprite",
+                    "id": "18c62bb1-1305-406b-8537-0a11a846c79f",
+                    "label": "collider",
+                    "useGameObjectName": true,
+                    "texture": {},
+                    "scaleX": 8,
+                    "scaleY": 8,
+                    "visible": false,
+                    "moves": false,
+                    "allowGravity": false,
+                    "allowDrag": false,
+                    "allowRotation": false,
+                    "pushable": false,
+                    "bodyGeometry": 0,
+                    "body.width": 128,
+                    "body.height": 128
                 }
             ]
         }

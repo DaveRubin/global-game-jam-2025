@@ -114,9 +114,13 @@ class Mouth extends Phaser.GameObjects.Container {
 		if (isDown) {
 			const direction = -1 * this.scaleX;
 			const vfx = this.list.find((child) => child.name === VFX_IMAGE);
+			vfx.anims.setProgress(0);
+			vfx.play("Mouth_Wind_fx");
+
 			vfx.setPosition(-50, 0);
 			vfx.setVisible(true);
 			vfx.setAlpha(1);
+
 			this.scene.tweens.killTweensOf(vfx);
 			this.scene.tweens.add({
 				targets: vfx,

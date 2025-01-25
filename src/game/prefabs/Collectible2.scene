@@ -13,7 +13,7 @@
             "id": "6add476d-9c56-42b6-92e2-8d0057aa2360",
             "label": "collectible2",
             "texture": {
-                "key": "collectible2"
+                "key": "PickUp_02"
             },
             "scaleX": 0.2,
             "scaleY": 0.2
@@ -25,5 +25,23 @@
         "url": "https://phaser.io/editor",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "variant",
+            "label": "Property",
+            "tooltip": "",
+            "defValue": "random",
+            "customDefinition": false,
+            "type": {
+                "id": "option",
+                "options": [
+                    "random",
+                    "1",
+                    "2",
+                    "3"
+                ]
+            }
+        }
+    ]
 }
