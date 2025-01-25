@@ -1,0 +1,69 @@
+{
+    "id": "d927362c-3436-4754-b2e2-17db4acede7e",
+    "sceneType": "PREFAB",
+    "settings": {
+        "generateAwakeHandler": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1125,
+        "borderHeight": 2436
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "4cf19527-91dc-4e29-bb4e-cbcb490a8441",
+            "label": "wall_01",
+            "x": 306,
+            "y": 196,
+            "angle": 90,
+            "alpha": 0.8,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "77d08d1e-0484-4242-a752-3fc27a70d2b8",
+                    "label": "wall",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "Wall_01"
+                    },
+                    "alpha": 0.8,
+                    "alphaTopLeft": 0.8,
+                    "alphaTopRight": 0.8,
+                    "alphaBottomLeft": 0.8,
+                    "alphaBottomRight": 0.8
+                },
+                {
+                    "type": "ArcadeSprite",
+                    "id": "27b761fe-69bc-4bfe-ab26-d636bb4f0c18",
+                    "label": "arcadesprite_1",
+                    "texture": {},
+                    "y": -6,
+                    "scaleX": 21.8,
+                    "scaleY": 4.45,
+                    "visible": false,
+                    "alpha": 0.8,
+                    "alphaTopLeft": 0.8,
+                    "alphaTopRight": 0.8,
+                    "alphaBottomLeft": 0.8,
+                    "alphaBottomRight": 0.8,
+                    "moves": false,
+                    "allowGravity": false,
+                    "allowDrag": false,
+                    "allowRotation": false,
+                    "pushable": false,
+                    "immovable": true,
+                    "body.width": 32,
+                    "body.height": 32
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
