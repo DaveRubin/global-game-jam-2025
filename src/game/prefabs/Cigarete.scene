@@ -32,8 +32,10 @@
                     "texture": {
                         "key": "Ciggarete"
                     },
-                    "scaleX": 0.5,
-                    "scaleY": 0.5
+                    "x": 3,
+                    "y": 21,
+                    "scaleX": 0.33,
+                    "scaleY": 0.33
                 }
             ]
         }
