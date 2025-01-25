@@ -46,8 +46,9 @@ class Rainbow extends Phaser.GameObjects.Container {
 		this.add(cloud_R);
 
 		// Meters
-		const meters = scene.add.text(438, 31, "", {});
+		const meters = scene.add.text(592, 125, "", {});
 		meters.name = "Meters";
+		meters.setOrigin(0.5, 0.5);
 		meters.tintTopLeft = 0;
 		meters.tintTopRight = 0;
 		meters.tintBottomLeft = 0;

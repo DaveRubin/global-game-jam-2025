@@ -10,6 +10,17 @@ class PlayerOpeningIndication extends Phaser.GameObjects.Container {
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
 
+		// BG
+		const bG = scene.add.image(0, 0, "PlayerBox");
+		bG.name = "BG";
+		bG.scaleX = 0.5;
+		bG.scaleY = 0.5;
+		bG.tintTopLeft = 6118749;
+		bG.tintTopRight = 6118749;
+		bG.tintBottomLeft = 7500402;
+		bG.tintBottomRight = 7500402;
+		this.add(bG);
+
 		// player-box
 		const player_box = scene.add.image(0, 0, "PlayerBox");
 		player_box.name = "player-box";

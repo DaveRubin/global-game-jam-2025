@@ -82,8 +82,7 @@ class Lobby extends Phaser.GameObjects.Container {
 
 
 		this.stageClient = getStageClient();
-		// this.add.sprite(GAME_WIDTH / 2, GAME_HEIGHT / 2, "qr-code");
-		// Write your code here.
+
 
 		this.awake();
 
@@ -118,7 +117,7 @@ class Lobby extends Phaser.GameObjects.Container {
 		};
 
 		this.stageClient.onScreenChanged = _ => {
-			this.scene.scene.start("GameScene");
+			this.scene.events.emit("start-game");
 		};
 
 		this.scene.input.keyboard.on("keydown", (event) => {

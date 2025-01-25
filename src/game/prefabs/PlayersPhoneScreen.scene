@@ -83,7 +83,7 @@
                 {
                     "type": "Image",
                     "id": "3b6ad5af-e777-4eed-8250-a19686a60146",
-                    "label": "TapWhenReady_1",
+                    "label": "TapWhenReady",
                     "texture": {
                         "key": "TAP_WhenReady"
                     },
@@ -101,6 +101,18 @@
                     },
                     "x": 1102,
                     "y": 634,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "3c250d92-e7f6-414f-b9e5-f12bde25b481",
+                    "label": "Ready_Text",
+                    "texture": {
+                        "key": "P_Ready"
+                    },
+                    "x": 1149,
+                    "y": -206,
                     "scaleX": 0.5,
                     "scaleY": 0.5
                 }
