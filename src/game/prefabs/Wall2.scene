@@ -51,6 +51,18 @@
                     "pushable": false,
                     "body.width": 32,
                     "body.height": 32
+                },
+                {
+                    "type": "Image",
+                    "id": "4ce848bc-b411-47cd-ad23-60e19baf2eb6",
+                    "label": "image_1",
+                    "texture": {
+                        "key": "Cloud_Smile_A"
+                    },
+                    "x": 197,
+                    "y": -2,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
                 }
             ]
         }

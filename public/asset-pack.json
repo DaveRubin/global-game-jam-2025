@@ -205,6 +205,20 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Obstacles/Walls/Cloud_Smile_A.png"
+                },
+                "type": "texture",
+                "key": "Cloud_Smile_A"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Obstacles/Walls/Cloud_Smile_B.png"
+                },
+                "type": "texture",
+                "key": "Cloud_Smile_B"
+            },
+            {
+                "url": {
                     "IMG": "public/collectible1.png"
                 },
                 "type": "texture",
