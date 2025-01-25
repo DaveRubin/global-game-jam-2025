@@ -79,6 +79,10 @@ class Rainbow extends Phaser.GameObjects.Container {
 
 		this.getByName("Meters").setText(this.text);
 
+		if (new URLSearchParams(window.location.search).has("debug-graphic")) {
+			this.scene.physics.world.createDebugGraphic();
+		}
+
 		this.overlapCollider = this.scene.physics.add.overlap(rainbow, Head2.instance, () => {
 			this.onRainbowOverlap();
 			this.scene.physics.world.removeCollider(this.overlapCollider);

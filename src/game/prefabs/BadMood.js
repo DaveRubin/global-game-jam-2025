@@ -118,8 +118,6 @@ class BadMood extends BaseCollider {
 	update(time, deltaTime) {
 		if (this.scene.physics.overlap(this.collider.body, Head2.instance)) {
 			Head2.instance.body.drag.y = this.dragInside;
-
-			console.log('what', Head2.instance.body, Head2.instance.body.drag);
 		}
 	}
 

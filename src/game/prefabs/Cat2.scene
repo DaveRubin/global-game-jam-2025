@@ -31,8 +31,11 @@
                     "texture": {
                         "key": "Cat_02"
                     },
-                    "scaleX": 0.5,
-                    "scaleY": 0.5
+                    "x": -6,
+                    "y": 12,
+                    "scaleX": 0.3,
+                    "scaleY": 0.3,
+                    "angle": 17
                 }
             ]
         }
