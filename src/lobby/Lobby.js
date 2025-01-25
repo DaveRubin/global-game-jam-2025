@@ -115,7 +115,7 @@ class Lobby extends Phaser.GameObjects.Container {
 		};
 
 		this.stageClient.onScreenChanged = _ => {
-			this.scene.start("GameScene");
+			this.scene.scene.start("GameScene");
 		};
 
 		this.scene.input.keyboard.on("keydown", (event) => {
