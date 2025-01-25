@@ -130,6 +130,8 @@ class Head2 extends Phaser.GameObjects.Container {
 
 
 	async kill(skipAnimation) {
+		this.scene.sound.play("DeathShort");
+
 		if (!skipAnimation) {
 			this.getByName("death_01").setVisible(true);
 			this.getByName("death_01").once('animationcomplete', () => {
