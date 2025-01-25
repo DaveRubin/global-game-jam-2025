@@ -36,6 +36,12 @@ class Wall2 extends BaseCollider {
 		collider.body.pushable = false;
 		collider.body.setSize(32, 32, false);
 		this.add(collider);
+
+		// image_1
+		const image_1 = scene.add.image(197, -2, "Cloud_Smile_A");
+		image_1.scaleX = 0.5;
+		image_1.scaleY = 0.5;
+		this.add(image_1);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 

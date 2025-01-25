@@ -1,0 +1,294 @@
+{
+    "id": "af6fe35d-f5da-4c05-a448-0853d2fad5d7",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1125,
+        "borderHeight": 2436
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "e04977c4-54a0-44b9-8df0-9b89e01230a6",
+            "label": "container_1",
+            "blendMode": -1,
+            "x": 1050,
+            "y": 633,
+            "list": [
+                {
+                    "type": "Container",
+                    "id": "ac22f04e-9c4d-4cf4-a7f6-f96644c0225b",
+                    "label": "BG1",
+                    "blendMode": -1,
+                    "x": -1882,
+                    "y": -328,
+                    "list": [
+                        {
+                            "type": "Rectangle",
+                            "id": "bad9d5ec-8917-4ef7-954a-3591609fea8d",
+                            "label": "rectangle",
+                            "x": 1421,
+                            "y": 929,
+                            "scaleX": 9.25,
+                            "scaleY": 38.8,
+                            "isFilled": true,
+                            "fillColor": "#f7e4aa",
+                            "strokeAlpha": 0,
+                            "width": 128,
+                            "height": 128
+                        },
+                        {
+                            "type": "Image",
+                            "id": "2af4307c-a717-4f8c-93e6-79af68e36552",
+                            "label": "background_2",
+                            "texture": {
+                                "key": "Background_02"
+                            },
+                            "x": 831,
+                            "y": -947,
+                            "originX": 0,
+                            "originY": 0,
+                            "tintTopLeft": "#ffe0a0",
+                            "tintTopRight": "#ffe0a0",
+                            "tintBottomLeft": "#ffe0a0",
+                            "tintBottomRight": "#ffe0a0"
+                        },
+                        {
+                            "type": "Image",
+                            "id": "29bed48b-b9f4-42c2-ad5a-3e0e6722f8a8",
+                            "label": "background_3",
+                            "texture": {
+                                "key": "Background_01"
+                            },
+                            "x": 842,
+                            "y": -41,
+                            "originX": 0,
+                            "originY": 0,
+                            "tintTopLeft": "#fed99b",
+                            "tintTopRight": "#fed99b",
+                            "tintBottomLeft": "#fed99b",
+                            "tintBottomRight": "#fed99b"
+                        },
+                        {
+                            "type": "Image",
+                            "id": "075ff775-fa4f-46fd-9b7d-0e827b351c4d",
+                            "label": "background_4",
+                            "texture": {
+                                "key": "Background_02"
+                            },
+                            "x": 835,
+                            "y": 410,
+                            "originX": 0,
+                            "originY": 0,
+                            "tintTopLeft": "#ffcd81",
+                            "tintTopRight": "#ffcd81",
+                            "tintBottomLeft": "#ffcd81",
+                            "tintBottomRight": "#ffcd81"
+                        },
+                        {
+                            "type": "Image",
+                            "id": "60416721-b7e9-4d37-9d49-f23d7058efc9",
+                            "label": "background_5",
+                            "texture": {
+                                "key": "Background_01"
+                            },
+                            "x": 835,
+                            "y": 1165,
+                            "originX": 0,
+                            "originY": 0,
+                            "tintTopLeft": "#f4be82",
+                            "tintTopRight": "#f4be82",
+                            "tintBottomLeft": "#f4be82",
+                            "tintBottomRight": "#f4be82"
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "8e39c440-ea9c-4838-8fc4-9f28da9fd77c",
+                    "label": "BG2",
+                    "blendMode": -1,
+                    "x": -1887,
+                    "y": -322,
+                    "list": [
+                        {
+                            "type": "Rectangle",
+                            "id": "c39d68cf-9758-41e5-999b-00e17e35a395",
+                            "label": "rectangle_1",
+                            "x": 1421,
+                            "y": 929,
+                            "scaleX": 9.25,
+                            "scaleY": 38.8,
+                            "isFilled": true,
+                            "fillColor": "#bcf3ff",
+                            "strokeAlpha": 0,
+                            "width": 128,
+                            "height": 128
+                        },
+                        {
+                            "type": "Image",
+                            "id": "075b96d5-5755-4534-93a2-d95b903ee971",
+                            "label": "background",
+                            "texture": {
+                                "key": "Background_02"
+                            },
+                            "x": 831,
+                            "y": -947,
+                            "originX": 0,
+                            "originY": 0,
+                            "tintTopLeft": "#8bebfd",
+                            "tintTopRight": "#8bebfd",
+                            "tintBottomLeft": "#8bebfd",
+                            "tintBottomRight": "#8bebfd"
+                        },
+                        {
+                            "type": "Image",
+                            "id": "14db5917-bcf5-4af4-82d9-792117218261",
+                            "label": "background_1",
+                            "texture": {
+                                "key": "Background_01"
+                            },
+                            "x": 842,
+                            "y": -41,
+                            "originX": 0,
+                            "originY": 0,
+                            "tintTopLeft": "#61dbfb",
+                            "tintTopRight": "#61dbfb",
+                            "tintBottomLeft": "#61dbfb",
+                            "tintBottomRight": "#61dbfb"
+                        },
+                        {
+                            "type": "Image",
+                            "id": "4e8d85e2-5549-44b4-83b9-4d48485489da",
+                            "label": "background_6",
+                            "texture": {
+                                "key": "Background_02"
+                            },
+                            "x": 835,
+                            "y": 410,
+                            "originX": 0,
+                            "originY": 0,
+                            "tintTopLeft": "#26d0fd",
+                            "tintTopRight": "#26d0fd",
+                            "tintBottomLeft": "#26d0fd",
+                            "tintBottomRight": "#26d0fd"
+                        },
+                        {
+                            "type": "Image",
+                            "id": "0f95aeb0-0a76-4e7f-8120-9f128350dc06",
+                            "label": "background_7",
+                            "texture": {
+                                "key": "Background_01"
+                            },
+                            "x": 835,
+                            "y": 1165,
+                            "originX": 0,
+                            "originY": 0,
+                            "tintTopLeft": "#2dc8ff",
+                            "tintTopRight": "#2dc8ff",
+                            "tintBottomLeft": "#2dc8ff",
+                            "tintBottomRight": "#2dc8ff"
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "1a757ec8-5296-4c6c-8011-0508900773ac",
+                    "label": "BG3",
+                    "blendMode": -1,
+                    "x": -1887,
+                    "y": -320,
+                    "list": [
+                        {
+                            "type": "Rectangle",
+                            "id": "70170d60-6ca9-4018-914a-2321b72d1221",
+                            "label": "rectangle_2",
+                            "x": 1421,
+                            "y": 929,
+                            "scaleX": 9.25,
+                            "scaleY": 38.8,
+                            "isFilled": true,
+                            "fillColor": "#cfbcff",
+                            "strokeAlpha": 0,
+                            "width": 128,
+                            "height": 128
+                        },
+                        {
+                            "type": "Image",
+                            "id": "e96a2b20-ea59-4347-9689-5c0b89c0d08c",
+                            "label": "background_8",
+                            "texture": {
+                                "key": "Background_02"
+                            },
+                            "x": 831,
+                            "y": -947,
+                            "originX": 0,
+                            "originY": 0,
+                            "tintTopLeft": "#bc98fd",
+                            "tintTopRight": "#bc98fd",
+                            "tintBottomLeft": "#bc98fd",
+                            "tintBottomRight": "#bc98fd"
+                        },
+                        {
+                            "type": "Image",
+                            "id": "f98d09ed-9bd9-49fd-9e97-1f9eba508e66",
+                            "label": "background_9",
+                            "texture": {
+                                "key": "Background_01"
+                            },
+                            "x": 842,
+                            "y": -41,
+                            "originX": 0,
+                            "originY": 0,
+                            "tintTopLeft": "#aa87fb",
+                            "tintTopRight": "#aa87fb",
+                            "tintBottomLeft": "#aa87fb",
+                            "tintBottomRight": "#aa87fb"
+                        },
+                        {
+                            "type": "Image",
+                            "id": "821f00a9-3a88-49f2-90cf-437670892bde",
+                            "label": "background_10",
+                            "texture": {
+                                "key": "Background_02"
+                            },
+                            "x": 835,
+                            "y": 410,
+                            "originX": 0,
+                            "originY": 0,
+                            "tintTopLeft": "#8b67f7",
+                            "tintTopRight": "#8b67f7",
+                            "tintBottomLeft": "#8b67f7",
+                            "tintBottomRight": "#8b67f7"
+                        },
+                        {
+                            "type": "Image",
+                            "id": "b7253b8f-f56e-43e3-bc09-8dc406a96154",
+                            "label": "background_11",
+                            "texture": {
+                                "key": "Background_01"
+                            },
+                            "x": 835,
+                            "y": 1165,
+                            "originX": 0,
+                            "originY": 0,
+                            "tintTopLeft": "#7955f2",
+                            "tintTopRight": "#7955f2",
+                            "tintBottomLeft": "#7955f2",
+                            "tintBottomRight": "#7955f2"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

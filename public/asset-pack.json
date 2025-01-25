@@ -10,6 +10,13 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/VFX/AOE_Round.png"
+                },
+                "type": "texture",
+                "key": "AOE_Round"
+            },
+            {
+                "url": {
                     "IMG": "public/Background_01.png"
                 },
                 "type": "texture",
@@ -205,6 +212,20 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Obstacles/Walls/Cloud_Smile_A.png"
+                },
+                "type": "texture",
+                "key": "Cloud_Smile_A"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Obstacles/Walls/Cloud_Smile_B.png"
+                },
+                "type": "texture",
+                "key": "Cloud_Smile_B"
+            },
+            {
+                "url": {
                     "IMG": "public/collectible1.png"
                 },
                 "type": "texture",
@@ -279,6 +300,20 @@
                 },
                 "type": "texture",
                 "key": "GridFrame"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Allies/Hand_Close.png"
+                },
+                "type": "texture",
+                "key": "Hand_Close"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Allies/Hand_Open.png"
+                },
+                "type": "texture",
+                "key": "Hand_Open"
             },
             {
                 "url": {
