@@ -47,6 +47,7 @@ export class GameScene extends Phaser.Scene {
 
 		this.cameras.main.setBackgroundColor('#aaaaaa');
 
+
 		this.startCameraLogic();
 
 		// @ts-ignore
@@ -57,10 +58,11 @@ export class GameScene extends Phaser.Scene {
 	}
 
 	reloadLevel() {
-		this.level.destroy();
 		this.physics.world.colliders.destroy();
+		this.events.removeAllListeners();
 		this.tweens.killAll();
 		Head2.instance.destroy();
+		this.level.destroy();
 		this.level = new Level_One(this);
 		this.add.existing(this.level);
 		this.startCameraLogic();
@@ -74,16 +76,18 @@ export class GameScene extends Phaser.Scene {
 		const startZoom = 1.385;
 		camera.setZoom(startZoom);
 
-		const bottomY = camera.height;    // Bottom of the current view
 
-		camera.setScroll(0, bottomY - (camera.height / startZoom));
+		const headY = Head2.instance.getWorldTransformMatrix().ty;
+
+
+		camera.setScroll(0, -GAME_HEIGHT / 2 + headY);
 
 		const scrollSpeed = 2;
 		// Update camera position each frame
 		this.scrollTimer = this.time.addEvent({
 			delay: 50, // Add a small delay (roughly 60fps)
 			callback: () => {
-				const headWorldY = Head2.instance.y - camera.scrollY;
+				const headWorldY = Head2.instance.getWorldTransformMatrix().ty - camera.scrollY;
 				const normalizedLocation = 1 - (headWorldY / GAME_HEIGHT);
 
 				let factor = 1;
@@ -95,7 +99,8 @@ export class GameScene extends Phaser.Scene {
 				camera.zoom = Math.max(camera.zoom, targetZoom);
 				// Check if Head2 is out of frame
 
-				if (headWorldY > GAME_HEIGHT / 4) {
+				if (normalizedLocation < -0.1) {
+					console.log("🚀 ~ OUT OF BOUNDS ")
 					Head2.instance.kill(true)
 				}
 
@@ -104,26 +109,22 @@ export class GameScene extends Phaser.Scene {
 		});
 	}
 
-	end() {
-		this.scrollTimer?.destroy();
-		// Wait 3 seconds then tween camera to bottom
-		this.resetGame();
-	}
 
 	resetGame() {
-		const startZoom = 1.385;
-		const camera = this.cameras.main;
+		return new Promise<void>((resolve) => {
+			this.scrollTimer?.destroy();
+			const startZoom = 1.385;
+			const camera = this.cameras.main;
 
-		this.time.delayedCall(3000, () => {
-			this.tweens.add({
-				targets: this.cameras.main,
-				scrollY: camera.height - (camera.height / startZoom),
-				zoom: 1.385,
-				duration: 2000,
-				ease: 'Power2',
-				onComplete: () => {
-					Head2.instance.reset();
-				}
+			this.time.delayedCall(3000, () => {
+				this.tweens.add({
+					targets: this.cameras.main,
+					scrollY: camera.height - (camera.height / startZoom),
+					zoom: 1.385,
+					duration: 2000,
+					ease: 'Power2',
+					onComplete: () => resolve()
+				});
 			});
 		});
 	}
