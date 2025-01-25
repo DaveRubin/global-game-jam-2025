@@ -53,18 +53,30 @@ export class GameScene extends Phaser.Scene {
 		this.events.emit("scene-awake");
 	}
 	startCameraLogic() {
+		const camera = this.cameras.main;
+
+		const targetZoom = 1;
+		const startZoom = 1.35;
+		camera.setZoom(startZoom);
+
+		const bottomY = camera.scrollY + camera.height;    // Bottom of the current view
+
+		camera.setScroll(0, bottomY - (camera.height / startZoom));
+
 		const scrollSpeed = 2;
 		// Update camera position each frame
 		this.scrollTimer = this.time.addEvent({
 			delay: 50, // Add a small delay (roughly 60fps)
 			callback: () => {
-				const headWorldY = Head2.instance.y - this.cameras.main.scrollY;
+				const headWorldY = Head2.instance.y - camera.scrollY;
 				const normalizedLocation = 1 - (headWorldY / GAME_HEIGHT);
 				let factor = 1;
 				if (normalizedLocation > 0.5) {
 					factor = 2;
 				}
-				this.cameras.main.scrollY -= scrollSpeed * factor;
+				camera.scrollY -= scrollSpeed * factor;
+				camera.zoom -= scrollSpeed * factor * 0.002;
+				camera.zoom = Math.max(camera.zoom, targetZoom);
 				// Check if Head2 is out of frame
 
 				if (headWorldY > GAME_HEIGHT + 300) {
