@@ -2,12 +2,11 @@
 // You can write more code here
 import {Wall2} from "./Wall2.js";
 import {Wall1} from "./Wall1.js";
-import {Collectible3} from "./Collectible3.js";
 import {Mouth} from "./Mouth.js";
 import {Nose} from "./Nose.js";
 import {BadMood} from "./BadMood.js";
 import {Collectible2} from "./Collectible2.js";
-import {Collectible1} from "./Collectible1.js";
+import {WallVertical} from "./WallVertical.js";
 import {Head2} from "./Head2.js";
 import {BadThought} from "./BadThought.js";
 import {Rainbow} from "./Rainbow.js";
@@ -25,6 +24,29 @@ class Level_One extends Phaser.GameObjects.Layer {
 		const container_3 = scene.add.container(-5, -2724);
 		container_3.blendMode = Phaser.BlendModes.SKIP_CHECK;
 		this.add(container_3);
+
+		// background_10
+		const background_10 = scene.add.image(3, -11073, "Background_01");
+		background_10.setOrigin(0, 0);
+		background_10.alpha = 0.75;
+		background_10.alphaTopLeft = 0.75;
+		background_10.alphaTopRight = 0.75;
+		background_10.alphaBottomLeft = 0.75;
+		background_10.alphaBottomRight = 0.75;
+		background_10.tintTopLeft = 6418304;
+		background_10.tintTopRight = 6418304;
+		background_10.tintBottomLeft = 6418304;
+		background_10.tintBottomRight = 6418304;
+		container_3.add(background_10);
+
+		// background_9
+		const background_9 = scene.add.image(-4, -9558, "Background_02");
+		background_9.setOrigin(0, 0);
+		background_9.tintTopLeft = 6418304;
+		background_9.tintTopRight = 6418304;
+		background_9.tintBottomLeft = 6418304;
+		background_9.tintBottomRight = 6418304;
+		container_3.add(background_9);
 
 		// background
 		const background = scene.add.image(0, 1671, "Background_01");
@@ -89,12 +111,26 @@ class Level_One extends Phaser.GameObjects.Layer {
 		// background_8
 		const background_8 = scene.add.image(0, -8444, "Background_01");
 		background_8.setOrigin(0, 0);
-		background_8.alpha = 0.75;
-		background_8.alphaTopLeft = 0.75;
-		background_8.alphaTopRight = 0.75;
-		background_8.alphaBottomLeft = 0.75;
-		background_8.alphaBottomRight = 0.75;
+		background_8.tintTopLeft = 6418304;
 		container_3.add(background_8);
+
+		// background_11
+		const background_11 = scene.add.image(0, -12011, "Background_02");
+		background_11.setOrigin(0, 0);
+		background_11.tintTopLeft = 6418304;
+		background_11.tintTopRight = 6418304;
+		background_11.tintBottomLeft = 6418304;
+		background_11.tintBottomRight = 6418304;
+		container_3.add(background_11);
+
+		// background_12
+		const background_12 = scene.add.image(0, -13554, "Background_01");
+		background_12.setOrigin(0, 0);
+		background_12.tintTopLeft = 6418304;
+		background_12.tintTopRight = 6418304;
+		background_12.tintBottomLeft = 6418304;
+		background_12.tintBottomRight = 6418304;
+		container_3.add(background_12);
 
 		// player
 		const player = scene.add.container(528, 1962);
@@ -160,7 +196,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(wall);
 
 		// rainbow
-		const rainbow = new Rainbow(scene, 0, -2189);
+		const rainbow = new Rainbow(scene, 0, -3010);
 		rainbow1.add(rainbow);
 
 		// mouth_1
@@ -170,7 +206,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(mouth_1);
 
 		// mouth_2
-		const mouth_2 = new Mouth(scene, 1037, 7596);
+		const mouth_2 = new Mouth(scene, 1023, 7379);
 		rainbow1.add(mouth_2);
 
 		// collectible2
@@ -192,7 +228,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(mouth_5);
 
 		// mouth_7
-		const mouth_7 = new Mouth(scene, 95, 7600);
+		const mouth_7 = new Mouth(scene, 116, 7404);
 		mouth_7.scaleX = -1;
 		mouth_7.scaleY = 1;
 		rainbow1.add(mouth_7);
@@ -205,13 +241,13 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(wall_4);
 
 		// wall_9
-		const wall_9 = new Wall1(scene, 934, 7380);
+		const wall_9 = new Wall1(scene, 941, 7184);
 		wall_9.scaleX = -0.7;
 		wall_9.scaleY = 0.7;
 		rainbow1.add(wall_9);
 
 		// wall_10
-		const wall_10 = new Wall1(scene, 117, 7377);
+		const wall_10 = new Wall1(scene, 117, 7174);
 		wall_10.scaleX = 0.7;
 		wall_10.scaleY = 0.7;
 		rainbow1.add(wall_10);
@@ -248,13 +284,6 @@ class Level_One extends Phaser.GameObjects.Layer {
 		const collectible_9 = new Collectible2(scene, 223, 6153);
 		rainbow1.add(collectible_9);
 
-		// badMood_1
-		const badMood_1 = new BadMood(scene, 42, -4816);
-		badMood_1.scaleX = 1;
-		badMood_1.scaleY = 1;
-		badMood_1.alpha = 0.8;
-		rainbow1.add(badMood_1);
-
 		// mouth_8
 		const mouth_8 = new Mouth(scene, 1026, 6287);
 		mouth_8.scaleX = 1;
@@ -274,11 +303,11 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(collectible_17);
 
 		// collectible_3
-		const collectible_3 = new Collectible2(scene, 521, 6963);
+		const collectible_3 = new Collectible2(scene, 395, 6487);
 		rainbow1.add(collectible_3);
 
 		// collectible_4
-		const collectible_4 = new Collectible2(scene, 518, 6765);
+		const collectible_4 = new Collectible2(scene, 287, 6352);
 		rainbow1.add(collectible_4);
 
 		// collectible_7
@@ -321,16 +350,8 @@ class Level_One extends Phaser.GameObjects.Layer {
 		const collectible_13 = new Collectible2(scene, 254.7076416015625, 3953.038330078125);
 		rainbow1.add(collectible_13);
 
-		// badThought_9
-		const badThought_9 = new BadThought(scene, 474, 2508);
-		rainbow1.add(badThought_9);
-
-		// badThought_10
-		const badThought_10 = new BadThought(scene, 470, 2309);
-		rainbow1.add(badThought_10);
-
 		// badThought_11
-		const badThought_11 = new BadThought(scene, 474, 2085);
+		const badThought_11 = new BadThought(scene, 486, 2054);
 		rainbow1.add(badThought_11);
 
 		// badThought_12
@@ -357,21 +378,11 @@ class Level_One extends Phaser.GameObjects.Layer {
 		const badThought_15 = new BadThought(scene, 499, 1084);
 		rainbow1.add(badThought_15);
 
-		// mouth_9
-		const mouth_9 = new Mouth(scene, 1024, 319);
-		mouth_9.scaleX = 1;
-		mouth_9.scaleY = 1;
-		rainbow1.add(mouth_9);
-
 		// mouth_11
-		const mouth_11 = new Mouth(scene, 1024, 547);
+		const mouth_11 = new Mouth(scene, 1000, -699);
 		mouth_11.scaleX = 1;
 		mouth_11.scaleY = 1;
 		rainbow1.add(mouth_11);
-
-		// badThought_16
-		const badThought_16 = new BadThought(scene, 503, 811);
-		rainbow1.add(badThought_16);
 
 		// nose_3
 		const nose_3 = new Nose(scene, 739, 905);
@@ -382,12 +393,71 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(nose_11);
 
 		// badThought_17
-		const badThought_17 = new BadThought(scene, 723, 75);
+		const badThought_17 = new BadThought(scene, 763, 90);
 		rainbow1.add(badThought_17);
 
 		// badThought_18
-		const badThought_18 = new BadThought(scene, 971, 63);
+		const badThought_18 = new BadThought(scene, 928, -1076);
 		rainbow1.add(badThought_18);
+
+		// badThought_1
+		const badThought_1 = new BadThought(scene, 484, 2281);
+		rainbow1.add(badThought_1);
+
+		// badThought_5
+		const badThought_5 = new BadThought(scene, 485, 2494);
+		rainbow1.add(badThought_5);
+
+		// collectible_14
+		const collectible_14 = new Collectible2(scene, 509, 7000);
+		rainbow1.add(collectible_14);
+
+		// collectible_19
+		const collectible_19 = new Collectible2(scene, 509, 6797);
+		rainbow1.add(collectible_19);
+
+		// badThought_7
+		const badThought_7 = new BadThought(scene, 186, -1006);
+		rainbow1.add(badThought_7);
+
+		// nose_16
+		const nose_16 = new Nose(scene, 454, -1413);
+		rainbow1.add(nose_16);
+
+		// nose_17
+		const nose_17 = new Nose(scene, 681, -1405);
+		rainbow1.add(nose_17);
+
+		// badThought_9
+		const badThought_9 = new BadThought(scene, 186, -1281);
+		rainbow1.add(badThought_9);
+
+		// badThought_10
+		const badThought_10 = new BadThought(scene, 950, -1274);
+		rainbow1.add(badThought_10);
+
+		// badThought_19
+		const badThought_19 = new BadThought(scene, 993, 89);
+		rainbow1.add(badThought_19);
+
+		// mouth_9
+		const mouth_9 = new Mouth(scene, 1005, 352);
+		mouth_9.scaleX = 1;
+		mouth_9.scaleY = 1;
+		rainbow1.add(mouth_9);
+
+		// mouth_12
+		const mouth_12 = new Mouth(scene, 993, 560);
+		mouth_12.scaleX = 1;
+		mouth_12.scaleY = 1;
+		rainbow1.add(mouth_12);
+
+		// badMood_1
+		const badMood_1 = new BadMood(scene, 914, -6173);
+		badMood_1.scaleX = 1;
+		badMood_1.scaleY = 1;
+		badMood_1.alpha = 1;
+		rainbow1.add(badMood_1);
 
 		// wallVertical_1
 		const wallVertical_1 = new WallVertical(scene, 486, -3837);
@@ -448,11 +518,127 @@ class Level_One extends Phaser.GameObjects.Layer {
 		const collectible_10 = new Collectible2(scene, 819, -5423);
 		this.add(collectible_10);
 
+		// container
+		const container = scene.add.container(390, -11918);
+		container.blendMode = Phaser.BlendModes.SKIP_CHECK;
+		container.alpha = 0.75;
+		this.add(container);
+
+		// nose_12
+		const nose_12 = new Nose(scene, -206, 0);
+		container.add(nose_12);
+
+		// nose_13
+		const nose_13 = new Nose(scene, 53, 0);
+		container.add(nose_13);
+
+		// nose_14
+		const nose_14 = new Nose(scene, 317, 0);
+		container.add(nose_14);
+
+		// nose_15
+		const nose_15 = new Nose(scene, 558, 0);
+		container.add(nose_15);
+
+		// collectible_15
+		const collectible_15 = new Collectible2(scene, 480, -1252);
+		this.add(collectible_15);
+
+		// badThought_16
+		const badThought_16 = new BadThought(scene, 480, -7041);
+		this.add(badThought_16);
+
+		// badThought_6
+		const badThought_6 = new BadThought(scene, 193, -7048);
+		this.add(badThought_6);
+
+		// mouth_13
+		const mouth_13 = new Mouth(scene, 121, -8592);
+		mouth_13.scaleX = -1;
+		mouth_13.scaleY = 1;
+		this.add(mouth_13);
+
+		// collectible_20
+		const collectible_20 = new Collectible2(scene, 830.4609824437817, -6433.562934924514);
+		this.add(collectible_20);
+
+		// collectible_21
+		const collectible_21 = new Collectible2(scene, 842.6914334836976, -6580.328347403503);
+		this.add(collectible_21);
+
+		// collectible_22
+		const collectible_22 = new Collectible2(scene, 830.4609824437817, -6714.863308842577);
+		this.add(collectible_22);
+
+		// collectible_23
+		const collectible_23 = new Collectible2(scene, 543.0453830057614, -8769.579083548422);
+		this.add(collectible_23);
+
+		// collectible_24
+		const collectible_24 = new Collectible2(scene, 543.0453830057614, -8622.813671069434);
+		this.add(collectible_24);
+
+		// collectible_25
+		const collectible_25 = new Collectible2(scene, 543, -8470);
+		this.add(collectible_25);
+
 		// wallVertical
-		const wallVertical = new WallVertical(scene, 505, -7901);
+		const wallVertical = new WallVertical(scene, 546, -7855);
 		wallVertical.scaleX = 0.5;
 		wallVertical.scaleY = 0.5;
 		this.add(wallVertical);
+
+		// container_2
+		const container_2 = scene.add.container(388, -12948);
+		container_2.blendMode = Phaser.BlendModes.SKIP_CHECK;
+		container_2.alpha = 0.75;
+		this.add(container_2);
+
+		// nose_18
+		const nose_18 = new Nose(scene, -206, 0);
+		container_2.add(nose_18);
+
+		// nose_19
+		const nose_19 = new Nose(scene, 53, 0);
+		container_2.add(nose_19);
+
+		// nose_20
+		const nose_20 = new Nose(scene, 317, 0);
+		container_2.add(nose_20);
+
+		// nose_21
+		const nose_21 = new Nose(scene, 558, 0);
+		container_2.add(nose_21);
+
+		// container_4
+		const container_4 = scene.add.container(252, -15049);
+		container_4.blendMode = Phaser.BlendModes.SKIP_CHECK;
+		container_4.alpha = 0.75;
+		this.add(container_4);
+
+		// nose_23
+		const nose_23 = new Nose(scene, 53, 0);
+		container_4.add(nose_23);
+
+		// nose_24
+		const nose_24 = new Nose(scene, 317, 0);
+		container_4.add(nose_24);
+
+		// nose_25
+		const nose_25 = new Nose(scene, 558, 0);
+		container_4.add(nose_25);
+
+		// collectible_26
+		const collectible_26 = new Collectible2(scene, 560.1651737450478, -9664.643547497226);
+		this.add(collectible_26);
+
+		// collectible_27
+		const collectible_27 = new Collectible2(scene, 563, -9826);
+		this.add(collectible_27);
+
+		// collectible_28
+		const collectible_28 = new Collectible2(scene, 565, -10011);
+		this.add(collectible_28);
 
 		// badMood (prefab fields)
 		badMood.player = "p1";
@@ -482,10 +668,6 @@ class Level_One extends Phaser.GameObjects.Layer {
 		// mouth_3 (prefab fields)
 		mouth_3.property = "p3";
 
-		// badMood_1 (prefab fields)
-		badMood_1.player = "p1";
-		badMood_1.dragInside = 0.5;
-
 		// mouth_8 (prefab fields)
 		mouth_8.property = "p1";
 
@@ -507,9 +689,6 @@ class Level_One extends Phaser.GameObjects.Layer {
 		// nose_2 (prefab fields)
 		nose_2.property = "p3";
 
-		// mouth_9 (prefab fields)
-		mouth_9.property = "p1";
-
 		// mouth_11 (prefab fields)
 		mouth_11.property = "p3";
 
@@ -518,6 +697,22 @@ class Level_One extends Phaser.GameObjects.Layer {
 
 		// nose_11 (prefab fields)
 		nose_11.property = "p4";
+
+		// nose_16 (prefab fields)
+		nose_16.property = "p2";
+
+		// nose_17 (prefab fields)
+		nose_17.property = "p2";
+
+		// mouth_9 (prefab fields)
+		mouth_9.property = "p3";
+
+		// mouth_12 (prefab fields)
+		mouth_12.property = "p3";
+
+		// badMood_1 (prefab fields)
+		badMood_1.player = "p1";
+		badMood_1.dragInside = 500;
 
 		// nose (prefab fields)
 		nose.property = "p1";
@@ -536,6 +731,42 @@ class Level_One extends Phaser.GameObjects.Layer {
 
 		// mouth_10 (prefab fields)
 		mouth_10.property = "p3";
+
+		// nose_12 (prefab fields)
+		nose_12.property = "p1";
+
+		// nose_13 (prefab fields)
+		nose_13.property = "p2";
+
+		// nose_14 (prefab fields)
+		nose_14.property = "p3";
+
+		// nose_15 (prefab fields)
+		nose_15.property = "p4";
+
+		// mouth_13 (prefab fields)
+		mouth_13.property = "p3";
+
+		// nose_18 (prefab fields)
+		nose_18.property = "p1";
+
+		// nose_19 (prefab fields)
+		nose_19.property = "p2";
+
+		// nose_20 (prefab fields)
+		nose_20.property = "p3";
+
+		// nose_21 (prefab fields)
+		nose_21.property = "p4";
+
+		// nose_23 (prefab fields)
+		nose_23.property = "p2";
+
+		// nose_24 (prefab fields)
+		nose_24.property = "p3";
+
+		// nose_25 (prefab fields)
+		nose_25.property = "p4";
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
