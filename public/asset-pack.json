@@ -225,6 +225,13 @@
                 "key": "Cloud_Smile_B"
             },
             {
+                "url": [
+                    "public/sfx/Collectable.wav"
+                ],
+                "type": "audio",
+                "key": "Collectable"
+            },
+            {
                 "url": {
                     "IMG": "public/collectible1.png"
                 },
@@ -293,6 +300,13 @@
                 },
                 "type": "texture",
                 "key": "Flood"
+            },
+            {
+                "url": [
+                    "public/sfx/GameStart.wav"
+                ],
+                "type": "audio",
+                "key": "GameStart"
             },
             {
                 "url": {
@@ -386,6 +400,20 @@
                 "key": "Logo"
             },
             {
+                "url": [
+                    "public/sfx/Meow.wav"
+                ],
+                "type": "audio",
+                "key": "Meow"
+            },
+            {
+                "url": [
+                    "public/sfx/Mouth.wav"
+                ],
+                "type": "audio",
+                "key": "Mouth"
+            },
+            {
                 "url": {
                     "IMG": "public/Mouth_Wind_fx.png"
                 },
@@ -421,6 +449,13 @@
                 "key": "Mouth_Wind_fx_04"
             },
             {
+                "url": [
+                    "public/sfx/Mouth2.wav"
+                ],
+                "type": "audio",
+                "key": "Mouth2"
+            },
+            {
                 "url": {
                     "IMG": "public/MouthBlow.png"
                 },
@@ -447,6 +482,20 @@
                 },
                 "type": "texture",
                 "key": "MouthIdle_1"
+            },
+            {
+                "url": [
+                    "public/sfx/Music.mp3"
+                ],
+                "type": "audio",
+                "key": "Music"
+            },
+            {
+                "url": [
+                    "public/sfx/Nose.wav"
+                ],
+                "type": "audio",
+                "key": "Nose"
             },
             {
                 "url": {
