@@ -289,6 +289,13 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/PhoneScreen/Flood.png"
+                },
+                "type": "texture",
+                "key": "Flood"
+            },
+            {
+                "url": {
                     "IMG": "public/Sprites/Opening/GoTitle.png"
                 },
                 "type": "texture",
@@ -349,6 +356,13 @@
                 },
                 "type": "texture",
                 "key": "HeadBefore Start"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/PhoneScreen/LoadingReadyREF.png"
+                },
+                "type": "texture",
+                "key": "LoadingReadyREF"
             },
             {
                 "url": {
@@ -482,6 +496,41 @@
                 },
                 "type": "texture",
                 "key": "ObstacleFace"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/PhoneScreen/P_Ready.png"
+                },
+                "type": "texture",
+                "key": "P_Ready"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/PhoneScreen/P1_Smile.png"
+                },
+                "type": "texture",
+                "key": "P1_Smile"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/PhoneScreen/P2_Smile.png"
+                },
+                "type": "texture",
+                "key": "P2_Smile"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/PhoneScreen/P3_Smile.png"
+                },
+                "type": "texture",
+                "key": "P3_Smile"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/PhoneScreen/P4_Smile.png"
+                },
+                "type": "texture",
+                "key": "P4_Smile"
             },
             {
                 "url": {
@@ -625,6 +674,20 @@
                 },
                 "type": "texture",
                 "key": "sunset-raster"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/PhoneScreen/TAP_WhenReady.png"
+                },
+                "type": "texture",
+                "key": "TAP_WhenReady"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/PhoneScreen/TapREF.png"
+                },
+                "type": "texture",
+                "key": "TapREF"
             },
             {
                 "url": {
