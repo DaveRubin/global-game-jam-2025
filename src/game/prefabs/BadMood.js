@@ -112,10 +112,20 @@ class BadMood extends BaseCollider {
 
 		const wall = this.getByName("cloud");
 		if (isDown) {
-			wall.setAlpha(0.2);
+			this.scene.tweens.add({
+				targets: wall,
+				alpha: 0.2,
+				duration: 0.35,
+				ease: 'Sine.out'
+			});
 		}
 		else {
-			wall.setAlpha(0.75);
+			this.scene.tweens.add({
+				targets: wall,
+				alpha: 0.75,
+				duration: 0.35,
+				ease: 'Sine.out'
+			});
 		}
 	}
 

@@ -116,8 +116,9 @@ class Level_One extends Phaser.GameObjects.Layer {
 		beginningClouds.add(wall2);
 
 		// rainbow1
-		const rainbow1 = scene.add.container(-22, -4058);
+		const rainbow1 = scene.add.container(-22, -7874);
 		rainbow1.blendMode = Phaser.BlendModes.SKIP_CHECK;
+		rainbow1.alpha = 0.75;
 		this.add(rainbow1);
 
 		// badMood
@@ -259,7 +260,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(badThought_1);
 
 		// badThought_2
-		const badThought_2 = new BadThought(scene, 1549, 4155);
+		const badThought_2 = new BadThought(scene, 554, 3718);
 		rainbow1.add(badThought_2);
 
 		// badThought_3

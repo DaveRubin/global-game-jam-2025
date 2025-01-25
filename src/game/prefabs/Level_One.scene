@@ -239,7 +239,8 @@
                     "label": "rainbow1",
                     "blendMode": -1,
                     "x": -22,
-                    "y": -4058,
+                    "y": -7874,
+                    "alpha": 0.75,
                     "list": [
                         {
                             "prefabId": "b1b89334-a192-48e5-a110-db77dd9e1c11",
@@ -630,8 +631,8 @@
                                 "y"
                             ],
                             "label": "badThought_2",
-                            "x": 1549,
-                            "y": 4155
+                            "x": 554,
+                            "y": 3718
                         },
                         {
                             "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
