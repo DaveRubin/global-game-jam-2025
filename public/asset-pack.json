@@ -394,6 +394,13 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Loading/Loading_Frame_02.png"
+                },
+                "type": "texture",
+                "key": "Loading_Frame_02"
+            },
+            {
+                "url": {
                     "IMG": "public/Sprites/PhoneScreen/LoadingReadyREF.png"
                 },
                 "type": "texture",
