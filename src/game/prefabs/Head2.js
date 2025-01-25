@@ -109,6 +109,9 @@ class Head2 extends Phaser.GameObjects.Container {
 		this.getByName("death_01").setVisible(false);
 		this.getByName("death_01").play("Death");
 		this.updateEvent = this.scene.events.on('update', () => {
+			if (!this.body) {
+				return;
+			}
 			const velocityX = this.body.velocity.x;
 			const velocityY = this.body.velocity.y;
 			const MAX_VELOCITY_Y = 60;
@@ -127,6 +130,8 @@ class Head2 extends Phaser.GameObjects.Container {
 
 
 	async kill(skipAnimation) {
+		this.scene.sound.play("DeathShort");
+
 		if (!skipAnimation) {
 			this.getByName("death_01").setVisible(true);
 			this.getByName("death_01").once('animationcomplete', () => {

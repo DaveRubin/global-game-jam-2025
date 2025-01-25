@@ -9,12 +9,9 @@ export class CollectibleBase extends Phaser.Physics.Arcade.Image {
         const body = this.body as Phaser.Physics.Arcade.Body;
         body.setAllowGravity(false);
         body.onOverlap = true;
-        this.scene.events.once("scene-awake", () => this.awake());
-    }
-
-    awake() {
         this.scene.physics.add.overlap(this, Head2.instance, () => this.collect());
     }
+
 
     collect() {
         HUD.instance.collected();
@@ -23,6 +20,9 @@ export class CollectibleBase extends Phaser.Physics.Arcade.Image {
 
         const particle = new CollectedParticle(this.scene, x, y);
         this.scene.add.existing(particle);
+        this.scene.sound.play("Collectable", {
+            rate: 0.8 + Math.random() * 0.4 // Random pitch between 0.8 and 1.2
+        });
         this.destroy();
     }
 

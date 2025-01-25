@@ -5,6 +5,7 @@ import Phaser from "phaser";
 import { PLAYER_COLORS } from "../consts";
 import { getPlayerTrigger } from "../getPlayerTrigger";
 import { Head2 } from "./Head2";
+import { createTween } from "../tweenFactory";
 
 
 // You can write more code here
@@ -84,6 +85,10 @@ class Mouth extends Phaser.GameObjects.Container {
 	awake() {
 		const effect = this.getByName("effect");
 
+		createTween(this.scene, this, new Phaser.Math.Vector2(this.offsetX, this.offsetY), {
+			delay: this.moveDelay,
+			moveDuration: this.moveDuration,
+		});
 
 		getPlayerTrigger(this.scene, this.property, (isDown) => this.onPlayerTrigger(isDown));
 		this.onPlayerTrigger(false);
@@ -120,6 +125,14 @@ class Mouth extends Phaser.GameObjects.Container {
 
 
 		if (isDown) {
+			const camera = this.scene.cameras.main;
+			const mouthY = this.getWorldTransformMatrix().ty - camera.scrollY;
+			if (mouthY > 0 && mouthY < camera.height) {
+				this.scene.sound.play(Math.random() > 0.5 ? "Mouth" : "Mouth2", {
+					rate: 0.8 + Math.random() * 0.4
+				});
+			}
+
 			const direction = -1 * this.scaleX;
 			const vfx = this.list.find((child) => child.name === VFX_IMAGE);
 			vfx.anims.setProgress(0);

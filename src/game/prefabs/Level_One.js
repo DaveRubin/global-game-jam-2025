@@ -20,83 +20,297 @@ class Level_One extends Phaser.GameObjects.Layer {
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
 
-		// container_3
-		const container_3 = scene.add.container(-5, -2724);
-		container_3.blendMode = Phaser.BlendModes.SKIP_CHECK;
-		this.add(container_3);
+		// BG1
+		const bG1 = scene.add.container(0, -609);
+		bG1.blendMode = Phaser.BlendModes.SKIP_CHECK;
+		this.add(bG1);
 
-		// background_14
-		const background_14 = scene.add.image(0, -10369, "Background_01");
-		background_14.setOrigin(0, 0);
-		container_3.add(background_14);
-
-		// background
-		const background = scene.add.image(0, 1671, "Background_01");
-		background.setOrigin(0, 0);
-		container_3.add(background);
-
-		// background_01
-		const background_01 = scene.add.image(0, 3906, "Background_01");
-		background_01.setOrigin(0, 0);
-		container_3.add(background_01);
-
-		// background_02
-		const background_02 = scene.add.image(0, 3006, "Background_02");
-		background_02.setOrigin(0, 0);
-		container_3.add(background_02);
-
-		// background_1
-		const background_1 = scene.add.image(0, 838, "Background_02");
-		background_1.setOrigin(0, 0);
-		container_3.add(background_1);
+		// rectangle
+		const rectangle = scene.add.rectangle(0, 929, 128, 128);
+		rectangle.scaleX = 9.25;
+		rectangle.scaleY = 38.8;
+		rectangle.setOrigin(0, 0.5);
+		rectangle.isFilled = true;
+		rectangle.fillColor = 16245930;
+		rectangle.strokeAlpha = 0;
+		bG1.add(rectangle);
 
 		// background_2
-		const background_2 = scene.add.image(0, -685, "Background_01");
+		const background_2 = scene.add.image(0, -947, "Background_02");
 		background_2.setOrigin(0, 0);
-		container_3.add(background_2);
+		background_2.tintTopLeft = 16769184;
+		background_2.tintTopRight = 16769184;
+		background_2.tintBottomLeft = 16769184;
+		background_2.tintBottomRight = 16769184;
+		bG1.add(background_2);
 
 		// background_3
-		const background_3 = scene.add.image(-4, -1826, "Background_02");
+		const background_3 = scene.add.image(0, -41, "Background_01");
 		background_3.setOrigin(0, 0);
-		background_3.alpha = 0.8;
-		background_3.alphaTopLeft = 0.8;
-		background_3.alphaTopRight = 0.8;
-		background_3.alphaBottomLeft = 0.8;
-		background_3.alphaBottomRight = 0.8;
-		container_3.add(background_3);
+		background_3.tintTopLeft = 16701851;
+		background_3.tintTopRight = 16701851;
+		background_3.tintBottomLeft = 16701851;
+		background_3.tintBottomRight = 16701851;
+		bG1.add(background_3);
 
 		// background_4
-		const background_4 = scene.add.image(0, -3457, "Background_01");
+		const background_4 = scene.add.image(0, 410, "Background_02");
 		background_4.setOrigin(0, 0);
-		container_3.add(background_4);
+		background_4.tintTopLeft = 16764289;
+		background_4.tintTopRight = 16764289;
+		background_4.tintBottomLeft = 16764289;
+		background_4.tintBottomRight = 16764289;
+		bG1.add(background_4);
 
 		// background_5
-		const background_5 = scene.add.image(0, -6052, "Background_01");
+		const background_5 = scene.add.image(0, 1165, "Background_01");
 		background_5.setOrigin(0, 0);
-		container_3.add(background_5);
+		background_5.tintTopLeft = 16039554;
+		background_5.tintTopRight = 16039554;
+		background_5.tintBottomLeft = 16039554;
+		background_5.tintBottomRight = 16039554;
+		bG1.add(background_5);
+
+		// background_24
+		const background_24 = scene.add.image(0, -986, "Background_02");
+		background_24.setOrigin(0, 0);
+		background_24.tintTopLeft = 16764289;
+		background_24.tintTopRight = 16764289;
+		background_24.tintBottomLeft = 16764289;
+		background_24.tintBottomRight = 16764289;
+		bG1.add(background_24);
+
+		// BG
+		const bG = scene.add.container(0, -5465);
+		bG.blendMode = Phaser.BlendModes.SKIP_CHECK;
+		this.add(bG);
+
+		// background
+		const background = scene.add.image(0, -947, "Background_02");
+		background.setOrigin(0, 0);
+		background.tintTopLeft = 16769184;
+		background.tintTopRight = 16769184;
+		background.tintBottomLeft = 16769184;
+		background.tintBottomRight = 16769184;
+		bG.add(background);
+
+		// background_1
+		const background_1 = scene.add.image(0, -467, "Background_01");
+		background_1.setOrigin(0, 0);
+		background_1.tintTopLeft = 16701851;
+		background_1.tintTopRight = 16701851;
+		background_1.tintBottomLeft = 16701851;
+		background_1.tintBottomRight = 16701851;
+		bG.add(background_1);
 
 		// background_6
-		const background_6 = scene.add.image(0, -4450, "Background_02");
+		const background_6 = scene.add.image(0, 410, "Background_02");
 		background_6.setOrigin(0, 0);
-		container_3.add(background_6);
+		background_6.tintTopLeft = 16764289;
+		background_6.tintTopRight = 16764289;
+		background_6.tintBottomLeft = 16764289;
+		background_6.tintBottomRight = 16764289;
+		bG.add(background_6);
 
 		// background_7
-		const background_7 = scene.add.image(0, -7011, "Background_02");
+		const background_7 = scene.add.image(0, 1165, "Background_01");
 		background_7.setOrigin(0, 0);
-		container_3.add(background_7);
+		background_7.tintTopLeft = 16039554;
+		background_7.tintTopRight = 16039554;
+		background_7.tintBottomLeft = 16039554;
+		background_7.tintBottomRight = 16039554;
+		bG.add(background_7);
 
-		// background_13
-		const background_13 = scene.add.image(0, -9208, "Background_02");
-		background_13.setOrigin(0, 0);
-		container_3.add(background_13);
+		// background_22
+		const background_22 = scene.add.image(10, -2060, "Background_01");
+		background_22.setOrigin(0, 0);
+		background_22.tintTopLeft = 16701851;
+		background_22.tintTopRight = 16701851;
+		background_22.tintBottomLeft = 16701851;
+		background_22.tintBottomRight = 16701851;
+		bG.add(background_22);
+
+		// background_23
+		const background_23 = scene.add.image(0, -2580, "Background_02");
+		background_23.setOrigin(0, 0);
+		background_23.tintTopLeft = 16764289;
+		background_23.tintTopRight = 16764289;
+		background_23.tintBottomLeft = 16764289;
+		background_23.tintBottomRight = 16764289;
+		bG.add(background_23);
+
+		// background_25
+		const background_25 = scene.add.image(0, 2281, "Background_01");
+		background_25.setOrigin(0, 0);
+		background_25.tintTopLeft = 16039554;
+		background_25.tintTopRight = 16039554;
+		background_25.tintBottomLeft = 16039554;
+		background_25.tintBottomRight = 16039554;
+		bG.add(background_25);
+
+		// BG_2
+		const bG_2 = scene.add.container(0, -20867);
+		bG_2.blendMode = Phaser.BlendModes.SKIP_CHECK;
+		this.add(bG_2);
+
+		// rectangle_4
+		const rectangle_4 = scene.add.rectangle(0, 929, 128, 128);
+		rectangle_4.scaleX = 9.25;
+		rectangle_4.scaleY = 38.8;
+		rectangle_4.setOrigin(0, 0.5);
+		rectangle_4.isFilled = true;
+		rectangle_4.fillColor = 13614335;
+		rectangle_4.strokeAlpha = 0;
+		bG_2.add(rectangle_4);
+
+		// background_9
+		const background_9 = scene.add.image(0, -947, "Background_02");
+		background_9.setOrigin(0, 0);
+		background_9.tintTopLeft = 12359933;
+		background_9.tintTopRight = 12359933;
+		background_9.tintBottomLeft = 12359933;
+		background_9.tintBottomRight = 12359933;
+		bG_2.add(background_9);
+
+		// background_10
+		const background_10 = scene.add.image(0, -41, "Background_01");
+		background_10.setOrigin(0, 0);
+		background_10.tintTopLeft = 11175931;
+		background_10.tintTopRight = 11175931;
+		background_10.tintBottomLeft = 11175931;
+		background_10.tintBottomRight = 11175931;
+		bG_2.add(background_10);
+
+		// background_11
+		const background_11 = scene.add.image(0, 410, "Background_02");
+		background_11.setOrigin(0, 0);
+		background_11.tintTopLeft = 9136119;
+		background_11.tintTopRight = 9136119;
+		background_11.tintBottomLeft = 9136119;
+		background_11.tintBottomRight = 9136119;
+		bG_2.add(background_11);
+
+		// background_12
+		const background_12 = scene.add.image(0, 931, "Background_01");
+		background_12.setOrigin(0, 0);
+		background_12.tintTopLeft = 7951858;
+		background_12.tintTopRight = 7951858;
+		background_12.tintBottomLeft = 7951858;
+		background_12.tintBottomRight = 7951858;
+		bG_2.add(background_12);
+
+		// BG_1
+		const bG_1 = scene.add.container(0, -10335);
+		bG_1.blendMode = Phaser.BlendModes.SKIP_CHECK;
+		this.add(bG_1);
+
+		// background_21
+		const background_21 = scene.add.image(52, -2779, "Background_02");
+		background_21.setOrigin(0, 0);
+		background_21.tintTopLeft = 16764289;
+		background_21.tintTopRight = 16764289;
+		background_21.tintBottomLeft = 16764289;
+		background_21.tintBottomRight = 16764289;
+		bG_1.add(background_21);
+
+		// background_20
+		const background_20 = scene.add.image(15, -2356, "Background_01");
+		background_20.setOrigin(0, 0);
+		background_20.tintTopLeft = 16039554;
+		background_20.tintTopRight = 16039554;
+		background_20.tintBottomLeft = 16039554;
+		background_20.tintBottomRight = 16039554;
+		bG_1.add(background_20);
 
 		// background_8
-		const background_8 = scene.add.image(0, -8444, "Background_01");
+		const background_8 = scene.add.image(0, -947, "Background_02");
 		background_8.setOrigin(0, 0);
-		container_3.add(background_8);
+		background_8.tintTopLeft = 16769184;
+		background_8.tintTopRight = 16769184;
+		background_8.tintBottomLeft = 16769184;
+		background_8.tintBottomRight = 16769184;
+		bG_1.add(background_8);
+
+		// background_13
+		const background_13 = scene.add.image(0, -41, "Background_01");
+		background_13.setOrigin(0, 0);
+		background_13.tintTopLeft = 16701851;
+		background_13.tintTopRight = 16701851;
+		background_13.tintBottomLeft = 16701851;
+		background_13.tintBottomRight = 16701851;
+		bG_1.add(background_13);
+
+		// background_14
+		const background_14 = scene.add.image(0, -107, "Background_02");
+		background_14.setOrigin(0, 0);
+		background_14.tintTopLeft = 16764289;
+		background_14.tintTopRight = 16764289;
+		background_14.tintBottomLeft = 16764289;
+		background_14.tintBottomRight = 16764289;
+		bG_1.add(background_14);
+
+		// background_15
+		const background_15 = scene.add.image(0, 1165, "Background_01");
+		background_15.setOrigin(0, 0);
+		background_15.tintTopLeft = 16039554;
+		background_15.tintTopRight = 16039554;
+		background_15.tintBottomLeft = 16039554;
+		background_15.tintBottomRight = 16039554;
+		bG_1.add(background_15);
+
+		// BG3
+		const bG3 = scene.add.container(0, -16120);
+		bG3.blendMode = Phaser.BlendModes.SKIP_CHECK;
+		this.add(bG3);
+
+		// rectangle_3
+		const rectangle_3 = scene.add.rectangle(0, 929, 128, 128);
+		rectangle_3.scaleX = 9.25;
+		rectangle_3.scaleY = 38.8;
+		rectangle_3.setOrigin(0, 0.5);
+		rectangle_3.isFilled = true;
+		rectangle_3.fillColor = 13614335;
+		rectangle_3.strokeAlpha = 0;
+		bG3.add(rectangle_3);
+
+		// background_16
+		const background_16 = scene.add.image(0, -947, "Background_02");
+		background_16.setOrigin(0, 0);
+		background_16.tintTopLeft = 12359933;
+		background_16.tintTopRight = 12359933;
+		background_16.tintBottomLeft = 12359933;
+		background_16.tintBottomRight = 12359933;
+		bG3.add(background_16);
+
+		// background_17
+		const background_17 = scene.add.image(0, -41, "Background_01");
+		background_17.setOrigin(0, 0);
+		background_17.tintTopLeft = 11175931;
+		background_17.tintTopRight = 11175931;
+		background_17.tintBottomLeft = 11175931;
+		background_17.tintBottomRight = 11175931;
+		bG3.add(background_17);
+
+		// background_18
+		const background_18 = scene.add.image(0, 410, "Background_02");
+		background_18.setOrigin(0, 0);
+		background_18.tintTopLeft = 9136119;
+		background_18.tintTopRight = 9136119;
+		background_18.tintBottomLeft = 9136119;
+		background_18.tintBottomRight = 9136119;
+		bG3.add(background_18);
+
+		// background_19
+		const background_19 = scene.add.image(0, 1165, "Background_01");
+		background_19.setOrigin(0, 0);
+		background_19.tintTopLeft = 7951858;
+		background_19.tintTopRight = 7951858;
+		background_19.tintBottomLeft = 7951858;
+		background_19.tintBottomRight = 7951858;
+		bG3.add(background_19);
 
 		// player
-		const player = scene.add.container(528, 2102);
+		const player = scene.add.container(550, 2102);
 		player.blendMode = Phaser.BlendModes.SKIP_CHECK;
 		this.add(player);
 
@@ -145,17 +359,28 @@ class Level_One extends Phaser.GameObjects.Layer {
 		wall_3.scaleY = 1;
 		beginningClouds.add(wall_3);
 
+		// wall_4
+		const wall_4 = new Wall1(scene, 97, -21597);
+		wall_4.scaleX = -1;
+		wall_4.scaleY = 1;
+		beginningClouds.add(wall_4);
+
+		// wall_6
+		const wall_6 = new Wall1(scene, 1184, -20451);
+		wall_6.scaleX = 1;
+		wall_6.scaleY = 1;
+		beginningClouds.add(wall_6);
+
+		// wall_5
+		const wall_5 = new Wall1(scene, 759, -20447);
+		wall_5.scaleX = 1;
+		wall_5.scaleY = 1;
+		beginningClouds.add(wall_5);
+
 		// rainbow1
 		const rainbow1 = scene.add.container(-22, -7874);
 		rainbow1.blendMode = Phaser.BlendModes.SKIP_CHECK;
 		this.add(rainbow1);
-
-		// badMood
-		const badMood = new BadMood(scene, -2231, 3923);
-		badMood.scaleX = 0.75;
-		badMood.scaleY = 0.75;
-		badMood.alpha = 1;
-		rainbow1.add(badMood);
 
 		// wall
 		const wall = new Wall1(scene, 548, 8546);
@@ -285,15 +510,8 @@ class Level_One extends Phaser.GameObjects.Layer {
 		mouth_9.scaleY = 1;
 		rainbow1.add(mouth_9);
 
-		// badMood_1
-		const badMood_1 = new BadMood(scene, -2651, -6320);
-		badMood_1.scaleX = 1;
-		badMood_1.scaleY = 1;
-		badMood_1.alpha = 1;
-		rainbow1.add(badMood_1);
-
 		// nose_26
-		const nose_26 = new Nose(scene, 465, -1243);
+		const nose_26 = new Nose(scene, 431, -1237);
 		rainbow1.add(nose_26);
 
 		// badThought_3
@@ -315,7 +533,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(mouth_3);
 
 		// nose_22
-		const nose_22 = new Nose(scene, 457, 836);
+		const nose_22 = new Nose(scene, 457, 707);
 		rainbow1.add(nose_22);
 
 		// nose_23
@@ -345,7 +563,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(badThought_12);
 
 		// badThought_13
-		const badThought_13 = new BadThought(scene, 179, -997);
+		const badThought_13 = new BadThought(scene, 185, -893);
 		rainbow1.add(badThought_13);
 
 		// collectible_15
@@ -369,7 +587,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(collectible_23);
 
 		// nose_10
-		const nose_10 = new Nose(scene, 676, 839);
+		const nose_10 = new Nose(scene, 676, 691);
 		rainbow1.add(nose_10);
 
 		// mouth_27
@@ -409,11 +627,11 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(mouth_32);
 
 		// badThought_1
-		const badThought_1 = new BadThought(scene, 186, 680);
+		const badThought_1 = new BadThought(scene, 186, 726);
 		rainbow1.add(badThought_1);
 
 		// badThought_5
-		const badThought_5 = new BadThought(scene, 962, 695);
+		const badThought_5 = new BadThought(scene, 962, 735);
 		rainbow1.add(badThought_5);
 
 		// nose_11
@@ -423,6 +641,22 @@ class Level_One extends Phaser.GameObjects.Layer {
 		// badThought_6
 		const badThought_6 = new BadThought(scene, 420, -426);
 		rainbow1.add(badThought_6);
+
+		// badThought_21
+		const badThought_21 = new BadThought(scene, 166, -423);
+		rainbow1.add(badThought_21);
+
+		// mouth_17
+		const mouth_17 = new Mouth(scene, 1016, -7410);
+		mouth_17.scaleX = 1;
+		mouth_17.scaleY = 1;
+		rainbow1.add(mouth_17);
+
+		// mouth_26
+		const mouth_26 = new Mouth(scene, 1047, -10513);
+		mouth_26.scaleX = 1;
+		mouth_26.scaleY = 1;
+		rainbow1.add(mouth_26);
 
 		// container_1
 		const container_1 = scene.add.container(393, -2749);
@@ -494,57 +728,22 @@ class Level_One extends Phaser.GameObjects.Layer {
 		levelTwo.blendMode = Phaser.BlendModes.SKIP_CHECK;
 		this.add(levelTwo);
 
-		// background_10
-		const background_10 = scene.add.image(0, 2883, "Background_01");
-		background_10.setOrigin(0, 0);
-		background_10.alpha = 0.75;
-		background_10.alphaTopLeft = 0.75;
-		background_10.alphaTopRight = 0.75;
-		background_10.alphaBottomLeft = 0.75;
-		background_10.alphaBottomRight = 0.75;
-		background_10.tintTopLeft = 6418304;
-		background_10.tintTopRight = 6418304;
-		background_10.tintBottomLeft = 6418304;
-		background_10.tintBottomRight = 6418304;
-		levelTwo.add(background_10);
-
-		// background_9
-		const background_9 = scene.add.image(0, 4539, "Background_02");
-		background_9.setOrigin(0, 0);
-		background_9.tintTopLeft = 6418304;
-		background_9.tintTopRight = 6418304;
-		background_9.tintBottomLeft = 6418304;
-		background_9.tintBottomRight = 6418304;
-		levelTwo.add(background_9);
-
-		// background_11
-		const background_11 = scene.add.image(0, 1945, "Background_02");
-		background_11.setOrigin(0, 0);
-		background_11.tintTopLeft = 6418304;
-		background_11.tintTopRight = 6418304;
-		background_11.tintBottomLeft = 6418304;
-		background_11.tintBottomRight = 6418304;
-		levelTwo.add(background_11);
-
-		// background_12
-		const background_12 = scene.add.image(0, 402, "Background_01");
-		background_12.setOrigin(0, 0);
-		background_12.tintTopLeft = 6418304;
-		background_12.tintTopRight = 6418304;
-		background_12.tintBottomLeft = 6418304;
-		background_12.tintBottomRight = 6418304;
-		levelTwo.add(background_12);
+		// rainbow
+		const rainbow = new Rainbow(scene, 26, 5358);
+		rainbow.scaleX = 1.05;
+		rainbow.scaleY = 1.05;
+		levelTwo.add(rainbow);
 
 		// nose_12
 		const nose_12 = new Nose(scene, 206, 4360);
 		levelTwo.add(nose_12);
 
 		// nose_18
-		const nose_18 = new Nose(scene, 204, 2906);
+		const nose_18 = new Nose(scene, 204, 3179);
 		levelTwo.add(nose_18);
 
 		// nose_32
-		const nose_32 = new Nose(scene, 208, 1360);
+		const nose_32 = new Nose(scene, 208, 2052);
 		levelTwo.add(nose_32);
 
 		// nose_13
@@ -552,27 +751,23 @@ class Level_One extends Phaser.GameObjects.Layer {
 		levelTwo.add(nose_13);
 
 		// nose_19
-		const nose_19 = new Nose(scene, 463, 2906);
+		const nose_19 = new Nose(scene, 463, 3179);
 		levelTwo.add(nose_19);
 
 		// nose_33
-		const nose_33 = new Nose(scene, 467, 1360);
+		const nose_33 = new Nose(scene, 467, 2052);
 		levelTwo.add(nose_33);
-
-		// rainbow
-		const rainbow = new Rainbow(scene, 0, 5358);
-		levelTwo.add(rainbow);
 
 		// nose_14
 		const nose_14 = new Nose(scene, 729, 4360);
 		levelTwo.add(nose_14);
 
 		// nose_20
-		const nose_20 = new Nose(scene, 727, 2906);
+		const nose_20 = new Nose(scene, 727, 3179);
 		levelTwo.add(nose_20);
 
 		// nose_34
-		const nose_34 = new Nose(scene, 731, 1360);
+		const nose_34 = new Nose(scene, 731, 2052);
 		levelTwo.add(nose_34);
 
 		// nose_15
@@ -580,12 +775,70 @@ class Level_One extends Phaser.GameObjects.Layer {
 		levelTwo.add(nose_15);
 
 		// nose_21
-		const nose_21 = new Nose(scene, 968, 2906);
+		const nose_21 = new Nose(scene, 968, 3179);
 		levelTwo.add(nose_21);
 
 		// nose_35
-		const nose_35 = new Nose(scene, 972, 1360);
+		const nose_35 = new Nose(scene, 972, 2057);
 		levelTwo.add(nose_35);
+
+		// nose_25
+		const nose_25 = new Nose(scene, 240, 991);
+		levelTwo.add(nose_25);
+
+		// nose_27
+		const nose_27 = new Nose(scene, 499, 991);
+		levelTwo.add(nose_27);
+
+		// nose_28
+		const nose_28 = new Nose(scene, 763, 991);
+		levelTwo.add(nose_28);
+
+		// nose_29
+		const nose_29 = new Nose(scene, 1004, 991);
+		levelTwo.add(nose_29);
+
+		// nose_30
+		const nose_30 = new Nose(scene, 250, 232);
+		levelTwo.add(nose_30);
+
+		// nose_31
+		const nose_31 = new Nose(scene, 509, 232);
+		levelTwo.add(nose_31);
+
+		// nose_36
+		const nose_36 = new Nose(scene, 773, 232);
+		levelTwo.add(nose_36);
+
+		// nose_37
+		const nose_37 = new Nose(scene, 1014, 232);
+		levelTwo.add(nose_37);
+
+		// nose_38
+		const nose_38 = new Nose(scene, 231, -646);
+		levelTwo.add(nose_38);
+
+		// nose_39
+		const nose_39 = new Nose(scene, 836, -1649);
+		levelTwo.add(nose_39);
+
+		// nose_40
+		const nose_40 = new Nose(scene, 1043, -1652);
+		levelTwo.add(nose_40);
+
+		// nose_41
+		const nose_41 = new Nose(scene, 836, -2116);
+		levelTwo.add(nose_41);
+
+		// nose_42
+		const nose_42 = new Nose(scene, 1031, -2123);
+		levelTwo.add(nose_42);
+
+		// rainbow_1
+		const rainbow_1 = new Rainbow(scene, 29, -2940);
+		rainbow_1.scaleX = 1.05;
+		rainbow_1.scaleY = 1.05;
+		levelTwo.add(rainbow_1);
 
 		// container_2
 		const container_2 = scene.add.container(121, -11543);
@@ -631,19 +884,19 @@ class Level_One extends Phaser.GameObjects.Layer {
 		container_2.add(nose_3);
 
 		// badThought_16
-		const badThought_16 = new BadThought(scene, 783, 123);
+		const badThought_16 = new BadThought(scene, 789, 1);
 		container_2.add(badThought_16);
 
 		// badThought_4
-		const badThought_4 = new BadThought(scene, 42, 126);
+		const badThought_4 = new BadThought(scene, 48, 22);
 		container_2.add(badThought_4);
 
 		// nose_1
-		const nose_1 = new Nose(scene, 518, 143);
+		const nose_1 = new Nose(scene, 518, 17);
 		container_2.add(nose_1);
 
 		// nose_16
-		const nose_16 = new Nose(scene, 292, 153);
+		const nose_16 = new Nose(scene, 292, 16);
 		container_2.add(nose_16);
 
 		// mouth_22
@@ -675,6 +928,60 @@ class Level_One extends Phaser.GameObjects.Layer {
 		// collectible_29
 		const collectible_29 = new Collectible2(scene, 422, 1840);
 		container_2.add(collectible_29);
+
+		// badThought_9
+		const badThought_9 = new BadThought(scene, 854, -4865);
+		container_2.add(badThought_9);
+
+		// badThought_11
+		const badThought_11 = new BadThought(scene, 902, -5932);
+		container_2.add(badThought_11);
+
+		// badThought_15
+		const badThought_15 = new BadThought(scene, 898, -6130);
+		container_2.add(badThought_15);
+
+		// mouth_11
+		const mouth_11 = new Mouth(scene, -5, -7779);
+		mouth_11.scaleX = -1;
+		mouth_11.scaleY = 1;
+		container_2.add(mouth_11);
+
+		// mouth_16
+		const mouth_16 = new Mouth(scene, -21, -8010);
+		mouth_16.scaleX = -1;
+		mouth_16.scaleY = 1;
+		container_2.add(mouth_16);
+
+		// badThought_22
+		const badThought_22 = new BadThought(scene, 407, -7300);
+		container_2.add(badThought_22);
+
+		// badThought_20
+		const badThought_20 = new BadThought(scene, 442, -8300);
+		container_2.add(badThought_20);
+
+		// mouth_12
+		const mouth_12 = new Mouth(scene, -26, -2545);
+		mouth_12.scaleX = -1;
+		mouth_12.scaleY = 1;
+		container_2.add(mouth_12);
+
+		// mouth_23
+		const mouth_23 = new Mouth(scene, -18, -7540);
+		mouth_23.scaleX = -1;
+		mouth_23.scaleY = 1;
+		container_2.add(mouth_23);
+
+		// badThought_29
+		const badThought_29 = new BadThought(scene, 528, -10448);
+		badThought_29.scaleX = 3;
+		badThought_29.scaleY = 3;
+		container_2.add(badThought_29);
+
+		// badThought_18
+		const badThought_18 = new BadThought(scene, 447, -8565);
+		container_2.add(badThought_18);
 
 		// collectible_24
 		const collectible_24 = new Collectible2(scene, 553, -10550);
@@ -721,7 +1028,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		this.add(collectible_31);
 
 		// collectible_32
-		const collectible_32 = new Collectible2(scene, 934.619087988577, -14519.761832667298);
+		const collectible_32 = new Collectible2(scene, 931, -14520);
 		this.add(collectible_32);
 
 		// collectible_33
@@ -736,9 +1043,29 @@ class Level_One extends Phaser.GameObjects.Layer {
 		const collectible_35 = new Collectible2(scene, 920.2283843132136, -14140.806635882727);
 		this.add(collectible_35);
 
-		// badMood (prefab fields)
-		badMood.player = "p1";
-		badMood.dragInside = 50;
+		// collectible_36
+		const collectible_36 = new Collectible2(scene, 164, -15872);
+		this.add(collectible_36);
+
+		// collectible_37
+		const collectible_37 = new Collectible2(scene, 160, -15752);
+		this.add(collectible_37);
+
+		// collectible_38
+		const collectible_38 = new Collectible2(scene, 166, -15637);
+		this.add(collectible_38);
+
+		// collectible_39
+		const collectible_39 = new Collectible2(scene, 160, -15521);
+		this.add(collectible_39);
+
+		// collectible_40
+		const collectible_40 = new Collectible2(scene, 160, -15392);
+		this.add(collectible_40);
+
+		// collectible_41
+		const collectible_41 = new Collectible2(scene, 155, -15258);
+		this.add(collectible_41);
 
 		// mouth_1 (prefab fields)
 		mouth_1.property = "p2";
@@ -772,10 +1099,6 @@ class Level_One extends Phaser.GameObjects.Layer {
 
 		// mouth_9 (prefab fields)
 		mouth_9.property = "p1";
-
-		// badMood_1 (prefab fields)
-		badMood_1.player = "p1";
-		badMood_1.dragInside = 500;
 
 		// nose_26 (prefab fields)
 		nose_26.property = "p2";
@@ -825,6 +1148,12 @@ class Level_One extends Phaser.GameObjects.Layer {
 		// nose_11 (prefab fields)
 		nose_11.property = "p4";
 
+		// mouth_17 (prefab fields)
+		mouth_17.property = "p1";
+
+		// mouth_26 (prefab fields)
+		mouth_26.property = "p2";
+
 		// nose (prefab fields)
 		nose.property = "p1";
 
@@ -842,6 +1171,9 @@ class Level_One extends Phaser.GameObjects.Layer {
 
 		// mouth (prefab fields)
 		mouth.property = "p1";
+
+		// rainbow (prefab fields)
+		rainbow.text = "100m";
 
 		// nose_12 (prefab fields)
 		nose_12.property = "p1";
@@ -861,9 +1193,6 @@ class Level_One extends Phaser.GameObjects.Layer {
 		// nose_33 (prefab fields)
 		nose_33.property = "p3";
 
-		// rainbow (prefab fields)
-		rainbow.text = "100m";
-
 		// nose_14 (prefab fields)
 		nose_14.property = "p1";
 
@@ -881,6 +1210,48 @@ class Level_One extends Phaser.GameObjects.Layer {
 
 		// nose_35 (prefab fields)
 		nose_35.property = "p3";
+
+		// nose_25 (prefab fields)
+		nose_25.property = "p4";
+
+		// nose_27 (prefab fields)
+		nose_27.property = "p4";
+
+		// nose_28 (prefab fields)
+		nose_28.property = "p4";
+
+		// nose_29 (prefab fields)
+		nose_29.property = "p4";
+
+		// nose_30 (prefab fields)
+		nose_30.property = "p2";
+
+		// nose_31 (prefab fields)
+		nose_31.property = "p2";
+
+		// nose_36 (prefab fields)
+		nose_36.property = "p1";
+
+		// nose_37 (prefab fields)
+		nose_37.property = "p1";
+
+		// nose_38 (prefab fields)
+		nose_38.property = "p4";
+
+		// nose_39 (prefab fields)
+		nose_39.property = "p4";
+
+		// nose_40 (prefab fields)
+		nose_40.property = "p4";
+
+		// nose_41 (prefab fields)
+		nose_41.property = "p4";
+
+		// nose_42 (prefab fields)
+		nose_42.property = "p4";
+
+		// rainbow_1 (prefab fields)
+		rainbow_1.text = "Goodbye!";
 
 		// nose_17 (prefab fields)
 		nose_17.property = "p4";
@@ -912,6 +1283,51 @@ class Level_One extends Phaser.GameObjects.Layer {
 		// mouth_25 (prefab fields)
 		mouth_25.property = "p3";
 
+		// badThought_9 (prefab fields)
+		badThought_9.offsetX = -770;
+		badThought_9.moveDuration = 2500;
+		badThought_9.moveDelay = 300;
+
+		// badThought_11 (prefab fields)
+		badThought_11.offsetX = -770;
+		badThought_11.moveDuration = 2500;
+		badThought_11.moveDelay = 600;
+
+		// badThought_15 (prefab fields)
+		badThought_15.offsetX = -770;
+		badThought_15.moveDuration = 2500;
+		badThought_15.moveDelay = 800;
+
+		// mouth_11 (prefab fields)
+		mouth_11.property = "p1";
+
+		// mouth_16 (prefab fields)
+		mouth_16.property = "p2";
+
+		// badThought_22 (prefab fields)
+		badThought_22.offsetX = 0;
+		badThought_22.offsetY = -1000;
+		badThought_22.moveDuration = 1300;
+		badThought_22.moveDelay = 0;
+
+		// badThought_20 (prefab fields)
+		badThought_20.offsetX = 0;
+		badThought_20.offsetY = 1000;
+		badThought_20.moveDuration = 1300;
+		badThought_20.moveDelay = 0;
+
+		// mouth_12 (prefab fields)
+		mouth_12.property = "p3";
+
+		// mouth_23 (prefab fields)
+		mouth_23.property = "p3";
+
+		// badThought_18 (prefab fields)
+		badThought_18.offsetX = 0;
+		badThought_18.offsetY = 0;
+		badThought_18.moveDuration = 1300;
+		badThought_18.moveDelay = 0;
+
 		// mouth_18 (prefab fields)
 		mouth_18.property = "p3";
 
@@ -919,27 +1335,62 @@ class Level_One extends Phaser.GameObjects.Layer {
 		mouth_21.property = "p3";
 
 		// collectible_30 (prefab fields)
-		collectible_30.offsetX = -840;
+		collectible_30.offsetX = -820;
+		collectible_30.moveDuration = 1500;
 
 		// collectible_31 (prefab fields)
-		collectible_31.offsetX = 0;
-		collectible_31.moveDelay = 150;
+		collectible_31.offsetX = -820;
+		collectible_31.moveDuration = 1500;
+		collectible_31.moveDelay = 100;
 
 		// collectible_32 (prefab fields)
-		collectible_32.offsetX = 0;
-		collectible_32.moveDelay = 300;
+		collectible_32.offsetX = -820;
+		collectible_32.moveDuration = 1500;
+		collectible_32.moveDelay = 200;
 
 		// collectible_33 (prefab fields)
-		collectible_33.offsetX = 0;
-		collectible_33.moveDelay = 450;
+		collectible_33.offsetX = -820;
+		collectible_33.moveDuration = 1500;
+		collectible_33.moveDelay = 300;
 
 		// collectible_34 (prefab fields)
-		collectible_34.offsetX = 0;
-		collectible_34.moveDelay = 700;
+		collectible_34.offsetX = -820;
+		collectible_34.moveDuration = 1500;
+		collectible_34.moveDelay = 400;
 
 		// collectible_35 (prefab fields)
-		collectible_35.offsetX = 0;
-		collectible_35.moveDelay = 850;
+		collectible_35.offsetX = -820;
+		collectible_35.moveDuration = 1500;
+		collectible_35.moveDelay = 500;
+
+		// collectible_36 (prefab fields)
+		collectible_36.offsetX = 820;
+		collectible_36.moveDuration = 1500;
+
+		// collectible_37 (prefab fields)
+		collectible_37.offsetX = 820;
+		collectible_37.moveDuration = 1500;
+		collectible_37.moveDelay = 100;
+
+		// collectible_38 (prefab fields)
+		collectible_38.offsetX = 820;
+		collectible_38.moveDuration = 1500;
+		collectible_38.moveDelay = 200;
+
+		// collectible_39 (prefab fields)
+		collectible_39.offsetX = 820;
+		collectible_39.moveDuration = 1500;
+		collectible_39.moveDelay = 300;
+
+		// collectible_40 (prefab fields)
+		collectible_40.offsetX = 820;
+		collectible_40.moveDuration = 1500;
+		collectible_40.moveDelay = 400;
+
+		// collectible_41 (prefab fields)
+		collectible_41.offsetX = 820;
+		collectible_41.moveDuration = 1500;
+		collectible_41.moveDelay = 500;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.

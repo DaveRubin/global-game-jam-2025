@@ -2,7 +2,7 @@ import Phaser from "phaser";
 import { PLAYER_COLORS } from "../consts";
 import { getPlayerTrigger } from "../getPlayerTrigger";
 import { Head2 } from "./Head2.js";
-import {createTween} from "../tweenFactory.ts";
+import { createTween } from "../tweenFactory.ts";
 // import { getTouchingPhysicsElement } from "../getTouchingPhysicsElement";
 
 
@@ -95,7 +95,10 @@ class Nose extends Phaser.GameObjects.Container {
 
 	/* START-USER-CODE */
 	awake() {
-		createTween(this.scene, this, new Phaser.Math.Vector2(0, 200));
+		createTween(this.scene, this, new Phaser.Math.Vector2(this.offsetX, this.offsetY), {
+			delay: this.moveDelay,
+			moveDuration: this.moveDuration,
+		});
 
 		getPlayerTrigger(this.scene, this.property, (isDown) => this.onPlayerTrigger(isDown));
 		this.onPlayerTrigger(false);
@@ -121,6 +124,15 @@ class Nose extends Phaser.GameObjects.Container {
 		const vfx = this.list.find((child) => child.name === VFX_IMAGE);
 
 		if (isDown) {
+
+			const camera = this.scene.cameras.main;
+			const noseY = this.getWorldTransformMatrix().ty - camera.scrollY;
+			if (noseY > 0 && noseY < camera.height) {
+				this.scene.sound.play("Nose", {
+					rate: 0.8 + Math.random() * 0.4
+				});
+			}
+
 			vfx.setPosition(0, 400);
 			vfx.setVisible(true);
 			vfx.setAlpha(1);

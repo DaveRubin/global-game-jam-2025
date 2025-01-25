@@ -1,6 +1,7 @@
 
 // You can write more code here
 import { Head2 } from "./Head2";
+import {createTween} from "../tweenFactory";
 
 /* START OF COMPILED CODE */
 
@@ -68,10 +69,26 @@ class BadThought extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
+	/** @type {"p1"|"p2"|"p3"|"p4"} */
+	property = "p1";
+	/** @type {number} */
+	offsetX = 0;
+	/** @type {number} */
+	offsetY = 0;
+	/** @type {number} */
+	moveDuration = 1000;
+	/** @type {number} */
+	moveDelay = 0;
+
 	/* START-USER-CODE */
 	awake() {
 		// @ts-ignore
 		this.getByName("arcadesprite_1").play("Obstacle");
+
+		createTween(this.scene, this, new Phaser.Math.Vector2(this.offsetX, this.offsetY), {
+			delay: this.moveDelay,
+			moveDuration: this.moveDuration,
+		});
 
 		// Add the enemy sprite
 		const enemyWhat = this.scene.add.sprite(400, 300, 'enemyTexture');

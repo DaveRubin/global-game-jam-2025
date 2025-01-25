@@ -2,6 +2,7 @@
     "id": "f5032964-65e6-42bf-9151-20eb2b02b297",
     "sceneType": "PREFAB",
     "settings": {
+        "generateAwakeHandler": true,
         "superClassName": "CollectibleBase",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -43,45 +44,55 @@
                 ]
             }
         },
-                {
-                    "name": "offsetX",
-                    "label": "Offset X",
-                    "tooltip": "",
-                    "defValue": 0,
-                    "customDefinition": false,
-                    "type": {
-                        "id": "number"
-                    }
-                },
-                {
-                    "name": "offsetY",
-                    "label": "Offset Y",
-                    "tooltip": "",
-                    "defValue": 0,
-                    "customDefinition": false,
-                    "type": {
-                        "id": "number"
-                    }
-                },
-                {
-                    "name": "moveDuration",
-                    "label": "Move Duration",
-                    "tooltip": "",
-                    "defValue": 1000,
-                    "customDefinition": false,
-                    "type": {
-                        "id": "number"
-                    }
-                },
-                {
-                    "name": "moveDelay",
-                    "label": "Move Delay",
-                    "tooltip": "",
-                    "defValue": 0,
-                    "customDefinition": false,
-                    "type": {
-                        "id": "number"
-                    }
-                }
+        {
+            "name": "offsetX",
+            "label": "Offset X",
+            "tooltip": "",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "offsetY",
+            "label": "Offset Y",
+            "tooltip": "",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "moveDuration",
+            "label": "Move Duration",
+            "tooltip": "",
+            "defValue": 1000,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "moveDelay",
+            "label": "Move Delay",
+            "tooltip": "",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "dsa",
+            "label": "dsa",
+            "tooltip": "",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        }
     ]
 }
