@@ -1,22 +1,13 @@
 import { getStageClient } from "../client/BaseClient";
 import { StageClient } from "../client/StageClient";
-import { PlayerColor } from "../game/PlayerColor";
 import encodeQR from "@paulmillr/qr";
 import { Lobby } from "./Lobby";
 
 
 export class LobbyScene extends Phaser.Scene {
   stageClient: StageClient;
-  bluePlayer!: Phaser.GameObjects.Rectangle;
-  greenPlayer!: Phaser.GameObjects.Rectangle;
-  yellowPlayer!: Phaser.GameObjects.Rectangle;
-  redPlayer!: Phaser.GameObjects.Rectangle;
-  players!: {
-    [PlayerColor.YELLOW]: Phaser.GameObjects.Rectangle;
-    [PlayerColor.GREEN]: Phaser.GameObjects.Rectangle;
-    [PlayerColor.RED]: Phaser.GameObjects.Rectangle;
-    [PlayerColor.BLUE]: Phaser.GameObjects.Rectangle
-  };
+
+
   constructor() {
     super("LobbyScene");
 

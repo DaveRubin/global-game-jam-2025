@@ -127,7 +127,7 @@ class Lobby extends Phaser.GameObjects.Container {
 					console.log("Debug mode activated!");
 					// @ts-ignore
 					window.isDebugMode = true;
-					this.scene.start("GameScene"); // Start the GameScene
+					this.scene.events.emit("start-game");
 					debugKeyCount = 0; // Reset the counter
 					clearTimeout(debugKeyTimeout); // Clear the timeout if debug mode is activated
 					return;
@@ -140,6 +140,14 @@ class Lobby extends Phaser.GameObjects.Container {
 				}, DEBUG_TIMEOUT);
 			}
 		});
+	}
+
+	hide() {
+		this.visible = false;
+	}
+
+	show() {
+		this.visible = true;
 	}
 	// Write your code here.
 
