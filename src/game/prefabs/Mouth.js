@@ -88,6 +88,18 @@ class Mouth extends Phaser.GameObjects.Container {
 		const vfx = this.list.find((child) => child.name === VFX_IMAGE);
 		vfx.setVisible(false);
 		this.getByName("mouth_Wind_fx").play("Mouth_Wind_fx");
+		this.updatePhysicsBody();
+	}
+
+	updatePhysicsBody() {
+		const effect = this.getByName("effect");
+		if (!effect) return;
+
+
+		if (this.scaleX < 0) {
+			effect.body.setOffset(effect.width, 0); // Flip offset if necessary
+		}
+
 	}
 	// Write your code here.
 
@@ -98,11 +110,29 @@ class Mouth extends Phaser.GameObjects.Container {
 		idleImage.setVisible(!isDown);
 		blowImage.setVisible(isDown);
 		const effect = this.getByName("effect");
-		const touching = this.scene.physics.overlap(effect, Head2.instance);
 
-		if (touching && isDown) {
-			const direction = this.scaleX > 0 ? -1 : 1;
-			Head2.instance.body.setVelocityX(800 * direction);
+
+		if (isDown) {
+			const direction = -1 * this.scaleX;
+			const vfx = this.list.find((child) => child.name === VFX_IMAGE);
+			vfx.setPosition(-50, 0);
+			vfx.setVisible(true);
+			vfx.setAlpha(1);
+			this.scene.tweens.killTweensOf(vfx);
+			this.scene.tweens.add({
+				targets: vfx,
+				x: -250,
+				alpha: 0,
+				duration: 500,
+				ease: 'Linear'
+			});
+			const touching = this.scene.physics.overlap(effect, Head2.instance);
+			if (touching) {
+				Head2.instance.body.velocity.add({
+					x: 800 * direction,
+					y: 0
+				});
+			}
 		}
 
 
