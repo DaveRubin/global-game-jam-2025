@@ -13,6 +13,7 @@ class BadMood extends BaseCollider {
 		super(scene, x ?? 252, y ?? 3);
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
+		this.alpha = 0.8;
 
 		// cloud
 		const cloud = scene.add.sprite(-260, 0, "Cloud_B_01");
@@ -79,6 +80,8 @@ class BadMood extends BaseCollider {
 
 	/** @type {"p1"|"p2"|"p3"|"p4"} */
 	player = "";
+	/** @type {number} */
+	dragInside = 1;
 
 	/* START-USER-CODE */
 
@@ -88,8 +91,19 @@ class BadMood extends BaseCollider {
 		super.awake();
 		wall.setTint(PLAYER_COLORS[this.player]);
 
+		this.collider = this.getByName("collider");
+
 		getPlayerTrigger(this.scene, this.player, (isDown) => this.onPlayerTrigger(isDown));
 		this.setFace(false);
+
+		this.scene.events.on('update', () => this.update());
+	}
+
+	update(time, deltaTime) {
+		if (this.scene.physics.overlap(this.collider.body, Head2.instance)) {
+			Head2.instance.body.setDrag(this.dragInside);
+			console.log('what', Head2.instance.body, Head2.instance.body.drag);
+		}
 	}
 
 	setFace(isCalm) {
@@ -103,9 +117,9 @@ class BadMood extends BaseCollider {
 		this.setFace(isDown);
 
 		const collider = this.getByName("collider");
-		collider.body.enable = !isDown;
-		if (!isDown) {
-			if (this.scene.physics.overlap(collider.body, Head2.instance)) {
+		collider.body.checkCollision.none = isDown;
+		if (this.scene.physics.overlap(collider.body, Head2.instance)) {
+			if (!isDown) {
 				Head2.instance.kill();
 			}
 		}

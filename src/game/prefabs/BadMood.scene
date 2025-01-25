@@ -17,6 +17,7 @@
             "blendMode": -1,
             "x": 252,
             "y": 3,
+            "alpha": 0.8,
             "list": [
                 {
                     "type": "Sprite",
@@ -139,6 +140,16 @@
                     "p3",
                     "p4"
                 ]
+            }
+        },
+        {
+            "name": "dragInside",
+            "label": "DragInside",
+            "tooltip": "",
+            "defValue": 1,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
             }
         }
     ]
