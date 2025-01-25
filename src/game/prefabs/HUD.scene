@@ -1,0 +1,55 @@
+{
+    "id": "4d465aba-280c-406e-9ac2-a9f5bb404b00",
+    "sceneType": "PREFAB",
+    "settings": {
+        "snapWidth": 442,
+        "snapHeight": 476,
+        "generateAwakeHandler": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1125,
+        "borderHeight": 2436
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "e774f897-7c97-47ff-a782-764f70da44eb",
+            "label": "container_1",
+            "blendMode": -1,
+            "list": [
+                {
+                    "type": "Text",
+                    "id": "719942ac-eddb-4d1b-8b1d-3eac056f97ee",
+                    "label": "text",
+                    "useGameObjectName": true,
+                    "x": 134,
+                    "y": 14,
+                    "scaleX": 1.540275387603872,
+                    "scaleY": 1.540275387603872,
+                    "text": "0",
+                    "fontSize": "72px"
+                },
+                {
+                    "type": "Image",
+                    "id": "8c302070-7d10-45f3-8327-6b96851da766",
+                    "label": "pickUp_02",
+                    "texture": {
+                        "key": "PickUp_02"
+                    },
+                    "x": 68,
+                    "y": 70,
+                    "scaleX": 0.23769132803317172,
+                    "scaleY": 0.23769132803317172
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
