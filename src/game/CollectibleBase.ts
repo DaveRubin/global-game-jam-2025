@@ -1,3 +1,4 @@
+import { CollectedParticle } from "./prefabs/CollectedParticle";
 import { Head2 } from "./prefabs/Head2";
 import { HUD } from "./prefabs/HUD";
 
@@ -17,6 +18,11 @@ export class CollectibleBase extends Phaser.Physics.Arcade.Image {
 
     collect() {
         HUD.instance.collected();
+        const y = this.getWorldTransformMatrix().ty;
+        const x = this.getWorldTransformMatrix().tx;
+
+        const particle = new CollectedParticle(this.scene, x, y);
+        this.scene.add.existing(particle);
         this.destroy();
     }
 
