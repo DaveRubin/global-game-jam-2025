@@ -9,8 +9,6 @@ import { createAnimation } from "./createAnimation";
 import { Head2 } from "./prefabs/Head2";
 import { GAME_HEIGHT } from "./consts";
 import { HUD } from "./prefabs/HUD";
-import encodeQR from "@paulmillr/qr";
-import { getStageClient } from "../client/BaseClient";
 import { Lobby } from "../lobby/Lobby";
 
 /* START OF COMPILED CODE */
@@ -24,16 +22,7 @@ export class GameScene extends Phaser.Scene {
 
 
 	preload() {
-		const stageClient = getStageClient();
-		const gameUrl = `${window.location.origin}${window.location.pathname}?game-id=${stageClient.gameId}`;
-		const gifBytes = encodeQR(gameUrl, "gif", { scale: 25 }); // Uncompressed GIF
-		const blob = new Blob([gifBytes], { type: "image/gif" });
-		const url = URL.createObjectURL(blob);
 
-		this.load.image("qr-code", url);
-		this.load.image('bubble', 'public/bubble.png');
-		this.load.pack("section1", "public/asset-pack.json");
-		this.load.spritesheet('raster', 'public/sunset-raster.png', { frameWidth: 16, frameHeight: 16 });
 	}
 
 	static instance: GameScene;

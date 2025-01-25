@@ -10,11 +10,11 @@ class LoadingScreen extends Phaser.GameObjects.Container {
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
 
-		// image_1
-		const image_1 = scene.add.image(0, 0, "LoadingREF");
+		const image_1 = scene.add.image(0, 0, "MainLogo");
 		image_1.visible = false;
 		this.add(image_1);
 
+<<<<<<< Updated upstream
 		// Bar
 		const bar = scene.add.rectangle(-455, 228, 128, 128);
 		bar.scaleX = 7.05;
@@ -25,6 +25,16 @@ class LoadingScreen extends Phaser.GameObjects.Container {
 
 		// LoadingFrame
 		const loadingFrame = scene.add.image(2, 319, "Loading_Frame_02");
+=======
+		const rectangle_1 = scene.add.rectangle(-455, 260, 128, 128);
+		rectangle_1.scaleX = 7.05;
+		rectangle_1.setOrigin(0, 0);
+		rectangle_1.isFilled = true;
+		this.add(rectangle_1);
+
+		// LoadingFrame
+		const loadingFrame = scene.add.image(2, 319, "MainLoading");
+>>>>>>> Stashed changes
 		this.add(loadingFrame);
 
 		// Logo
@@ -46,3 +56,4 @@ class LoadingScreen extends Phaser.GameObjects.Container {
 /* END OF COMPILED CODE */
 
 // You can write more code here
+export { LoadingScreen }
