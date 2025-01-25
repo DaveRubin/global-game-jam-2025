@@ -29,7 +29,7 @@ class HUD extends Phaser.GameObjects.Container {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
-		this.instance = this;
+		HUD.instance = this;
 		this.setScrollFactor(0);
 
 		/* END-USER-CTR-CODE */
