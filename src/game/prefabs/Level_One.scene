@@ -698,7 +698,7 @@
                                 "scaleY"
                             ],
                             "label": "mouth_9",
-                            "property": "p3",
+                            "property": "p1",
                             "x": 1020,
                             "y": 133,
                             "scaleX": 1,
@@ -1760,7 +1760,7 @@
                         "scaleY"
                     ],
                     "label": "mouth_18",
-                    "property": "p4",
+                    "property": "p3",
                     "x": 99,
                     "y": -7241,
                     "scaleX": -1,

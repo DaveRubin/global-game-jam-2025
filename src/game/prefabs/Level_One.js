@@ -708,7 +708,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		nose_2.property = "p1";
 
 		// mouth_9 (prefab fields)
-		mouth_9.property = "p3";
+		mouth_9.property = "p1";
 
 		// badMood_1 (prefab fields)
 		badMood_1.player = "p1";
@@ -835,7 +835,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		mouth_12.property = "p4";
 
 		// mouth_18 (prefab fields)
-		mouth_18.property = "p4";
+		mouth_18.property = "p3";
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
