@@ -3,6 +3,7 @@
     "sceneType": "PREFAB",
     "settings": {
         "generateAwakeHandler": true,
+        "superClassName": "BaseCollider",
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -20,33 +21,24 @@
             "alpha": 0.8,
             "list": [
                 {
-                    "type": "Image",
+                    "type": "Sprite",
                     "id": "77d08d1e-0484-4242-a752-3fc27a70d2b8",
                     "label": "wall",
                     "useGameObjectName": true,
                     "texture": {
                         "key": "Wall_01"
-                    },
-                    "alpha": 0.8,
-                    "alphaTopLeft": 0.8,
-                    "alphaTopRight": 0.8,
-                    "alphaBottomLeft": 0.8,
-                    "alphaBottomRight": 0.8
+                    }
                 },
                 {
                     "type": "ArcadeSprite",
                     "id": "27b761fe-69bc-4bfe-ab26-d636bb4f0c18",
-                    "label": "arcadesprite_1",
+                    "label": "collider",
+                    "useGameObjectName": true,
                     "texture": {},
                     "y": -6,
                     "scaleX": 21.8,
                     "scaleY": 4.45,
                     "visible": false,
-                    "alpha": 0.8,
-                    "alphaTopLeft": 0.8,
-                    "alphaTopRight": 0.8,
-                    "alphaBottomLeft": 0.8,
-                    "alphaBottomRight": 0.8,
                     "moves": false,
                     "allowGravity": false,
                     "allowDrag": false,

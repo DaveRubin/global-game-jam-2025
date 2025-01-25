@@ -88,7 +88,7 @@ export class GameScene extends Phaser.Scene {
 		const headY = Head2.instance.getWorldTransformMatrix().ty;
 
 
-		camera.setScroll(0, -GAME_HEIGHT / 2 + headY);
+		camera.setScroll(0, -GAME_HEIGHT / 2 + headY - 500);
 
 		const scrollSpeed = 2;
 		// Update camera position each frame
