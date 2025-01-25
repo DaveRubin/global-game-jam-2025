@@ -2,6 +2,7 @@
 // You can write more code here
 
 import { GAME_WIDTH } from "../consts";
+import { GameScene } from "../GameScene";
 
 /* START OF COMPILED CODE */
 
@@ -82,6 +83,7 @@ class Head2 extends Phaser.GameObjects.Container {
 	}
 
 	reset() {
+		this.getByName("head_Idle").setVisible(true);
 		this.setPosition(this.initialPosition.x, this.initialPosition.y);
 		const headIdle = this.getByName("head_Idle");
 		headIdle.setScale(0);
@@ -93,6 +95,17 @@ class Head2 extends Phaser.GameObjects.Container {
 			ease: 'Back.out'
 		});
 		this.getByName("death_01").setVisible(false);
+		GameScene.instance.reloadLevel();
+	}
+
+	kill() {
+		GameScene.instance.end();
+		this.getByName("death_01").setVisible(true);
+		this.getByName("death_01").once('animationcomplete', () => {
+			this.getByName("death_01").setVisible(false);
+		});
+		this.getByName("death_01").play("Death");
+		this.getByName("head_Idle").setVisible(false);
 	}
 	// Write your code here.
 

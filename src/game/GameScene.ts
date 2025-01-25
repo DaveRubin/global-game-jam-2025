@@ -15,6 +15,7 @@ export class GameScene extends Phaser.Scene {
 	scrollTimer: Phaser.Time.TimerEvent | null = null;
 	constructor() {
 		super("GameScene");
+		GameScene.instance = this;
 	}
 
 
@@ -22,6 +23,8 @@ export class GameScene extends Phaser.Scene {
 		this.load.image('bubble', 'public/bubble.png');
 		this.load.pack("section1", "public/asset-pack.json");
 	}
+	static instance: GameScene;
+	level: Level_One;
 
 	/** @returns {void} */
 	editorCreate() {
@@ -30,8 +33,8 @@ export class GameScene extends Phaser.Scene {
 
 		new Controller(this);
 		// Create and add level container to the scene
-		const level = new Level_One(this);
-		this.add.existing(level); // This adds the container to the display list
+		this.level = new Level_One(this);
+		this.add.existing(this.level); // This adds the container to the display list
 		createAnimation(this, 'Cloud_A', 3);
 		createAnimation(this, 'Cloud_B', 3);
 		createAnimation(this, 'Obstacle', 3);
@@ -40,7 +43,7 @@ export class GameScene extends Phaser.Scene {
 		createAnimation(this, 'CheckPointCloud_R', 3);
 		createAnimation(this, 'SuckFx_02', 4);
 		createAnimation(this, 'Mouth_Wind_fx', 4);
-		createAnimation(this, 'Death', 7);
+		createAnimation(this, 'Death', 7, 0);
 
 		this.cameras.main.setBackgroundColor('#aaaaaa');
 
@@ -53,6 +56,17 @@ export class GameScene extends Phaser.Scene {
 		// this.cameras.main.startFollow(bubble, false, 0.2, 0.2);
 		this.events.emit("scene-awake");
 	}
+
+	reloadLevel() {
+		this.level.destroy();
+		this.physics.world.colliders.destroy();
+		this.tweens.killAll();
+		Head2.instance.destroy();
+		this.level = new Level_One(this);
+		this.add.existing(this.level);
+		this.events.emit("scene-awake");
+	}
+
 	startCameraLogic() {
 		const camera = this.cameras.main;
 
@@ -81,16 +95,19 @@ export class GameScene extends Phaser.Scene {
 				// Check if Head2 is out of frame
 
 				if (headWorldY > GAME_HEIGHT + 300) {
-					console.log("Head2 is out of frame!");
-					this.scrollTimer?.destroy();
-					// Wait 3 seconds then tween camera to bottom
-					this.resetGame();
-
+					GameScene.instance.end();
 				}
 
 			},
 			loop: true
 		});
+	}
+
+	end() {
+		console.log("Head2 is out of frame!");
+		this.scrollTimer?.destroy();
+		// Wait 3 seconds then tween camera to bottom
+		this.resetGame();
 	}
 
 	resetGame() {
