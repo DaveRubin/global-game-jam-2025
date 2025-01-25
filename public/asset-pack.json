@@ -295,6 +295,20 @@
                 "key": "Death_07"
             },
             {
+                "url": [
+                    "public/sfx/Death_long.mp3"
+                ],
+                "type": "audio",
+                "key": "Death_long"
+            },
+            {
+                "url": [
+                    "public/sfx/DeathShort.mp3"
+                ],
+                "type": "audio",
+                "key": "DeathShort"
+            },
+            {
                 "url": {
                     "IMG": "public/Sprites/PhoneScreen/Flood.png"
                 },

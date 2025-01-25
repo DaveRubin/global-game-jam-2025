@@ -16,6 +16,21 @@
             "list": [
                 {
                     "type": "Image",
+                    "id": "e5155c23-e850-4800-b716-7cf7413265f2",
+                    "label": "BG",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "PlayerBox"
+                    },
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "tintTopLeft": "#5d5d5d",
+                    "tintTopRight": "#5d5d5d",
+                    "tintBottomLeft": "#727272",
+                    "tintBottomRight": "#727272"
+                },
+                {
+                    "type": "Image",
                     "id": "13875367-a05b-4876-9127-d8c92cf14097",
                     "label": "player-box",
                     "useGameObjectName": true,
