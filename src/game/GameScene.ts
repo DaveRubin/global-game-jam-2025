@@ -57,11 +57,11 @@ export class GameScene extends Phaser.Scene {
 	}
 
 	reloadLevel() {
-		this.level.destroy();
 		this.physics.world.colliders.destroy();
 		this.events.removeAllListeners();
 		this.tweens.killAll();
 		Head2.instance.destroy();
+		this.level.destroy();
 		this.level = new Level_One(this);
 		this.add.existing(this.level);
 		this.startCameraLogic();
