@@ -499,6 +499,13 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Opening/Opening_Ref_02.png"
+                },
+                "type": "texture",
+                "key": "Opening_Ref_02"
+            },
+            {
+                "url": {
                     "IMG": "public/Sprites/PhoneScreen/P_Ready.png"
                 },
                 "type": "texture",
