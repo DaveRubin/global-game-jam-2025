@@ -359,10 +359,24 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Loading/Loading_Frame.png"
+                },
+                "type": "texture",
+                "key": "Loading_Frame"
+            },
+            {
+                "url": {
                     "IMG": "public/Sprites/PhoneScreen/LoadingReadyREF.png"
                 },
                 "type": "texture",
                 "key": "LoadingReadyREF"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Loading/LoadingREF.png"
+                },
+                "type": "texture",
+                "key": "LoadingREF"
             },
             {
                 "url": {
