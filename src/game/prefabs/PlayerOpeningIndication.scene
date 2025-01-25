@@ -17,7 +17,8 @@
                 {
                     "type": "Image",
                     "id": "13875367-a05b-4876-9127-d8c92cf14097",
-                    "label": "P1_off",
+                    "label": "player-box",
+                    "useGameObjectName": true,
                     "texture": {
                         "key": "PlayerBox"
                     },
@@ -30,23 +31,9 @@
                 },
                 {
                     "type": "Image",
-                    "id": "e5bc94ac-634b-426d-8a96-9ab35c7d5377",
-                    "label": "P1_On",
-                    "texture": {
-                        "key": "PlayerBox"
-                    },
-                    "scaleX": 0.5,
-                    "scaleY": 0.5,
-                    "visible": false,
-                    "tintTopLeft": "#fbfb53",
-                    "tintTopRight": "#fbfb53",
-                    "tintBottomLeft": "#fbfb53",
-                    "tintBottomRight": "#fbfb53"
-                },
-                {
-                    "type": "Image",
                     "id": "fbdd4088-2ebb-46a4-a691-809a48027769",
                     "label": "Ready",
+                    "useGameObjectName": true,
                     "texture": {
                         "key": "ReadyBox"
                     },
@@ -58,6 +45,7 @@
                     "type": "Image",
                     "id": "9c297c18-b3db-4139-9a26-e2dfeed27c2c",
                     "label": "ReadyText",
+                    "useGameObjectName": true,
                     "texture": {
                         "key": "ReadyTitle"
                     },
