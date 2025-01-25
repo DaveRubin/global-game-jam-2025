@@ -18,8 +18,8 @@ class BadMood extends BaseCollider {
 		// cloud
 		const cloud = scene.add.sprite(-260, 0, "Cloud_B_01");
 		cloud.name = "cloud";
-		cloud.scaleX = 2;
-		cloud.scaleY = 2;
+		cloud.scaleX = 3;
+		cloud.scaleY = 3;
 		cloud.alpha = 0.8;
 		cloud.alphaTopLeft = 0.8;
 		cloud.alphaTopRight = 0.8;
@@ -31,9 +31,14 @@ class BadMood extends BaseCollider {
 		// collider
 		const collider = scene.physics.add.sprite(-291, -107, "AOE");
 		collider.name = "collider";
-		collider.scaleX = 2.8;
-		collider.scaleY = 1.8;
+		collider.scaleX = 3.3;
+		collider.scaleY = 3.2;
 		collider.visible = false;
+		collider.alpha = 0.8;
+		collider.alphaTopLeft = 0.8;
+		collider.alphaTopRight = 0.8;
+		collider.alphaBottomLeft = 0.8;
+		collider.alphaBottomRight = 0.8;
 		collider.body.moves = false;
 		collider.body.pushable = false;
 		collider.body.immovable = true;
@@ -52,6 +57,11 @@ class BadMood extends BaseCollider {
 		scar2.name = "scar2";
 		scar2.scaleX = 2.5;
 		scar2.scaleY = 2.5;
+		scar2.alpha = 0.8;
+		scar2.alphaTopLeft = 0.8;
+		scar2.alphaTopRight = 0.8;
+		scar2.alphaBottomLeft = 0.8;
+		scar2.alphaBottomRight = 0.8;
 		this.add(scar2);
 
 		// scar1
@@ -59,6 +69,11 @@ class BadMood extends BaseCollider {
 		scar1.name = "scar1";
 		scar1.scaleX = 2.5;
 		scar1.scaleY = 2.5;
+		scar1.alpha = 0.8;
+		scar1.alphaTopLeft = 0.8;
+		scar1.alphaTopRight = 0.8;
+		scar1.alphaBottomLeft = 0.8;
+		scar1.alphaBottomRight = 0.8;
 		this.add(scar1);
 
 		// content
@@ -66,11 +81,12 @@ class BadMood extends BaseCollider {
 		content.name = "content";
 		content.scaleX = 2.5;
 		content.scaleY = 2.5;
-		content.alpha = 0.75;
-		content.alphaTopLeft = 0.75;
-		content.alphaTopRight = 0.75;
-		content.alphaBottomLeft = 0.75;
-		content.alphaBottomRight = 0.75;
+		content.visible = false;
+		content.alpha = 0.8;
+		content.alphaTopLeft = 0.8;
+		content.alphaTopRight = 0.8;
+		content.alphaBottomLeft = 0.8;
+		content.alphaBottomRight = 0.8;
 		this.add(content);
 
 		/* START-USER-CTR-CODE */
@@ -81,7 +97,7 @@ class BadMood extends BaseCollider {
 	/** @type {"p1"|"p2"|"p3"|"p4"} */
 	player = "";
 	/** @type {number} */
-	dragInside = 1;
+	dragInside = 100;
 
 	/* START-USER-CODE */
 
@@ -96,12 +112,13 @@ class BadMood extends BaseCollider {
 		getPlayerTrigger(this.scene, this.player, (isDown) => this.onPlayerTrigger(isDown));
 		this.setFace(false);
 
-		this.scene.events.on('update', () => this.update());
+		this.scene.events.on('update', (time, deltaTime) => this.update(time, deltaTime));
 	}
 
 	update(time, deltaTime) {
 		if (this.scene.physics.overlap(this.collider.body, Head2.instance)) {
-			Head2.instance.body.setDrag(this.dragInside);
+			Head2.instance.body.drag.y = this.dragInside;
+
 			console.log('what', Head2.instance.body, Head2.instance.body.drag);
 		}
 	}
@@ -117,7 +134,7 @@ class BadMood extends BaseCollider {
 		this.setFace(isDown);
 
 		const collider = this.getByName("collider");
-		collider.body.checkCollision.none = isDown;
+		collider.body.checkCollision.down = !isDown;
 		if (this.scene.physics.overlap(collider.body, Head2.instance)) {
 			if (!isDown) {
 				Head2.instance.kill();

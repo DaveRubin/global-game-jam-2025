@@ -34,12 +34,14 @@ class Head2 extends Phaser.GameObjects.Container {
 		/* START-USER-CTR-CODE */
 		scene.physics.add.existing(this);
 		this.body.friction.x = 0;
+		this.body.friction.y = 0;
 		this.body.bounce.x = 0.5;
 		this.body.bounce.y = 0.5;
 		this.body.setOffset(-150, -150);
 		this.body.setCircle(150);
 		this.body.onCollide = true;
 		this.body.onOverlap = true;
+		this.body.allowDrag = true;
 
 		// Create boundaries
 		const leftBoundary = scene.add.rectangle(GAME_WIDTH, 0, 10, 800000);

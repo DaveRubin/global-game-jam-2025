@@ -29,8 +29,8 @@
                         "key": "Cloud_B_01"
                     },
                     "x": -260,
-                    "scaleX": 2,
-                    "scaleY": 2,
+                    "scaleX": 3,
+                    "scaleY": 3,
                     "alpha": 0.8,
                     "alphaTopLeft": 0.8,
                     "alphaTopRight": 0.8,
@@ -49,9 +49,14 @@
                     },
                     "x": -291,
                     "y": -107,
-                    "scaleX": 2.8,
-                    "scaleY": 1.8,
+                    "scaleX": 3.3,
+                    "scaleY": 3.2,
                     "visible": false,
+                    "alpha": 0.8,
+                    "alphaTopLeft": 0.8,
+                    "alphaTopRight": 0.8,
+                    "alphaBottomLeft": 0.8,
+                    "alphaBottomRight": 0.8,
                     "moves": false,
                     "pushable": false,
                     "immovable": true,
@@ -82,7 +87,12 @@
                     "x": 792,
                     "y": 44,
                     "scaleX": 2.5,
-                    "scaleY": 2.5
+                    "scaleY": 2.5,
+                    "alpha": 0.8,
+                    "alphaTopLeft": 0.8,
+                    "alphaTopRight": 0.8,
+                    "alphaBottomLeft": 0.8,
+                    "alphaBottomRight": 0.8
                 },
                 {
                     "type": "Image",
@@ -95,7 +105,12 @@
                     "x": -1316,
                     "y": -115,
                     "scaleX": 2.5,
-                    "scaleY": 2.5
+                    "scaleY": 2.5,
+                    "alpha": 0.8,
+                    "alphaTopLeft": 0.8,
+                    "alphaTopRight": 0.8,
+                    "alphaBottomLeft": 0.8,
+                    "alphaBottomRight": 0.8
                 },
                 {
                     "type": "Image",
@@ -109,11 +124,12 @@
                     "y": -62,
                     "scaleX": 2.5,
                     "scaleY": 2.5,
-                    "alpha": 0.75,
-                    "alphaTopLeft": 0.75,
-                    "alphaTopRight": 0.75,
-                    "alphaBottomLeft": 0.75,
-                    "alphaBottomRight": 0.75
+                    "visible": false,
+                    "alpha": 0.8,
+                    "alphaTopLeft": 0.8,
+                    "alphaTopRight": 0.8,
+                    "alphaBottomLeft": 0.8,
+                    "alphaBottomRight": 0.8
                 }
             ]
         }
@@ -146,7 +162,7 @@
             "name": "dragInside",
             "label": "DragInside",
             "tooltip": "",
-            "defValue": 1,
+            "defValue": 100,
             "customDefinition": false,
             "type": {
                 "id": "number"
