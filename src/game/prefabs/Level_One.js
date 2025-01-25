@@ -96,7 +96,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		container_3.add(background_8);
 
 		// player
-		const player = scene.add.container(528, -7368);
+		const player = scene.add.container(528, 2560);
 		player.blendMode = Phaser.BlendModes.SKIP_CHECK;
 		this.add(player);
 
@@ -140,16 +140,10 @@ class Level_One extends Phaser.GameObjects.Layer {
 		beginningClouds.add(wall2);
 
 		// wall_3
-		const wall_3 = new Wall1(scene, 250, -9689);
+		const wall_3 = new Wall1(scene, 250, -10335);
 		wall_3.scaleX = 1;
 		wall_3.scaleY = 1;
 		beginningClouds.add(wall_3);
-
-		// wall_4
-		const wall_4 = new Wall1(scene, 85, -9857);
-		wall_4.scaleX = 0.5;
-		wall_4.scaleY = 0.5;
-		beginningClouds.add(wall_4);
 
 		// rainbow1
 		const rainbow1 = scene.add.container(-22, -7874);
@@ -270,7 +264,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(badThought_14);
 
 		// badThought_17
-		const badThought_17 = new BadThought(scene, 714, -826);
+		const badThought_17 = new BadThought(scene, 714, -1232);
 		rainbow1.add(badThought_17);
 
 		// collectible_14
@@ -282,11 +276,11 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(collectible_19);
 
 		// badThought_19
-		const badThought_19 = new BadThought(scene, 967, -824);
+		const badThought_19 = new BadThought(scene, 967, -1230);
 		rainbow1.add(badThought_19);
 
 		// mouth_9
-		const mouth_9 = new Mouth(scene, 998, -573);
+		const mouth_9 = new Mouth(scene, 998, -979);
 		mouth_9.scaleX = 1;
 		mouth_9.scaleY = 1;
 		rainbow1.add(mouth_9);
@@ -299,7 +293,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(badMood_1);
 
 		// nose_26
-		const nose_26 = new Nose(scene, 419, -837);
+		const nose_26 = new Nose(scene, 465, -1243);
 		rainbow1.add(nose_26);
 
 		// badThought_3
@@ -321,7 +315,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(mouth_3);
 
 		// nose_22
-		const nose_22 = new Nose(scene, 457, 938);
+		const nose_22 = new Nose(scene, 457, 836);
 		rainbow1.add(nose_22);
 
 		// nose_23
@@ -351,7 +345,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(badThought_12);
 
 		// badThought_13
-		const badThought_13 = new BadThought(scene, 183, -543);
+		const badThought_13 = new BadThought(scene, 179, -997);
 		rainbow1.add(badThought_13);
 
 		// collectible_15
@@ -375,8 +369,60 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(collectible_23);
 
 		// nose_10
-		const nose_10 = new Nose(scene, 676, 941);
+		const nose_10 = new Nose(scene, 676, 839);
 		rainbow1.add(nose_10);
+
+		// mouth_27
+		const mouth_27 = new Mouth(scene, 1011, -2864);
+		mouth_27.scaleX = 1;
+		mouth_27.scaleY = 1;
+		rainbow1.add(mouth_27);
+
+		// mouth_28
+		const mouth_28 = new Mouth(scene, 1005, -2662);
+		mouth_28.scaleX = 1;
+		mouth_28.scaleY = 1;
+		rainbow1.add(mouth_28);
+
+		// mouth_29
+		const mouth_29 = new Mouth(scene, 1000, -2449);
+		mouth_29.scaleX = 1;
+		mouth_29.scaleY = 1;
+		rainbow1.add(mouth_29);
+
+		// mouth_30
+		const mouth_30 = new Mouth(scene, 1006, -2214);
+		mouth_30.scaleX = 1;
+		mouth_30.scaleY = 1;
+		rainbow1.add(mouth_30);
+
+		// mouth_31
+		const mouth_31 = new Mouth(scene, 1005, -1984);
+		mouth_31.scaleX = 1;
+		mouth_31.scaleY = 1;
+		rainbow1.add(mouth_31);
+
+		// mouth_32
+		const mouth_32 = new Mouth(scene, 994, -1755);
+		mouth_32.scaleX = 1;
+		mouth_32.scaleY = 1;
+		rainbow1.add(mouth_32);
+
+		// badThought_1
+		const badThought_1 = new BadThought(scene, 186, 680);
+		rainbow1.add(badThought_1);
+
+		// badThought_5
+		const badThought_5 = new BadThought(scene, 962, 695);
+		rainbow1.add(badThought_5);
+
+		// nose_11
+		const nose_11 = new Nose(scene, 895, -580);
+		rainbow1.add(nose_11);
+
+		// badThought_6
+		const badThought_6 = new BadThought(scene, 420, -426);
+		rainbow1.add(badThought_6);
 
 		// container_1
 		const container_1 = scene.add.container(393, -2749);
@@ -432,15 +478,15 @@ class Level_One extends Phaser.GameObjects.Layer {
 		this.add(mouth);
 
 		// collectible_13
-		const collectible_13 = new Collectible2(scene, 963, -7803);
+		const collectible_13 = new Collectible2(scene, 876, -8107);
 		this.add(collectible_13);
 
 		// collectible_11
-		const collectible_11 = new Collectible2(scene, 959, -7673);
+		const collectible_11 = new Collectible2(scene, 872, -7977);
 		this.add(collectible_11);
 
 		// collectible_12
-		const collectible_12 = new Collectible2(scene, 955, -7558);
+		const collectible_12 = new Collectible2(scene, 868, -7862);
 		this.add(collectible_12);
 
 		// LevelTwo
@@ -563,7 +609,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		this.add(container_2);
 
 		// mouth_11
-		const mouth_11 = new Mouth(scene, 862, 797);
+		const mouth_11 = new Mouth(scene, NaN, 0);
 		mouth_11.scaleX = 1;
 		mouth_11.scaleY = 1;
 		container_2.add(mouth_11);
@@ -581,37 +627,37 @@ class Level_One extends Phaser.GameObjects.Layer {
 		container_2.add(badThought_10);
 
 		// mouth_13
-		const mouth_13 = new Mouth(scene, -4, 785);
+		const mouth_13 = new Mouth(scene, 5, 785);
 		mouth_13.scaleX = -1;
 		mouth_13.scaleY = 1;
 		container_2.add(mouth_13);
 
 		// mouth_14
-		const mouth_14 = new Mouth(scene, -26, 1069);
+		const mouth_14 = new Mouth(scene, 5, 1010);
 		mouth_14.scaleX = -1;
 		mouth_14.scaleY = 1;
 		container_2.add(mouth_14);
 
 		// mouth_15
-		const mouth_15 = new Mouth(scene, -26, 1365);
+		const mouth_15 = new Mouth(scene, 5, 1238);
 		mouth_15.scaleX = -1;
 		mouth_15.scaleY = 1;
 		container_2.add(mouth_15);
 
 		// mouth_16
-		const mouth_16 = new Mouth(scene, 868, 1094);
+		const mouth_16 = new Mouth(scene, NaN, 0);
 		mouth_16.scaleX = 1;
 		mouth_16.scaleY = 1;
 		container_2.add(mouth_16);
 
 		// mouth_17
-		const mouth_17 = new Mouth(scene, 856, 1382);
+		const mouth_17 = new Mouth(scene, NaN, 0);
 		mouth_17.scaleX = 1;
 		mouth_17.scaleY = 1;
 		container_2.add(mouth_17);
 
 		// collectible_26
-		const collectible_26 = new Collectible2(scene, 401, 825);
+		const collectible_26 = new Collectible2(scene, 432, 825);
 		container_2.add(collectible_26);
 
 		// nose_3
@@ -635,92 +681,88 @@ class Level_One extends Phaser.GameObjects.Layer {
 		container_2.add(nose_16);
 
 		// mouth_12
-		const mouth_12 = new Mouth(scene, 864, 1656);
+		const mouth_12 = new Mouth(scene, NaN, 0);
 		mouth_12.scaleX = 1;
 		mouth_12.scaleY = 1;
 		container_2.add(mouth_12);
 
 		// mouth_22
-		const mouth_22 = new Mouth(scene, -28, 1654);
+		const mouth_22 = new Mouth(scene, 5, 1468);
 		mouth_22.scaleX = -1;
 		mouth_22.scaleY = 1;
 		container_2.add(mouth_22);
 
 		// collectible_21
-		const collectible_21 = new Collectible2(scene, 383, 1486);
+		const collectible_21 = new Collectible2(scene, 414, 1486);
 		container_2.add(collectible_21);
 
 		// collectible_28
-		const collectible_28 = new Collectible2(scene, 377, 1654);
+		const collectible_28 = new Collectible2(scene, 408, 1654);
 		container_2.add(collectible_28);
 
 		// mouth_23
-		const mouth_23 = new Mouth(scene, 846, 1980);
+		const mouth_23 = new Mouth(scene, NaN, 0);
 		mouth_23.scaleX = 1;
 		mouth_23.scaleY = 1;
 		container_2.add(mouth_23);
 
 		// mouth_24
-		const mouth_24 = new Mouth(scene, -20, 1968);
+		const mouth_24 = new Mouth(scene, 5, 1699);
 		mouth_24.scaleX = -1;
 		mouth_24.scaleY = 1;
 		container_2.add(mouth_24);
 
 		// mouth_25
-		const mouth_25 = new Mouth(scene, -42, 2252);
+		const mouth_25 = new Mouth(scene, 18, 1934);
 		mouth_25.scaleX = -1;
 		mouth_25.scaleY = 1;
 		container_2.add(mouth_25);
 
 		// mouth_26
-		const mouth_26 = new Mouth(scene, 852, 2277);
+		const mouth_26 = new Mouth(scene, NaN, 2277);
 		mouth_26.scaleX = 1;
 		mouth_26.scaleY = 1;
 		container_2.add(mouth_26);
 
 		// collectible_29
-		const collectible_29 = new Collectible2(scene, 391, 1840);
+		const collectible_29 = new Collectible2(scene, 422, 1840);
 		container_2.add(collectible_29);
 
-		// collectible_30
-		const collectible_30 = new Collectible2(scene, 385, 2008);
-		container_2.add(collectible_30);
-
-		// collectible_31
-		const collectible_31 = new Collectible2(scene, 385, 2176);
-		container_2.add(collectible_31);
-
 		// collectible_24
-		const collectible_24 = new Collectible2(scene, 522, -10550);
+		const collectible_24 = new Collectible2(scene, 553, -10550);
 		this.add(collectible_24);
 
 		// collectible_25
-		const collectible_25 = new Collectible2(scene, 511, -10387);
+		const collectible_25 = new Collectible2(scene, 542, -10387);
 		this.add(collectible_25);
 
 		// collectible_27
-		const collectible_27 = new Collectible2(scene, 506, -10224);
+		const collectible_27 = new Collectible2(scene, 537, -10224);
 		this.add(collectible_27);
 
 		// mouth_18
-		const mouth_18 = new Mouth(scene, 101, -7307);
+		const mouth_18 = new Mouth(scene, 101, -7713);
 		mouth_18.scaleX = -1;
 		mouth_18.scaleY = 1;
 		this.add(mouth_18);
 
 		// mouth_21
-		const mouth_21 = new Mouth(scene, 100, -7576);
+		const mouth_21 = new Mouth(scene, 100, -7982);
 		mouth_21.scaleX = -1;
 		mouth_21.scaleY = 1;
 		this.add(mouth_21);
 
 		// collectible_18
-		const collectible_18 = new Collectible2(scene, 953, -7430);
+		const collectible_18 = new Collectible2(scene, 866, -7734);
 		this.add(collectible_18);
 
 		// collectible_20
-		const collectible_20 = new Collectible2(scene, 946, -7299);
+		const collectible_20 = new Collectible2(scene, 859, -7603);
 		this.add(collectible_20);
+
+		// collectible_22
+		const collectible_22 = new Collectible2(scene, 546, -9540);
+		this.add(collectible_22);
 
 		// badMood (prefab fields)
 		badMood.player = "p1";
@@ -789,6 +831,27 @@ class Level_One extends Phaser.GameObjects.Layer {
 
 		// nose_10 (prefab fields)
 		nose_10.property = "p4";
+
+		// mouth_27 (prefab fields)
+		mouth_27.property = "p1";
+
+		// mouth_28 (prefab fields)
+		mouth_28.property = "p1";
+
+		// mouth_29 (prefab fields)
+		mouth_29.property = "p2";
+
+		// mouth_30 (prefab fields)
+		mouth_30.property = "p2";
+
+		// mouth_31 (prefab fields)
+		mouth_31.property = "p1";
+
+		// mouth_32 (prefab fields)
+		mouth_32.property = "p1";
+
+		// nose_11 (prefab fields)
+		nose_11.property = "p4";
 
 		// nose (prefab fields)
 		nose.property = "p1";
