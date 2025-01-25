@@ -15,7 +15,6 @@
             "type": "Layer",
             "id": "8f988352-82cb-4e87-85ce-9dfd4fc7206e",
             "label": "layer_1",
-            "blendMode": -1,
             "list": [
                 {
                     "type": "Image",
@@ -237,11 +236,15 @@
                     "id": "6b51a230-f78a-4dd9-bdf3-a0d35d20bcaa",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "scaleX",
+                        "scaleY"
                     ],
                     "label": "head2",
                     "x": 528,
-                    "y": 2093
+                    "y": 2093,
+                    "scaleX": 0.7,
+                    "scaleY": 0.7
                 },
                 {
                     "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",

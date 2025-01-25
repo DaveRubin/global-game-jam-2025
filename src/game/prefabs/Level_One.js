@@ -1,5 +1,14 @@
 
 // You can write more code here
+import {Wall2} from "./Wall2.js";
+import {Wall1} from "./Wall1.js";
+import {Collectible3} from "./Collectible3.js";
+import {Mouth} from "./Mouth.js";
+import {Collectible2} from "./Collectible2.js";
+import {Collectible1} from "./Collectible1.js";
+import {Head2} from "./Head2.js";
+import {BadThought} from "./BadThought.js";
+import {Rainbow} from "./Rainbow.js";
 
 /* START OF COMPILED CODE */
 
@@ -70,6 +79,8 @@ class Level_One extends Phaser.GameObjects.Container {
 
 		// head2
 		const head2 = new Head2(scene, 528, 2093);
+		head2.scaleX = 0.7;
+		head2.scaleY = 0.7;
 		this.add(head2);
 
 		// mouth_4
@@ -200,3 +211,4 @@ class Level_One extends Phaser.GameObjects.Container {
 /* END OF COMPILED CODE */
 
 // You can write more code here
+export {Level_One}

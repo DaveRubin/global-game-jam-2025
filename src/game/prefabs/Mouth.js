@@ -109,8 +109,11 @@ class Mouth extends Phaser.GameObjects.Container {
 		const effect = this.list.find((child) => child.name === EFFECT_IMAGE);
 
 		if (isDown) {
-			const touchedBody = getTouchingPhysicsElement(this.scene, effect);
-			if (touchedBody?.body) {
+			const touchedBodies = getTouchingPhysicsElement(this.scene, effect);
+			touchedBodies.map(x => x.body).forEach(touchedBody => {
+				if (!touchedBody) {
+					return;
+				}
 				const touchedWorldPoint = this.getWorldTransformMatrix().transformPoint(touchedBody.x, touchedBody.y);
 				const worldPoint = this.getWorldTransformMatrix().transformPoint(effect.x, effect.y);
 				const dx = worldPoint.x - touchedWorldPoint.x;
@@ -119,12 +122,13 @@ class Mouth extends Phaser.GameObjects.Container {
 				if (part < 1) {
 					const direction = dx > 0 ? 1 : -1;
 					const forceX = 1 - part;
+					console.log(forceX * 200 * direction);
 					touchedBody.body.velocity.add({
 						x: forceX * 200 * direction,
 						y: 0
 					});
 				}
-			}
+			});
 		}
 	}
 
