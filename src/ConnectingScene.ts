@@ -49,7 +49,7 @@ export class ConnectingScene extends Phaser.Scene {
     }
 
     if (isHost()) {
-      this.scene.start("LobbyScene");
+      this.scene.start("GameScene");
     } else {
       this.scene.start("MobileLobbyScene");
     }

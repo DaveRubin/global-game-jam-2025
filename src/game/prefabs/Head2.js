@@ -68,7 +68,31 @@ class Head2 extends Phaser.GameObjects.Container {
 	/* START-USER-CODE */
 	static instance;
 	initialPosition = { x: 0, y: 0 };
+
+	start() {
+		const head = this.getByName("head_Idle");
+		this.scene.time.delayedCall(200, () => {
+			head.setTexture("Head_Idle");
+		});
+
+		this.scene.tweens.add({
+			targets: head,
+			scale: 0.5,
+			y: 0,
+			duration: 1500,
+			ease: 'Bounce.easeOut',
+			onComplete: () => {
+				this.body.setAllowGravity(true)
+			}
+		});
+
+	}
+
 	awake() {
+		const head = this.getByName("head_Idle");
+		head.setTexture("HeadBefore Start");
+		head.setScale(0.2);
+		head.y += 150;
 
 		// Create a looping rotation tween
 		this.scene.tweens.add({

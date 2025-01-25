@@ -1,0 +1,117 @@
+{
+    "id": "45680c36-a50d-40f6-ad85-fbe659ba1980",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1125,
+        "borderHeight": 2436
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "9d8cf380-979b-4583-97e3-9e29162b2d76",
+            "label": "container_1",
+            "blendMode": -1,
+            "x": -566,
+            "y": 1218,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "25a03860-5160-4d03-a575-e03e3e76e564",
+                    "label": "rectangle_1",
+                    "x": 1128.5,
+                    "scaleX": 17.8,
+                    "scaleY": 20.5,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Image",
+                    "id": "db3306a8-2177-42e6-b700-d547fe2ebff5",
+                    "label": "P1_Smile",
+                    "texture": {
+                        "key": "P1_Smile"
+                    },
+                    "x": 1104,
+                    "y": 653,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "249e0d8f-0aef-4364-862a-fc9063f5d0d6",
+                    "label": "P2_Smile",
+                    "texture": {
+                        "key": "P2_Smile"
+                    },
+                    "x": 1103,
+                    "y": 653,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "4621b166-629f-48f5-b942-bdccac7b3192",
+                    "label": "P3_Smile",
+                    "texture": {
+                        "key": "P3_Smile"
+                    },
+                    "x": 1096,
+                    "y": 673,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "8d3fa4c0-8dbc-4055-a57a-2b97fe2e7547",
+                    "label": "Flood",
+                    "texture": {
+                        "key": "Flood"
+                    },
+                    "x": 1132,
+                    "scaleX": 0.51,
+                    "scaleY": 0.51,
+                    "alpha": 0.37,
+                    "alphaTopLeft": 0.37,
+                    "alphaTopRight": 0.37,
+                    "alphaBottomLeft": 0.37,
+                    "alphaBottomRight": 0.37
+                },
+                {
+                    "type": "Image",
+                    "id": "3b6ad5af-e777-4eed-8250-a19686a60146",
+                    "label": "TapWhenReady_1",
+                    "texture": {
+                        "key": "TAP_WhenReady"
+                    },
+                    "x": 1145,
+                    "y": -213,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "2205b164-0211-446c-b8ce-7fe2a805ca8c",
+                    "label": "P3_Smile_1",
+                    "texture": {
+                        "key": "P4_Smile"
+                    },
+                    "x": 1102,
+                    "y": 634,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
