@@ -17,9 +17,9 @@ class Bills extends Phaser.GameObjects.Container {
 		this.add(badThought);
 
 		// arcadesprite_1
-		const arcadesprite_1 = scene.physics.add.staticSprite(0, 0, "Bill");
-		arcadesprite_1.scaleX = 0.5;
-		arcadesprite_1.scaleY = 0.5;
+		const arcadesprite_1 = scene.physics.add.staticSprite(-6, 6, "Bill");
+		arcadesprite_1.scaleX = 0.25;
+		arcadesprite_1.scaleY = 0.25;
 		arcadesprite_1.body.allowGravity = false;
 		arcadesprite_1.body.setSize(664, 666, false);
 		this.add(arcadesprite_1);

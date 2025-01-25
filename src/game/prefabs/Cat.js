@@ -17,9 +17,10 @@ class Cat extends Phaser.GameObjects.Container {
 		this.add(badThought);
 
 		// cat
-		const cat = scene.add.image(0, 0, "Cat_01");
-		cat.scaleX = 0.5;
-		cat.scaleY = 0.5;
+		const cat = scene.add.image(-22, 4, "Cat_01");
+		cat.scaleX = 0.27;
+		cat.scaleY = 0.27;
+		cat.angle = 11;
 		this.add(cat);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());

@@ -34,8 +34,10 @@
                     "texture": {
                         "key": "Bill"
                     },
-                    "scaleX": 0.5,
-                    "scaleY": 0.5,
+                    "x": -6,
+                    "y": 6,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
                     "physicsType": 1,
                     "allowGravity": false,
                     "body.width": 664,
