@@ -29,10 +29,11 @@
                 {
                     "type": "Rectangle",
                     "id": "2f0dd501-adf4-4fe3-8932-2b727cd3e64d",
-                    "label": "rectangle_1",
+                    "label": "Bar",
                     "x": -455,
-                    "y": 260,
+                    "y": 228,
                     "scaleX": 7.05,
+                    "scaleY": 1.4,
                     "originX": 0,
                     "originY": 0,
                     "isFilled": true,
@@ -45,7 +46,7 @@
                     "id": "3cd918ea-4c6a-4bbf-b5c3-282342365ef7",
                     "label": "LoadingFrame",
                     "texture": {
-                        "key": "Loading_Frame"
+                        "key": "Loading_Frame_02"
                     },
                     "x": 2,
                     "y": 319
