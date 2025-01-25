@@ -45,8 +45,8 @@ export class GameScene extends Phaser.Scene {
 
 		this.startCameraLogic();
 
-
-
+		// @ts-ignore
+		window.RESET_GAME = this.resetGame.bind(this);
 
 		// Make camera follow the bubble
 		// this.cameras.main.startFollow(bubble, false, 0.2, 0.2);
@@ -70,10 +70,27 @@ export class GameScene extends Phaser.Scene {
 				if (headWorldY > GAME_HEIGHT + 300) {
 					console.log("Head2 is out of frame!");
 					this.scrollTimer?.destroy();
+					// Wait 3 seconds then tween camera to bottom
+					this.resetGame();
+
 				}
 
 			},
 			loop: true
+		});
+	}
+
+	resetGame() {
+		this.time.delayedCall(3000, () => {
+			this.tweens.add({
+				targets: this.cameras.main,
+				scrollY: 0,
+				duration: 2000,
+				ease: 'Power2',
+				onComplete: () => {
+					Head2.instance.reset();
+				}
+			});
 		});
 	}
 

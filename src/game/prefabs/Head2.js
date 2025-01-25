@@ -56,13 +56,15 @@ class Head2 extends Phaser.GameObjects.Container {
 		death_01.setVisible(false);
 		const body = this.body;
 		body.setMaxVelocity(150, 80);
+		this.initialPosition = { x: this.x, y: this.y };
 		/* END-USER-CTR-CODE */
 	}
 
 	/* START-USER-CODE */
 	static instance;
+	initialPosition = { x: 0, y: 0 };
 	awake() {
-		console.log(this.getByName("head_Idle"))
+
 		// Create a looping rotation tween
 		this.scene.tweens.add({
 			targets: this.getByName("head_Idle"),
@@ -77,6 +79,20 @@ class Head2 extends Phaser.GameObjects.Container {
 
 		this.getByName("death_01").setVisible(false);
 		this.getByName("death_01").play("Death");
+	}
+
+	reset() {
+		this.setPosition(this.initialPosition.x, this.initialPosition.y);
+		const headIdle = this.getByName("head_Idle");
+		headIdle.setScale(0);
+		this.scene.tweens.add({
+			targets: headIdle,
+			scaleX: 0.5,
+			scaleY: 0.5,
+			duration: 400,
+			ease: 'Back.out'
+		});
+		this.getByName("death_01").setVisible(false);
 	}
 	// Write your code here.
 
