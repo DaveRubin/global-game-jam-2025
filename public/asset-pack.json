@@ -296,6 +296,20 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/Allies/Hand_Close.png"
+                },
+                "type": "texture",
+                "key": "Hand_Close"
+            },
+            {
+                "url": {
+                    "IMG": "public/Sprites/Allies/Hand_Open.png"
+                },
+                "type": "texture",
+                "key": "Hand_Open"
+            },
+            {
+                "url": {
                     "IMG": "public/Sprites/Player/Hat.png"
                 },
                 "type": "texture",
