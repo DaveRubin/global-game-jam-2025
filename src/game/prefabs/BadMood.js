@@ -1,9 +1,9 @@
 
 // You can write more code here
-import {PLAYER_COLORS} from "../consts";
-import {BaseCollider} from "../BaseCollider";
-import {getPlayerTrigger} from "../getPlayerTrigger";
-import {Head2} from "./Head2.js";
+import { PLAYER_COLORS } from "../consts";
+import { BaseCollider } from "../BaseCollider";
+import { getPlayerTrigger } from "../getPlayerTrigger";
+import { Head2 } from "./Head2.js";
 
 /* START OF COMPILED CODE */
 
@@ -116,6 +116,10 @@ class BadMood extends BaseCollider {
 	}
 
 	update(time, deltaTime) {
+		if (!this.scene?.physics) {
+			return;
+		}
+
 		if (this.scene.physics.overlap(this.collider.body, Head2.instance)) {
 			Head2.instance.body.drag.y = this.dragInside;
 		}
@@ -166,4 +170,4 @@ class BadMood extends BaseCollider {
 // You can write more code here
 
 
-export {BadMood}
+export { BadMood }
