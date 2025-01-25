@@ -25,9 +25,11 @@ class BadThought extends Phaser.GameObjects.Container {
 		arcadesprite_1.body.setSize(421, 542, false);
 		this.add(arcadesprite_1);
 
-		// image_1
-		const image_1 = scene.add.image(-20, 23, "ObstacleFace");
-		this.add(image_1);
+		// face
+		const face = scene.add.image(-20, 23, "ObstacleFace");
+		face.name = "face";
+		face.visible = false;
+		this.add(face);
 
 		// Active
 		const active = scene.add.container(-343, -322);
@@ -61,6 +63,44 @@ class BadThought extends Phaser.GameObjects.Container {
 		collider.body.pushable = false;
 		collider.body.setCircle(64);
 		this.add(collider);
+
+		// bill
+		const bill = scene.add.image(0, 0, "Bill");
+		bill.name = "bill";
+		bill.scaleX = 0.5;
+		bill.scaleY = 0.5;
+		bill.visible = false;
+		this.add(bill);
+
+		// cat1
+		const cat1 = scene.add.image(0, 0, "Cat_01");
+		cat1.name = "cat1";
+		cat1.scaleX = 0.5;
+		cat1.scaleY = 0.5;
+		cat1.visible = false;
+		this.add(cat1);
+
+		// cat2
+		const cat2 = scene.add.image(0, 0, "Cat_02");
+		cat2.name = "cat2";
+		cat2.scaleX = 0.5;
+		cat2.scaleY = 0.5;
+		cat2.visible = false;
+		this.add(cat2);
+
+		// ciggarete
+		const ciggarete = scene.add.image(0, 0, "Ciggarete");
+		ciggarete.name = "ciggarete";
+		ciggarete.scaleX = 0.5;
+		ciggarete.scaleY = 0.5;
+		ciggarete.visible = false;
+		this.add(ciggarete);
+
+		// hat
+		const hat = scene.add.image(-6, -5, "Hat");
+		hat.name = "hat";
+		hat.visible = false;
+		this.add(hat);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
@@ -89,6 +129,11 @@ class BadThought extends Phaser.GameObjects.Container {
 			delay: this.moveDelay,
 			moveDuration: this.moveDuration,
 		});
+
+		const items = ['cat1', 'cat2', 'bill', 'ciggarete', 'hat', 'bill'];
+		const randomItem = items[Math.floor(Math.random() * items.length)];
+		this.getByName(randomItem).setVisible(true);
+
 
 		// Add the enemy sprite
 		const enemyWhat = this.scene.add.sprite(400, 300, 'enemyTexture');

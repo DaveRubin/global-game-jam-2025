@@ -36,12 +36,14 @@
                 {
                     "type": "Image",
                     "id": "79ef9c47-cb72-4be1-ba28-851d27b78aa1",
-                    "label": "image_1",
+                    "label": "face",
+                    "useGameObjectName": true,
                     "texture": {
                         "key": "ObstacleFace"
                     },
                     "x": -20,
-                    "y": 23
+                    "y": 23,
+                    "visible": false
                 },
                 {
                     "type": "Container",
@@ -99,6 +101,66 @@
                     "bodyGeometry": 0,
                     "body.width": 128,
                     "body.height": 128
+                },
+                {
+                    "type": "Image",
+                    "id": "bf8d3a41-9bd6-467c-9c72-2a6fc140e30a",
+                    "label": "bill",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "Bill"
+                    },
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "d7675307-2789-4dfb-85a3-96714b213625",
+                    "label": "cat1",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "Cat_01"
+                    },
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "cb4dfda4-93b4-4418-b748-a672abad137d",
+                    "label": "cat2",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "Cat_02"
+                    },
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "c9b58f6e-3c8b-48be-8c82-f9f289057760",
+                    "label": "ciggarete",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "Ciggarete"
+                    },
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "a67c7e08-8205-4d60-8019-df07a8574c1e",
+                    "label": "hat",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "Hat"
+                    },
+                    "x": -6,
+                    "y": -5,
+                    "visible": false
                 }
             ]
         }
