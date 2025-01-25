@@ -71,15 +71,17 @@
                     "id": "7609c423-ebee-4ceb-904d-cd7a13f32434",
                     "label": "Meters",
                     "useGameObjectName": true,
-                    "x": 438,
-                    "y": 31,
+                    "x": 592,
+                    "y": 125,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "tintTopLeft": "#000000",
                     "tintTopRight": "#000000",
                     "tintBottomLeft": "#000000",
                     "tintBottomRight": "#000000",
                     "text": "50m",
                     "align": "center",
-                    "fontFamily": "Dokdo",
+                    "fontFamily": "Roboto",
                     "fontSize": "168px"
                 }
             ]

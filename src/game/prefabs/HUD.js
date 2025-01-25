@@ -16,7 +16,7 @@ class HUD extends Phaser.GameObjects.Container {
 		text.scaleX = 1.540275387603872;
 		text.scaleY = 1.540275387603872;
 		text.text = "0";
-		text.setStyle({ "fontSize": "72px" });
+		text.setStyle({ "fontFamily": "Roboto", "fontSize": "72px" });
 		this.add(text);
 
 		// pickUp_02
