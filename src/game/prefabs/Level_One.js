@@ -276,7 +276,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		bG1.add(background_5);
 
 		// player
-		const player = scene.add.container(528, 2385);
+		const player = scene.add.container(528, 2102);
 		player.blendMode = Phaser.BlendModes.SKIP_CHECK;
 		this.add(player);
 
