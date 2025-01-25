@@ -1,7 +1,7 @@
 import Phaser from "phaser";
 import { PLAYER_COLORS } from "../consts";
 import { getPlayerTrigger } from "../getPlayerTrigger";
-import { getTouchingPhysicsElement } from "../getTouchingPhysicsElement";
+// import { getTouchingPhysicsElement } from "../getTouchingPhysicsElement";
 
 
 // You can write more code here
@@ -106,15 +106,15 @@ class Nose extends Phaser.GameObjects.Container {
 			});
 		}
 
-		const effect = this.list.find((child) => child.name === EFFECT_IMAGE);
-		const touchedBody = getTouchingPhysicsElement(this.scene, effect);
+		// const effect = this.list.find((child) => child.name === EFFECT_IMAGE);
+		// const touchedBody = getTouchingPhysicsElement(this.scene, effect);
 
-		if (touchedBody?.body) {
-			touchedBody.body.velocity.add({
-				x: 0,
-				y: isDown ? -100 : 200
-			});
-		}
+		// if (touchedBody?.body) {
+		// 	touchedBody.body.velocity.add({
+		// 		x: 0,
+		// 		y: isDown ? -100 : 200
+		// 	});
+		// }
 
 	}
 

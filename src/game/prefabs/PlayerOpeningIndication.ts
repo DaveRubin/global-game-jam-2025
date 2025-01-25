@@ -59,3 +59,4 @@ class PlayerOpeningIndication extends Phaser.GameObjects.Container {
 /* END OF COMPILED CODE */
 
 // You can write more code here
+export { PlayerOpeningIndication };

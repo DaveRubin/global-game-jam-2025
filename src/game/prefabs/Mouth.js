@@ -5,7 +5,6 @@ import Phaser from "phaser";
 import { PLAYER_COLORS } from "../consts";
 import { getPlayerTrigger } from "../getPlayerTrigger";
 import { Head2 } from "./Head2";
-import { getTouchingPhysicsElement } from "../getTouchingPhysicsElement";
 
 
 // You can write more code here

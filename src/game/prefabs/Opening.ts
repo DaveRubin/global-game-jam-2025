@@ -1,6 +1,8 @@
 
 // You can write more code here
 
+import { PlayerOpeningIndication } from "./PlayerOpeningIndication";
+
 /* START OF COMPILED CODE */
 
 class Opening extends Phaser.GameObjects.Container {
@@ -81,3 +83,5 @@ class Opening extends Phaser.GameObjects.Container {
 /* END OF COMPILED CODE */
 
 // You can write more code here
+
+export { Opening };
