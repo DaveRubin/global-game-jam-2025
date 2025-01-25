@@ -108,7 +108,7 @@
                     "label": "wall",
                     "x": 542,
                     "y": -547,
-                    "scaleX": 0.2,
+                    "scaleX": -0.2,
                     "scaleY": 0.2
                 },
                 {
@@ -166,8 +166,8 @@
                     ],
                     "label": "mouth_3",
                     "property": "p3",
-                    "x": 25,
-                    "y": 1338,
+                    "x": 64,
+                    "y": 846,
                     "scaleX": -1,
                     "scaleY": 1
                 },
@@ -185,19 +185,6 @@
                     "y": 872
                 },
                 {
-                    "prefabId": "d7ad529b-d006-4116-8863-a029760214eb",
-                    "id": "affaa79c-7ab4-494b-89db-38ddca0168b9",
-                    "unlock": [
-                        "x",
-                        "y",
-                        "angle"
-                    ],
-                    "label": "wall2",
-                    "x": 1140,
-                    "y": 446,
-                    "angle": 0
-                },
-                {
                     "prefabId": "f889b80a-a443-4d72-a67d-d9bbe0ab009a",
                     "id": "ab766a69-51e7-4dda-a128-5fea339189fa",
                     "unlock": [
@@ -207,8 +194,8 @@
                         "scaleY"
                     ],
                     "label": "wall_1",
-                    "x": 29,
-                    "y": 1111,
+                    "x": 25,
+                    "y": 1320,
                     "scaleX": 0.4,
                     "scaleY": 0.4
                 },
@@ -224,17 +211,6 @@
                     "y": 972
                 },
                 {
-                    "prefabId": "80a3c23b-897f-4af9-aeb3-82f0b1e9b190",
-                    "id": "1e2f23f0-8e71-4444-8b40-a8eb86909a9f",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "collectible3",
-                    "x": 555,
-                    "y": 1259
-                },
-                {
                     "prefabId": "d3c9b8d8-0f55-4b5c-bbe7-e2708c75f54d",
                     "id": "520628fc-8255-45e9-860d-02d24525c1d4",
                     "unlock": [
@@ -242,8 +218,8 @@
                         "y"
                     ],
                     "label": "collectible1",
-                    "x": 555,
-                    "y": 1501
+                    "x": 547,
+                    "y": 1257
                 },
                 {
                     "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
@@ -268,34 +244,6 @@
                     "y": 2093
                 },
                 {
-                    "prefabId": "d7ad529b-d006-4116-8863-a029760214eb",
-                    "id": "26803516-d157-4038-9128-d74c1980d68c",
-                    "unlock": [
-                        "x",
-                        "y",
-                        "angle",
-                        "scaleX",
-                        "scaleY"
-                    ],
-                    "label": "wall_2",
-                    "x": 1167,
-                    "y": 643,
-                    "scaleX": 0.3,
-                    "scaleY": 0.3,
-                    "angle": 0
-                },
-                {
-                    "prefabId": "d3c9b8d8-0f55-4b5c-bbe7-e2708c75f54d",
-                    "id": "cbd4ceef-8f0b-4646-8fe5-27aafe267a86",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "collectible",
-                    "x": 555,
-                    "y": 716
-                },
-                {
                     "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
                     "id": "8221fdd6-bda0-4a10-80ac-fc4bd1f04cf5",
                     "unlock": [
@@ -307,8 +255,8 @@
                     ],
                     "label": "mouth_4",
                     "property": "p1",
-                    "x": 92,
-                    "y": 470,
+                    "x": 82,
+                    "y": 455,
                     "scaleX": -1,
                     "scaleY": 1
                 },
@@ -322,8 +270,8 @@
                     ],
                     "label": "mouth_5",
                     "property": "p4",
-                    "x": 1045,
-                    "y": 37
+                    "x": 1073,
+                    "y": 478
                 },
                 {
                     "prefabId": "80a3c23b-897f-4af9-aeb3-82f0b1e9b190",
@@ -469,6 +417,63 @@
                     "y": -2432,
                     "scaleX": 1,
                     "scaleY": 1
+                },
+                {
+                    "prefabId": "80a3c23b-897f-4af9-aeb3-82f0b1e9b190",
+                    "id": "71f0d1cb-8c46-4249-92cd-ef4c06e33f8c",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "collectible",
+                    "x": 537,
+                    "y": 685
+                },
+                {
+                    "prefabId": "f889b80a-a443-4d72-a67d-d9bbe0ab009a",
+                    "id": "8d3a3854-13af-4f39-8a51-e87e7da9642a",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "player",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "wall_2",
+                    "x": 0,
+                    "y": 1493,
+                    "scaleX": 0.2,
+                    "scaleY": 0.2
+                },
+                {
+                    "prefabId": "f889b80a-a443-4d72-a67d-d9bbe0ab009a",
+                    "id": "40b9e0ec-b801-493a-abd3-3807970e47f4",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "wall_8",
+                    "x": 1096,
+                    "y": 1333,
+                    "scaleX": -0.4,
+                    "scaleY": 0.4
+                },
+                {
+                    "prefabId": "d7ad529b-d006-4116-8863-a029760214eb",
+                    "id": "327246df-b620-4311-aae7-005a329772c7",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "wall2",
+                    "x": 1106,
+                    "y": 1487,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
                 }
             ]
         }

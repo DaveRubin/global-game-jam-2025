@@ -22,7 +22,7 @@ class Level_One extends Phaser.GameObjects.Container {
 
 		// wall
 		const wall = new Wall1(scene, 542, -547);
-		wall.scaleX = 0.2;
+		wall.scaleX = -0.2;
 		wall.scaleY = 0.2;
 		this.add(wall);
 
@@ -41,7 +41,7 @@ class Level_One extends Phaser.GameObjects.Container {
 		this.add(mouth_2);
 
 		// mouth_3
-		const mouth_3 = new Mouth(scene, 25, 1338);
+		const mouth_3 = new Mouth(scene, 64, 846);
 		mouth_3.scaleX = -1;
 		mouth_3.scaleY = 1;
 		this.add(mouth_3);
@@ -50,13 +50,8 @@ class Level_One extends Phaser.GameObjects.Container {
 		const mouth = new Mouth(scene, 1067, 872);
 		this.add(mouth);
 
-		// wall2
-		const wall2 = new Wall2(scene, 1140, 446);
-		wall2.angle = 0;
-		this.add(wall2);
-
 		// wall_1
-		const wall_1 = new Wall1(scene, 29, 1111);
+		const wall_1 = new Wall1(scene, 25, 1320);
 		wall_1.scaleX = 0.4;
 		wall_1.scaleY = 0.4;
 		this.add(wall_1);
@@ -65,12 +60,8 @@ class Level_One extends Phaser.GameObjects.Container {
 		const collectible2 = new Collectible2(scene, 555, 972);
 		this.add(collectible2);
 
-		// collectible3
-		const collectible3 = new Collectible3(scene, 555, 1259);
-		this.add(collectible3);
-
 		// collectible1
-		const collectible1 = new Collectible1(scene, 555, 1501);
+		const collectible1 = new Collectible1(scene, 547, 1257);
 		this.add(collectible1);
 
 		// badThought
@@ -81,25 +72,14 @@ class Level_One extends Phaser.GameObjects.Container {
 		const head2 = new Head2(scene, 528, 2093);
 		this.add(head2);
 
-		// wall_2
-		const wall_2 = new Wall2(scene, 1167, 643);
-		wall_2.scaleX = 0.3;
-		wall_2.scaleY = 0.3;
-		wall_2.angle = 0;
-		this.add(wall_2);
-
-		// collectible
-		const collectible = new Collectible1(scene, 555, 716);
-		this.add(collectible);
-
 		// mouth_4
-		const mouth_4 = new Mouth(scene, 92, 470);
+		const mouth_4 = new Mouth(scene, 82, 455);
 		mouth_4.scaleX = -1;
 		mouth_4.scaleY = 1;
 		this.add(mouth_4);
 
 		// mouth_5
-		const mouth_5 = new Mouth(scene, 1045, 37);
+		const mouth_5 = new Mouth(scene, 1073, 478);
 		this.add(mouth_5);
 
 		// collectible_1
@@ -155,6 +135,28 @@ class Level_One extends Phaser.GameObjects.Container {
 		wall_7.scaleX = 1;
 		wall_7.scaleY = 1;
 		this.add(wall_7);
+
+		// collectible
+		const collectible = new Collectible3(scene, 537, 685);
+		this.add(collectible);
+
+		// wall_2
+		const wall_2 = new Wall1(scene, 0, 1493);
+		wall_2.scaleX = 0.2;
+		wall_2.scaleY = 0.2;
+		this.add(wall_2);
+
+		// wall_8
+		const wall_8 = new Wall1(scene, 1096, 1333);
+		wall_8.scaleX = -0.4;
+		wall_8.scaleY = 0.4;
+		this.add(wall_8);
+
+		// wall2
+		const wall2 = new Wall2(scene, 1106, 1487);
+		wall2.scaleX = 0.25;
+		wall2.scaleY = 0.25;
+		this.add(wall2);
 
 		// rainbow (prefab fields)
 		rainbow.text = "150m";
