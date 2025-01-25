@@ -8,6 +8,7 @@ import { Level_One } from "./prefabs/Level_One";
 import { createAnimation } from "./createAnimation";
 import { Head2 } from "./prefabs/Head2";
 import { GAME_HEIGHT } from "./consts";
+import { HUD } from "./prefabs/HUD";
 
 /* START OF COMPILED CODE */
 
@@ -22,6 +23,7 @@ export class GameScene extends Phaser.Scene {
 	preload() {
 		this.load.image('bubble', 'public/bubble.png');
 		this.load.pack("section1", "public/asset-pack.json");
+		this.load.spritesheet('raster', 'public/sunset-raster.png', { frameWidth: 16, frameHeight: 16 });
 	}
 	static instance: GameScene;
 	level: Level_One;
@@ -34,7 +36,10 @@ export class GameScene extends Phaser.Scene {
 		new Controller(this);
 		// Create and add level container to the scene
 		this.level = new Level_One(this);
+
 		this.add.existing(this.level); // This adds the container to the display list
+
+		// Make HUD fixed to camera
 		createAnimation(this, 'Cloud_A', 3);
 		createAnimation(this, 'Cloud_B', 3);
 		createAnimation(this, 'Obstacle', 3);
@@ -45,8 +50,11 @@ export class GameScene extends Phaser.Scene {
 		createAnimation(this, 'Mouth_Wind_fx', 4);
 		createAnimation(this, 'Death', 7, 0);
 
-		this.cameras.main.setBackgroundColor('#aaaaaa');
 
+
+		this.cameras.main.setBackgroundColor('#aaaaaa');
+		const hud = new HUD(this, 0, 0);
+		this.add.existing(hud);
 
 		this.startCameraLogic();
 
@@ -92,7 +100,8 @@ export class GameScene extends Phaser.Scene {
 
 				let factor = 1;
 				if (normalizedLocation > 0.5) {
-					factor = 2;
+					const extra = normalizedLocation - 0.5;
+					factor = 1 + extra * 20;
 				}
 				camera.scrollY -= scrollSpeed * factor;
 				camera.zoom -= scrollSpeed * factor * 0.002;

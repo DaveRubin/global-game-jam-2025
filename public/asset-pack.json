@@ -586,6 +586,13 @@
             },
             {
                 "url": {
+                    "IMG": "public/sunset-raster.png"
+                },
+                "type": "texture",
+                "key": "sunset-raster"
+            },
+            {
+                "url": {
                     "IMG": "public/tsconfig.png"
                 },
                 "type": "texture",

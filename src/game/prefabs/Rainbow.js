@@ -2,6 +2,7 @@
 // You can write more code here
 import { getStageClient } from "../../client/BaseClient";
 import { Head2 } from "./Head2";
+import { HUD } from "./HUD";
 
 /* START OF COMPILED CODE */
 
@@ -88,6 +89,7 @@ class Rainbow extends Phaser.GameObjects.Container {
 	}
 
 	onRainbowOverlap() {
+		HUD.instance.playConfetti();
 		getStageClient().distributeColors(true);
 	}
 	/* END-USER-CODE */

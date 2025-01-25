@@ -1,4 +1,5 @@
 import { Head2 } from "./prefabs/Head2";
+import { HUD } from "./prefabs/HUD";
 
 export class CollectibleBase extends Phaser.Physics.Arcade.Image {
     constructor(scene: Phaser.Scene, x: number, y: number, texture: string, frame?: number | string) {
@@ -15,6 +16,7 @@ export class CollectibleBase extends Phaser.Physics.Arcade.Image {
     }
 
     collect() {
+        HUD.instance.collected();
         this.destroy();
     }
 
