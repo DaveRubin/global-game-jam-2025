@@ -1,6 +1,7 @@
 import { PlayerColor } from "../game/PlayerColor";
 import { getStageClient } from "../client/BaseClient";
 import { PlayerOpeningIndication } from "../game/prefabs/PlayerOpeningIndication";
+import { GAME_HEIGHT } from "../game/consts";
 
 // You can write more code here
 
@@ -26,7 +27,7 @@ class Lobby extends Phaser.GameObjects.Container {
 		this.add(logo_1);
 
 		// QR
-		const qR = scene.add.rectangle(474, 1031, 128, 128);
+		const qR = scene.add.rectangle(467, 802, 128, 128);
 		qR.name = "QR";
 		qR.scaleX = 4.806442681550568;
 		qR.scaleY = 4.806442681550568;
@@ -34,42 +35,42 @@ class Lobby extends Phaser.GameObjects.Container {
 		this.add(qR);
 
 		// P1_
-		const p1_ = new PlayerOpeningIndication(scene, 134, 1655);
+		const p1_ = new PlayerOpeningIndication(scene, 134, 1440);
 		p1_.name = "P1_";
 		p1_.scaleX = 2;
 		p1_.scaleY = 2;
 		this.add(p1_);
 
 		// P2_
-		const p2_ = new PlayerOpeningIndication(scene, 364, 1655);
+		const p2_ = new PlayerOpeningIndication(scene, 364, 1440);
 		p2_.name = "P2_";
 		p2_.scaleX = 2;
 		p2_.scaleY = 2;
 		this.add(p2_);
 
 		// P3_
-		const p3_ = new PlayerOpeningIndication(scene, 580, 1655);
+		const p3_ = new PlayerOpeningIndication(scene, 580, 1440);
 		p3_.name = "P3_";
 		p3_.scaleX = 2;
 		p3_.scaleY = 2;
 		this.add(p3_);
 
 		// P4_
-		const p4_ = new PlayerOpeningIndication(scene, 784, 1655);
+		const p4_ = new PlayerOpeningIndication(scene, 784, 1440);
 		p4_.name = "P4_";
 		p4_.scaleX = 2;
 		p4_.scaleY = 2;
 		this.add(p4_);
 
 		// Frame
-		const frame = scene.add.image(902, 1692, "GridFrame");
+		const frame = scene.add.image(902, 1477, "GridFrame");
 		frame.setOrigin(1, 0.5);
 		this.add(frame);
 
 		// logo
-		const logo = scene.add.image(464, 302, "Logo");
-		logo.scaleX = 0.9420280827601931;
-		logo.scaleY = 0.9420280827601931;
+		const logo = scene.add.image(464, 181, "Logo");
+		logo.scaleX = 0.623789574732615;
+		logo.scaleY = 0.623789574732615;
 		this.add(logo);
 
 		/* START-USER-CTR-CODE */
@@ -91,7 +92,9 @@ class Lobby extends Phaser.GameObjects.Container {
 
 	/* START-USER-CODE */
 
+	initialY = 0;
 	awake() {
+		this.initialY = this.y;
 		const players = {
 			[PlayerColor.BLUE]: this.getByName("P1_"),
 			[PlayerColor.GREEN]: this.getByName("P2_"),
@@ -143,11 +146,22 @@ class Lobby extends Phaser.GameObjects.Container {
 	}
 
 	hide() {
-		this.visible = false;
+
+		this.scene.tweens.add({
+			targets: this,
+			y: GAME_HEIGHT + 1000,
+			duration: 1500,
+			ease: 'Power2',
+		});
 	}
 
 	show() {
-		this.visible = true;
+		this.scene.tweens.add({
+			targets: this,
+			y: this.initialY,
+			duration: 1500,
+			ease: 'Power2',
+		});
 	}
 	// Write your code here.
 

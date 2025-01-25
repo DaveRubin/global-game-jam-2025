@@ -55,7 +55,6 @@ export class GameScene extends Phaser.Scene {
 		createAnimation(this, 'Death', 7, 0);
 
 		this.cameras.main.setBackgroundColor('#aaaaaa');
-		// this.physics.world.timeScale = 0;
 
 		this.level = new Level_One(this);
 		this.add.existing(this.level);
@@ -91,7 +90,8 @@ export class GameScene extends Phaser.Scene {
 	async startCameraLogic() {
 		const camera = this.cameras.main;
 		await this.resetGame();
-		Head2.instance.body.setAllowGravity(true)
+		Head2.instance.start();
+
 
 
 		const scrollSpeed = 2;
