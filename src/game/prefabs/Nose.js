@@ -2,10 +2,13 @@ import Phaser from "phaser";
 import { PLAYER_COLORS } from "../consts";
 import { getPlayerTrigger } from "../getPlayerTrigger";
 import { Head2 } from "./Head2.js";
+import {createTween} from "../tweenFactory.ts";
 // import { getTouchingPhysicsElement } from "../getTouchingPhysicsElement";
 
 
 // You can write more code here
+
+let created = 0;
 
 const SUCK_IMAGE = "noseSuck";
 const IDLE_IMAGE = "noseIdle";
@@ -81,9 +84,19 @@ class Nose extends Phaser.GameObjects.Container {
 
 	/** @type {"p1"|"p2"|"p3"|"p4"} */
 	property = "p1";
+	/** @type {number} */
+	offsetX = 0;
+	/** @type {number} */
+	offsetY = 0;
+	/** @type {number} */
+	moveDuration = 1000;
+	/** @type {number} */
+	moveDelay = 0;
 
 	/* START-USER-CODE */
 	awake() {
+		createTween(this.scene, this, new Phaser.Math.Vector2(0, 200));
+
 		getPlayerTrigger(this.scene, this.property, (isDown) => this.onPlayerTrigger(isDown));
 		this.onPlayerTrigger(false);
 

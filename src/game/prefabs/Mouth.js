@@ -69,8 +69,16 @@ class Mouth extends Phaser.GameObjects.Container {
 
 	/** @type {"p1"|"p2"|"p3"|"p4"} */
 	property = "p1";
-	/** @type {"p1"|"p2"|"p3"|"p4"} */
-	property_1 = "p1";
+	/** @type {number} */
+	offsetX = 0;
+	/** @type {number} */
+	offsetY = 0;
+	/** @type {number} */
+	moveDuration = 1000;
+	/** @type {number} */
+	moveDelay = 0;
+	/** @type {Phaser.Math.Vector2} */
+	property_1;
 
 	/* START-USER-CODE */
 	awake() {
