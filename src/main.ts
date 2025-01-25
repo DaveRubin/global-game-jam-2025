@@ -4,14 +4,14 @@ import "./PhaserGame";
 // Disable scrolling
 document.body.style.overflow = 'hidden';
 
-// Prevent touch gestures on touch devices
-document.addEventListener(
-    'touchmove',
-    (event) => {
-        event.preventDefault(); // Prevent scrolling
-    },
-    { passive: false } // Allow preventDefault to work
-);
+// // Prevent touch gestures on touch devices
+// document.addEventListener(
+//     'touchmove',
+//     (event) => {
+//         event.preventDefault(); // Prevent scrolling
+//     },
+//     { passive: false } // Allow preventDefault to work
+// );
 
 // Disable the context menu (right-click and long-press)
 document.addEventListener('contextmenu', (event) => {
