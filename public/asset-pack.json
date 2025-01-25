@@ -10,6 +10,13 @@
             },
             {
                 "url": {
+                    "IMG": "public/Sprites/VFX/AOE_Round.png"
+                },
+                "type": "texture",
+                "key": "AOE_Round"
+            },
+            {
+                "url": {
                     "IMG": "public/Background_01.png"
                 },
                 "type": "texture",
