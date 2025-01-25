@@ -7,6 +7,7 @@ import { Level } from "./prefabs/Level";
 import { Level_One } from "./prefabs/Level_One";
 import { createAnimation } from "./createAnimation";
 import { Head2 } from "./prefabs/Head2";
+import { GAME_HEIGHT } from "./consts";
 
 /* START OF COMPILED CODE */
 
@@ -41,30 +42,39 @@ export class GameScene extends Phaser.Scene {
 		createAnimation(this, 'Mouth_Wind_fx', 4);
 		createAnimation(this, 'Death', 7);
 
-		const scrollSpeed = 2;
 
-		// Update camera position each frame
-		this.scrollTimer = this.time.addEvent({
-			delay: 50, // Add a small delay (roughly 60fps)
-			callback: () => {
-				this.cameras.main.scrollY -= scrollSpeed;
-				// Check if Head2 is out of frame
-				if (Head2.instance) {
-					const headWorldY = Head2.instance.y - this.cameras.main.scrollY;
-					if (headWorldY > this.cameras.main.height + 300) {
-						console.log("Head2 is out of frame!");
-						this.scrollTimer?.destroy();
-					}
-				}
-			},
-			loop: true
-		});
+		this.startCameraLogic();
+
 
 
 
 		// Make camera follow the bubble
 		// this.cameras.main.startFollow(bubble, false, 0.2, 0.2);
 		this.events.emit("scene-awake");
+	}
+	startCameraLogic() {
+		const scrollSpeed = 2;
+		// Update camera position each frame
+		this.scrollTimer = this.time.addEvent({
+			delay: 50, // Add a small delay (roughly 60fps)
+			callback: () => {
+				const headWorldY = Head2.instance.y - this.cameras.main.scrollY;
+				const normalizedLocation = 1 - (headWorldY / GAME_HEIGHT);
+				let factor = 1;
+				if (normalizedLocation > 0.5) {
+					factor = 2;
+				}
+				this.cameras.main.scrollY -= scrollSpeed * factor;
+				// Check if Head2 is out of frame
+
+				if (headWorldY > GAME_HEIGHT + 300) {
+					console.log("Head2 is out of frame!");
+					this.scrollTimer?.destroy();
+				}
+
+			},
+			loop: true
+		});
 	}
 
 
