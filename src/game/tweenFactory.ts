@@ -8,6 +8,10 @@ export function createTween(
 ): void {
     const { moveDuration = 1000, delay = 0 } = options; // Default values for moveDuration and delay
 
+    if (offset.x === 0 && offset.y === 0) {
+        return;
+    }
+
     scene.tweens.add({
         targets: transform, // The object being moved
         x: transform.x + offset.x, // Target x position
