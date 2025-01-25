@@ -100,7 +100,8 @@ export class GameScene extends Phaser.Scene {
 
 				let factor = 1;
 				if (normalizedLocation > 0.5) {
-					factor = 2;
+					const extra = normalizedLocation - 0.5;
+					factor = 1 + extra * 20;
 				}
 				camera.scrollY -= scrollSpeed * factor;
 				camera.zoom -= scrollSpeed * factor * 0.002;
