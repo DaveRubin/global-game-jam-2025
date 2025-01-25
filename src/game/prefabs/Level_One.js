@@ -4,6 +4,8 @@ import {Wall2} from "./Wall2.js";
 import {Wall1} from "./Wall1.js";
 import {Collectible3} from "./Collectible3.js";
 import {Mouth} from "./Mouth.js";
+import {Nose} from "./Nose.js";
+import {BadMood} from "./BadMood.js";
 import {Collectible2} from "./Collectible2.js";
 import {Collectible1} from "./Collectible1.js";
 import {Head2} from "./Head2.js";
@@ -117,6 +119,13 @@ class Level_One extends Phaser.GameObjects.Layer {
 		const rainbow1 = scene.add.container(-22, -4962);
 		rainbow1.blendMode = Phaser.BlendModes.SKIP_CHECK;
 		this.add(rainbow1);
+
+		// badMood
+		const badMood = new BadMood(scene, 788, 5443);
+		badMood.scaleX = 0.75;
+		badMood.scaleY = 0.75;
+		badMood.alpha = 0.7;
+		rainbow1.add(badMood);
 
 		// wall
 		const wall = new Wall1(scene, 552, 7356);
@@ -281,9 +290,8 @@ class Level_One extends Phaser.GameObjects.Layer {
 		const nose_3 = new Nose(scene, 962, 4772);
 		rainbow1.add(nose_3);
 
-		// badMood
-		const badMood = new BadMood(scene, 849, 5549);
-		rainbow1.add(badMood);
+		// badMood (prefab fields)
+		badMood.player = "p1";
 
 		// rainbow (prefab fields)
 		rainbow.text = "150m";
@@ -320,9 +328,6 @@ class Level_One extends Phaser.GameObjects.Layer {
 
 		// nose_3 (prefab fields)
 		nose_3.property = "p2";
-
-		// badMood (prefab fields)
-		badMood.player = "p1";
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.

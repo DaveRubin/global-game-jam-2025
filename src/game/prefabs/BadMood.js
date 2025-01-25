@@ -1,29 +1,26 @@
 
 // You can write more code here
+import {PLAYER_COLORS} from "../consts";
+import {BaseCollider} from "../BaseCollider";
+import {getPlayerTrigger} from "../getPlayerTrigger";
+import {Head2} from "./Head2.js";
 
 /* START OF COMPILED CODE */
 
-import {Sprite} from "@babylonjs/core/index.js";
-import {PLAYER_COLORS} from "../consts.js";
-
-class BadMood extends Phaser.GameObjects.Container {
+class BadMood extends BaseCollider {
 
 	constructor(scene, x, y) {
 		super(scene, x ?? 252, y ?? 3);
 
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
 
-		// cloud_B_01
-		const cloud_B_01 = scene.add.sprite(-260, 0, "Cloud_B_01");
-		cloud_B_01.scaleX = 2;
-		cloud_B_01.scaleY = 2;
-		cloud_B_01.alpha = 0.75;
-		cloud_B_01.alphaTopLeft = 0.75;
-		cloud_B_01.alphaTopRight = 0.75;
-		cloud_B_01.alphaBottomLeft = 0.75;
-		cloud_B_01.alphaBottomRight = 0.75;
-		cloud_B_01.tintFill = true;
-		this.add(cloud_B_01);
+		// cloud
+		const cloud = scene.add.sprite(-260, 0, "Cloud_B_01");
+		cloud.name = "cloud";
+		cloud.scaleX = 2;
+		cloud.scaleY = 2;
+		cloud.tintFill = true;
+		this.add(cloud);
 
 		// obstacle_Empty_Face
 		const obstacle_Empty_Face = scene.add.image(-296, -16, "Obstacle_Empty_Face");
@@ -31,16 +28,17 @@ class BadMood extends Phaser.GameObjects.Container {
 		obstacle_Empty_Face.scaleY = 2;
 		this.add(obstacle_Empty_Face);
 
-		// arcadesprite_1
-		const arcadesprite_1 = scene.physics.add.sprite(-291, -73, "AOE");
-		arcadesprite_1.scaleX = 2.8;
-		arcadesprite_1.scaleY = 1.35;
-		arcadesprite_1.visible = false;
-		arcadesprite_1.body.moves = false;
-		arcadesprite_1.body.pushable = false;
-		arcadesprite_1.body.immovable = true;
-		arcadesprite_1.body.setSize(886, 331, false);
-		this.add(arcadesprite_1);
+		// collider
+		const collider = scene.physics.add.sprite(-291, -107, "AOE");
+		collider.name = "collider";
+		collider.scaleX = 2.8;
+		collider.scaleY = 1.8;
+		collider.visible = false;
+		collider.body.moves = false;
+		collider.body.pushable = false;
+		collider.body.immovable = true;
+		collider.body.setSize(886, 331, false);
+		this.add(collider);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -53,10 +51,32 @@ class BadMood extends Phaser.GameObjects.Container {
 	/* START-USER-CODE */
 
 	awake() {
-		const wall: Phaser.GameObjects.Sprite = this.getByName("Cloud_B_01");
+		const wall = this.getByName("cloud");
 		wall.play("Cloud_B");
 		super.awake();
-		wall.setTint(PLAYER_COLORS[this.player])
+		wall.setTint(PLAYER_COLORS[this.player]);
+
+
+
+		getPlayerTrigger(this.scene, this.player, (isDown) => this.onPlayerTrigger(isDown));
+	}
+
+	onPlayerTrigger(isDown) {
+		const collider = this.getByName("collider");
+		collider.body.enable = !isDown;
+		if (!isDown) {
+			if (this.scene.physics.overlap(collider.body, Head2.instance)) {
+
+			}
+		}
+
+		const wall = this.getByName("cloud");
+		if (isDown) {
+			wall.setAlpha(0.2);
+		}
+		else {
+			wall.setAlpha(0.75);
+		}
 	}
 
 	/* END-USER-CODE */

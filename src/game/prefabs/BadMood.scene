@@ -2,6 +2,7 @@
     "id": "b1b89334-a192-48e5-a110-db77dd9e1c11",
     "sceneType": "PREFAB",
     "settings": {
+        "superClassName": "BaseCollider",
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -20,18 +21,15 @@
                 {
                     "type": "Sprite",
                     "id": "8be6526e-46f8-4d06-be9e-888f7ca9a3b2",
-                    "label": "cloud_B_01",
+                    "label": "cloud",
+                    "displayName": "cloud",
+                    "useGameObjectName": true,
                     "texture": {
                         "key": "Cloud_B_01"
                     },
                     "x": -260,
                     "scaleX": 2,
                     "scaleY": 2,
-                    "alpha": 0.75,
-                    "alphaTopLeft": 0.75,
-                    "alphaTopRight": 0.75,
-                    "alphaBottomLeft": 0.75,
-                    "alphaBottomRight": 0.75,
                     "tintFill": true
                 },
                 {
@@ -49,14 +47,16 @@
                 {
                     "type": "ArcadeSprite",
                     "id": "827da2b5-f409-4e40-819e-1472b5dffd7d",
-                    "label": "arcadesprite_1",
+                    "label": "collider",
+                    "displayName": "collider",
+                    "useGameObjectName": true,
                     "texture": {
                         "key": "AOE"
                     },
                     "x": -291,
-                    "y": -73,
+                    "y": -107,
                     "scaleX": 2.8,
-                    "scaleY": 1.35,
+                    "scaleY": 1.8,
                     "visible": false,
                     "moves": false,
                     "pushable": false,

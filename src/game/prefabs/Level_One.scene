@@ -242,6 +242,25 @@
                     "y": -4962,
                     "list": [
                         {
+                            "prefabId": "b1b89334-a192-48e5-a110-db77dd9e1c11",
+                            "id": "84a87498-f542-4d1a-a3f0-393779867c8f",
+                            "unlock": [
+                                "x",
+                                "y",
+                                "player",
+                                "scaleX",
+                                "scaleY",
+                                "alpha"
+                            ],
+                            "label": "badMood",
+                            "player": "p1",
+                            "x": 788,
+                            "y": 5443,
+                            "scaleX": 0.75,
+                            "scaleY": 0.75,
+                            "alpha": 0.7
+                        },
+                        {
                             "prefabId": "f889b80a-a443-4d72-a67d-d9bbe0ab009a",
                             "id": "9be2f353-b183-4f4b-ab0d-8393e1feb065",
                             "unlock": [
@@ -696,19 +715,6 @@
                             "property": "p2",
                             "x": 962,
                             "y": 4772
-                        },
-                        {
-                            "prefabId": "b1b89334-a192-48e5-a110-db77dd9e1c11",
-                            "id": "84a87498-f542-4d1a-a3f0-393779867c8f",
-                            "unlock": [
-                                "x",
-                                "y",
-                                "player"
-                            ],
-                            "label": "badMood",
-                            "player": "p1",
-                            "x": 849,
-                            "y": 5549
                         }
                     ]
                 }
