@@ -68,6 +68,25 @@
                     "y": 197,
                     "scaleX": 0.5,
                     "scaleY": 0.5
+                },
+                {
+                    "type": "ArcadeSprite",
+                    "id": "b3cc7845-9fc7-41b0-8227-95a2cc682683",
+                    "label": "AOE",
+                    "useGameObjectName": true,
+                    "texture": {},
+                    "x": -2,
+                    "y": 339,
+                    "scaleX": 9.176256547231612,
+                    "scaleY": 19.29343053638097,
+                    "visible": false,
+                    "moves": false,
+                    "allowGravity": false,
+                    "allowDrag": false,
+                    "allowRotation": false,
+                    "pushable": false,
+                    "body.width": 32,
+                    "body.height": 32
                 }
             ]
         }

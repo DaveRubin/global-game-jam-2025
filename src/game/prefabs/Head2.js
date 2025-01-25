@@ -56,8 +56,28 @@ class Head2 extends Phaser.GameObjects.Container {
 		Head2.instance = this;
 		death_01.setVisible(false);
 		const body = this.body;
-		body.setMaxVelocity(300, 80);
+		// body.setMaxVelocity(300, 80);
 		this.initialPosition = { x: this.x, y: this.y };
+
+		// Add update event listener for logging position each frame
+		scene.events.on('update', () => {
+			// console.log(`Head position: x=${this.x.toFixed(2)}, y=${this.y.toFixed(2)}`);
+			// console.log(`Head velocity: vx=${this.body.velocity.x.toFixed(2)}, vy=${this.body.velocity.y.toFixed(2)}`);
+			const velocityX = this.body.velocity.x;
+			const velocityY = this.body.velocity.y;
+			const MAX_VELOCITY_Y = 60;
+			const MAX_VELOCITY_X = 150;
+			if (Math.abs(velocityY) > MAX_VELOCITY_Y) {
+				const delta = velocityY - MAX_VELOCITY_Y * Math.sign(velocityY);
+				this.body.velocity.y -= delta / 16;
+				console.log(`Y velocity delta: ${delta}`);
+			}
+			if (Math.abs(velocityX) > MAX_VELOCITY_X) {
+				const delta = velocityX - MAX_VELOCITY_X * Math.sign(velocityX);
+				this.body.velocity.x -= delta / 16;
+				console.log(`X velocity delta: ${delta}`);
+			}
+		});
 		/* END-USER-CTR-CODE */
 	}
 

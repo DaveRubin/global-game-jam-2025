@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 import { PLAYER_COLORS } from "../consts";
 import { getPlayerTrigger } from "../getPlayerTrigger";
+import { Head2 } from "./Head2.js";
 // import { getTouchingPhysicsElement } from "../getTouchingPhysicsElement";
 
 
@@ -56,6 +57,20 @@ class Nose extends Phaser.GameObjects.Container {
 		noseVfx.scaleX = 0.5;
 		noseVfx.scaleY = 0.5;
 		this.add(noseVfx);
+
+		// AOE
+		const aOE = scene.physics.add.sprite(-2, 339, "_MISSING");
+		aOE.name = "AOE";
+		aOE.scaleX = 9.176256547231612;
+		aOE.scaleY = 19.29343053638097;
+		aOE.visible = false;
+		aOE.body.moves = false;
+		aOE.body.allowGravity = false;
+		aOE.body.allowDrag = false;
+		aOE.body.allowRotation = false;
+		aOE.body.pushable = false;
+		aOE.body.setSize(32, 32, false);
+		this.add(aOE);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
@@ -104,6 +119,16 @@ class Nose extends Phaser.GameObjects.Container {
 				duration: 500,
 				ease: 'Linear'
 			});
+			const AOE = this.getByName("AOE");
+			const touching = this.scene.physics.overlap(AOE, Head2.instance);
+			if (touching) {
+
+				Head2.instance.body.velocity.add({
+					x: 0,
+					y: -1000
+				});
+			}
+
 		}
 
 		// const effect = this.list.find((child) => child.name === EFFECT_IMAGE);
