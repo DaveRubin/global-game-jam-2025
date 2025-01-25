@@ -9,6 +9,9 @@ import { createAnimation } from "./createAnimation";
 import { Head2 } from "./prefabs/Head2";
 import { GAME_HEIGHT } from "./consts";
 import { HUD } from "./prefabs/HUD";
+import encodeQR from "@paulmillr/qr";
+import { getStageClient } from "../client/BaseClient";
+import { Lobby } from "../lobby/Lobby";
 
 /* START OF COMPILED CODE */
 
@@ -21,23 +24,24 @@ export class GameScene extends Phaser.Scene {
 
 
 	preload() {
+		const stageClient = getStageClient();
+		const gameUrl = `${window.location.origin}${window.location.pathname}?game-id=${stageClient.gameId}`;
+		const gifBytes = encodeQR(gameUrl, "gif", { scale: 25 }); // Uncompressed GIF
+		const blob = new Blob([gifBytes], { type: "image/gif" });
+		const url = URL.createObjectURL(blob);
+
+		this.load.image("qr-code", url);
 		this.load.image('bubble', 'public/bubble.png');
 		this.load.pack("section1", "public/asset-pack.json");
 		this.load.spritesheet('raster', 'public/sunset-raster.png', { frameWidth: 16, frameHeight: 16 });
 	}
+
 	static instance: GameScene;
+	lobby: Lobby;
 	level: Level_One;
 
 	/** @returns {void} */
 	editorCreate() {
-
-		// bubble physics body
-
-		new Controller(this);
-		// Create and add level container to the scene
-		this.level = new Level_One(this);
-
-		this.add.existing(this.level); // This adds the container to the display list
 
 		// Make HUD fixed to camera
 		createAnimation(this, 'Cloud_A', 3);
@@ -50,19 +54,25 @@ export class GameScene extends Phaser.Scene {
 		createAnimation(this, 'Mouth_Wind_fx', 4);
 		createAnimation(this, 'Death', 7, 0);
 
-
-
 		this.cameras.main.setBackgroundColor('#aaaaaa');
+
+		this.level = new Level_One(this);
+		this.add.existing(this.level);
 		const hud = new HUD(this, 0, 0);
 		this.add.existing(hud);
+		Head2.instance.body.setAllowGravity(false)
 
-		this.startCameraLogic();
 
-		// @ts-ignore
-		window.RESET_GAME = this.resetGame.bind(this);
+		this.lobby = new Lobby(this);
+		this.add.existing(this.lobby);
 
-		// Make camera follow the bubble
+		this.events.on("start-game", () => {
+			this.lobby.hide();
+			this.startGame();
+		});
 		this.events.emit("scene-awake");
+
+
 	}
 
 	reloadLevel() {
@@ -77,18 +87,12 @@ export class GameScene extends Phaser.Scene {
 		this.events.emit("scene-awake");
 	}
 
-	startCameraLogic() {
+	async startCameraLogic() {
 		const camera = this.cameras.main;
-
-		const targetZoom = 1;
-		const startZoom = 1.385;
-		camera.setZoom(startZoom);
+		await this.resetGame();
+		Head2.instance.start();
 
 
-		const headY = Head2.instance.getWorldTransformMatrix().ty;
-
-
-		camera.setScroll(0, -GAME_HEIGHT / 2 + headY - 500);
 
 		const scrollSpeed = 2;
 		// Update camera position each frame
@@ -105,7 +109,7 @@ export class GameScene extends Phaser.Scene {
 				}
 				camera.scrollY -= scrollSpeed * factor;
 				camera.zoom -= scrollSpeed * factor * 0.002;
-				camera.zoom = Math.max(camera.zoom, targetZoom);
+				camera.zoom = Math.max(camera.zoom, 1);
 				// Check if Head2 is out of frame
 
 				if (normalizedLocation < -0.1) {
@@ -140,7 +144,12 @@ export class GameScene extends Phaser.Scene {
 
 
 	create() {
-
 		this.editorCreate();
+	}
+
+	startGame() {
+		new Controller(this);
+		this.startCameraLogic();
+		this.events.emit("scene-awake");
 	}
 }
