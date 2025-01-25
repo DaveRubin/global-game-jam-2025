@@ -31,7 +31,7 @@ export class BootScene extends Phaser.Scene {
             progressBar.destroy();
             progressBox.destroy();
             loadingText.destroy();
-            this.scene.start('ConnectingScene');
+            this.scene.start('GameScene');
         });
 
         // Load all your game assets here

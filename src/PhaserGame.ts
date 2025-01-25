@@ -20,7 +20,7 @@ if (new URLSearchParams(window.location.search).has("edit-level")) {
 // @ts-ignore
 const scenes = window.isDebugMode
   ? GameScene
-  : [BootScene, ConnectingScene, LobbyScene, MobileLobbyScene, MobileGameScene, GameScene, MobileDisconnectedScene];
+  : [ConnectingScene, BootScene, LobbyScene, MobileLobbyScene, MobileGameScene, GameScene, MobileDisconnectedScene];
 
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
