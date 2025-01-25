@@ -15,10 +15,13 @@
             "blendMode": -1,
             "list": [
                 {
-                    "type": "Image",
+                    "type": "ArcadeImage",
                     "id": "bd6f9b0a-962f-45e1-b596-122660c9b55e",
                     "label": "effect",
                     "useGameObjectName": true,
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 886,
+                    "hitArea.height": 331,
                     "texture": {
                         "key": "AOE"
                     },
@@ -29,7 +32,14 @@
                     "alphaTopLeft": 0.2,
                     "alphaTopRight": 0.2,
                     "alphaBottomLeft": 0.2,
-                    "alphaBottomRight": 0.2
+                    "alphaBottomRight": 0.2,
+                    "moves": false,
+                    "allowGravity": false,
+                    "allowDrag": false,
+                    "allowRotation": false,
+                    "pushable": false,
+                    "body.width": 886,
+                    "body.height": 331
                 },
                 {
                     "type": "Image",

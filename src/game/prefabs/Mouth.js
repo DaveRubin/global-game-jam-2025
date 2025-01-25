@@ -4,6 +4,7 @@
 import Phaser from "phaser";
 import { PLAYER_COLORS } from "../consts";
 import { getPlayerTrigger } from "../getPlayerTrigger";
+import { Head2 } from "./Head2";
 import { getTouchingPhysicsElement } from "../getTouchingPhysicsElement";
 
 
@@ -24,14 +25,21 @@ class Mouth extends Phaser.GameObjects.Container {
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
 
 		// effect
-		const effect = scene.add.image(-3, 4, "AOE");
+		const effect = scene.physics.add.image(-3, 4, "AOE");
 		effect.name = "effect";
+		effect.setInteractive(new Phaser.Geom.Rectangle(0, 0, 886, 331), Phaser.Geom.Rectangle.Contains);
 		effect.setOrigin(1, 0.5);
 		effect.alpha = 0.2;
 		effect.alphaTopLeft = 0.2;
 		effect.alphaTopRight = 0.2;
 		effect.alphaBottomLeft = 0.2;
 		effect.alphaBottomRight = 0.2;
+		effect.body.moves = false;
+		effect.body.allowGravity = false;
+		effect.body.allowDrag = false;
+		effect.body.allowRotation = false;
+		effect.body.pushable = false;
+		effect.body.setSize(886, 331, false);
 		this.add(effect);
 
 		// mouthIdle
@@ -57,8 +65,6 @@ class Mouth extends Phaser.GameObjects.Container {
 
 		/* START-USER-CTR-CODE */
 
-		// awake handler
-		this.scene.events.once("scene-awake", this.awake, this);
 		/* END-USER-CTR-CODE */
 	}
 
@@ -69,6 +75,9 @@ class Mouth extends Phaser.GameObjects.Container {
 
 	/* START-USER-CODE */
 	awake() {
+		const effect = this.getByName("effect");
+
+
 		getPlayerTrigger(this.scene, this.property, (isDown) => this.onPlayerTrigger(isDown));
 		this.onPlayerTrigger(false);
 		this.list.forEach((child) => {
@@ -88,48 +97,15 @@ class Mouth extends Phaser.GameObjects.Container {
 
 		idleImage.setVisible(!isDown);
 		blowImage.setVisible(isDown);
+		const effect = this.getByName("effect");
+		const touching = this.scene.physics.overlap(effect, Head2.instance);
 
-		const vfx = this.list.find((child) => child.name === VFX_IMAGE);
-
-		if (isDown) {
-			vfx.setPosition(-50, 0);
-			vfx.setVisible(true);
-			vfx.setAlpha(1);
-			this.scene.tweens.killTweensOf(vfx);
-			this.scene.tweens.add({
-				targets: vfx,
-				x: -250,
-				alpha: 0,
-				duration: 500,
-				ease: 'Linear'
-			});
+		if (touching && isDown) {
+			const direction = this.scaleX > 0 ? -1 : 1;
+			Head2.instance.body.setVelocityX(800 * direction);
 		}
 
 
-		const effect = this.list.find((child) => child.name === EFFECT_IMAGE);
-
-		if (isDown) {
-			const touchedBodies = getTouchingPhysicsElement(this.scene, effect);
-			touchedBodies.map(x => x.body).forEach(touchedBody => {
-				if (!touchedBody) {
-					return;
-				}
-				const touchedWorldPoint = this.getWorldTransformMatrix().transformPoint(touchedBody.x, touchedBody.y);
-				const worldPoint = this.getWorldTransformMatrix().transformPoint(effect.x, effect.y);
-				const dx = worldPoint.x - touchedWorldPoint.x;
-				const maxDist = 600;
-				const part = Math.abs(dx) / maxDist;
-				if (part < 1) {
-					const direction = dx > 0 ? 1 : -1;
-					const forceX = 1 - part;
-					console.log(forceX * 200 * direction);
-					touchedBody.body.velocity.add({
-						x: forceX * 200 * direction,
-						y: 0
-					});
-				}
-			});
-		}
 	}
 
 
