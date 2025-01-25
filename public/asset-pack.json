@@ -491,6 +491,13 @@
                 "key": "Music"
             },
             {
+                "url": [
+                    "public/sfx/Nose.wav"
+                ],
+                "type": "audio",
+                "key": "Nose"
+            },
+            {
                 "url": {
                     "IMG": "public/NoseIdle.png"
                 },
