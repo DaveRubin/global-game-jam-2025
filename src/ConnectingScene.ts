@@ -41,6 +41,9 @@ async function init() {
 }
 
 export class ConnectingScene extends Phaser.Scene {
+  constructor() {
+    super("ConnectingScene");
+  }
   async create() {
     const success = await init();
     if (!success) {
