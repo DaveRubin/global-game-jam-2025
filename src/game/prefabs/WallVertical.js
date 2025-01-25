@@ -51,7 +51,7 @@ class WallVertical extends Phaser.GameObjects.Container {
 
 	awake() {
 		const wall = this.getByName("wall");
-		wall.play("Cloud_A");
+		//wall.play("Cloud_A");
 		super.awake();
 	}
 

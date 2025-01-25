@@ -233,7 +233,7 @@
                     "label": "player",
                     "blendMode": -1,
                     "x": 528,
-                    "y": 1962,
+                    "y": -2288,
                     "list": [
                         {
                             "type": "Image",
