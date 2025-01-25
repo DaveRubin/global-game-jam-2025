@@ -8,19 +8,19 @@ class WallVertical extends BaseCollider {
 	constructor(scene, x, y) {
 		super(scene, x ?? 306, y ?? 196);
 
-		this.angle = 90;
-		this.alpha = 0.8;
-
 		// wall
 		const wall = scene.add.sprite(0, 0, "Wall_01");
 		wall.name = "wall";
+		wall.scaleX = 0.5;
+		wall.scaleY = 0.5;
+		wall.angle = 90;
 		this.add(wall);
 
 		// collider
-		const collider = scene.physics.add.sprite(0, -6, "_MISSING");
+		const collider = scene.physics.add.sprite(10, -1, "_MISSING");
 		collider.name = "collider";
-		collider.scaleX = 21.8;
-		collider.scaleY = 4.45;
+		collider.scaleX = 3.9;
+		collider.scaleY = 22.4;
 		collider.visible = false;
 		collider.body.moves = false;
 		collider.body.allowGravity = false;

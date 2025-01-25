@@ -17,8 +17,6 @@
             "label": "wall_01",
             "x": 306,
             "y": 196,
-            "angle": 90,
-            "alpha": 0.8,
             "list": [
                 {
                     "type": "Sprite",
@@ -27,7 +25,10 @@
                     "useGameObjectName": true,
                     "texture": {
                         "key": "Wall_01"
-                    }
+                    },
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "angle": 90
                 },
                 {
                     "type": "ArcadeSprite",
@@ -35,9 +36,10 @@
                     "label": "collider",
                     "useGameObjectName": true,
                     "texture": {},
-                    "y": -6,
-                    "scaleX": 21.8,
-                    "scaleY": 4.45,
+                    "x": 10,
+                    "y": -1,
+                    "scaleX": 3.9,
+                    "scaleY": 22.4,
                     "visible": false,
                     "moves": false,
                     "allowGravity": false,

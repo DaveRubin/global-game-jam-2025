@@ -17,9 +17,10 @@ class Cat2 extends Phaser.GameObjects.Container {
 		this.add(badThought);
 
 		// image_1
-		const image_1 = scene.add.image(0, 0, "Cat_02");
-		image_1.scaleX = 0.5;
-		image_1.scaleY = 0.5;
+		const image_1 = scene.add.image(-6, 12, "Cat_02");
+		image_1.scaleX = 0.3;
+		image_1.scaleY = 0.3;
+		image_1.angle = 17;
 		this.add(image_1);
 
 		/* START-USER-CTR-CODE */

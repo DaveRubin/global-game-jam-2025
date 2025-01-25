@@ -182,7 +182,7 @@
                     "label": "player",
                     "blendMode": -1,
                     "x": 528,
-                    "y": 2081,
+                    "y": 2039,
                     "list": [
                         {
                             "type": "Image",
@@ -289,7 +289,6 @@
                     "blendMode": -1,
                     "x": -22,
                     "y": -7874,
-                    "alpha": 0.75,
                     "list": [
                         {
                             "prefabId": "b1b89334-a192-48e5-a110-db77dd9e1c11",
@@ -603,7 +602,7 @@
                                 "property"
                             ],
                             "label": "nose_8",
-                            "property": "p4",
+                            "property": "p1",
                             "x": 350,
                             "y": 3806
                         },
@@ -616,22 +615,9 @@
                                 "property"
                             ],
                             "label": "nose_9",
-                            "property": "p2",
+                            "property": "p1",
                             "x": 682,
                             "y": 1949
-                        },
-                        {
-                            "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
-                            "id": "c59d504b-2f60-405c-94fb-50dd38fba3f5",
-                            "unlock": [
-                                "x",
-                                "y",
-                                "property"
-                            ],
-                            "label": "nose_10",
-                            "property": "p4",
-                            "x": 464,
-                            "y": -226
                         },
                         {
                             "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
@@ -642,7 +628,7 @@
                                 "property"
                             ],
                             "label": "nose_2",
-                            "property": "p3",
+                            "property": "p1",
                             "x": 934,
                             "y": 1948
                         },
@@ -665,8 +651,8 @@
                                 "y"
                             ],
                             "label": "badThought_17",
-                            "x": 763,
-                            "y": -118
+                            "x": 714,
+                            "y": -127
                         },
                         {
                             "prefabId": "f5032964-65e6-42bf-9151-20eb2b02b297",
@@ -698,8 +684,8 @@
                                 "y"
                             ],
                             "label": "badThought_19",
-                            "x": 993,
-                            "y": -113
+                            "x": 978,
+                            "y": -129
                         },
                         {
                             "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
@@ -712,7 +698,7 @@
                                 "scaleY"
                             ],
                             "label": "mouth_9",
-                            "property": "p1",
+                            "property": "p3",
                             "x": 1020,
                             "y": 133,
                             "scaleX": 1,
@@ -733,8 +719,8 @@
                             "label": "badMood_1",
                             "player": "p1",
                             "dragInside": 500,
-                            "x": -2593,
-                            "y": -6173,
+                            "x": -2651,
+                            "y": -6320,
                             "scaleX": 1,
                             "scaleY": 1,
                             "alpha": 1
@@ -749,8 +735,8 @@
                             ],
                             "label": "nose_26",
                             "property": "p2",
-                            "x": 221,
-                            "y": -221
+                            "x": 204,
+                            "y": -147
                         },
                         {
                             "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
@@ -760,8 +746,8 @@
                                 "y"
                             ],
                             "label": "badThought_3",
-                            "x": 404,
-                            "y": 2010
+                            "x": 393,
+                            "y": 1988
                         },
                         {
                             "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
@@ -798,7 +784,7 @@
                             "label": "mouth_3",
                             "property": "p3",
                             "x": 1030,
-                            "y": 4203,
+                            "y": 4132,
                             "scaleX": 1,
                             "scaleY": 1
                         },
@@ -815,19 +801,6 @@
                         },
                         {
                             "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
-                            "id": "8ab47012-dfb4-40c7-ac38-08bca42ef7cc",
-                            "unlock": [
-                                "x",
-                                "y",
-                                "property"
-                            ],
-                            "label": "nose_11",
-                            "property": "p2",
-                            "x": 204,
-                            "y": 985
-                        },
-                        {
-                            "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
                             "id": "f0af8809-36ed-4138-85fe-757c5a807463",
                             "unlock": [
                                 "x",
@@ -836,8 +809,8 @@
                             ],
                             "label": "nose_22",
                             "property": "p4",
-                            "x": 446,
-                            "y": 972
+                            "x": 457,
+                            "y": 938
                         },
                         {
                             "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
@@ -848,7 +821,7 @@
                                 "property"
                             ],
                             "label": "nose_23",
-                            "property": "p3",
+                            "property": "p4",
                             "x": 132,
                             "y": 3007
                         },
@@ -861,7 +834,7 @@
                                 "property"
                             ],
                             "label": "nose_24",
-                            "property": "p2",
+                            "property": "p4",
                             "x": 343,
                             "y": 2999
                         },
@@ -928,36 +901,58 @@
                         },
                         {
                             "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
-                            "id": "e739c0a9-8e2a-454c-9064-225e2a802d3c",
-                            "unlock": [
-                                "x",
-                                "y"
-                            ],
-                            "label": "badThought_1",
-                            "x": 241,
-                            "y": -795
-                        },
-                        {
-                            "prefabId": "d927362c-3436-4754-b2e2-17db4acede7e",
-                            "id": "3318f04c-97f7-4f30-9329-dfbd6c27c239",
-                            "unlock": [
-                                "x",
-                                "y"
-                            ],
-                            "label": "wallVertical_1",
-                            "x": 520,
-                            "y": -1056
-                        },
-                        {
-                            "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
                             "id": "51ea1ad8-4ef2-449a-b737-303277b33203",
                             "unlock": [
                                 "x",
                                 "y"
                             ],
                             "label": "badThought_11",
-                            "x": 236,
-                            "y": -1406
+                            "x": 220,
+                            "y": -788
+                        },
+                        {
+                            "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
+                            "id": "f85da286-25f5-4333-b016-3fbc327678be",
+                            "unlock": [
+                                "x",
+                                "y"
+                            ],
+                            "label": "badThought_12",
+                            "x": 188,
+                            "y": 953
+                        },
+                        {
+                            "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
+                            "id": "9c59d40b-6ad3-4d6b-8d10-3949436314e4",
+                            "unlock": [
+                                "x",
+                                "y"
+                            ],
+                            "label": "badThought_13",
+                            "x": 456,
+                            "y": -123
+                        },
+                        {
+                            "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
+                            "id": "d46d6bda-31d7-40c9-8fc0-b3b120ffd8a1",
+                            "unlock": [
+                                "x",
+                                "y"
+                            ],
+                            "label": "badThought_1",
+                            "x": 233,
+                            "y": -1384
+                        },
+                        {
+                            "prefabId": "d927362c-3436-4754-b2e2-17db4acede7e",
+                            "id": "60ea5d2e-4dee-4a5b-b1f7-68c351da4116",
+                            "unlock": [
+                                "x",
+                                "y"
+                            ],
+                            "label": "wallVertical_1",
+                            "x": 519,
+                            "y": -1092
                         }
                     ]
                 },
@@ -1034,7 +1029,7 @@
                         "scaleY"
                     ],
                     "label": "mouth_6",
-                    "property": "p3",
+                    "property": "p2",
                     "x": 118,
                     "y": -5594,
                     "scaleX": -1,
@@ -1117,9 +1112,9 @@
                         "scaleY"
                     ],
                     "label": "mouth",
-                    "property": "p3",
-                    "x": 101,
-                    "y": -7183,
+                    "property": "p1",
+                    "x": 90,
+                    "y": -6595,
                     "scaleX": -1,
                     "scaleY": 1
                 },
@@ -1509,8 +1504,8 @@
                             ],
                             "label": "nose_16",
                             "property": "p2",
-                            "x": 308,
-                            "y": 173
+                            "x": 304,
+                            "y": 425
                         },
                         {
                             "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
@@ -1521,9 +1516,9 @@
                                 "property"
                             ],
                             "label": "nose_17",
-                            "property": "p4",
-                            "x": 541,
-                            "y": 169
+                            "property": "p2",
+                            "x": 533,
+                            "y": 443
                         },
                         {
                             "prefabId": "3c90fc12-c395-48e8-8e59-20b766fb72c8",
@@ -1563,17 +1558,6 @@
                             "y": 774,
                             "scaleX": -1,
                             "scaleY": 1
-                        },
-                        {
-                            "prefabId": "f5032964-65e6-42bf-9151-20eb2b02b297",
-                            "id": "84bb058e-c446-4a5a-93dc-72b4e587d0ec",
-                            "unlock": [
-                                "x",
-                                "y"
-                            ],
-                            "label": "collectible_23",
-                            "x": 417,
-                            "y": 550
                         },
                         {
                             "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
@@ -1686,6 +1670,32 @@
                             "label": "badThought_6",
                             "x": 28,
                             "y": 225
+                        },
+                        {
+                            "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
+                            "id": "a7076a8a-e95e-4852-bd02-354131b89a8e",
+                            "unlock": [
+                                "x",
+                                "y",
+                                "property"
+                            ],
+                            "label": "nose_1",
+                            "property": "p2",
+                            "x": 309,
+                            "y": 26
+                        },
+                        {
+                            "prefabId": "d173283d-30db-4654-aaef-bf47e40a912d",
+                            "id": "0f57fa9e-2505-41bc-a079-eccd043c80e6",
+                            "unlock": [
+                                "x",
+                                "y",
+                                "property"
+                            ],
+                            "label": "nose_3",
+                            "property": "p2",
+                            "x": 536,
+                            "y": 30
                         }
                     ]
                 },
@@ -1700,7 +1710,7 @@
                         "scaleY"
                     ],
                     "label": "mouth_12",
-                    "property": "p3",
+                    "property": "p4",
                     "x": 115,
                     "y": -8393,
                     "scaleX": -1,
@@ -1738,6 +1748,23 @@
                     "label": "collectible_27",
                     "x": 513,
                     "y": -10166
+                },
+                {
+                    "prefabId": "d1732831-30db-4654-aaef-bf47e40a912d",
+                    "id": "3d8abd5f-ddd3-4525-84e8-c2ac7064f359",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "property",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "mouth_18",
+                    "property": "p4",
+                    "x": 99,
+                    "y": -7241,
+                    "scaleX": -1,
+                    "scaleY": 1
                 }
             ]
         }
