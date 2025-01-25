@@ -65,6 +65,11 @@ class BadMood extends BaseCollider {
 		content.name = "content";
 		content.scaleX = 2.5;
 		content.scaleY = 2.5;
+		content.alpha = 0.75;
+		content.alphaTopLeft = 0.75;
+		content.alphaTopRight = 0.75;
+		content.alphaBottomLeft = 0.75;
+		content.alphaBottomRight = 0.75;
 		this.add(content);
 
 		/* START-USER-CTR-CODE */

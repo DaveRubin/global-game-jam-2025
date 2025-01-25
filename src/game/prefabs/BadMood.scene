@@ -107,7 +107,12 @@
                     "x": -309,
                     "y": -62,
                     "scaleX": 2.5,
-                    "scaleY": 2.5
+                    "scaleY": 2.5,
+                    "alpha": 0.75,
+                    "alphaTopLeft": 0.75,
+                    "alphaTopRight": 0.75,
+                    "alphaBottomLeft": 0.75,
+                    "alphaBottomRight": 0.75
                 }
             ]
         }
