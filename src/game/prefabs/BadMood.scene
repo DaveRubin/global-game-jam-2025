@@ -30,19 +30,12 @@
                     "x": -260,
                     "scaleX": 2,
                     "scaleY": 2,
+                    "alpha": 0.8,
+                    "alphaTopLeft": 0.8,
+                    "alphaTopRight": 0.8,
+                    "alphaBottomLeft": 0.8,
+                    "alphaBottomRight": 0.8,
                     "tintFill": true
-                },
-                {
-                    "type": "Image",
-                    "id": "a99c0aed-d6f0-4006-adca-51d02880c08f",
-                    "label": "obstacle_Empty_Face",
-                    "texture": {
-                        "key": "Obstacle_Empty_Face"
-                    },
-                    "x": -296,
-                    "y": -16,
-                    "scaleX": 2,
-                    "scaleY": 2
                 },
                 {
                     "type": "ArcadeSprite",
@@ -63,6 +56,58 @@
                     "immovable": true,
                     "body.width": 886,
                     "body.height": 331
+                },
+                {
+                    "type": "Image",
+                    "id": "11a985aa-72e4-4530-99c9-d860f747307b",
+                    "label": "angry",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "ObstacleFace"
+                    },
+                    "x": -308,
+                    "y": -82,
+                    "scaleX": 2.5,
+                    "scaleY": 2.5
+                },
+                {
+                    "type": "Image",
+                    "id": "68dcca4f-70eb-4c72-a338-e66b5d0d8e64",
+                    "label": "scar2",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "NoseVfx"
+                    },
+                    "x": 792,
+                    "y": 44,
+                    "scaleX": 2.5,
+                    "scaleY": 2.5
+                },
+                {
+                    "type": "Image",
+                    "id": "2ddb4828-7ce3-4705-a2b2-52ddf7d40aed",
+                    "label": "scar1",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "NoseVfx"
+                    },
+                    "x": -1316,
+                    "y": -115,
+                    "scaleX": 2.5,
+                    "scaleY": 2.5
+                },
+                {
+                    "type": "Image",
+                    "id": "f20796f2-d2cf-4c9b-b84d-43582e61d2b8",
+                    "label": "content",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "Obstacle_Empty_Face"
+                    },
+                    "x": -309,
+                    "y": -62,
+                    "scaleX": 2.5,
+                    "scaleY": 2.5
                 }
             ]
         }

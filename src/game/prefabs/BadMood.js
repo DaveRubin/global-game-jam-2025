@@ -19,14 +19,13 @@ class BadMood extends BaseCollider {
 		cloud.name = "cloud";
 		cloud.scaleX = 2;
 		cloud.scaleY = 2;
+		cloud.alpha = 0.8;
+		cloud.alphaTopLeft = 0.8;
+		cloud.alphaTopRight = 0.8;
+		cloud.alphaBottomLeft = 0.8;
+		cloud.alphaBottomRight = 0.8;
 		cloud.tintFill = true;
 		this.add(cloud);
-
-		// obstacle_Empty_Face
-		const obstacle_Empty_Face = scene.add.image(-296, -16, "Obstacle_Empty_Face");
-		obstacle_Empty_Face.scaleX = 2;
-		obstacle_Empty_Face.scaleY = 2;
-		this.add(obstacle_Empty_Face);
 
 		// collider
 		const collider = scene.physics.add.sprite(-291, -107, "AOE");
@@ -39,6 +38,34 @@ class BadMood extends BaseCollider {
 		collider.body.immovable = true;
 		collider.body.setSize(886, 331, false);
 		this.add(collider);
+
+		// angry
+		const angry = scene.add.image(-308, -82, "ObstacleFace");
+		angry.name = "angry";
+		angry.scaleX = 2.5;
+		angry.scaleY = 2.5;
+		this.add(angry);
+
+		// scar2
+		const scar2 = scene.add.image(792, 44, "NoseVfx");
+		scar2.name = "scar2";
+		scar2.scaleX = 2.5;
+		scar2.scaleY = 2.5;
+		this.add(scar2);
+
+		// scar1
+		const scar1 = scene.add.image(-1316, -115, "NoseVfx");
+		scar1.name = "scar1";
+		scar1.scaleX = 2.5;
+		scar1.scaleY = 2.5;
+		this.add(scar1);
+
+		// content
+		const content = scene.add.image(-309, -62, "Obstacle_Empty_Face");
+		content.name = "content";
+		content.scaleX = 2.5;
+		content.scaleY = 2.5;
+		this.add(content);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -56,17 +83,25 @@ class BadMood extends BaseCollider {
 		super.awake();
 		wall.setTint(PLAYER_COLORS[this.player]);
 
-
-
 		getPlayerTrigger(this.scene, this.player, (isDown) => this.onPlayerTrigger(isDown));
+		this.setFace(false);
+	}
+
+	setFace(isCalm) {
+		this.getByName("content").setVisible(isCalm);
+		this.getByName("angry").setVisible(!isCalm);
+		this.getByName("scar1").setVisible(!isCalm);
+		this.getByName("scar2").setVisible(!isCalm);
 	}
 
 	onPlayerTrigger(isDown) {
+		this.setFace(isDown);
+
 		const collider = this.getByName("collider");
 		collider.body.enable = !isDown;
 		if (!isDown) {
 			if (this.scene.physics.overlap(collider.body, Head2.instance)) {
-
+				Head2.instance.kill();
 			}
 		}
 

@@ -116,7 +116,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		beginningClouds.add(wall2);
 
 		// rainbow1
-		const rainbow1 = scene.add.container(-22, -4962);
+		const rainbow1 = scene.add.container(-22, -4058);
 		rainbow1.blendMode = Phaser.BlendModes.SKIP_CHECK;
 		this.add(rainbow1);
 
