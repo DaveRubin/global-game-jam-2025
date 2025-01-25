@@ -1,6 +1,6 @@
 export enum PlayerColor {
-  BLUE = 0x0000ff,
-  GREEN = 0x00ff00,
-  YELLOW = 0xffff00,
-  RED = 0xff0000,
+  BLUE = 0xFBFB53,
+  GREEN = 0x75F4EF,
+  YELLOW = 0xE96CD6,
+  RED = 0x79F66F,
 }
