@@ -79,6 +79,7 @@
                     "tintBottomRight": "#000000",
                     "text": "50m",
                     "align": "center",
+                    "fontFamily": "Dokdo",
                     "fontSize": "168px"
                 }
             ]

@@ -26,7 +26,7 @@ class Lobby extends Phaser.GameObjects.Container {
 		this.add(logo_1);
 
 		// QR
-		const qR = scene.add.rectangle(486, 1025, 128, 128);
+		const qR = scene.add.rectangle(474, 1031, 128, 128);
 		qR.name = "QR";
 		qR.scaleX = 4.806442681550568;
 		qR.scaleY = 4.806442681550568;
@@ -34,41 +34,37 @@ class Lobby extends Phaser.GameObjects.Container {
 		this.add(qR);
 
 		// P1_
-		const p1_ = new PlayerOpeningIndication(scene, 177, 1743);
+		const p1_ = new PlayerOpeningIndication(scene, 134, 1655);
 		p1_.name = "P1_";
 		p1_.scaleX = 2;
 		p1_.scaleY = 2;
 		this.add(p1_);
 
 		// P2_
-		const p2_ = new PlayerOpeningIndication(scene, 407, 1743);
+		const p2_ = new PlayerOpeningIndication(scene, 364, 1655);
 		p2_.name = "P2_";
 		p2_.scaleX = 2;
 		p2_.scaleY = 2;
 		this.add(p2_);
 
 		// P3_
-		const p3_ = new PlayerOpeningIndication(scene, 623, 1743);
+		const p3_ = new PlayerOpeningIndication(scene, 580, 1655);
 		p3_.name = "P3_";
 		p3_.scaleX = 2;
 		p3_.scaleY = 2;
 		this.add(p3_);
 
 		// P4_
-		const p4_ = new PlayerOpeningIndication(scene, 827, 1743);
+		const p4_ = new PlayerOpeningIndication(scene, 784, 1655);
 		p4_.name = "P4_";
 		p4_.scaleX = 2;
 		p4_.scaleY = 2;
 		this.add(p4_);
 
 		// Frame
-		const frame = scene.add.image(945, 1780, "GridFrame");
+		const frame = scene.add.image(902, 1692, "GridFrame");
 		frame.setOrigin(1, 0.5);
 		this.add(frame);
-
-		// C2A
-		const c2A = scene.add.image(511, 1436, "C2A");
-		this.add(c2A);
 
 		// logo
 		const logo = scene.add.image(464, 302, "Logo");
@@ -105,30 +101,8 @@ class Lobby extends Phaser.GameObjects.Container {
 
 		Object.entries(players).forEach(([color, p]) => {
 			p.init(color)
-		})
+		});
 
-		// setTimeout(() => {
-		// 	Object.entries(players).forEach(([color, p]) => {
-		// 		p.setAssigned(true)
-		// 	})
-		// }, 1000)
-
-		// setTimeout(() => {
-		// 	Object.entries(players).forEach(([color, p]) => {
-		// 		p.ready(true)
-		// 	})
-		// }, 2000)
-
-		// setTimeout(() => {
-		// 	Object.entries(players).forEach(([color, p]) => {
-		// 		p.ready(false)
-		// 	})
-		// }, 3000)
-		// setTimeout(() => {
-		// 	Object.entries(players).forEach(([color, p]) => {
-		// 		p.setAssigned(false)
-		// 	})
-		// }, 4000)
 
 		this.stageClient.onPlayerAssignedCallbacks = (player) => {
 			const p = players[player.baseColor]

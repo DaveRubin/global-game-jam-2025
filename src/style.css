@@ -35,3 +35,12 @@ canvas {
   width: 100vw;
   height: 100vh;
 }
+
+.dokdo-regular {
+  font-family: "Dokdo", serif;
+  font-weight: 400;
+  font-style: normal;
+  visibility: hidden;
+  position:absolute; 
+  left:-1000px;
+}

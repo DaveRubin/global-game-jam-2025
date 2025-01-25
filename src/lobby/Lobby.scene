@@ -35,8 +35,8 @@
                     "id": "493eed1d-686d-4917-a983-3d3f21fb1290",
                     "label": "QR",
                     "useGameObjectName": true,
-                    "x": 486,
-                    "y": 1025,
+                    "x": 474,
+                    "y": 1031,
                     "scaleX": 4.806442681550568,
                     "scaleY": 4.806442681550568,
                     "isFilled": true,
@@ -55,8 +55,8 @@
                     "label": "P1_",
                     "displayName": "P1",
                     "useGameObjectName": true,
-                    "x": 177,
-                    "y": 1743,
+                    "x": 134,
+                    "y": 1655,
                     "scaleX": 2,
                     "scaleY": 2
                 },
@@ -72,8 +72,8 @@
                     "label": "P2_",
                     "displayName": "P2",
                     "useGameObjectName": true,
-                    "x": 407,
-                    "y": 1743,
+                    "x": 364,
+                    "y": 1655,
                     "scaleX": 2,
                     "scaleY": 2
                 },
@@ -89,8 +89,8 @@
                     "label": "P3_",
                     "displayName": "P3",
                     "useGameObjectName": true,
-                    "x": 623,
-                    "y": 1743,
+                    "x": 580,
+                    "y": 1655,
                     "scaleX": 2,
                     "scaleY": 2
                 },
@@ -106,8 +106,8 @@
                     "label": "P4_",
                     "displayName": "P4",
                     "useGameObjectName": true,
-                    "x": 827,
-                    "y": 1743,
+                    "x": 784,
+                    "y": 1655,
                     "scaleX": 2,
                     "scaleY": 2
                 },
@@ -118,19 +118,9 @@
                     "texture": {
                         "key": "GridFrame"
                     },
-                    "x": 945,
-                    "y": 1780,
+                    "x": 902,
+                    "y": 1692,
                     "originX": 1
-                },
-                {
-                    "type": "Image",
-                    "id": "f87f5bc4-fcb7-464c-b932-9a5becf6cde2",
-                    "label": "C2A",
-                    "texture": {
-                        "key": "C2A"
-                    },
-                    "x": 511,
-                    "y": 1436
                 },
                 {
                     "type": "Image",
