@@ -59,6 +59,7 @@ export class GameScene extends Phaser.Scene {
 	reloadLevel() {
 		this.level.destroy();
 		this.physics.world.colliders.destroy();
+		this.events.removeAllListeners();
 		this.tweens.killAll();
 		Head2.instance.destroy();
 		this.level = new Level_One(this);
@@ -104,26 +105,22 @@ export class GameScene extends Phaser.Scene {
 		});
 	}
 
-	end() {
-		this.scrollTimer?.destroy();
-		// Wait 3 seconds then tween camera to bottom
-		this.resetGame();
-	}
 
 	resetGame() {
-		const startZoom = 1.385;
-		const camera = this.cameras.main;
+		return new Promise<void>((resolve) => {
+			this.scrollTimer?.destroy();
+			const startZoom = 1.385;
+			const camera = this.cameras.main;
 
-		this.time.delayedCall(3000, () => {
-			this.tweens.add({
-				targets: this.cameras.main,
-				scrollY: camera.height - (camera.height / startZoom),
-				zoom: 1.385,
-				duration: 2000,
-				ease: 'Power2',
-				onComplete: () => {
-					Head2.instance.reset();
-				}
+			this.time.delayedCall(3000, () => {
+				this.tweens.add({
+					targets: this.cameras.main,
+					scrollY: camera.height - (camera.height / startZoom),
+					zoom: 1.385,
+					duration: 2000,
+					ease: 'Power2',
+					onComplete: () => resolve()
+				});
 			});
 		});
 	}
