@@ -1,17 +1,19 @@
-import {get, getDatabase, onValue, ref, update} from "firebase/database";
-import {GameState, GameStateScreen} from "./GameState";
-import {GameStatePlayer} from "./GameStatePlayer";
-import {firebaseConfig} from "./config";
-import {initializeApp} from "firebase/app";
-import {PlayerColor} from "../game/PlayerColor.ts";
+import { get, getDatabase, onValue, ref, update } from "firebase/database";
+import { GameState, GameStateScreen } from "./GameState";
+import { GameStatePlayer } from "./GameStatePlayer";
+import { firebaseConfig } from "./config";
+import { initializeApp } from "firebase/app";
+import { PlayerColor } from "../game/PlayerColor.ts";
 import throttle from 'lodash/throttle';
 
 export type StateScreenCallback = (screen: GameStateScreen) => void;
 export type PlayerColorsChange = (colors: PlayerColor[]) => void;
 
+
+
 const MIN_TOGGLE_DURATION = 200; // Minimum time (in milliseconds)
 export class PlayerClient {
-  throttledToggle : any = {
+  throttledToggle: any = {
     [PlayerColor.BLUE]: this.createThrottle(PlayerColor.BLUE),
     [PlayerColor.GREEN]: this.createThrottle(PlayerColor.GREEN),
     [PlayerColor.YELLOW]: this.createThrottle(PlayerColor.YELLOW),
@@ -19,11 +21,11 @@ export class PlayerClient {
   };
   createThrottle(color: PlayerColor) {
     return throttle(
-        ({isOn}) => {
-          this.updateColorState(color, isOn);
-        },
-        MIN_TOGGLE_DURATION,
-        { trailing: true } // Ensures the last call is executed after the throttle duration
+      ({ isOn }) => {
+        this.updateColorState(color, isOn);
+      },
+      MIN_TOGGLE_DURATION,
+      { trailing: true } // Ensures the last call is executed after the throttle duration
     );
   }
   onGameChangeScreen: StateScreenCallback = (screen) => {
@@ -86,7 +88,7 @@ export class PlayerClient {
   private updateColorState(color: number, isOn: boolean) {
     const path = `${this.root}/${this.gameId}/colors`;
     console.log("updateColorState", path, isOn);
-    update(ref(this.db, path), {[color]: isOn});
+    update(ref(this.db, path), { [color]: isOn });
   }
 
   private getFreePlayer(state: GameState): GameStatePlayer | undefined {
