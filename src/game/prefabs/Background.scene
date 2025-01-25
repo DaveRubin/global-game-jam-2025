@@ -1,0 +1,118 @@
+{
+    "id": "af6fe35d-f5da-4c05-a448-0853d2fad5d7",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1125,
+        "borderHeight": 2436
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "e04977c4-54a0-44b9-8df0-9b89e01230a6",
+            "label": "container_1",
+            "blendMode": -1,
+            "x": 1050,
+            "y": 633,
+            "list": [
+                {
+                    "type": "Container",
+                    "id": "ac22f04e-9c4d-4cf4-a7f6-f96644c0225b",
+                    "label": "container",
+                    "blendMode": -1,
+                    "x": -1881.52036140902,
+                    "y": -345.17954631779565,
+                    "list": [
+                        {
+                            "type": "Rectangle",
+                            "id": "bad9d5ec-8917-4ef7-954a-3591609fea8d",
+                            "label": "rectangle",
+                            "x": 1421,
+                            "y": 929,
+                            "scaleX": 9.25,
+                            "scaleY": 38.8,
+                            "isFilled": true,
+                            "fillColor": "#f7e4aa",
+                            "strokeAlpha": 0,
+                            "width": 128,
+                            "height": 128
+                        },
+                        {
+                            "type": "Image",
+                            "id": "2af4307c-a717-4f8c-93e6-79af68e36552",
+                            "label": "background_2",
+                            "texture": {
+                                "key": "Background_02"
+                            },
+                            "x": 831,
+                            "y": -947,
+                            "originX": 0,
+                            "originY": 0,
+                            "tintTopLeft": "#ffe0a0",
+                            "tintTopRight": "#ffe0a0",
+                            "tintBottomLeft": "#ffe0a0",
+                            "tintBottomRight": "#ffe0a0"
+                        },
+                        {
+                            "type": "Image",
+                            "id": "29bed48b-b9f4-42c2-ad5a-3e0e6722f8a8",
+                            "label": "background_3",
+                            "texture": {
+                                "key": "Background_01"
+                            },
+                            "x": 842,
+                            "y": -41,
+                            "originX": 0,
+                            "originY": 0,
+                            "tintTopLeft": "#fed99b",
+                            "tintTopRight": "#fed99b",
+                            "tintBottomLeft": "#fed99b",
+                            "tintBottomRight": "#fed99b"
+                        },
+                        {
+                            "type": "Image",
+                            "id": "075ff775-fa4f-46fd-9b7d-0e827b351c4d",
+                            "label": "background_4",
+                            "texture": {
+                                "key": "Background_02"
+                            },
+                            "x": 835,
+                            "y": 410,
+                            "originX": 0,
+                            "originY": 0,
+                            "tintTopLeft": "#ffcd81",
+                            "tintTopRight": "#ffcd81",
+                            "tintBottomLeft": "#ffcd81",
+                            "tintBottomRight": "#ffcd81"
+                        },
+                        {
+                            "type": "Image",
+                            "id": "60416721-b7e9-4d37-9d49-f23d7058efc9",
+                            "label": "background_5",
+                            "texture": {
+                                "key": "Background_01"
+                            },
+                            "x": 835,
+                            "y": 1165,
+                            "originX": 0,
+                            "originY": 0,
+                            "tintTopLeft": "#f4be82",
+                            "tintTopRight": "#f4be82",
+                            "tintBottomLeft": "#f4be82",
+                            "tintBottomRight": "#f4be82"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
