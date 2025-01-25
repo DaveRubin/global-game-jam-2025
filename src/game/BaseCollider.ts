@@ -1,18 +1,21 @@
 import { Head2 } from "./prefabs/Head2";
 
-export class BaseCollider extends Phaser.Physics.Arcade.Sprite {
-    constructor(scene: Phaser.Scene, x: number, y: number, texture: string, frame?: number | string) {
-        super(scene, x, y, texture, frame);
-        scene.physics.add.existing(this);
-        const body = this.body as Phaser.Physics.Arcade.Body;
-        if (body) {
-            body.setSize(this.width, this.height, false);
-            body.onCollide = true;
-        }
+export class BaseCollider extends Phaser.GameObjects.Container {
+    constructor(scene: Phaser.Scene, x: number, y: number) {
+        super(scene, x, y);
+
+
+
         this.scene.events.once("scene-awake", () => this.awake());
     }
 
     awake() {
-        this.scene.physics.add.collider(Head2.instance, this);
+        const collider = this.getByName("collider") as Phaser.GameObjects.Sprite;
+        const body = collider.body as Phaser.Physics.Arcade.StaticBody;
+        if (body) {
+            body.setSize(this.width, this.height, false);
+            body.onCollide = true;
+        }
+        this.scene.physics.add.collider(Head2.instance, collider);
     }
 }

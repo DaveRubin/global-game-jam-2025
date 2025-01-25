@@ -7,18 +7,31 @@ import { BaseCollider } from "../BaseCollider";
 
 class Wall1 extends BaseCollider {
 
-	constructor(scene, x, y, texture, frame) {
-		super(scene, x ?? 0, y ?? 0, texture || "Cloud_A_01", frame);
+	constructor(scene, x, y) {
+		super(scene, x ?? 0, y ?? 0);
 
-		this.scaleX = 0.4;
-		this.scaleY = 0.4;
-		scene.physics.add.existing(this, true);
-		this.body.moves = false;
-		this.body.allowGravity = false;
-		this.body.allowDrag = false;
-		this.body.allowRotation = false;
-		this.body.pushable = false;
-		this.body.setSize(1685, 350, false);
+		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
+
+		// wall_02
+		const wall_02 = scene.add.sprite(0, 0, "Cloud_A_01");
+		wall_02.name = "wall_02";
+		wall_02.scaleX = 0.4;
+		wall_02.scaleY = 0.4;
+		this.add(wall_02);
+
+		// collider
+		const collider = scene.physics.add.sprite(-2, -20, "_MISSING");
+		collider.name = "collider";
+		collider.scaleX = 16.769825786717423;
+		collider.scaleY = 3.0703617855894216;
+		collider.visible = false;
+		collider.body.moves = false;
+		collider.body.allowGravity = false;
+		collider.body.allowDrag = false;
+		collider.body.allowRotation = false;
+		collider.body.pushable = false;
+		collider.body.setSize(32, 32, false);
+		this.add(collider);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
@@ -31,7 +44,8 @@ class Wall1 extends BaseCollider {
 
 	// Write your code here.
 	awake() {
-		this.play("Cloud_A");
+		const wall = this.getByName("wall_02");
+		wall.play("Cloud_A");
 		super.awake();
 	}
 	/* END-USER-CODE */

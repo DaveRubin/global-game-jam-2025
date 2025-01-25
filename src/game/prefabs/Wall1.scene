@@ -10,22 +10,42 @@
     },
     "displayList": [
         {
-            "type": "ArcadeSprite",
-            "id": "1795e3ae-1c96-4662-9d0d-13aa7a4079a6",
-            "label": "wall_02",
-            "texture": {
-                "key": "Cloud_A_01"
-            },
-            "scaleX": 0.4,
-            "scaleY": 0.4,
-            "physicsType": 1,
-            "moves": false,
-            "allowGravity": false,
-            "allowDrag": false,
-            "allowRotation": false,
-            "pushable": false,
-            "body.width": 1685,
-            "body.height": 350
+            "type": "Container",
+            "id": "ee297f29-cad0-4a01-9af2-aba67cdb7171",
+            "label": "container_1",
+            "blendMode": -1,
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "1795e3ae-1c96-4662-9d0d-13aa7a4079a6",
+                    "label": "wall_02",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "Cloud_A_01"
+                    },
+                    "scaleX": 0.4,
+                    "scaleY": 0.4
+                },
+                {
+                    "type": "ArcadeSprite",
+                    "id": "9b0504e1-6264-4eee-a7bb-de47a35b3d29",
+                    "label": "collider",
+                    "useGameObjectName": true,
+                    "texture": {},
+                    "x": -2,
+                    "y": -20,
+                    "scaleX": 16.769825786717423,
+                    "scaleY": 3.0703617855894216,
+                    "visible": false,
+                    "moves": false,
+                    "allowGravity": false,
+                    "allowDrag": false,
+                    "allowRotation": false,
+                    "pushable": false,
+                    "body.width": 32,
+                    "body.height": 32
+                }
+            ]
         }
     ],
     "plainObjects": [],

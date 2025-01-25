@@ -10,21 +10,49 @@
     },
     "displayList": [
         {
-            "type": "ArcadeSprite",
-            "id": "9e15f02d-4ec8-442d-b6a8-cfcbfc378027",
-            "label": "wall_01",
-            "texture": {
-                "key": "Cloud_B_01"
-            },
-            "scaleX": 0.5,
-            "scaleY": 0.5,
-            "moves": false,
-            "allowGravity": false,
-            "allowDrag": false,
-            "allowRotation": false,
-            "pushable": false,
-            "body.width": 1203,
-            "body.height": 300
+            "type": "Container",
+            "id": "987bea33-ed58-4136-ba07-e45b6ed990bb",
+            "label": "container_1",
+            "blendMode": -1,
+            "list": [
+                {
+                    "type": "ArcadeSprite",
+                    "id": "9e15f02d-4ec8-442d-b6a8-cfcbfc378027",
+                    "label": "wall_01",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "Cloud_B_01"
+                    },
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "moves": false,
+                    "allowGravity": false,
+                    "allowDrag": false,
+                    "allowRotation": false,
+                    "pushable": false,
+                    "body.width": 1203,
+                    "body.height": 300
+                },
+                {
+                    "type": "ArcadeSprite",
+                    "id": "b09a2bce-a7a2-43f4-8f29-a555cd9b58e2",
+                    "label": "collider",
+                    "useGameObjectName": true,
+                    "texture": {},
+                    "x": 5,
+                    "y": -14,
+                    "scaleX": 16.40969611167718,
+                    "scaleY": -3.9650974652694466,
+                    "visible": false,
+                    "moves": false,
+                    "allowGravity": false,
+                    "allowDrag": false,
+                    "allowRotation": false,
+                    "pushable": false,
+                    "body.width": 32,
+                    "body.height": 32
+                }
+            ]
         }
     ],
     "plainObjects": [],
