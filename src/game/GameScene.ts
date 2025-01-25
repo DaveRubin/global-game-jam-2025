@@ -47,6 +47,7 @@ export class GameScene extends Phaser.Scene {
 
 		this.cameras.main.setBackgroundColor('#aaaaaa');
 
+
 		this.startCameraLogic();
 
 		// @ts-ignore
@@ -75,16 +76,18 @@ export class GameScene extends Phaser.Scene {
 		const startZoom = 1.385;
 		camera.setZoom(startZoom);
 
-		const bottomY = camera.height;    // Bottom of the current view
 
-		camera.setScroll(0, bottomY - (camera.height / startZoom));
+		const headY = Head2.instance.getWorldTransformMatrix().ty;
+
+
+		camera.setScroll(0, -GAME_HEIGHT / 2 + headY);
 
 		const scrollSpeed = 2;
 		// Update camera position each frame
 		this.scrollTimer = this.time.addEvent({
 			delay: 50, // Add a small delay (roughly 60fps)
 			callback: () => {
-				const headWorldY = Head2.instance.y - camera.scrollY;
+				const headWorldY = Head2.instance.getWorldTransformMatrix().ty - camera.scrollY;
 				const normalizedLocation = 1 - (headWorldY / GAME_HEIGHT);
 
 				let factor = 1;
@@ -96,7 +99,8 @@ export class GameScene extends Phaser.Scene {
 				camera.zoom = Math.max(camera.zoom, targetZoom);
 				// Check if Head2 is out of frame
 
-				if (headWorldY > GAME_HEIGHT / 4) {
+				if (normalizedLocation < -0.1) {
+					console.log("🚀 ~ OUT OF BOUNDS ")
 					Head2.instance.kill(true)
 				}
 
