@@ -103,69 +103,69 @@
             ]
         }
     ],
-    "prefabProperties": [
-            {
-                "name": "property",
-                "label": "Property",
-                "tooltip": "",
-                "defValue": "p1",
-                "customDefinition": false,
-                "type": {
-                    "id": "option",
-                    "options": [
-                        "p1",
-                        "p2",
-                        "p3",
-                        "p4"
-                    ]
-                }
-            },
-            {
-                "name": "offsetX",
-                "label": "Offset X",
-                "tooltip": "",
-                "defValue": 0,
-                "customDefinition": false,
-                "type": {
-                    "id": "number"
-                }
-            },
-            {
-                "name": "offsetY",
-                "label": "Offset Y",
-                "tooltip": "",
-                "defValue": 0,
-                "customDefinition": false,
-                "type": {
-                    "id": "number"
-                }
-            },
-            {
-                "name": "moveDuration",
-                "label": "Move Duration",
-                "tooltip": "",
-                "defValue": 1000,
-                "customDefinition": false,
-                "type": {
-                    "id": "number"
-                }
-            },
-            {
-                "name": "moveDelay",
-                "label": "Move Delay",
-                "tooltip": "",
-                "defValue": 0,
-                "customDefinition": false,
-                "type": {
-                    "id": "number"
-                }
-            }
-        ],
     "plainObjects": [],
     "meta": {
         "app": "Phaser Editor - Scene Editor",
         "url": "https://phaser.io/editor",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "property",
+            "label": "Property",
+            "tooltip": "",
+            "defValue": "p1",
+            "customDefinition": false,
+            "type": {
+                "id": "option",
+                "options": [
+                    "p1",
+                    "p2",
+                    "p3",
+                    "p4"
+                ]
+            }
+        },
+        {
+            "name": "offsetX",
+            "label": "Offset X",
+            "tooltip": "",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "offsetY",
+            "label": "Offset Y",
+            "tooltip": "",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "moveDuration",
+            "label": "Move Duration",
+            "tooltip": "",
+            "defValue": 1000,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "moveDelay",
+            "label": "Move Delay",
+            "tooltip": "",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
 }

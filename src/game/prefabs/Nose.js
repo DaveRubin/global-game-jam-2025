@@ -95,7 +95,10 @@ class Nose extends Phaser.GameObjects.Container {
 
 	/* START-USER-CODE */
 	awake() {
-		createTween(this.scene, this, new Phaser.Math.Vector2(0, 200));
+		createTween(this.scene, this, new Phaser.Math.Vector2(this.offsetX, this.offsetY), {
+			delay: this.moveDelay,
+			moveDuration: this.moveDuration,
+		});
 
 		getPlayerTrigger(this.scene, this.property, (isDown) => this.onPlayerTrigger(isDown));
 		this.onPlayerTrigger(false);
