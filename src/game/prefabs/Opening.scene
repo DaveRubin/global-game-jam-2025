@@ -21,52 +21,56 @@
                     "id": "81c48d63-cbe4-4856-819f-22369e7b1945",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "playerColor"
                     ],
                     "label": "P1_",
                     "displayName": "P1",
                     "useGameObjectName": true,
-                    "x": -164,
-                    "y": 240
+                    "x": 73,
+                    "y": 813
                 },
                 {
                     "prefabId": "f9d62b2f-f86e-4dfc-a19d-cd9669c2d9db",
                     "id": "4f1e120e-3832-4a9d-a21e-25af70d37944",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "playerColor"
                     ],
                     "label": "P2_",
                     "displayName": "P2",
                     "useGameObjectName": true,
-                    "x": -47,
-                    "y": 240
+                    "x": 190,
+                    "y": 813
                 },
                 {
                     "prefabId": "f9d62b2f-f86e-4dfc-a19d-cd9669c2d9db",
                     "id": "d4e57ded-f0a8-464e-acf8-7c1ed804f3b9",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "playerColor"
                     ],
                     "label": "P3_",
                     "displayName": "P3",
                     "useGameObjectName": true,
-                    "x": 57,
-                    "y": 240
+                    "x": 294,
+                    "y": 813
                 },
                 {
                     "prefabId": "f9d62b2f-f86e-4dfc-a19d-cd9669c2d9db",
                     "id": "2e53662d-88fb-4ab1-ab66-cde3ad49efde",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "playerColor"
                     ],
                     "label": "P4_",
                     "displayName": "P4",
                     "useGameObjectName": true,
-                    "x": 161,
-                    "y": 240
+                    "x": 398,
+                    "y": 813
                 },
                 {
                     "type": "Image",
@@ -75,44 +79,10 @@
                     "texture": {
                         "key": "GridFrame"
                     },
-                    "y": 258,
+                    "x": 237,
+                    "y": 831,
                     "scaleX": 0.5,
                     "scaleY": 0.5
-                },
-                {
-                    "type": "Container",
-                    "id": "1dc74bf1-5a81-4091-8ef3-f100fee9619a",
-                    "label": "Go Container",
-                    "blendMode": -1,
-                    "x": -218,
-                    "y": 351,
-                    "visible": false,
-                    "list": [
-                        {
-                            "type": "Image",
-                            "id": "6c19eab8-8d7f-4fd2-8438-0bba8d2cc457",
-                            "label": "Bar",
-                            "texture": {
-                                "key": "ReadyBox"
-                            },
-                            "x": 217,
-                            "y": 19,
-                            "scaleX": 1.85,
-                            "scaleY": 0.5
-                        },
-                        {
-                            "type": "Image",
-                            "id": "cc032f36-4c92-488a-b9f6-48e5c0020c97",
-                            "label": "Go_Text",
-                            "texture": {
-                                "key": "GoTitle"
-                            },
-                            "x": 215,
-                            "y": 20,
-                            "scaleX": 0.5,
-                            "scaleY": 0.5
-                        }
-                    ]
                 },
                 {
                     "type": "Image",
@@ -121,7 +91,8 @@
                     "texture": {
                         "key": "C2A"
                     },
-                    "y": -129,
+                    "x": 237,
+                    "y": 444,
                     "scaleX": 0.5,
                     "scaleY": 0.5
                 },
@@ -132,8 +103,8 @@
                     "texture": {
                         "key": "Logo"
                     },
-                    "x": 1,
-                    "y": -377,
+                    "x": 238,
+                    "y": 196,
                     "scaleX": 0.5,
                     "scaleY": 0.5
                 }

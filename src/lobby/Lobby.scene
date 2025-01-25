@@ -2,6 +2,8 @@
     "id": "b83dbb8d-0a28-4fab-8fac-34a9ac237e5a",
     "sceneType": "PREFAB",
     "settings": {
+        "snapWidth": 125,
+        "snapHeight": 53,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -18,24 +20,129 @@
             "y": 165,
             "list": [
                 {
-                    "type": "Text",
-                    "id": "4d00bbaa-0fc5-4f3c-9c4d-e1852b66edac",
-                    "label": "text_1",
-                    "text": "LOBBY\n",
-                    "fontSize": "72px"
+                    "type": "Image",
+                    "id": "eb231a87-648e-4bff-9b2f-fdc75cd3dc4d",
+                    "label": "logo_1",
+                    "texture": {
+                        "key": "Ref_1"
+                    },
+                    "x": 456,
+                    "y": 1048,
+                    "visible": false
                 },
                 {
                     "type": "Rectangle",
                     "id": "493eed1d-686d-4917-a983-3d3f21fb1290",
                     "label": "QR",
                     "useGameObjectName": true,
-                    "x": 472,
-                    "y": 1908,
-                    "scaleX": 4.524157508786485,
-                    "scaleY": 4.524157508786485,
+                    "x": 486,
+                    "y": 1025,
+                    "scaleX": 4.806442681550568,
+                    "scaleY": 4.806442681550568,
                     "isFilled": true,
                     "width": 128,
                     "height": 128
+                },
+                {
+                    "prefabId": "f9d62b2f-f86e-4dfc-a19d-cd9669c2d9db",
+                    "id": "c78b1558-b8ef-461c-9347-9aa166a4b4cd",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "P1_",
+                    "displayName": "P1",
+                    "useGameObjectName": true,
+                    "x": 177,
+                    "y": 1743,
+                    "scaleX": 2,
+                    "scaleY": 2
+                },
+                {
+                    "prefabId": "f9d62b2f-f86e-4dfc-a19d-cd9669c2d9db",
+                    "id": "216b37b9-0b89-49a7-a6f2-000562f96f11",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "P2_",
+                    "displayName": "P2",
+                    "useGameObjectName": true,
+                    "x": 407,
+                    "y": 1743,
+                    "scaleX": 2,
+                    "scaleY": 2
+                },
+                {
+                    "prefabId": "f9d62b2f-f86e-4dfc-a19d-cd9669c2d9db",
+                    "id": "514bc44f-ad44-4c52-8396-02a6061b526b",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "P3_",
+                    "displayName": "P3",
+                    "useGameObjectName": true,
+                    "x": 623,
+                    "y": 1743,
+                    "scaleX": 2,
+                    "scaleY": 2
+                },
+                {
+                    "prefabId": "f9d62b2f-f86e-4dfc-a19d-cd9669c2d9db",
+                    "id": "57e36490-418d-43df-84ab-dc0893ca4428",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "P4_",
+                    "displayName": "P4",
+                    "useGameObjectName": true,
+                    "x": 827,
+                    "y": 1743,
+                    "scaleX": 2,
+                    "scaleY": 2
+                },
+                {
+                    "type": "Image",
+                    "id": "a1e561fd-9490-4500-880b-811967ea0b99",
+                    "label": "Frame",
+                    "texture": {
+                        "key": "GridFrame"
+                    },
+                    "x": 945,
+                    "y": 1780,
+                    "originX": 1
+                },
+                {
+                    "type": "Image",
+                    "id": "f87f5bc4-fcb7-464c-b932-9a5becf6cde2",
+                    "label": "C2A",
+                    "texture": {
+                        "key": "C2A"
+                    },
+                    "x": 511,
+                    "y": 1436
+                },
+                {
+                    "type": "Image",
+                    "id": "563f5637-b9d3-4bb6-861f-6fbd7510da6e",
+                    "label": "logo",
+                    "texture": {
+                        "key": "Logo"
+                    },
+                    "x": 464,
+                    "y": 302,
+                    "scaleX": 0.9420280827601931,
+                    "scaleY": 0.9420280827601931
                 }
             ]
         }
