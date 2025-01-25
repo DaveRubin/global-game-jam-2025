@@ -20,12 +20,12 @@ class Level_One extends Phaser.GameObjects.Layer {
 		this.blendMode = Phaser.BlendModes.SKIP_CHECK;
 
 		// container_3
-		const container_3 = scene.add.container(-5, -3792);
+		const container_3 = scene.add.container(-5, -2724);
 		container_3.blendMode = Phaser.BlendModes.SKIP_CHECK;
 		this.add(container_3);
 
 		// background
-		const background = scene.add.image(0, 964, "Background_01");
+		const background = scene.add.image(0, 1671, "Background_01");
 		background.setOrigin(0, 0);
 		container_3.add(background);
 
@@ -35,14 +35,39 @@ class Level_One extends Phaser.GameObjects.Layer {
 		container_3.add(background_01);
 
 		// background_02
-		const background_02 = scene.add.image(0, 2692, "Background_02");
+		const background_02 = scene.add.image(0, 3006, "Background_02");
 		background_02.setOrigin(0, 0);
 		container_3.add(background_02);
 
 		// background_1
-		const background_1 = scene.add.image(0, 0, "Background_02");
+		const background_1 = scene.add.image(0, 838, "Background_02");
 		background_1.setOrigin(0, 0);
 		container_3.add(background_1);
+
+		// background_2
+		const background_2 = scene.add.image(0, -685, "Background_01");
+		background_2.setOrigin(0, 0);
+		container_3.add(background_2);
+
+		// background_3
+		const background_3 = scene.add.image(-4, -1826, "Background_02");
+		background_3.setOrigin(0, 0);
+		container_3.add(background_3);
+
+		// background_4
+		const background_4 = scene.add.image(0, -3457, "Background_01");
+		background_4.setOrigin(0, 0);
+		container_3.add(background_4);
+
+		// background_5
+		const background_5 = scene.add.image(0, -6052, "Background_01");
+		background_5.setOrigin(0, 0);
+		container_3.add(background_5);
+
+		// background_6
+		const background_6 = scene.add.image(0, -4450, "Background_02");
+		background_6.setOrigin(0, 0);
+		container_3.add(background_6);
 
 		// player
 		const player = scene.add.container(528, 2093);
@@ -110,7 +135,7 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(rainbow);
 
 		// mouth_1
-		const mouth_1 = new Mouth(scene, 76, 7588);
+		const mouth_1 = new Mouth(scene, 120, 7588);
 		mouth_1.scaleX = -1;
 		mouth_1.scaleY = 1;
 		rainbow1.add(mouth_1);
@@ -128,13 +153,13 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(badThought);
 
 		// mouth_4
-		const mouth_4 = new Mouth(scene, 82, 8136);
+		const mouth_4 = new Mouth(scene, 120, 8136);
 		mouth_4.scaleX = -1;
 		mouth_4.scaleY = 1;
 		rainbow1.add(mouth_4);
 
 		// mouth_5
-		const mouth_5 = new Mouth(scene, 1073, 8152);
+		const mouth_5 = new Mouth(scene, 1037, 8152);
 		rainbow1.add(mouth_5);
 
 		// collectible_1
@@ -150,13 +175,13 @@ class Level_One extends Phaser.GameObjects.Layer {
 		rainbow1.add(collectible_3);
 
 		// mouth_6
-		const mouth_6 = new Mouth(scene, 67, 6541);
+		const mouth_6 = new Mouth(scene, 120, 6541);
 		mouth_6.scaleX = -1;
 		mouth_6.scaleY = 1;
 		rainbow1.add(mouth_6);
 
 		// mouth_7
-		const mouth_7 = new Mouth(scene, 1014, 6557);
+		const mouth_7 = new Mouth(scene, 1037, 6557);
 		rainbow1.add(mouth_7);
 
 		// wall_3

@@ -3,10 +3,10 @@ export const coloredImages = ['noseSuck', 'noseIdle'];
 export type PlayerType = 'p1' | 'p2' | 'p3' | 'p4';
 
 export const KEY_BINDING: Record<PlayerType, string> = {
-    p1: "A",
-    p2: "B",
+    p1: "Z",
+    p2: "X",
     p3: "C",
-    p4: "D",
+    p4: "V",
 }
 
 export const PLAYER_COLORS: Record<PlayerType, number> = {

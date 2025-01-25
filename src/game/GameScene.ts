@@ -42,6 +42,7 @@ export class GameScene extends Phaser.Scene {
 		createAnimation(this, 'Mouth_Wind_fx', 4);
 		createAnimation(this, 'Death', 7);
 
+		this.cameras.main.setBackgroundColor('#aaaaaa');
 
 		this.startCameraLogic();
 
@@ -56,7 +57,7 @@ export class GameScene extends Phaser.Scene {
 		const camera = this.cameras.main;
 
 		const targetZoom = 1;
-		const startZoom = 1.35;
+		const startZoom = 1.385;
 		camera.setZoom(startZoom);
 
 		const bottomY = camera.scrollY + camera.height;    // Bottom of the current view
