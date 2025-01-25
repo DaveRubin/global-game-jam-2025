@@ -1,7 +1,4 @@
 import Phaser from "phaser";
-import encodeQR from "@paulmillr/qr";
-import { getStageClient } from "./client/BaseClient";
-
 
 export class BootScene extends Phaser.Scene {
     constructor() {
