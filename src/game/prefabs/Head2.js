@@ -98,14 +98,18 @@ class Head2 extends Phaser.GameObjects.Container {
 		GameScene.instance.reloadLevel();
 	}
 
-	kill() {
+	kill(skipAnimation) {
 		GameScene.instance.end();
+		if (skipAnimation) {
+			return
+		}
 		this.getByName("death_01").setVisible(true);
 		this.getByName("death_01").once('animationcomplete', () => {
 			this.getByName("death_01").setVisible(false);
 		});
 		this.getByName("death_01").play("Death");
 		this.getByName("head_Idle").setVisible(false);
+
 	}
 	// Write your code here.
 

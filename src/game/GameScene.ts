@@ -53,7 +53,6 @@ export class GameScene extends Phaser.Scene {
 		window.RESET_GAME = this.resetGame.bind(this);
 
 		// Make camera follow the bubble
-		// this.cameras.main.startFollow(bubble, false, 0.2, 0.2);
 		this.events.emit("scene-awake");
 	}
 
@@ -64,6 +63,7 @@ export class GameScene extends Phaser.Scene {
 		Head2.instance.destroy();
 		this.level = new Level_One(this);
 		this.add.existing(this.level);
+		this.startCameraLogic();
 		this.events.emit("scene-awake");
 	}
 
@@ -74,7 +74,7 @@ export class GameScene extends Phaser.Scene {
 		const startZoom = 1.385;
 		camera.setZoom(startZoom);
 
-		const bottomY = camera.scrollY + camera.height;    // Bottom of the current view
+		const bottomY = camera.height;    // Bottom of the current view
 
 		camera.setScroll(0, bottomY - (camera.height / startZoom));
 
@@ -85,6 +85,7 @@ export class GameScene extends Phaser.Scene {
 			callback: () => {
 				const headWorldY = Head2.instance.y - camera.scrollY;
 				const normalizedLocation = 1 - (headWorldY / GAME_HEIGHT);
+
 				let factor = 1;
 				if (normalizedLocation > 0.5) {
 					factor = 2;
@@ -94,8 +95,8 @@ export class GameScene extends Phaser.Scene {
 				camera.zoom = Math.max(camera.zoom, targetZoom);
 				// Check if Head2 is out of frame
 
-				if (headWorldY > GAME_HEIGHT + 300) {
-					GameScene.instance.end();
+				if (headWorldY > GAME_HEIGHT / 4) {
+					Head2.instance.kill(true)
 				}
 
 			},
@@ -104,17 +105,20 @@ export class GameScene extends Phaser.Scene {
 	}
 
 	end() {
-		console.log("Head2 is out of frame!");
 		this.scrollTimer?.destroy();
 		// Wait 3 seconds then tween camera to bottom
 		this.resetGame();
 	}
 
 	resetGame() {
+		const startZoom = 1.385;
+		const camera = this.cameras.main;
+
 		this.time.delayedCall(3000, () => {
 			this.tweens.add({
 				targets: this.cameras.main,
-				scrollY: 0,
+				scrollY: camera.height - (camera.height / startZoom),
+				zoom: 1.385,
 				duration: 2000,
 				ease: 'Power2',
 				onComplete: () => {
