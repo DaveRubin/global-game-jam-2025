@@ -53,7 +53,7 @@ class Rainbow extends Phaser.GameObjects.Container {
 		meters.tintBottomLeft = 0;
 		meters.tintBottomRight = 0;
 		meters.text = "50m";
-		meters.setStyle({ "align": "center", "fontSize": "168px" });
+		meters.setStyle({ "align": "center", "fontFamily": "Dokdo", "fontSize": "168px" });
 		this.add(meters);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
