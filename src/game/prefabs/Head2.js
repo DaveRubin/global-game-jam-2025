@@ -70,12 +70,10 @@ class Head2 extends Phaser.GameObjects.Container {
 			if (Math.abs(velocityY) > MAX_VELOCITY_Y) {
 				const delta = velocityY - MAX_VELOCITY_Y * Math.sign(velocityY);
 				this.body.velocity.y -= delta / 16;
-				console.log(`Y velocity delta: ${delta}`);
 			}
 			if (Math.abs(velocityX) > MAX_VELOCITY_X) {
 				const delta = velocityX - MAX_VELOCITY_X * Math.sign(velocityX);
 				this.body.velocity.x -= delta / 16;
-				console.log(`X velocity delta: ${delta}`);
 			}
 		});
 		/* END-USER-CTR-CODE */

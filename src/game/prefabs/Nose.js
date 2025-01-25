@@ -130,17 +130,6 @@ class Nose extends Phaser.GameObjects.Container {
 			}
 
 		}
-
-		// const effect = this.list.find((child) => child.name === EFFECT_IMAGE);
-		// const touchedBody = getTouchingPhysicsElement(this.scene, effect);
-
-		// if (touchedBody?.body) {
-		// 	touchedBody.body.velocity.add({
-		// 		x: 0,
-		// 		y: isDown ? -100 : 200
-		// 	});
-		// }
-
 	}
 
 	// Write your code here.
