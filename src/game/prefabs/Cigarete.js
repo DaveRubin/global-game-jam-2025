@@ -17,9 +17,9 @@ class Cigarete extends Phaser.GameObjects.Container {
 		this.add(badThought);
 
 		// image_1
-		const image_1 = scene.add.image(0, 0, "Ciggarete");
-		image_1.scaleX = 0.5;
-		image_1.scaleY = 0.5;
+		const image_1 = scene.add.image(3, 21, "Ciggarete");
+		image_1.scaleX = 0.33;
+		image_1.scaleY = 0.33;
 		this.add(image_1);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
