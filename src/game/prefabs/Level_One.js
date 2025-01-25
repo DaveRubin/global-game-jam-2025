@@ -25,28 +25,10 @@ class Level_One extends Phaser.GameObjects.Layer {
 		container_3.blendMode = Phaser.BlendModes.SKIP_CHECK;
 		this.add(container_3);
 
-		// background_10
-		const background_10 = scene.add.image(3, -11073, "Background_01");
-		background_10.setOrigin(0, 0);
-		background_10.alpha = 0.75;
-		background_10.alphaTopLeft = 0.75;
-		background_10.alphaTopRight = 0.75;
-		background_10.alphaBottomLeft = 0.75;
-		background_10.alphaBottomRight = 0.75;
-		background_10.tintTopLeft = 6418304;
-		background_10.tintTopRight = 6418304;
-		background_10.tintBottomLeft = 6418304;
-		background_10.tintBottomRight = 6418304;
-		container_3.add(background_10);
-
-		// background_9
-		const background_9 = scene.add.image(-4, -9558, "Background_02");
-		background_9.setOrigin(0, 0);
-		background_9.tintTopLeft = 6418304;
-		background_9.tintTopRight = 6418304;
-		background_9.tintBottomLeft = 6418304;
-		background_9.tintBottomRight = 6418304;
-		container_3.add(background_9);
+		// background_14
+		const background_14 = scene.add.image(0, -10369, "Background_01");
+		background_14.setOrigin(0, 0);
+		container_3.add(background_14);
 
 		// background
 		const background = scene.add.image(0, 1671, "Background_01");
@@ -103,29 +85,15 @@ class Level_One extends Phaser.GameObjects.Layer {
 		background_7.setOrigin(0, 0);
 		container_3.add(background_7);
 
+		// background_13
+		const background_13 = scene.add.image(0, -9208, "Background_02");
+		background_13.setOrigin(0, 0);
+		container_3.add(background_13);
+
 		// background_8
 		const background_8 = scene.add.image(0, -8444, "Background_01");
 		background_8.setOrigin(0, 0);
-		background_8.tintTopLeft = 6418304;
 		container_3.add(background_8);
-
-		// background_11
-		const background_11 = scene.add.image(0, -12011, "Background_02");
-		background_11.setOrigin(0, 0);
-		background_11.tintTopLeft = 6418304;
-		background_11.tintTopRight = 6418304;
-		background_11.tintBottomLeft = 6418304;
-		background_11.tintBottomRight = 6418304;
-		container_3.add(background_11);
-
-		// background_12
-		const background_12 = scene.add.image(0, -13554, "Background_01");
-		background_12.setOrigin(0, 0);
-		background_12.tintTopLeft = 6418304;
-		background_12.tintTopRight = 6418304;
-		background_12.tintBottomLeft = 6418304;
-		background_12.tintBottomRight = 6418304;
-		container_3.add(background_12);
 
 		// player
 		const player = scene.add.container(528, 2081);
@@ -189,10 +157,6 @@ class Level_One extends Phaser.GameObjects.Layer {
 		wall.scaleX = -0.57;
 		wall.scaleY = 0.57;
 		rainbow1.add(wall);
-
-		// rainbow
-		const rainbow = new Rainbow(scene, 0, -3010);
-		rainbow1.add(rainbow);
 
 		// mouth_1
 		const mouth_1 = new Mouth(scene, 1020, 6505);
@@ -475,28 +439,6 @@ class Level_One extends Phaser.GameObjects.Layer {
 		const collectible_2 = new Collectible2(scene, 256, -4300);
 		this.add(collectible_2);
 
-		// container
-		const container = scene.add.container(390, -11918);
-		container.blendMode = Phaser.BlendModes.SKIP_CHECK;
-		container.alpha = 0.75;
-		this.add(container);
-
-		// nose_12
-		const nose_12 = new Nose(scene, -206, 0);
-		container.add(nose_12);
-
-		// nose_13
-		const nose_13 = new Nose(scene, 53, 0);
-		container.add(nose_13);
-
-		// nose_14
-		const nose_14 = new Nose(scene, 317, 0);
-		container.add(nose_14);
-
-		// nose_15
-		const nose_15 = new Nose(scene, 558, 0);
-		container.add(nose_15);
-
 		// collectible_15
 		const collectible_15 = new Collectible2(scene, 480, -1252);
 		this.add(collectible_15);
@@ -518,69 +460,6 @@ class Level_One extends Phaser.GameObjects.Layer {
 		// collectible_25
 		const collectible_25 = new Collectible2(scene, 543, -8470);
 		this.add(collectible_25);
-
-		// container_2
-		const container_2 = scene.add.container(388, -12948);
-		container_2.blendMode = Phaser.BlendModes.SKIP_CHECK;
-		this.add(container_2);
-
-		// nose_18
-		const nose_18 = new Nose(scene, -206, 0);
-		container_2.add(nose_18);
-
-		// nose_19
-		const nose_19 = new Nose(scene, 53, 0);
-		container_2.add(nose_19);
-
-		// nose_20
-		const nose_20 = new Nose(scene, 317, 0);
-		container_2.add(nose_20);
-
-		// nose_21
-		const nose_21 = new Nose(scene, 558, 0);
-		container_2.add(nose_21);
-
-		// container_5
-		const container_5 = scene.add.container(373, -13930);
-		container_5.blendMode = Phaser.BlendModes.SKIP_CHECK;
-		this.add(container_5);
-
-		// nose_28
-		const nose_28 = new Nose(scene, -206, 0);
-		container_5.add(nose_28);
-
-		// nose_29
-		const nose_29 = new Nose(scene, 53, 0);
-		container_5.add(nose_29);
-
-		// nose_30
-		const nose_30 = new Nose(scene, 317, 0);
-		container_5.add(nose_30);
-
-		// nose_31
-		const nose_31 = new Nose(scene, 558, 0);
-		container_5.add(nose_31);
-
-		// container_6
-		const container_6 = scene.add.container(392, -14918);
-		container_6.blendMode = Phaser.BlendModes.SKIP_CHECK;
-		this.add(container_6);
-
-		// nose_32
-		const nose_32 = new Nose(scene, -206, 0);
-		container_6.add(nose_32);
-
-		// nose_33
-		const nose_33 = new Nose(scene, 53, 0);
-		container_6.add(nose_33);
-
-		// nose_34
-		const nose_34 = new Nose(scene, 317, 0);
-		container_6.add(nose_34);
-
-		// nose_35
-		const nose_35 = new Nose(scene, 558, 0);
-		container_6.add(nose_35);
 
 		// collectible_6
 		const collectible_6 = new Collectible2(scene, 258, -4459);
@@ -608,12 +487,123 @@ class Level_One extends Phaser.GameObjects.Layer {
 		const collectible_12 = new Collectible2(scene, 902, -7262);
 		this.add(collectible_12);
 
+		// LevelTwo
+		const levelTwo = scene.add.container(-22, -18200);
+		levelTwo.blendMode = Phaser.BlendModes.SKIP_CHECK;
+		this.add(levelTwo);
+
+		// background_10
+		const background_10 = scene.add.image(0, 2883, "Background_01");
+		background_10.setOrigin(0, 0);
+		background_10.alpha = 0.75;
+		background_10.alphaTopLeft = 0.75;
+		background_10.alphaTopRight = 0.75;
+		background_10.alphaBottomLeft = 0.75;
+		background_10.alphaBottomRight = 0.75;
+		background_10.tintTopLeft = 6418304;
+		background_10.tintTopRight = 6418304;
+		background_10.tintBottomLeft = 6418304;
+		background_10.tintBottomRight = 6418304;
+		levelTwo.add(background_10);
+
+		// background_9
+		const background_9 = scene.add.image(0, 4539, "Background_02");
+		background_9.setOrigin(0, 0);
+		background_9.tintTopLeft = 6418304;
+		background_9.tintTopRight = 6418304;
+		background_9.tintBottomLeft = 6418304;
+		background_9.tintBottomRight = 6418304;
+		levelTwo.add(background_9);
+
+		// background_11
+		const background_11 = scene.add.image(0, 1945, "Background_02");
+		background_11.setOrigin(0, 0);
+		background_11.tintTopLeft = 6418304;
+		background_11.tintTopRight = 6418304;
+		background_11.tintBottomLeft = 6418304;
+		background_11.tintBottomRight = 6418304;
+		levelTwo.add(background_11);
+
+		// background_12
+		const background_12 = scene.add.image(0, 402, "Background_01");
+		background_12.setOrigin(0, 0);
+		background_12.tintTopLeft = 6418304;
+		background_12.tintTopRight = 6418304;
+		background_12.tintBottomLeft = 6418304;
+		background_12.tintBottomRight = 6418304;
+		levelTwo.add(background_12);
+
+		// nose_12
+		const nose_12 = new Nose(scene, 206, 4360);
+		levelTwo.add(nose_12);
+
+		// nose_18
+		const nose_18 = new Nose(scene, 204, 3330);
+		levelTwo.add(nose_18);
+
+		// nose_28
+		const nose_28 = new Nose(scene, 189, 2348);
+		levelTwo.add(nose_28);
+
+		// nose_32
+		const nose_32 = new Nose(scene, 208, 1360);
+		levelTwo.add(nose_32);
+
+		// nose_13
+		const nose_13 = new Nose(scene, 465, 4360);
+		levelTwo.add(nose_13);
+
+		// nose_19
+		const nose_19 = new Nose(scene, 463, 3330);
+		levelTwo.add(nose_19);
+
+		// nose_29
+		const nose_29 = new Nose(scene, 448, 2348);
+		levelTwo.add(nose_29);
+
+		// nose_33
+		const nose_33 = new Nose(scene, 467, 1360);
+		levelTwo.add(nose_33);
+
+		// rainbow
+		const rainbow = new Rainbow(scene, 0, 5358);
+		levelTwo.add(rainbow);
+
+		// nose_14
+		const nose_14 = new Nose(scene, 729, 4360);
+		levelTwo.add(nose_14);
+
+		// nose_20
+		const nose_20 = new Nose(scene, 727, 3330);
+		levelTwo.add(nose_20);
+
+		// nose_30
+		const nose_30 = new Nose(scene, 712, 2348);
+		levelTwo.add(nose_30);
+
+		// nose_34
+		const nose_34 = new Nose(scene, 731, 1360);
+		levelTwo.add(nose_34);
+
+		// nose_15
+		const nose_15 = new Nose(scene, 970, 4360);
+		levelTwo.add(nose_15);
+
+		// nose_21
+		const nose_21 = new Nose(scene, 968, 3330);
+		levelTwo.add(nose_21);
+
+		// nose_31
+		const nose_31 = new Nose(scene, 953, 2348);
+		levelTwo.add(nose_31);
+
+		// nose_35
+		const nose_35 = new Nose(scene, 972, 1360);
+		levelTwo.add(nose_35);
+
 		// badMood (prefab fields)
 		badMood.player = "p1";
 		badMood.dragInside = 50;
-
-		// rainbow (prefab fields)
-		rainbow.text = "100m";
 
 		// mouth_1 (prefab fields)
 		mouth_1.property = "p3";
@@ -700,59 +690,62 @@ class Level_One extends Phaser.GameObjects.Layer {
 		// mouth_6 (prefab fields)
 		mouth_6.property = "p3";
 
-		// nose_12 (prefab fields)
-		nose_12.property = "p1";
-
-		// nose_13 (prefab fields)
-		nose_13.property = "p1";
-
-		// nose_14 (prefab fields)
-		nose_14.property = "p1";
-
-		// nose_15 (prefab fields)
-		nose_15.property = "p1";
-
 		// mouth_13 (prefab fields)
 		mouth_13.property = "p3";
+
+		// mouth (prefab fields)
+		mouth.property = "p3";
+
+		// nose_12 (prefab fields)
+		nose_12.property = "p1";
 
 		// nose_18 (prefab fields)
 		nose_18.property = "p2";
 
-		// nose_19 (prefab fields)
-		nose_19.property = "p2";
-
-		// nose_20 (prefab fields)
-		nose_20.property = "p2";
-
-		// nose_21 (prefab fields)
-		nose_21.property = "p2";
-
 		// nose_28 (prefab fields)
 		nose_28.property = "p3";
-
-		// nose_29 (prefab fields)
-		nose_29.property = "p3";
-
-		// nose_30 (prefab fields)
-		nose_30.property = "p3";
-
-		// nose_31 (prefab fields)
-		nose_31.property = "p3";
 
 		// nose_32 (prefab fields)
 		nose_32.property = "p3";
 
+		// nose_13 (prefab fields)
+		nose_13.property = "p1";
+
+		// nose_19 (prefab fields)
+		nose_19.property = "p2";
+
+		// nose_29 (prefab fields)
+		nose_29.property = "p3";
+
 		// nose_33 (prefab fields)
 		nose_33.property = "p3";
+
+		// rainbow (prefab fields)
+		rainbow.text = "100m";
+
+		// nose_14 (prefab fields)
+		nose_14.property = "p1";
+
+		// nose_20 (prefab fields)
+		nose_20.property = "p2";
+
+		// nose_30 (prefab fields)
+		nose_30.property = "p3";
 
 		// nose_34 (prefab fields)
 		nose_34.property = "p3";
 
+		// nose_15 (prefab fields)
+		nose_15.property = "p1";
+
+		// nose_21 (prefab fields)
+		nose_21.property = "p2";
+
+		// nose_31 (prefab fields)
+		nose_31.property = "p3";
+
 		// nose_35 (prefab fields)
 		nose_35.property = "p3";
-
-		// mouth (prefab fields)
-		mouth.property = "p3";
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
