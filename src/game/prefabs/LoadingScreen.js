@@ -14,18 +14,6 @@ class LoadingScreen extends Phaser.GameObjects.Container {
 		image_1.visible = false;
 		this.add(image_1);
 
-<<<<<<< Updated upstream
-		// Bar
-		const bar = scene.add.rectangle(-455, 228, 128, 128);
-		bar.scaleX = 7.05;
-		bar.scaleY = 1.4;
-		bar.setOrigin(0, 0);
-		bar.isFilled = true;
-		this.add(bar);
-
-		// LoadingFrame
-		const loadingFrame = scene.add.image(2, 319, "Loading_Frame_02");
-=======
 		const rectangle_1 = scene.add.rectangle(-455, 260, 128, 128);
 		rectangle_1.scaleX = 7.05;
 		rectangle_1.setOrigin(0, 0);
@@ -34,7 +22,6 @@ class LoadingScreen extends Phaser.GameObjects.Container {
 
 		// LoadingFrame
 		const loadingFrame = scene.add.image(2, 319, "MainLoading");
->>>>>>> Stashed changes
 		this.add(loadingFrame);
 
 		// Logo
