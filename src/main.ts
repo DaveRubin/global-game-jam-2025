@@ -29,4 +29,4 @@ document.addEventListener('contextmenu', (event) => {
 // }, { passive: false });
 
 
-console.log('version', '0.2.0');
+console.log('version', '1.0.0');
