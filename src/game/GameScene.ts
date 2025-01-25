@@ -98,7 +98,7 @@ export class GameScene extends Phaser.Scene {
 		// Update camera position each frame
 		this.scrollTimer = this.time.addEvent({
 			delay: 50, // Add a small delay (roughly 60fps)
-			callback: (time, deltaTime) => {
+			callback: () => {
 				const headWorldY = Head2.instance.getWorldTransformMatrix().ty - camera.scrollY - 400;
 				const normalizedLocation = 1 - (headWorldY / GAME_HEIGHT);
 
