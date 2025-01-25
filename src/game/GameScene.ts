@@ -10,7 +10,7 @@ import { Head2 } from "./prefabs/Head2";
 import { GAME_HEIGHT } from "./consts";
 import { HUD } from "./prefabs/HUD";
 import { Lobby } from "../lobby/Lobby";
-import {getStageClient} from "../client/BaseClient.ts";
+import { getStageClient } from "../client/BaseClient.ts";
 import encodeQR from "@paulmillr/qr";
 
 /* START OF COMPILED CODE */
@@ -76,15 +76,7 @@ export class GameScene extends Phaser.Scene {
 	}
 
 	reloadLevel() {
-		this.physics.world.colliders.destroy();
-		this.events.removeAllListeners();
-		this.tweens.killAll();
-		Head2.instance.destroy();
-		this.level.destroy();
-		this.level = new Level_One(this);
-		this.add.existing(this.level);
-		this.startCameraLogic();
-		this.events.emit("scene-awake");
+		location.reload();
 	}
 
 	async startCameraLogic() {

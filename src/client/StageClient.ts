@@ -47,6 +47,9 @@ export class StageClient {
   }
 
   private handleGameStateChange(updatedGameState: GameState) {
+    if (!updatedGameState) {
+      return;
+    }
     Object.values(this.currentGameState.players).forEach((currentPlayer) => {
       const updatedPlayer = Object.values(updatedGameState.players).find(
         (p) => p.id === currentPlayer.id

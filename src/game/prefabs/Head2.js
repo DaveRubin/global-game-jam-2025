@@ -146,17 +146,22 @@ class Head2 extends Phaser.GameObjects.Container {
 		this.reset();
 	}
 
-	reset() {
+	async reset() {
 		this.getByName("head_Idle").setVisible(true);
 		this.setPosition(this.initialPosition.x, this.initialPosition.y);
 		const headIdle = this.getByName("head_Idle");
 		headIdle.setScale(0);
-		this.scene.tweens.add({
-			targets: headIdle,
-			scaleX: 0.5,
-			scaleY: 0.5,
-			duration: 400,
-			ease: 'Back.out'
+		await new Promise(resolve => {
+			this.scene.tweens.add({
+				targets: headIdle,
+				scaleX: 0.5,
+				scaleY: 0.5,
+				duration: 400,
+				ease: 'Back.out',
+				onComplete: () => {
+					resolve();
+				}
+			});
 		});
 		this.getByName("death_01").setVisible(false);
 		GameScene.instance.reloadLevel();
