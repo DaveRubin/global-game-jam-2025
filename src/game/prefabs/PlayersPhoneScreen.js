@@ -46,17 +46,23 @@ class PlayersPhoneScreen extends Phaser.GameObjects.Container {
 		flood.alphaBottomRight = 0.37;
 		this.add(flood);
 
-		// TapWhenReady_1
-		const tapWhenReady_1 = scene.add.image(1145, -213, "TAP_WhenReady");
-		tapWhenReady_1.scaleX = 0.5;
-		tapWhenReady_1.scaleY = 0.5;
-		this.add(tapWhenReady_1);
+		// TapWhenReady
+		const tapWhenReady = scene.add.image(1145, -213, "TAP_WhenReady");
+		tapWhenReady.scaleX = 0.5;
+		tapWhenReady.scaleY = 0.5;
+		this.add(tapWhenReady);
 
 		// P3_Smile_1
 		const p3_Smile_1 = scene.add.image(1102, 634, "P4_Smile");
 		p3_Smile_1.scaleX = 0.5;
 		p3_Smile_1.scaleY = 0.5;
 		this.add(p3_Smile_1);
+
+		// Ready_Text
+		const ready_Text = scene.add.image(1149, -206, "P_Ready");
+		ready_Text.scaleX = 0.5;
+		ready_Text.scaleY = 0.5;
+		this.add(ready_Text);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
