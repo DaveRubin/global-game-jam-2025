@@ -21,7 +21,7 @@ export class PlayerClient {
   };
   async createThrottle(color: PlayerColor) {
     return throttle(
-      ({ isOn }) => {
+      async ({ isOn }) => {
         await this.updateColorState(color, isOn);
       },
       MIN_TOGGLE_DURATION,
@@ -95,7 +95,7 @@ export class PlayerClient {
     return Object.values(state.players).find((player) => !player.assignedTo);
   }
 
-  private setPlayerAssigned() {
+  private async setPlayerAssigned() {
     await this.updatePlayerState({ assignedTo: this.playerId });
   }
 
@@ -108,7 +108,7 @@ export class PlayerClient {
     await this.updatePlayerState({ isReady: toggle });
   }
 
-  shutdown() {
+  async shutdown() {
     await this.updatePlayerState({ assignedTo: null });
   }
 }
