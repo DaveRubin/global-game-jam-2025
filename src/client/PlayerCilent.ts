@@ -19,10 +19,10 @@ export class PlayerClient {
     [PlayerColor.YELLOW]: this.createThrottle(PlayerColor.YELLOW),
     [PlayerColor.RED]: this.createThrottle(PlayerColor.RED),
   };
-  createThrottle(color: PlayerColor) {
+  async createThrottle(color: PlayerColor) {
     return throttle(
       ({ isOn }) => {
-        this.updateColorState(color, isOn);
+        await this.updateColorState(color, isOn);
       },
       MIN_TOGGLE_DURATION,
       { trailing: true } // Ensures the last call is executed after the throttle duration
@@ -60,7 +60,7 @@ export class PlayerClient {
       return null;
     }
     this.player = player;
-    this.setPlayerAssigned();
+    await this.setPlayerAssigned();
     console.log("join room ", gameSnapshot.val());
 
     onValue(ref(this.db, `${this.root}/${this.gameId}/screen`), (snapshot) => {
@@ -79,16 +79,16 @@ export class PlayerClient {
     return this.player;
   }
 
-  private updatePlayerState(change: Partial<GameStatePlayer>) {
+  private async updatePlayerState(change: Partial<GameStatePlayer>) {
     const path = `${this.root}/${this.gameId}/players/${this.player.id}`;
     console.log("updatePlayerState", change);
-    update(ref(this.db, path), change);
+    await update(ref(this.db, path), change);
   }
 
-  private updateColorState(color: number, isOn: boolean) {
+  private async updateColorState(color: number, isOn: boolean) {
     const path = `${this.root}/${this.gameId}/colors`;
     console.log("updateColorState", path, isOn);
-    update(ref(this.db, path), { [color]: isOn });
+    await update(ref(this.db, path), { [color]: isOn });
   }
 
   private getFreePlayer(state: GameState): GameStatePlayer | undefined {
@@ -96,20 +96,20 @@ export class PlayerClient {
   }
 
   private setPlayerAssigned() {
-    this.updatePlayerState({ assignedTo: this.playerId });
+    await this.updatePlayerState({ assignedTo: this.playerId });
   }
 
-  public togglePlayerOn(color: number, isOn: boolean) {
-    this.throttledToggle[color]({ isOn });
+  public async togglePlayerOn(color: number, isOn: boolean) {
+    await this.throttledToggle[color]({ isOn });
   }
 
-  public togglePlayerReady(toggle: boolean) {
+  public async togglePlayerReady(toggle: boolean) {
     this.player.isReady = toggle;
-    this.updatePlayerState({ isReady: toggle });
+    await this.updatePlayerState({ isReady: toggle });
   }
 
   shutdown() {
-    this.updatePlayerState({ assignedTo: null });
+    await this.updatePlayerState({ assignedTo: null });
   }
 }
 

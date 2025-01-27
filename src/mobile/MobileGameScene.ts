@@ -28,13 +28,16 @@ export class MobileGameScene extends Phaser.Scene {
 // Helper to create a rectangle
     const createRectangle = (x: number, y: number, width: number, height: number, color: number) => {
       const rect = this.add.rectangle(x, y, width, height, color).setOrigin(0, 0);
+      const clickColor = new Phaser.Display.Color(color).brighten(20).color;
       rect.setInteractive();
       rect.on("pointerdown", () => {
         this.playerClient.togglePlayerOn(color, true);
+        rect.fillColor = clickColor;
 
         // Add a global pointerup listener to ensure it gets called regardless of where it's released
         const pointerUpHandler = () => {
           this.playerClient.togglePlayerOn(color, false);
+          rect.fillColor = color;
           // Remove the global listener after it is called
           window.removeEventListener("pointerup", pointerUpHandler);
         };
