@@ -28,7 +28,7 @@ export class MobileGameScene extends Phaser.Scene {
 // Helper to create a rectangle
     const createRectangle = (x: number, y: number, width: number, height: number, color: number) => {
       const rect = this.add.rectangle(x, y, width, height, color).setOrigin(0, 0);
-      const clickColor = new Phaser.Display.Color(color).brighten(20).color;
+      const clickColor = new Phaser.Display.Color(color).brighten(20).color32;
       rect.setInteractive();
       rect.on("pointerdown", async () => {
         this.playerClient.togglePlayerOn(color, true);
