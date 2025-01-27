@@ -4,3 +4,10 @@ export enum PlayerColor {
   YELLOW = 0xE96CD6,
   RED = 0x79F66F,
 }
+
+export const allColors = [
+  PlayerColor.BLUE,
+  PlayerColor.GREEN,
+  PlayerColor.YELLOW,
+  PlayerColor.RED,
+]

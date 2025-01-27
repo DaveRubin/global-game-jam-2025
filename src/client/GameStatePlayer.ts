@@ -4,8 +4,13 @@ export interface GameStatePlayer {
   id: string;
   name: string;
   baseColor: PlayerColor;
-  colors: PlayerColor[];
-  isOn: boolean;
+  colors: {
+    [PlayerColor.BLUE]: boolean
+    [PlayerColor.GREEN]: boolean
+    [PlayerColor.YELLOW]: boolean
+    [PlayerColor.RED]: boolean
+  };
   isReady: boolean;
   assignedTo: string | null;
 }
+

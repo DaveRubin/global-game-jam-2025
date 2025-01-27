@@ -19,7 +19,7 @@ export class MobileGameScene extends Phaser.Scene {
     };
 
 
-    const colors = this.playerClient.player.colors;
+    const colors = this.playerClient.colors;
 
 // Get screen dimensions
     const screenWidth = this.cameras.main.width;

@@ -13,7 +13,7 @@ export class MobileLobbyScene extends Phaser.Scene {
     this.playerClient = getPlayerClient();
 
     const changeColors = () => {
-      const colors = this.playerClient.player.colors;
+      const colors = this.playerClient.colors;
 
 // Get screen dimensions
       const screenWidth = this.cameras.main.width;
