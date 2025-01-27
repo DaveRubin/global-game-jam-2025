@@ -30,7 +30,7 @@ export class MobileGameScene extends Phaser.Scene {
       const rect = this.add.rectangle(x, y, width, height, color).setOrigin(0, 0);
       const clickColor = new Phaser.Display.Color(color).brighten(20).color;
       rect.setInteractive();
-      rect.on("pointerdown", () => {
+      rect.on("pointerdown", async () => {
         this.playerClient.togglePlayerOn(color, true);
         rect.fillColor = clickColor;
 

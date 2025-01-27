@@ -13,13 +13,13 @@ export type PlayerColorsChange = (colors: PlayerColor[]) => void;
 
 const MIN_TOGGLE_DURATION = 200; // Minimum time (in milliseconds)
 export class PlayerClient {
-  throttledToggle: any = {
+    throttledToggle: any = {
     [PlayerColor.BLUE]: this.createThrottle(PlayerColor.BLUE),
     [PlayerColor.GREEN]: this.createThrottle(PlayerColor.GREEN),
     [PlayerColor.YELLOW]: this.createThrottle(PlayerColor.YELLOW),
     [PlayerColor.RED]: this.createThrottle(PlayerColor.RED),
   };
-  async createThrottle(color: PlayerColor) {
+  createThrottle(color: PlayerColor) {
     return throttle(({ isOn }) => {
         this.updateColorState(color, isOn);
       },
@@ -99,7 +99,7 @@ export class PlayerClient {
   }
 
   public togglePlayerOn(color: number, isOn: boolean) {
-    this.throttledToggle[color]({ isOn });
+      this.throttledToggle[color]({ isOn });
   }
 
   public async togglePlayerReady(toggle: boolean) {
