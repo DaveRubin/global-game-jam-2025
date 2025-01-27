@@ -20,9 +20,8 @@ export class PlayerClient {
     [PlayerColor.RED]: this.createThrottle(PlayerColor.RED),
   };
   async createThrottle(color: PlayerColor) {
-    return throttle(
-      async ({ isOn }) => {
-        await this.updateColorState(color, isOn);
+    return throttle(({ isOn }) => {
+        this.updateColorState(color, isOn);
       },
       MIN_TOGGLE_DURATION,
       { trailing: true } // Ensures the last call is executed after the throttle duration
@@ -99,8 +98,8 @@ export class PlayerClient {
     await this.updatePlayerState({ assignedTo: this.playerId });
   }
 
-  public async togglePlayerOn(color: number, isOn: boolean) {
-    await this.throttledToggle[color]({ isOn });
+  public togglePlayerOn(color: number, isOn: boolean) {
+    this.throttledToggle[color]({ isOn });
   }
 
   public async togglePlayerReady(toggle: boolean) {
