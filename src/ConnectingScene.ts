@@ -44,17 +44,32 @@ export class ConnectingScene extends Phaser.Scene {
   constructor() {
     super("ConnectingScene");
   }
-  async create() {
-    const success = await init();
-    if (!success) {
-      this.scene.start("MobileDisconnectedScene");
-      return;
-    }
 
-    if (isHost()) {
-      this.scene.start("BootScene");
-    } else {
-      this.scene.start("MobileLobbyScene");
-    }
+  preload() {
+    this.load.image('loading', 'public/Sprites/Loading/Loading_Frame_02.png');
+    this.load.image('logo', 'public/Sprites/Opening/Logo.png');
+    this.load.image('background1', 'public/Background_01.png');
+    this.load.image('background2', 'public/Background_02.png');
+    this.load.image('body', 'public/Sprites/Player/Bod.png');
+    this.load.image('hat', 'public/Sprites/Player/Hat.png');
+    this.load.image('happy', 'public/Sprites/Player/Head_Idle.png');
+
+    this.load.on('complete', async () => {
+      const success = await init();
+      if (!success) {
+        this.scene.start("MobileDisconnectedScene");
+        return;
+      }
+
+      if (isHost()) {
+        this.scene.start("BootScene");
+      } else {
+        this.scene.start("MobileLobbyScene");
+      }
+    });
+  }
+
+  async create() {
+
   }
 }
