@@ -7,6 +7,7 @@ import { GameScene } from "./game/GameScene.ts";
 import { GAME_WIDTH, GAME_HEIGHT } from "./game/consts.js";
 import { MobileDisconnectedScene } from "./mobile/MobileDisconnectedScene.ts";
 import { BootScene } from "./BootScene.ts";
+import {MobileBootScene} from "./mobile/MobileBootScene.ts";
 
 
 
@@ -20,7 +21,7 @@ if (new URLSearchParams(window.location.search).has("edit-level")) {
 // @ts-ignore
 const scenes = window.isDebugMode
   ? GameScene
-  : [ConnectingScene, BootScene, LobbyScene, MobileLobbyScene, MobileGameScene, GameScene, MobileDisconnectedScene];
+  : [ConnectingScene, BootScene, LobbyScene, MobileLobbyScene, MobileBootScene, MobileGameScene, GameScene, MobileDisconnectedScene];
 
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,

@@ -4,6 +4,7 @@ import {
   initClient,
   isHost,
 } from "./client/BaseClient";
+import Phaser from "phaser";
 
 async function init() {
   const isHost = initClient();
@@ -47,6 +48,7 @@ export class ConnectingScene extends Phaser.Scene {
 
   preload() {
     this.load.image('loading', 'public/Sprites/Loading/Loading_Frame_02.png');
+    this.load.image('loading2', 'public/Sprites/Loading/Loading_Frame.png');
     this.load.image('logo', 'public/Sprites/Opening/Logo.png');
     this.load.image('background1', 'public/Background_01.png');
     this.load.image('background2', 'public/Background_02.png');
@@ -64,7 +66,15 @@ export class ConnectingScene extends Phaser.Scene {
       if (isHost()) {
         this.scene.start("BootScene");
       } else {
-        this.scene.start("MobileLobbyScene");
+        const hexColor = getPlayerClient().player.baseColor;
+        const color = Phaser.Display.Color.IntegerToColor(hexColor);
+
+        this.cameras.main.fade(250, color.red, color.green, color.blue, false, (_, progress) => {
+          // When fade is complete, start the next scene
+          if (progress === 1) {
+            this.scene.start("MobileBootScene");
+          }
+        });
       }
     });
   }

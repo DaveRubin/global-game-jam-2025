@@ -1,9 +1,24 @@
 import {getPlayerClient} from "../client/BaseClient";
 import {GameStateScreen} from "../client/GameState";
 import {PlayerClient} from "../client/PlayerCilent";
+import {PlayerColor} from "../game/PlayerColor.ts";
 
 export class MobileLobbyScene extends Phaser.Scene {
   playerClient!: PlayerClient;
+  private readyContainer: Phaser.GameObjects.Container;
+  private notReady: Phaser.GameObjects.Sprite;
+  private ready: Phaser.GameObjects.Sprite;
+  private clickable = {
+    [PlayerColor.BLUE]:'P1_Smile',
+    [PlayerColor.GREEN]:'P2_Smile',
+    [PlayerColor.YELLOW]: 'P3_Smile',
+    [PlayerColor.RED]:'P4_Smile'
+  };
+  private baseColor: PlayerColor;
+  private clickColor: number;
+  private image: Phaser.GameObjects.Sprite;
+  private imageTween: Phaser.Tweens.Tween;
+  private isOddClick = 1;
 
   constructor() {
     super("MobileLobbyScene");
@@ -12,76 +27,97 @@ export class MobileLobbyScene extends Phaser.Scene {
   async create() {
     this.playerClient = getPlayerClient();
 
-    const changeColors = () => {
-      const colors = this.playerClient.colors;
+    const width = this.cameras.main.width;
+    const height = this.cameras.main.height;
 
-// Get screen dimensions
-      const screenWidth = this.cameras.main.width;
-      const screenHeight = this.cameras.main.height;
+    this.baseColor = this.playerClient.player.baseColor;
+    this.clickColor = Phaser.Display.Color.IntegerToColor(this.baseColor).brighten(20).color32;
+    this.cameras.main.setBackgroundColor(this.baseColor);
 
-      const createRectangle = (x: number, y: number, width: number, height: number, color: number) => {
-        return this.add.rectangle(x, y, width, height, color).setOrigin(0, 0);
-      };
+    this.image = this.add.sprite(width / 2, height / 2 + 300, this.clickable[this.baseColor]);
+    this.image.scale = 0.25;
+    this.image.alpha = 1;
 
-      this.children.removeAll();
+    this.readyContainer = this.add.container(width / 2, height / 2 - 200)
+    this.notReady = this.add.sprite(0, 0, 'TAP_WhenReady');
+    this.ready = this.add.sprite(0, 0, 'P_Ready');
+    this.ready.setVisible(false);
+    this.readyContainer.alpha = 1;
+    this.readyContainer.add(this.notReady);
+    this.readyContainer.add(this.ready);
+    this.readyContainer.scale = 0.25;
 
-      if (!colors || !colors.length) {
-        return;
-      }
+    window.addEventListener("pointerup", () => this.onPointerUp());
+    window.addEventListener("pointerdown", () => this.onPointerDown());
 
-      if (colors.length === 1) {
-        // One color: Full-screen rectangle
-        createRectangle(0, 0, screenWidth, screenHeight, colors[0]);
-      } else if (colors.length === 2) {
-        // Two colors: Split horizontally
-        createRectangle(0, 0, screenWidth, screenHeight / 2, colors[0]);
-        createRectangle(0, screenHeight / 2, screenWidth, screenHeight / 2, colors[1]);
-      } else if (colors.length === 4) {
-        // Four colors: Quadrants
-        const halfWidth = screenWidth / 2;
-        const halfHeight = screenHeight / 2;
-        createRectangle(0, 0, halfWidth, halfHeight, colors[0]);
-        createRectangle(halfWidth, 0, halfWidth, halfHeight, colors[1]);
-        createRectangle(0, halfHeight, halfWidth, halfHeight, colors[2]);
-        createRectangle(halfWidth, halfHeight, halfWidth, halfHeight, colors[3]);
-      }
 
-      const readyButton = this.add.rectangle(
-          this.cameras.main.centerX,
-          this.cameras.main.centerY + 100,
-          200,
-          50,
-          0xffffff
-      );
+    this.connectToReady();
+  }
 
-      const readyText = this.add
-          .text(readyButton.x, readyButton.y, "Not Ready", {
-            color: "#000000",
-            fontSize: "24px",
-          })
-          .setOrigin(0.5);
+  connectToReady() {
 
-      this.playerClient.onGameChangeScreen = (screen: GameStateScreen) => {
-        if (screen === GameStateScreen.GAME) {
-          window.removeEventListener('pointerup', pointerUpHandler);
+    this.playerClient.onGameChangeScreen = (screen: GameStateScreen) => {
+      if (screen === GameStateScreen.GAME) {
+        window.removeEventListener('pointerup', lobbyPointerUpHandler);
+        this.readyContainer.alpha = 0;
+        if (this.playerClient.colors.length > 1) {
           this.game.scene.start("MobileGameScene");
         }
-        if (screen === GameStateScreen.DISCONNECTED) {
-          window.removeEventListener('pointerup', pointerUpHandler);
-          this.game.scene.start("MobileDisconnectedScene");
+        else {
+          this.connectToGame();
         }
-      };
-
-      const pointerUpHandler = () => {
-        const targetReady = !this.playerClient.player.isReady;
-        readyText.setText(targetReady ? 'Ready' : 'Not Ready')
-        this.playerClient.togglePlayerReady(targetReady);
       }
-      window.removeEventListener('pointerup', pointerUpHandler);
-      window.addEventListener("pointerup", pointerUpHandler);
+      if (screen === GameStateScreen.DISCONNECTED) {
+        window.removeEventListener('pointerup', lobbyPointerUpHandler);
+        this.game.scene.start("MobileDisconnectedScene");
+      }
     };
 
-    this.playerClient.onPlayerColorsChange = changeColors;
-    changeColors();
+    const lobbyPointerUpHandler = () => {
+      const targetReady = !this.playerClient.player.isReady;
+      this.ready.setVisible(targetReady);
+      this.notReady.setVisible(!targetReady);
+      this.playerClient.togglePlayerReady(targetReady);
+    }
+    window.removeEventListener('pointerup', lobbyPointerUpHandler);
+    window.addEventListener("pointerup", lobbyPointerUpHandler);
+  }
+
+  onPointerDown() {
+    console.log('onPointerDown');
+    this.cameras.main.setBackgroundColor(this.clickColor);
+
+    this.imageTween?.stop();
+    this.image.alpha = 1;
+    this.image.angle = Math.random() * 30 * this.isOddClick;
+    this.isOddClick *= -1;
+    const pointer = this.input.activePointer;
+    this.image.x = pointer.x;
+    this.image.y = pointer.y;
+    this.imageTween = this.tweens.add({
+      targets: this.image,
+      duration: 300, // Duration of the tween in milliseconds
+      alpha: 0,
+      ease: 'Power2', // Easing function for a smooth transition
+      delay: 600
+    });
+  }
+
+  onPointerUp() {
+    console.log('onPointerUp');
+    this.cameras.main.setBackgroundColor(this.baseColor);
+  }
+
+  private connectToGame() {
+    window.addEventListener("pointerdown", () => this.gamePointerDown());
+    window.addEventListener("pointerup", () => this.gamePointerUp());
+  }
+
+  private gamePointerDown() {
+    this.playerClient.togglePlayerOn(this.baseColor, true);
+  }
+
+  private gamePointerUp() {
+    this.playerClient.togglePlayerOn(this.baseColor, false);
   }
 }

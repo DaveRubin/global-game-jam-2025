@@ -31,8 +31,8 @@ export class StageClient {
 
     const snapshot = await get(this.gameRef);
     const existing = snapshot.val();
-    if (existing) {
-      //return null;
+    if (!testGameId && existing) {
+      return null;
     }
 
     await set(this.gameRef, this.currentGameState);
@@ -85,9 +85,10 @@ export class StageClient {
     if (!assignedPlayer) {
       return;
     }
+    assignedPlayer.isReady = false;
     assignedPlayer.assignedTo = null;
     this.distributeColors();
-    update(this.playerRefs[assignedPlayer.id], { assignedTo: null });
+    update(this.playerRefs[assignedPlayer.id], { assignedTo: null, isReady: false });
   }
 
   private getAssignedPlayer(playerRegistrationId): GameStatePlayer | undefined {
@@ -106,8 +107,8 @@ export class StageClient {
       const isReady = snapshot.val();
       if (currentPlayer.isReady !== isReady) {
         console.log("player ready", currentPlayer);
-        this.onPlayerReadyCallbacks(currentPlayer!);
         currentPlayer.isReady = isReady;
+        this.onPlayerReadyCallbacks(currentPlayer!);
 
         if (this.arePlayersReady()) {
           this.currentGameState.screen = GameStateScreen.GAME;
@@ -125,8 +126,8 @@ export class StageClient {
         const currentPlayerColorIsOn = currentPlayer.colors[color];
         if (currentPlayerColorIsOn !== updatedColorIsOn) {
           console.log("player color change", currentPlayerColorIsOn, updatedColorIsOn);
-          this.onPlayerOnCallbacks(color, updatedColorIsOn);
           currentPlayer.colors[color] = updatedColorIsOn;
+          this.onPlayerOnCallbacks(color, updatedColorIsOn);
         }
       });
     })
@@ -135,8 +136,8 @@ export class StageClient {
       const currentPlayer = this.currentGameState.players[playerId];
       const assignedTo = snapshot.val();
       console.log("player ready", currentPlayer);
-      this.onPlayerAssignedCallbacks(currentPlayer!);
       currentPlayer.assignedTo = assignedTo;
+      this.onPlayerAssignedCallbacks(currentPlayer!);
     });
   }
 
@@ -144,12 +145,14 @@ export class StageClient {
     const assignedPlayers = Object.values(this.currentGameState.players).filter(
       (player) => !!player.assignedTo
     );
-    if (!assignedPlayers.length) {
-      return false;
+    const isSingleColor = (new URLSearchParams(window.location.search).get("single")) != null;
+
+    if ((!isSingleColor && assignedPlayers.length) || (isSingleColor && assignedPlayers.length === 4)) {
+      return assignedPlayers.every(
+          (player) => player.isReady
+      );
     }
-    return assignedPlayers.every(
-      (player) => player.isReady
-    );
+    return null;
   }
 
   public distributeColors(isRandomized = false) {

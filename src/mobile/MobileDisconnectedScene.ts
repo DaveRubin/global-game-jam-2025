@@ -11,6 +11,7 @@ export class MobileDisconnectedScene extends Phaser.Scene {
   create() {
     this.playerClient = getPlayerClient();
 
+  this.cameras.main.setBackgroundColor('#000000'); // Hex color code for light blue
     const readyButton = this.add.rectangle(
         this.cameras.main.centerX,
         this.cameras.main.centerY + 100,
