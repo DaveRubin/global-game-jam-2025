@@ -94,6 +94,8 @@ class Head2 extends Phaser.GameObjects.Container {
 		head.setScale(0.2);
 		head.y += 150;
 
+		this.body.setDragX(135);
+
 		// Create a looping rotation tween
 		this.scene.tweens.add({
 			targets: this.getByName("head_Idle"),
