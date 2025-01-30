@@ -11,17 +11,17 @@ type NestedKey<T> = T extends object
     }[keyof T]
     : never;
 
-type NestedKeyOfType<T, TType> = T extends object
-    ? T extends Date
-        ? (T extends TType ? string : never) // If T is Date, include only if it matches TType
-        : {
-            [K in keyof T]: T[K] extends TType
-                ? `${K & string}` // If field matches TType, include it
-                : T[K] extends object
-                    ? `${K & string}.${NestedKeyOfType<T[K], TType>}` // Recursively check nested fields
-                    : never;
-        }[keyof T]
-    : never;
+// type NestedKeyOfType<T, TType> = T extends object
+//     ? T extends Date
+//         ? (T extends TType ? string : never) // If T is Date, include only if it matches TType
+//         : {
+//             [K in keyof T]: T[K] extends TType
+//                 ? `${K & string}` // If field matches TType, include it
+//                 : T[K] extends object
+//                     ? `${K & string}.${NestedKeyOfType<T[K], TType>}` // Recursively check nested fields
+//                     : never;
+//         }[keyof T]
+//     : never;
 
 
 type ExtractFieldType<TSchema, Field extends string> =
@@ -30,7 +30,7 @@ type ExtractFieldType<TSchema, Field extends string> =
             ? ExtractFieldType<TSchema[Prefix], Rest>
             : never
         : Field extends keyof TSchema
-            ? TSchema[Field]
+            ? TSchema[Field] extends infer R ? R : never
             : never;
 
 // Types remain the same
@@ -63,8 +63,128 @@ class BaseTqlBuilder {
         this.root = root;
     }
 }
+interface IEqualityComparer<TSchema, Field extends string & NestedKey<TSchema>> {
+    eq(value: ExtractFieldType<TSchema, Field>);
+    neq(value: ExtractFieldType<TSchema, Field>);
+}
 
-export class TQLBuilder<TSchema> extends BaseTqlBuilder{
+interface IInComparer<TSchema, Field extends string & NestedKey<TSchema>> {
+    in(values: ExtractFieldType<TSchema, Field>[]): TQLBuilder<TSchema>;
+    notIn(values: ExtractFieldType<TSchema, Field>[]): TQLBuilder<TSchema>;
+}
+
+interface IVariableComparer<TSchema, Field extends string & NestedKey<TSchema>> {
+    lt(value: ExtractFieldType<TSchema, Field>);
+    gt(value: ExtractFieldType<TSchema, Field>);
+    gte(value: ExtractFieldType<TSchema, Field>);
+    lte(value: ExtractFieldType<TSchema, Field>);
+}
+
+interface IArrayComparer<TSchema, Field extends string & NestedKey<TSchema>> {
+    any(
+        callback: (b: NestedTQLBuilder<ExtractFieldType<TSchema, Field> extends (infer U)[] ? U : never>) => void
+    ): TQLBuilder<TSchema>;
+}
+
+interface INumberComparer<TSchema, Field extends string & NestedKey<TSchema>> extends IEqualityComparer<TSchema, Field>, IInComparer<TSchema, Field>, IVariableComparer<TSchema, Field> {
+}
+
+interface IDateComparer<TSchema, Field extends string & NestedKey<TSchema>> extends IEqualityComparer<TSchema, Field>, IInComparer<TSchema, Field>, IVariableComparer<TSchema, Field> {
+}
+
+interface IBooleanComparer<TSchema, Field extends string & NestedKey<TSchema>> extends IEqualityComparer<TSchema, Field> {
+}
+
+interface IStringComparer<TSchema, Field extends string & NestedKey<TSchema>> extends IEqualityComparer<TSchema, Field>, IInComparer<TSchema, Field>, IVariableComparer<TSchema, Field> {
+    contains<Field extends NestedKey<TSchema>>(
+        value: ExtractFieldType<TSchema, Field>
+    ): TQLBuilder<TSchema>;
+
+    endsWith<Field extends NestedKey<TSchema>>(
+        value: ExtractFieldType<TSchema, Field> extends string ? ExtractFieldType<TSchema, Field> : never
+    ): TQLBuilder<TSchema>;
+
+    startsWith<Field extends NestedKey<TSchema>>(
+        value: ExtractFieldType<TSchema, Field> extends string ? ExtractFieldType<TSchema, Field> : never
+    ): TQLBuilder<TSchema>;
+}
+
+class TQLComparer<TSchema, Field extends string & NestedKey<TSchema>>
+    implements IStringComparer<TSchema, Field>, INumberComparer<TSchema, Field>, IDateComparer<TSchema, Field>,
+        IArrayComparer<TSchema, Field>
+
+{
+    private builder: TQLBuilder<TSchema>;
+    private field: string;
+    constructor(builder: TQLBuilder<TSchema>, field: string) {
+        this.builder = builder;
+        this.field = field;
+    }
+
+    eq(value: ExtractFieldType<TSchema, Field>) {
+        return this.builder.addCondition({ field: this.field, operator: '==', value: value });
+    }
+
+    neq(value: ExtractFieldType<TSchema, Field>): TQLBuilder<TSchema> {
+        return this.builder.addCondition({ field: this.field, operator: '!=', value: value});
+    }
+
+    lt(value: ExtractFieldType<TSchema, Field>): TQLBuilder<TSchema> {
+        return this.builder.addCondition({ field: this.field, operator: '<', value: value});
+    }
+
+    lte(value: ExtractFieldType<TSchema, Field>): TQLBuilder<TSchema> {
+        return this.builder.addCondition({ field: this.field, operator: '<=', value: value});
+    }
+
+    gt(value: ExtractFieldType<TSchema, Field>): TQLBuilder<TSchema> {
+        return this.builder.addCondition({ field: this.field, operator: '>', value: value});
+    }
+
+    gte(value: ExtractFieldType<TSchema, Field>): TQLBuilder<TSchema> {
+        return this.builder.addCondition({ field: this.field, operator: '>=', value: value});
+    }
+
+    in(values: ExtractFieldType<TSchema, Field>[]): TQLBuilder<TSchema> {
+        return this.builder.addCondition({ field: this.field, operator: 'IN', value: values});
+    }
+
+    notIn(values: ExtractFieldType<TSchema, Field>[]): TQLBuilder<TSchema> {
+        return this.builder.addCondition({ field: this.field, operator: 'NOT_IN', value: values});
+    }
+
+    contains<Field extends NestedKey<TSchema>>(
+        value: ExtractFieldType<TSchema, Field>
+    ): TQLBuilder<TSchema> {
+        return this.builder.addCondition({ field: this.field, operator: 'CONTAINS', value: value});
+    }
+
+    endsWith<Field extends NestedKey<TSchema>>(
+        value: ExtractFieldType<TSchema, Field> extends string ? ExtractFieldType<TSchema, Field> : never
+    ): TQLBuilder<TSchema> {
+        return this.builder.addCondition({ field: this.field, operator: 'ENDS_WITH', value: value});
+    }
+
+    startsWith<Field extends NestedKey<TSchema>>(
+        value: ExtractFieldType<TSchema, Field> extends string ? ExtractFieldType<TSchema, Field> : never
+    ): TQLBuilder<TSchema> {
+        return this.builder.addCondition({ field: this.field, operator: 'STARTS_WITH', value: value});
+    }
+
+    any(
+        callback: (b: NestedTQLBuilder<ExtractFieldType<TSchema, Field> extends (infer U)[] ? U : never>) => void
+    ): TQLBuilder<TSchema> {
+        const subBuilder = new NestedTQLBuilder<ExtractFieldType<TSchema, Field> extends (infer U)[] ? U : never>();
+        callback(subBuilder);
+        return this.builder.addCondition({
+            field: this.field,
+            operator: "ANY",
+            conditions: subBuilder.root,
+        });
+    }
+}
+
+export class TQLBuilder<TSchema> extends BaseTqlBuilder {
 
     constructor() {
         super({
@@ -73,69 +193,15 @@ export class TQLBuilder<TSchema> extends BaseTqlBuilder{
         });
     }
 
-    eq<Field extends NestedKey<TSchema>>(field: Field, value: ExtractFieldType<TSchema, Field>) {
-        return this.addCondition({ field, operator: '==', value: value });
-    }
+    field<Field extends string & NestedKey<TSchema>>(field: Field)
+        : ExtractFieldType<TSchema, Field> extends string ? IStringComparer<TSchema, Field>
+        : ExtractFieldType<TSchema, Field> extends Date ? IDateComparer<TSchema, Field>
+        : ExtractFieldType<TSchema, Field> extends boolean ? IBooleanComparer<TSchema, Field>
+        : ExtractFieldType<TSchema, Field> extends number ? INumberComparer<TSchema, Field>
+        : ExtractFieldType<TSchema, Field> extends Array<Field> ? IArrayComparer<TSchema, Field>
+        : TQLComparer<TSchema, Field> {
 
-    neq<Field extends NestedKey<TSchema>>(field: Field, value: ExtractFieldType<TSchema, Field>): this {
-        return this.addCondition({ field, operator: '!=', value: value});
-    }
-
-    lt<Field extends NestedKeyOfType<TSchema, number | Date>>(
-        field: Field,
-        value: ExtractFieldType<TSchema, Field> extends number | Date ? ExtractFieldType<TSchema, Field> : never
-    ): this {
-        return this.addCondition({ field, operator: '<', value: value});
-    }
-
-    lte<Field extends NestedKey<TSchema>>(
-        field: Field,
-        value: ExtractFieldType<TSchema, Field> extends number | Date ? ExtractFieldType<TSchema, Field> : never
-    ): this {
-        return this.addCondition({ field, operator: '<=', value: value});
-    }
-
-    gt<Field extends NestedKey<TSchema>>(
-        field: Field,
-        value: ExtractFieldType<TSchema, Field> extends number | Date ? ExtractFieldType<TSchema, Field> : never
-    ): this {
-        return this.addCondition({ field, operator: '>', value: value});
-    }
-
-    gte<Field extends NestedKey<TSchema>>(
-        field: Field,
-        value: ExtractFieldType<TSchema, Field> extends number | Date ? ExtractFieldType<TSchema, Field> : never
-    ): this {
-        return this.addCondition({ field, operator: '>=', value: value});
-    }
-
-    in<Field extends NestedKey<TSchema>>(field: Field, values: ExtractFieldType<TSchema, Field>[]): this {
-        return this.addCondition({ field, operator: 'IN', value: values});
-    }
-
-    notIn<Field extends NestedKey<TSchema>>(field: Field, values: ExtractFieldType<TSchema, Field>[]): this {
-        return this.addCondition({ field, operator: 'NOT_IN', value: values});
-    }
-
-    contains<Field extends NestedKey<TSchema>>(
-        field: Field,
-        value: ExtractFieldType<TSchema, Field> extends string ? ExtractFieldType<TSchema, Field> : never
-    ): this {
-        return this.addCondition({ field, operator: 'CONTAINS', value: value});
-    }
-
-    endsWith<Field extends NestedKey<TSchema>>(
-        field: Field,
-        value: ExtractFieldType<TSchema, Field> extends string ? ExtractFieldType<TSchema, Field> : never
-    ): this {
-        return this.addCondition({ field, operator: 'ENDS_WITH', value: value});
-    }
-
-    startsWith<Field extends NestedKey<TSchema>>(
-        field: Field,
-        value: ExtractFieldType<TSchema, Field> extends string ? ExtractFieldType<TSchema, Field> : never
-    ): this {
-        return this.addCondition({ field, operator: 'STARTS_WITH', value: value});
+        return new TQLComparer<TSchema, Field>(this, field);
     }
 
     and(callback: (b: TQLBuilder<TSchema>) => void): this {
@@ -152,20 +218,7 @@ export class TQLBuilder<TSchema> extends BaseTqlBuilder{
         return this.addCondition(root);
     }
 
-    any<Field extends NestedKey<TSchema>>(
-        field: Field,
-        callback: (b: NestedTQLBuilder<ExtractFieldType<TSchema, Field> extends (infer U)[] ? U : never>) => void
-    ): this {
-        const subBuilder = new NestedTQLBuilder<ExtractFieldType<TSchema, Field> extends (infer U)[] ? U : never>();
-        callback(subBuilder);
-        return this.addCondition({
-            field,
-            operator: "ANY",
-            conditions: subBuilder.root,
-        });
-    }
-
-    addCondition(
+    public addCondition(
         comparison: TQLExpression
     ): this {
         this.root.conditions.push(comparison)
